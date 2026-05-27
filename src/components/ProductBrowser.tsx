@@ -3,6 +3,7 @@
 import { useMemo, useState } from "react";
 import type { Product, Vendor, WoodSpecies, WoodUsage } from "@/lib/types";
 import { SPECIES } from "@/lib/wood-species";
+import { formatKg, formatRelative, formatZar } from "@/lib/format";
 
 type UsageFilter = "all" | WoodUsage;
 type SortKey = "price-per-kg-asc" | "price-per-kg-desc" | "price-asc" | "weight-desc";
@@ -22,6 +23,8 @@ const USAGE_LABEL: Record<UsageFilter, string> = {
   both: "Both",
 };
 
+const PAGE_SIZE = 25;
+
 const SORT_LABEL: Record<SortKey, string> = {
   "price-per-kg-asc": "Cheapest per kg first",
   "price-per-kg-desc": "Most expensive per kg first",
@@ -29,28 +32,6 @@ const SORT_LABEL: Record<SortKey, string> = {
   "weight-desc": "Largest pack first",
 };
 
-function formatZar(n: number): string {
-  return new Intl.NumberFormat("en-ZA", {
-    style: "currency",
-    currency: "ZAR",
-    maximumFractionDigits: n < 10 ? 2 : 0,
-  }).format(n);
-}
-
-function formatKg(n: number): string {
-  if (n >= 1000) return `${(n / 1000).toFixed(n >= 10000 ? 0 : 1)} t`;
-  if (n >= 100) return `${Math.round(n)} kg`;
-  return `${n.toFixed(n < 10 ? 2 : 1)} kg`;
-}
-
-function formatRelative(iso: string): string {
-  const ms = Date.now() - new Date(iso).getTime();
-  const h = Math.floor(ms / 3_600_000);
-  if (h < 1) return "less than an hour ago";
-  if (h < 24) return `${h} hour${h === 1 ? "" : "s"} ago`;
-  const d = Math.floor(h / 24);
-  return `${d} day${d === 1 ? "" : "s"} ago`;
-}
 
 export default function ProductBrowser({
   products,
@@ -64,19 +45,41 @@ export default function ProductBrowser({
   const [inStockOnly, setInStockOnly] = useState(true);
   const [sort, setSort] = useState<SortKey>("price-per-kg-asc");
   const [showFilters, setShowFilters] = useState(false);
+  const [page, setPage] = useState(1);
 
-  const speciesCounts = useMemo(() => {
-    const c: Partial<Record<WoodSpecies, number>> = {};
-    for (const p of products) c[p.species] = (c[p.species] ?? 0) + 1;
-    return c;
-  }, [products]);
-
-  const filtered = useMemo(() => {
+  const baseFiltered = useMemo(() => {
     let out = products;
     if (inStockOnly) out = out.filter((p) => p.inStock);
     if (usage !== "all") {
       out = out.filter((p) => p.usage === usage || p.usage === "both");
     }
+    return out;
+  }, [products, usage, inStockOnly]);
+
+  const productsForSpeciesCount = useMemo(() => {
+    if (selectedVendors.size === 0) return baseFiltered;
+    return baseFiltered.filter((p) => selectedVendors.has(p.vendorId));
+  }, [baseFiltered, selectedVendors]);
+
+  const productsForVendorCount = useMemo(() => {
+    if (selectedSpecies.size === 0) return baseFiltered;
+    return baseFiltered.filter((p) => selectedSpecies.has(p.species));
+  }, [baseFiltered, selectedSpecies]);
+
+  const speciesCounts = useMemo(() => {
+    const c: Partial<Record<WoodSpecies, number>> = {};
+    for (const p of productsForSpeciesCount) c[p.species] = (c[p.species] ?? 0) + 1;
+    return c;
+  }, [productsForSpeciesCount]);
+
+  const vendorCounts = useMemo(() => {
+    const c: Record<string, number> = {};
+    for (const p of productsForVendorCount) c[p.vendorId] = (c[p.vendorId] ?? 0) + 1;
+    return c;
+  }, [productsForVendorCount]);
+
+  const filtered = useMemo(() => {
+    let out = baseFiltered;
     if (selectedSpecies.size > 0) out = out.filter((p) => selectedSpecies.has(p.species));
     if (selectedVendors.size > 0) out = out.filter((p) => selectedVendors.has(p.vendorId));
 
@@ -95,13 +98,19 @@ export default function ProductBrowser({
         break;
     }
     return out;
-  }, [products, usage, selectedSpecies, selectedVendors, inStockOnly, sort]);
+  }, [baseFiltered, selectedSpecies, selectedVendors, sort]);
 
   const speciesOptions = useMemo(() => {
     return Object.values(SPECIES)
-      .filter((s) => (speciesCounts[s.id] ?? 0) > 0)
+      .filter((s) => (speciesCounts[s.id] ?? 0) > 0 || selectedSpecies.has(s.id))
       .sort((a, b) => (speciesCounts[b.id] ?? 0) - (speciesCounts[a.id] ?? 0));
-  }, [speciesCounts]);
+  }, [speciesCounts, selectedSpecies]);
+
+  const vendorOptions = useMemo(() => {
+    return vendors
+      .filter((v) => (vendorCounts[v.id] ?? 0) > 0 || selectedVendors.has(v.id))
+      .sort((a, b) => (vendorCounts[b.id] ?? 0) - (vendorCounts[a.id] ?? 0));
+  }, [vendors, vendorCounts, selectedVendors]);
 
   const vendorById = useMemo(() => {
     const m: Record<string, Vendor> = {};
@@ -116,6 +125,7 @@ export default function ProductBrowser({
       else next.add(s);
       return next;
     });
+    setPage(1);
   }
 
   function toggleVendor(v: string) {
@@ -125,6 +135,7 @@ export default function ProductBrowser({
       else next.add(v);
       return next;
     });
+    setPage(1);
   }
 
   function clearAll() {
@@ -133,6 +144,7 @@ export default function ProductBrowser({
     setSelectedVendors(new Set());
     setInStockOnly(true);
     setSort("price-per-kg-asc");
+    setPage(1);
   }
 
   const failedVendors = Object.entries(vendorRunStatus).filter(([, s]) => !s.ok);
@@ -167,7 +179,10 @@ export default function ProductBrowser({
             <button
               key={u}
               type="button"
-              onClick={() => setUsage(u)}
+              onClick={() => {
+                setUsage(u);
+                setPage(1);
+              }}
               className={`rounded-md px-3 py-1.5 text-sm font-medium transition ${
                 usage === u
                   ? "bg-zinc-900 text-white dark:bg-white dark:text-zinc-900"
@@ -182,14 +197,20 @@ export default function ProductBrowser({
             <input
               type="checkbox"
               checked={inStockOnly}
-              onChange={(e) => setInStockOnly(e.target.checked)}
+              onChange={(e) => {
+                setInStockOnly(e.target.checked);
+                setPage(1);
+              }}
               className="h-4 w-4 rounded border-zinc-300"
             />
             In stock only
           </label>
           <select
             value={sort}
-            onChange={(e) => setSort(e.target.value as SortKey)}
+            onChange={(e) => {
+              setSort(e.target.value as SortKey);
+              setPage(1);
+            }}
             className="rounded-md border border-zinc-300 bg-white px-2 py-1.5 text-sm dark:border-zinc-700 dark:bg-zinc-900"
           >
             {(Object.keys(SORT_LABEL) as SortKey[]).map((k) => (
@@ -222,7 +243,7 @@ export default function ProductBrowser({
             </button>
           )}
           <FilterGroup title="Wood type">
-            <div className="space-y-1">
+            <div className="max-h-96 space-y-1 overflow-y-auto pr-1">
               {speciesOptions.map((s) => (
                 <FilterChip
                   key={s.id}
@@ -236,11 +257,11 @@ export default function ProductBrowser({
           </FilterGroup>
           <FilterGroup title="Vendor">
             <div className="space-y-1">
-              {vendors.map((v) => (
+              {vendorOptions.map((v) => (
                 <FilterChip
                   key={v.id}
                   label={v.name}
-                  count={vendorRunStatus[v.id]?.count}
+                  count={vendorCounts[v.id] ?? 0}
                   active={selectedVendors.has(v.id)}
                   onToggle={() => toggleVendor(v.id)}
                 />
@@ -249,25 +270,13 @@ export default function ProductBrowser({
           </FilterGroup>
         </aside>
 
-        <main>
-          <p className="mb-3 text-sm text-zinc-600 dark:text-zinc-400">
-            {filtered.length} {filtered.length === 1 ? "product" : "products"} match
-          </p>
-          {filtered.length === 0 ? (
-            <div className="rounded-lg border border-dashed border-zinc-300 p-12 text-center text-sm text-zinc-500 dark:border-zinc-700">
-              No products match your filters.{" "}
-              <button onClick={clearAll} className="underline">
-                Reset
-              </button>
-            </div>
-          ) : (
-            <ul className="space-y-3">
-              {filtered.map((p) => (
-                <ProductRow key={p.id} product={p} vendor={vendorById[p.vendorId]} />
-              ))}
-            </ul>
-          )}
-        </main>
+        <PagedList
+          products={filtered}
+          vendorById={vendorById}
+          page={page}
+          setPage={setPage}
+          clearAll={clearAll}
+        />
       </div>
     </div>
   );
@@ -394,4 +403,135 @@ function ProductRow({ product, vendor }: { product: Product; vendor?: Vendor }) 
       </div>
     </li>
   );
+}
+
+function PagedList({
+  products,
+  vendorById,
+  page,
+  setPage,
+  clearAll,
+}: {
+  products: Product[];
+  vendorById: Record<string, Vendor>;
+  page: number;
+  setPage: (p: number) => void;
+  clearAll: () => void;
+}) {
+  const total = products.length;
+  const totalPages = Math.max(1, Math.ceil(total / PAGE_SIZE));
+  const safePage = Math.min(page, totalPages);
+  const start = (safePage - 1) * PAGE_SIZE;
+  const end = Math.min(start + PAGE_SIZE, total);
+  const pageItems = products.slice(start, end);
+
+  return (
+    <main>
+      <p className="mb-3 text-sm text-zinc-600 dark:text-zinc-400">
+        {total === 0
+          ? "0 products match"
+          : `Showing ${start + 1}–${end} of ${total} ${total === 1 ? "product" : "products"}`}
+      </p>
+      {total === 0 ? (
+        <div className="rounded-lg border border-dashed border-zinc-300 p-12 text-center text-sm text-zinc-500 dark:border-zinc-700">
+          No products match your filters.{" "}
+          <button onClick={clearAll} className="underline">
+            Reset
+          </button>
+        </div>
+      ) : (
+        <>
+          <ul className="space-y-3">
+            {pageItems.map((p) => (
+              <ProductRow key={p.id} product={p} vendor={vendorById[p.vendorId]} />
+            ))}
+          </ul>
+          {totalPages > 1 && (
+            <Pagination
+              page={safePage}
+              totalPages={totalPages}
+              onChange={(p) => {
+                setPage(p);
+                if (typeof window !== "undefined") {
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                }
+              }}
+            />
+          )}
+        </>
+      )}
+    </main>
+  );
+}
+
+function Pagination({
+  page,
+  totalPages,
+  onChange,
+}: {
+  page: number;
+  totalPages: number;
+  onChange: (p: number) => void;
+}) {
+  const pages = visiblePages(page, totalPages);
+  return (
+    <nav className="mt-6 flex flex-wrap items-center justify-center gap-1 text-sm">
+      <PageButton disabled={page === 1} onClick={() => onChange(page - 1)}>
+        ← Prev
+      </PageButton>
+      {pages.map((p, i) =>
+        p === "…" ? (
+          <span key={`gap-${i}`} className="px-2 text-zinc-500">
+            …
+          </span>
+        ) : (
+          <PageButton key={p} active={p === page} onClick={() => onChange(p)}>
+            {p}
+          </PageButton>
+        ),
+      )}
+      <PageButton disabled={page === totalPages} onClick={() => onChange(page + 1)}>
+        Next →
+      </PageButton>
+    </nav>
+  );
+}
+
+function PageButton({
+  children,
+  onClick,
+  active,
+  disabled,
+}: {
+  children: React.ReactNode;
+  onClick: () => void;
+  active?: boolean;
+  disabled?: boolean;
+}) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      disabled={disabled}
+      className={`min-w-9 rounded-md px-3 py-1.5 font-medium transition ${
+        active
+          ? "bg-zinc-900 text-white dark:bg-white dark:text-zinc-900"
+          : "bg-white text-zinc-700 ring-1 ring-zinc-200 hover:bg-zinc-100 disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:bg-white dark:bg-zinc-900 dark:text-zinc-300 dark:ring-zinc-700 dark:hover:bg-zinc-800 dark:disabled:hover:bg-zinc-900"
+      }`}
+    >
+      {children}
+    </button>
+  );
+}
+
+function visiblePages(current: number, total: number): (number | "…")[] {
+  if (total <= 7) return Array.from({ length: total }, (_, i) => i + 1);
+  const pages: (number | "…")[] = [1];
+  const left = Math.max(2, current - 1);
+  const right = Math.min(total - 1, current + 1);
+  if (left > 2) pages.push("…");
+  for (let p = left; p <= right; p++) pages.push(p);
+  if (right < total - 1) pages.push("…");
+  pages.push(total);
+  return pages;
 }
