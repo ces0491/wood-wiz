@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 const LINKS = [
   { href: "/", label: "Prices" },
   { href: "/vendors", label: "Vendors" },
+  { href: "/faq", label: "How it works" },
 ];
 
 function StackedLogsMark({ className }: { className?: string }) {
