@@ -34,6 +34,11 @@ jobs:
             echo "::error::package-lock.json is out of sync with package.json."
             echo "Run 'npm run lock:refresh' locally and commit the result."
             git diff --stat package-lock.json
+            echo "---FULL DIFF---"
+            git --no-pager diff package-lock.json
+            echo "---NODE/NPM VERSIONS---"
+            node --version
+            npm --version
             exit 1
           fi
           echo "Lockfile is in sync."
