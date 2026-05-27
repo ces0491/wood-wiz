@@ -93,7 +93,12 @@ interface WooProduct {
   name: string;
   permalink: string;
   is_in_stock: boolean;
-  prices: { price: string; regular_price: string; currency_minor_unit: number };
+  prices: {
+    price: string;
+    regular_price: string;
+    currency_minor_unit: number;
+    price_range?: { min_amount: string; max_amount: string } | null;
+  };
   images: { src: string }[];
   variation: string;
   type: string;
@@ -120,11 +125,24 @@ export async function scrapeWooCommerce(
     for (const p of data) {
       const minor = p.prices?.currency_minor_unit ?? 2;
       const divisor = Math.pow(10, minor);
-      const price = parseFloat(p.prices?.price ?? "0") / divisor;
+
+      // Variable products expose a price_range whose min_amount is what the
+      // storefront actually displays. The parent's `price` field is a stale
+      // default that doesn't correspond to any selectable variant, so trusting
+      // it produces ghost prices well below any real purchase option.
+      const isVariable = p.type === "variable";
+      const range = p.prices?.price_range;
+      const priceStr = isVariable && range?.min_amount ? range.min_amount : p.prices?.price ?? "0";
+      const price = parseFloat(priceStr) / divisor;
       if (!Number.isFinite(price) || price <= 0) continue;
-      const regular = p.prices?.regular_price
-        ? parseFloat(p.prices.regular_price) / divisor
-        : undefined;
+
+      // Skip the regular_price comparison for variable products — the min
+      // variant IS the regular price, not a sale.
+      const regular =
+        !isVariable && p.prices?.regular_price
+          ? parseFloat(p.prices.regular_price) / divisor
+          : undefined;
+
       out.push({
         vendorId,
         externalId: String(p.id),

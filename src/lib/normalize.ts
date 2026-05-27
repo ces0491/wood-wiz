@@ -12,6 +12,7 @@ interface WeightResult {
 // fuel substitutes, or tools sold alongside firewood.
 const NON_FIREWOOD_PATTERNS = [
   /\bfire\s*lighters?\b/i,
+  /\bfire\s*starters?\b/i,
   /\bgas\s*lighter\b/i,
   /\blid\s*lifter\b/i,
   /\b(braai\s*)?tongs?\b/i,
@@ -28,7 +29,14 @@ const NON_FIREWOOD_PATTERNS = [
   /\bcharcoal\b/i,
   /\bblitz\s+firelighters?\b/i,
   /\bbbq\s*(tool|set)\b/i,
+  /\b(gift|starter|cleaning)\s*kit\b/i,
+  /\bgrid\b/i,
   /\baxe\b/i,
+  /\bgas\s+(boiling|burner|stove|table)\b/i,
+  /\bfire\s*pit\b/i,
+  /\bpotjie\s+(cooker|pot)\b/i,
+  /\blk(?:'s|’s)?\s+pot\b/i,
+  /\bfruit\s+bin\b/i,
   /\bfire(wood)?\s*holder\b/i,
   /\b(stand|rack)\b/i,
   /\bbag\s*opener\b/i,
@@ -77,6 +85,22 @@ function extractWeight(text: string, densityKgPerM3: number): WeightResult | nul
   const bagsMatch = lower.match(/(\d+)\s*x\s*bags?\b/);
   if (bagsMatch) {
     const count = parseInt(bagsMatch[1], 10);
+    const unitMatch = lower.match(/(\d+(?:\.\d+)?)\s*kg\s*bags?\b/);
+    if (unitMatch) {
+      const unit = parseFloat(unitMatch[1]);
+      const total = count * unit;
+      if (total > 0 && total < 50000) {
+        return { weightKg: total, estimated: false, packFormat: "pallet" };
+      }
+    }
+  }
+
+  // Multi-pack variant: unit weight followed by separator (em-dash, en-dash, or
+  // pipe) and bag count. Shopify scrapers join product title and variant title
+  // with " — ", producing strings like "5KG Bags — 50 Bag" or "18KG Bags | 25 Bags".
+  const sepBagsMatch = lower.match(/[—–|]\s*(\d+)\s*bags?\b/);
+  if (sepBagsMatch) {
+    const count = parseInt(sepBagsMatch[1], 10);
     const unitMatch = lower.match(/(\d+(?:\.\d+)?)\s*kg\s*bags?\b/);
     if (unitMatch) {
       const unit = parseFloat(unitMatch[1]);
