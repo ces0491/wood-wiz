@@ -7,8 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "scrape": "tsx scripts/scrape-all.ts",
-    "lock:refresh": "npm install --include=optional --os=linux --cpu=x64 --libc=glibc --package-lock-only"
+    "scrape": "tsx scripts/scrape-all.ts"
   },
   "dependencies": {
     "cheerio": "^1.2.0",

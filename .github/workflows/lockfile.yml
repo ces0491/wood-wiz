@@ -1,4 +1,4 @@
-name: Lockfile guard
+name: Lockfile sync
 
 on:
   pull_request:
@@ -13,17 +13,36 @@ on:
       - package-lock.json
       - .github/workflows/lockfile.yml
 
+permissions:
+  contents: write
+
 jobs:
-  verify:
+  sync:
+    if: github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
       - uses: actions/checkout@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          ref: ${{ github.head_ref || github.ref_name }}
 
       - uses: actions/setup-node@v6
         with:
           node-version: "24"
           cache: "npm"
 
-      - name: Verify lockfile is installable on Linux
-        run: npm ci --dry-run
+      - name: Regenerate lockfile on Linux
+        run: npm install --include=optional --package-lock-only
+
+      - name: Commit and push if changed
+        run: |
+          if git diff --quiet package-lock.json; then
+            echo "Lockfile is already in sync."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add package-lock.json
+          git commit -m "Sync package-lock.json with Linux-shaped npm output"
+          git push
