@@ -11,6 +11,7 @@ export const VENDORS: Vendor[] = [
       description: "Free delivery & stacking over R1,000. R100 flat fee under R1,000.",
       freeOverZar: 1000,
       flatFeeZar: 100,
+      stacking: "free-over-threshold",
     },
   },
   {
@@ -64,6 +65,7 @@ export const VENDORS: Vendor[] = [
     delivery: {
       description: "Delivered and stacked. West Coast, Boland, Cape Town.",
       zoneNote: "By region",
+      stacking: "free",
     },
   },
   {

@@ -69,6 +69,7 @@ export interface DeliveryRule {
   freeOverZar?: number;
   flatFeeZar?: number;
   zoneNote?: string;
+  stacking?: "free" | "free-over-threshold" | "extra" | "unknown";
 }
 
 export interface Vendor {
