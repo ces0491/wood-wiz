@@ -1,7 +1,19 @@
+import {
+  HelpCircle,
+  Layers,
+  Package,
+  PiggyBank,
+  Tag,
+  Trees,
+  TrendingDown,
+  Truck,
+} from "lucide-react";
 import type { ComparisonHighlights, VendorStats } from "@/lib/vendor-stats";
 import type { Vendor } from "@/lib/types";
 import { SPECIES } from "@/lib/wood-species";
-import { formatPct, formatRelative, formatZar } from "@/lib/format";
+import { formatKg, formatPct, formatRelative, formatZar } from "@/lib/format";
+
+type IconType = typeof Tag;
 
 interface Props {
   vendors: Vendor[];
@@ -45,11 +57,11 @@ export default function VendorComparison({
       <header className="mb-6">
         <div className="flex flex-wrap items-baseline justify-between gap-2">
           <h1 className="text-2xl font-bold tracking-tight sm:text-3xl">Vendor comparison</h1>
-          <span className="rounded-full bg-emerald-100 px-3 py-1 text-xs font-medium text-emerald-900 dark:bg-emerald-900/40 dark:text-emerald-200">
+          <span className="rounded-full bg-amber-100 px-3 py-1 text-xs font-medium text-amber-900 ring-1 ring-amber-200 dark:bg-amber-900/40 dark:text-amber-200 dark:ring-amber-800/50">
             Cape Town
           </span>
         </div>
-        <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">
+        <p className="mt-1 text-sm text-stone-600 dark:text-stone-400">
           {totalProducts} products across {stats.length} vendors. Data refreshed{" "}
           {formatRelative(generatedAt)}.
         </p>
@@ -58,6 +70,8 @@ export default function VendorComparison({
       <section className="mb-8 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
         {highlights.cheapestAvg && (
           <SpotlightCard
+            icon={TrendingDown}
+            tone="emerald"
             label="Cheapest on average"
             value={vendorById[highlights.cheapestAvg.vendorId]?.name ?? highlights.cheapestAvg.vendorId}
             sub={`${formatZar(highlights.cheapestAvg.avgPricePerKgZar)} avg per kg`}
@@ -65,6 +79,8 @@ export default function VendorComparison({
         )}
         {highlights.cheapestSingleProduct && (
           <SpotlightCard
+            icon={PiggyBank}
+            tone="amber"
             label="Lowest price per kg"
             value={formatZar(highlights.cheapestSingleProduct.pricePerKgZar)}
             sub={
@@ -84,6 +100,8 @@ export default function VendorComparison({
         )}
         {highlights.mostVariety && (
           <SpotlightCard
+            icon={Trees}
+            tone="sky"
             label="Most species variety"
             value={vendorById[highlights.mostVariety.vendorId]?.name ?? highlights.mostVariety.vendorId}
             sub={`${highlights.mostVariety.speciesCount} species across ${highlights.mostVariety.productCount} products`}
@@ -91,6 +109,8 @@ export default function VendorComparison({
         )}
         {highlights.mostSales && (
           <SpotlightCard
+            icon={Tag}
+            tone="rose"
             label="Most active sales right now"
             value={vendorById[highlights.mostSales.vendorId]?.name ?? highlights.mostSales.vendorId}
             sub={`${highlights.mostSales.salesCount} product${highlights.mostSales.salesCount === 1 ? "" : "s"} on sale`}
@@ -100,6 +120,7 @@ export default function VendorComparison({
 
       <section className="mb-8 grid grid-cols-1 gap-6 lg:grid-cols-2">
         <BarChart
+          icon={TrendingDown}
           title="Average price per kg"
           subtitle="Lower is better"
           rows={stats
@@ -113,6 +134,7 @@ export default function VendorComparison({
           tone="cheap"
         />
         <BarChart
+          icon={Trees}
           title="Species variety"
           subtitle="Distinct wood types per vendor"
           rows={stats
@@ -126,6 +148,7 @@ export default function VendorComparison({
           tone="abundant"
         />
         <BarChart
+          icon={Package}
           title="Product range"
           subtitle="Total in-catalog products per vendor"
           rows={stats
@@ -140,6 +163,7 @@ export default function VendorComparison({
         />
         {maxSales > 0 && (
           <BarChart
+            icon={Tag}
             title="Active sales right now"
             subtitle="In-stock products with a struck-through regular price"
             rows={stats
@@ -169,7 +193,7 @@ export default function VendorComparison({
               return (
                 <article
                   key={s.vendorId}
-                  className="rounded-lg border border-zinc-200 bg-white p-4 dark:border-zinc-800 dark:bg-zinc-900"
+                  className="rounded-lg border border-stone-200 bg-white p-4 dark:border-stone-800 dark:bg-stone-900"
                 >
                   <div className="mb-3 flex flex-wrap items-baseline justify-between gap-2">
                     <h3 className="text-base font-semibold">
@@ -182,7 +206,7 @@ export default function VendorComparison({
                         {v.name}
                       </a>
                     </h3>
-                    <span className="text-xs uppercase tracking-wide text-zinc-500">
+                    <span className="text-xs uppercase tracking-wide text-stone-500">
                       {v.platform}
                     </span>
                   </div>
@@ -196,8 +220,8 @@ export default function VendorComparison({
                     <Stat label="On sale" value={`${s.salesCount}`} />
                   </dl>
 
-                  <div className="mt-3 border-t border-zinc-100 pt-3 dark:border-zinc-800">
-                    <p className="text-xs text-zinc-500">Cheapest product</p>
+                  <div className="mt-3 border-t border-stone-100 pt-3 dark:border-stone-800">
+                    <p className="text-xs text-stone-500">Cheapest product</p>
                     <a
                       href={s.cheapestProduct.url}
                       target="_blank"
@@ -206,20 +230,42 @@ export default function VendorComparison({
                     >
                       {s.cheapestProduct.title}
                     </a>
-                    <p className="text-xs text-zinc-500">
-                      {SPECIES[s.cheapestProduct.species].displayName} •{" "}
-                      {formatZar(s.cheapestProduct.priceZar, 0)} total
+                    <p className="flex flex-wrap items-center gap-x-1.5 text-xs text-stone-500">
+                      <span
+                        aria-hidden
+                        className={`size-2 shrink-0 rounded-full ${SPECIES[s.cheapestProduct.species].color}`}
+                      />
+                      <span>{SPECIES[s.cheapestProduct.species].displayName}</span>
+                      <span>•</span>
+                      <span>{formatZar(s.cheapestProduct.priceZar, 0)} total</span>
+                      <span>•</span>
+                      <span>{formatKg(s.cheapestProduct.weightKg)}</span>
+                      {s.cheapestProduct.weightEstimated && (
+                        <span
+                          title="Weight estimated from piece count or volume — not stated by vendor"
+                          className="text-amber-700 dark:text-amber-300"
+                        >
+                          ~est
+                        </span>
+                      )}
                     </p>
                   </div>
 
-                  <div className="mt-3 border-t border-zinc-100 pt-3 dark:border-zinc-800">
-                    <p className="text-xs text-zinc-500">Delivery</p>
+                  <div className="mt-3 border-t border-stone-100 pt-3 dark:border-stone-800">
+                    <p className="text-xs text-stone-500">Delivery</p>
                     <p className="text-sm">{v.delivery.description}</p>
                     <div className="mt-2 flex flex-wrap gap-1.5">
                       {freeDelivery !== undefined && (
-                        <Badge tone="good">Free delivery over {formatZar(freeDelivery, 0)}</Badge>
+                        <Badge tone="good" icon={Truck}>
+                          Free delivery over {formatZar(freeDelivery, 0)}
+                        </Badge>
                       )}
-                      <Badge tone={stacking.tone}>{stacking.text}</Badge>
+                      <Badge
+                        tone={stacking.tone}
+                        icon={stacking.tone === "unknown" ? HelpCircle : Layers}
+                      >
+                        {stacking.text}
+                      </Badge>
                     </div>
                   </div>
                 </article>
@@ -231,22 +277,64 @@ export default function VendorComparison({
   );
 }
 
+type SpotlightTone = "emerald" | "amber" | "sky" | "rose";
+
+const SPOTLIGHT_TONE: Record<SpotlightTone, { iconBg: string; iconColor: string; border: string }> = {
+  emerald: {
+    iconBg: "bg-emerald-100 dark:bg-emerald-900/40",
+    iconColor: "text-emerald-700 dark:text-emerald-300",
+    border: "border-emerald-200/60 dark:border-emerald-900/50",
+  },
+  amber: {
+    iconBg: "bg-amber-100 dark:bg-amber-900/40",
+    iconColor: "text-amber-700 dark:text-amber-300",
+    border: "border-amber-200/60 dark:border-amber-900/50",
+  },
+  sky: {
+    iconBg: "bg-sky-100 dark:bg-sky-900/40",
+    iconColor: "text-sky-700 dark:text-sky-300",
+    border: "border-sky-200/60 dark:border-sky-900/50",
+  },
+  rose: {
+    iconBg: "bg-rose-100 dark:bg-rose-900/40",
+    iconColor: "text-rose-700 dark:text-rose-300",
+    border: "border-rose-200/60 dark:border-rose-900/50",
+  },
+};
+
 function SpotlightCard({
+  icon: Icon,
+  tone,
   label,
   value,
   sub,
 }: {
+  icon: IconType;
+  tone: SpotlightTone;
   label: string;
   value: React.ReactNode;
   sub?: React.ReactNode;
 }) {
+  const t = SPOTLIGHT_TONE[tone];
   return (
-    <div className="rounded-lg border border-zinc-200 bg-white p-4 dark:border-zinc-800 dark:bg-zinc-900">
-      <p className="text-xs uppercase tracking-wide text-zinc-500">{label}</p>
-      <p className="mt-1 text-lg font-semibold leading-tight">{value}</p>
-      {sub !== undefined && (
-        <p className="mt-1 text-xs text-zinc-600 dark:text-zinc-400">{sub}</p>
-      )}
+    <div
+      className={`rounded-lg border ${t.border} bg-white p-4 dark:bg-stone-900`}
+    >
+      <div className="flex items-start gap-3">
+        <span
+          className={`flex size-9 shrink-0 items-center justify-center rounded-md ${t.iconBg}`}
+          aria-hidden
+        >
+          <Icon className={`size-5 ${t.iconColor}`} />
+        </span>
+        <div className="min-w-0">
+          <p className="text-xs uppercase tracking-wide text-stone-500">{label}</p>
+          <p className="mt-0.5 text-lg font-semibold leading-tight">{value}</p>
+          {sub !== undefined && (
+            <p className="mt-1 text-xs text-stone-600 dark:text-stone-400">{sub}</p>
+          )}
+        </div>
+      </div>
     </div>
   );
 }
@@ -254,7 +342,7 @@ function SpotlightCard({
 function Stat({ label, value }: { label: string; value: string }) {
   return (
     <div>
-      <dt className="text-xs text-zinc-500">{label}</dt>
+      <dt className="text-xs text-stone-500">{label}</dt>
       <dd className="font-medium tabular-nums">{value}</dd>
     </div>
   );
@@ -263,17 +351,25 @@ function Stat({ label, value }: { label: string; value: string }) {
 function Badge({
   children,
   tone,
+  icon: Icon,
 }: {
   children: React.ReactNode;
   tone: "good" | "neutral" | "unknown";
+  icon?: IconType;
 }) {
   const styles = {
     good: "bg-emerald-100 text-emerald-900 dark:bg-emerald-900/30 dark:text-emerald-200",
-    neutral: "bg-zinc-100 text-zinc-700 dark:bg-zinc-800 dark:text-zinc-300",
-    unknown: "bg-zinc-50 text-zinc-500 ring-1 ring-zinc-200 dark:bg-zinc-900 dark:text-zinc-500 dark:ring-zinc-800",
+    neutral: "bg-stone-100 text-stone-700 dark:bg-stone-800 dark:text-stone-300",
+    unknown:
+      "bg-stone-50 text-stone-500 ring-1 ring-stone-200 dark:bg-stone-900 dark:text-stone-500 dark:ring-stone-800",
   }[tone];
   return (
-    <span className={`rounded px-1.5 py-0.5 text-xs font-medium ${styles}`}>{children}</span>
+    <span
+      className={`inline-flex items-center gap-1 rounded px-1.5 py-0.5 text-xs font-medium ${styles}`}
+    >
+      {Icon && <Icon className="size-3" aria-hidden />}
+      {children}
+    </span>
   );
 }
 
@@ -283,23 +379,33 @@ function BarChart({
   rows,
   max,
   tone,
+  icon: Icon,
 }: {
   title: string;
   subtitle: string;
   rows: { label: string; value: number; display: string }[];
   max: number;
   tone: "cheap" | "abundant" | "sale";
+  icon?: IconType;
 }) {
   const barColor = {
     cheap: "bg-emerald-500/80 dark:bg-emerald-400/70",
     abundant: "bg-sky-500/80 dark:bg-sky-400/70",
     sale: "bg-amber-500/80 dark:bg-amber-400/70",
   }[tone];
+  const iconColor = {
+    cheap: "text-emerald-600 dark:text-emerald-400",
+    abundant: "text-sky-600 dark:text-sky-400",
+    sale: "text-amber-600 dark:text-amber-400",
+  }[tone];
 
   return (
-    <div className="rounded-lg border border-zinc-200 bg-white p-4 dark:border-zinc-800 dark:bg-zinc-900">
-      <h3 className="text-sm font-semibold">{title}</h3>
-      <p className="text-xs text-zinc-500">{subtitle}</p>
+    <div className="rounded-lg border border-stone-200 bg-white p-4 dark:border-stone-800 dark:bg-stone-900">
+      <div className="flex items-center gap-2">
+        {Icon && <Icon className={`size-4 ${iconColor}`} aria-hidden />}
+        <h3 className="text-sm font-semibold">{title}</h3>
+      </div>
+      <p className="text-xs text-stone-500">{subtitle}</p>
       <ul className="mt-3 space-y-2">
         {rows.map((r) => {
           const pct = max > 0 ? (r.value / max) * 100 : 0;
@@ -307,11 +413,11 @@ function BarChart({
             <li key={r.label}>
               <div className="mb-0.5 flex justify-between text-xs">
                 <span className="truncate pr-2">{r.label}</span>
-                <span className="shrink-0 tabular-nums text-zinc-600 dark:text-zinc-400">
+                <span className="shrink-0 tabular-nums text-stone-600 dark:text-stone-400">
                   {r.display}
                 </span>
               </div>
-              <div className="h-2 overflow-hidden rounded-full bg-zinc-100 dark:bg-zinc-800">
+              <div className="h-2 overflow-hidden rounded-full bg-stone-100 dark:bg-stone-800">
                 <div
                   className={`h-full rounded-full ${barColor}`}
                   style={{ width: `${pct}%` }}

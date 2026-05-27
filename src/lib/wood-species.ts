@@ -6,6 +6,10 @@ interface SpeciesInfo {
   aliases: string[];
   densityKgPerM3: number;
   usage: WoodUsage;
+  // Tailwind background class for a 6px color dot in the UI. Hints at the
+  // wood's visual character where the name suggests one (red gum → red);
+  // otherwise an earthy tone.
+  color: string;
 }
 
 // Approximate air-dry densities (kg/m^3). These are mid-range estimates from
@@ -27,6 +31,7 @@ export const SPECIES: Record<WoodSpecies, SpeciesInfo> = {
     ],
     densityKgPerM3: 1150,
     usage: "both",
+    color: "bg-yellow-600",
   },
   sekelbos: {
     id: "sekelbos",
@@ -34,6 +39,7 @@ export const SPECIES: Record<WoodSpecies, SpeciesInfo> = {
     aliases: ["sekelbos", "sickle bush", "dichrostachys"],
     densityKgPerM3: 950,
     usage: "both",
+    color: "bg-green-700",
   },
   mopane: {
     id: "mopane",
@@ -41,6 +47,7 @@ export const SPECIES: Record<WoodSpecies, SpeciesInfo> = {
     aliases: ["mopane", "mopani", "mupani", "mupane", "colophospermum"],
     densityKgPerM3: 1150,
     usage: "both",
+    color: "bg-amber-800",
   },
   rooikrans: {
     id: "rooikrans",
@@ -48,6 +55,7 @@ export const SPECIES: Record<WoodSpecies, SpeciesInfo> = {
     aliases: ["rooikrans", "rooi krans", "red eye", "acacia cyclops"],
     densityKgPerM3: 750,
     usage: "braai",
+    color: "bg-orange-700",
   },
   "black-wattle": {
     id: "black-wattle",
@@ -55,6 +63,7 @@ export const SPECIES: Record<WoodSpecies, SpeciesInfo> = {
     aliases: ["black wattle", "wattle", "acacia mearnsii"],
     densityKgPerM3: 700,
     usage: "both",
+    color: "bg-stone-800",
   },
   "blue-gum": {
     id: "blue-gum",
@@ -62,6 +71,7 @@ export const SPECIES: Record<WoodSpecies, SpeciesInfo> = {
     aliases: ["blue gum", "bluegum", "eucalyptus globulus", "eucalyptus"],
     densityKgPerM3: 800,
     usage: "both",
+    color: "bg-sky-600",
   },
   "red-gum": {
     id: "red-gum",
@@ -69,6 +79,7 @@ export const SPECIES: Record<WoodSpecies, SpeciesInfo> = {
     aliases: ["red gum", "redgum", "eucalyptus camaldulensis"],
     densityKgPerM3: 850,
     usage: "both",
+    color: "bg-red-600",
   },
   swarthaak: {
     id: "swarthaak",
@@ -76,6 +87,7 @@ export const SPECIES: Record<WoodSpecies, SpeciesInfo> = {
     aliases: ["swarthaak", "swart haak", "black thorn", "senegalia mellifera"],
     densityKgPerM3: 950,
     usage: "both",
+    color: "bg-stone-700",
   },
   soetdoring: {
     id: "soetdoring",
@@ -83,6 +95,7 @@ export const SPECIES: Record<WoodSpecies, SpeciesInfo> = {
     aliases: ["soetdoring", "soet doring", "sweet thorn", "vachellia karroo"],
     densityKgPerM3: 950,
     usage: "both",
+    color: "bg-amber-500",
   },
   "port-jackson": {
     id: "port-jackson",
@@ -90,6 +103,7 @@ export const SPECIES: Record<WoodSpecies, SpeciesInfo> = {
     aliases: ["port jackson", "port-jackson", "acacia saligna"],
     densityKgPerM3: 700,
     usage: "braai",
+    color: "bg-lime-700",
   },
   "rooibos-hardwood": {
     id: "rooibos-hardwood",
@@ -105,6 +119,7 @@ export const SPECIES: Record<WoodSpecies, SpeciesInfo> = {
     ],
     densityKgPerM3: 950,
     usage: "both",
+    color: "bg-red-800",
   },
   "grape-vine": {
     id: "grape-vine",
@@ -121,6 +136,7 @@ export const SPECIES: Record<WoodSpecies, SpeciesInfo> = {
     ],
     densityKgPerM3: 700,
     usage: "smoking",
+    color: "bg-purple-700",
   },
   beefwood: {
     id: "beefwood",
@@ -128,6 +144,7 @@ export const SPECIES: Record<WoodSpecies, SpeciesInfo> = {
     aliases: ["beefwood", "beef wood", "casuarina"],
     densityKgPerM3: 850,
     usage: "both",
+    color: "bg-rose-700",
   },
   oak: {
     id: "oak",
@@ -135,6 +152,7 @@ export const SPECIES: Record<WoodSpecies, SpeciesInfo> = {
     aliases: ["oak", "eikehout", "quercus"],
     densityKgPerM3: 750,
     usage: "fireplace",
+    color: "bg-amber-700",
   },
   olive: {
     id: "olive",
@@ -142,6 +160,7 @@ export const SPECIES: Record<WoodSpecies, SpeciesInfo> = {
     aliases: ["olive", "olienhout", "olea europaea"],
     densityKgPerM3: 950,
     usage: "both",
+    color: "bg-emerald-700",
   },
   pine: {
     id: "pine",
@@ -149,6 +168,7 @@ export const SPECIES: Record<WoodSpecies, SpeciesInfo> = {
     aliases: ["pine", "den", "pinus"],
     densityKgPerM3: 500,
     usage: "braai",
+    color: "bg-green-800",
   },
   plum: {
     id: "plum",
@@ -156,6 +176,7 @@ export const SPECIES: Record<WoodSpecies, SpeciesInfo> = {
     aliases: ["plum", "pruim"],
     densityKgPerM3: 750,
     usage: "smoking",
+    color: "bg-purple-800",
   },
   marula: {
     id: "marula",
@@ -163,6 +184,7 @@ export const SPECIES: Record<WoodSpecies, SpeciesInfo> = {
     aliases: ["marula", "sclerocarya"],
     densityKgPerM3: 600,
     usage: "smoking",
+    color: "bg-yellow-700",
   },
   karee: {
     id: "karee",
@@ -170,6 +192,7 @@ export const SPECIES: Record<WoodSpecies, SpeciesInfo> = {
     aliases: ["karee", "searsia lancea"],
     densityKgPerM3: 850,
     usage: "both",
+    color: "bg-stone-600",
   },
   myrtle: {
     id: "myrtle",
@@ -177,6 +200,7 @@ export const SPECIES: Record<WoodSpecies, SpeciesInfo> = {
     aliases: ["myrtle"],
     densityKgPerM3: 700,
     usage: "both",
+    color: "bg-emerald-600",
   },
   cherry: {
     id: "cherry",
@@ -184,6 +208,7 @@ export const SPECIES: Record<WoodSpecies, SpeciesInfo> = {
     aliases: ["cherry"],
     densityKgPerM3: 650,
     usage: "smoking",
+    color: "bg-pink-700",
   },
   pecan: {
     id: "pecan",
@@ -191,6 +216,7 @@ export const SPECIES: Record<WoodSpecies, SpeciesInfo> = {
     aliases: ["pecan"],
     densityKgPerM3: 750,
     usage: "smoking",
+    color: "bg-amber-600",
   },
   macadamia: {
     id: "macadamia",
@@ -198,6 +224,7 @@ export const SPECIES: Record<WoodSpecies, SpeciesInfo> = {
     aliases: ["macadamia"],
     densityKgPerM3: 800,
     usage: "smoking",
+    color: "bg-orange-400",
   },
   mesquite: {
     id: "mesquite",
@@ -205,6 +232,7 @@ export const SPECIES: Record<WoodSpecies, SpeciesInfo> = {
     aliases: ["mesquite", "prosopis"],
     densityKgPerM3: 850,
     usage: "smoking",
+    color: "bg-stone-700",
   },
   "namibian-hardwood-mix": {
     id: "namibian-hardwood-mix",
@@ -212,6 +240,7 @@ export const SPECIES: Record<WoodSpecies, SpeciesInfo> = {
     aliases: ["namibian mix", "namibian hardwood", "nam mix"],
     densityKgPerM3: 950,
     usage: "both",
+    color: "bg-amber-900",
   },
   "doring-mix": {
     id: "doring-mix",
@@ -219,6 +248,7 @@ export const SPECIES: Record<WoodSpecies, SpeciesInfo> = {
     aliases: ["doring mix", "thorn mix"],
     densityKgPerM3: 1000,
     usage: "both",
+    color: "bg-yellow-800",
   },
   "smoking-mix": {
     id: "smoking-mix",
@@ -226,6 +256,7 @@ export const SPECIES: Record<WoodSpecies, SpeciesInfo> = {
     aliases: ["smoking wood chunks", "smoking chunks", "smoking wood"],
     densityKgPerM3: 750,
     usage: "smoking",
+    color: "bg-stone-500",
   },
   unknown: {
     id: "unknown",
@@ -233,6 +264,7 @@ export const SPECIES: Record<WoodSpecies, SpeciesInfo> = {
     aliases: [],
     densityKgPerM3: 800,
     usage: "both",
+    color: "bg-stone-400",
   },
 };
 
