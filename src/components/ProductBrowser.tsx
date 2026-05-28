@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import {
   ChevronLeft,
   ChevronRight,
@@ -11,6 +11,7 @@ import {
   PackageCheck,
   SlidersHorizontal,
   Wind,
+  X,
 } from "lucide-react";
 import type { Product, Vendor, WoodSpecies, WoodUsage } from "@/lib/types";
 import { SPECIES } from "@/lib/wood-species";
@@ -76,6 +77,25 @@ export default function ProductBrowser({
   const [sort, setSort] = useState<SortKey>("price-per-kg-asc");
   const [showFilters, setShowFilters] = useState(false);
   const [page, setPage] = useState(1);
+
+  // Close mobile filter drawer on Escape; lock background scroll while open.
+  // Only active on mobile/tablet — on lg+ the sidebar is always visible so
+  // showFilters has no visible effect there.
+  useEffect(() => {
+    if (!showFilters) return;
+    const isDesktop = window.matchMedia("(min-width: 1024px)").matches;
+    if (isDesktop) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setShowFilters(false);
+    };
+    document.addEventListener("keydown", onKey);
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.body.style.overflow = prevOverflow;
+    };
+  }, [showFilters]);
 
   const baseFiltered = useMemo(() => {
     let out = products;
@@ -293,19 +313,49 @@ export default function ProductBrowser({
           </select>
           <button
             type="button"
-            onClick={() => setShowFilters((s) => !s)}
+            onClick={() => setShowFilters(true)}
+            aria-expanded={showFilters}
+            aria-controls="filter-panel"
             className="inline-flex items-center gap-1.5 rounded-md bg-white px-3 py-1.5 text-sm font-medium ring-1 ring-stone-200 hover:bg-stone-100 dark:bg-stone-900 dark:ring-stone-700 dark:hover:bg-stone-800 lg:hidden"
           >
             <SlidersHorizontal className="size-4" aria-hidden />
-            {showFilters ? "Hide" : "Filters"}
+            Filters
           </button>
         </div>
       </div>
 
+      {/* Mobile backdrop — only shown when drawer is open at <lg */}
+      {showFilters && (
+        <button
+          type="button"
+          onClick={() => setShowFilters(false)}
+          aria-label="Close filters"
+          className="fixed inset-0 z-40 bg-stone-900/50 backdrop-blur-sm lg:hidden"
+        />
+      )}
+
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-[18rem_1fr]">
         <aside
-          className={`space-y-6 lg:block ${showFilters ? "block" : "hidden"} self-start lg:sticky lg:top-4`}
+          id="filter-panel"
+          className={`self-start space-y-6 lg:sticky lg:top-4 lg:block ${
+            showFilters
+              ? "fixed inset-x-0 bottom-0 z-50 max-h-[85vh] overflow-y-auto rounded-t-2xl border-t border-stone-200 bg-stone-50 p-4 shadow-2xl lg:static lg:max-h-none lg:overflow-visible lg:rounded-none lg:border-0 lg:bg-transparent lg:p-0 lg:shadow-none dark:border-stone-800 dark:bg-stone-950 dark:lg:bg-transparent"
+              : "hidden"
+          }`}
+          aria-label="Filters"
         >
+          {/* Sheet header — mobile only */}
+          <div className="flex items-center justify-between border-b border-stone-200 pb-3 lg:hidden dark:border-stone-800">
+            <h2 className="text-base font-semibold">Filters</h2>
+            <button
+              type="button"
+              onClick={() => setShowFilters(false)}
+              aria-label="Close filters"
+              className="rounded-md p-1 text-stone-500 hover:bg-stone-100 hover:text-stone-900 dark:hover:bg-stone-800 dark:hover:text-stone-100"
+            >
+              <X className="size-5" aria-hidden />
+            </button>
+          </div>
           {hasFilters && (
             <button
               type="button"
@@ -615,8 +665,15 @@ function Pagination({
 }) {
   const pages = visiblePages(page, totalPages);
   return (
-    <nav className="mt-6 flex flex-wrap items-center justify-center gap-1 text-sm">
-      <PageButton disabled={page === 1} onClick={() => onChange(page - 1)}>
+    <nav
+      aria-label="Pagination"
+      className="mt-6 flex flex-wrap items-center justify-center gap-1 text-sm"
+    >
+      <PageButton
+        disabled={page === 1}
+        onClick={() => onChange(page - 1)}
+        label="Previous page"
+      >
         <span className="inline-flex items-center gap-1">
           <ChevronLeft className="size-4" aria-hidden />
           Prev
@@ -624,16 +681,25 @@ function Pagination({
       </PageButton>
       {pages.map((p, i) =>
         p === "…" ? (
-          <span key={`gap-${i}`} className="px-2 text-stone-500">
+          <span key={`gap-${i}`} aria-hidden className="px-2 text-stone-500">
             …
           </span>
         ) : (
-          <PageButton key={p} active={p === page} onClick={() => onChange(p)}>
+          <PageButton
+            key={p}
+            active={p === page}
+            onClick={() => onChange(p)}
+            label={p === page ? `Page ${p}, current` : `Go to page ${p}`}
+          >
             {p}
           </PageButton>
         ),
       )}
-      <PageButton disabled={page === totalPages} onClick={() => onChange(page + 1)}>
+      <PageButton
+        disabled={page === totalPages}
+        onClick={() => onChange(page + 1)}
+        label="Next page"
+      >
         <span className="inline-flex items-center gap-1">
           Next
           <ChevronRight className="size-4" aria-hidden />
@@ -648,17 +714,21 @@ function PageButton({
   onClick,
   active,
   disabled,
+  label,
 }: {
   children: React.ReactNode;
   onClick: () => void;
   active?: boolean;
   disabled?: boolean;
+  label?: string;
 }) {
   return (
     <button
       type="button"
       onClick={onClick}
       disabled={disabled}
+      aria-current={active ? "page" : undefined}
+      aria-label={label}
       className={`min-w-9 rounded-md px-3 py-1.5 font-medium transition ${
         active
           ? "bg-amber-700 text-white shadow-sm shadow-amber-900/30 dark:bg-amber-600 dark:text-stone-50"

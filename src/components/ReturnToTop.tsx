@@ -9,10 +9,21 @@ export default function ReturnToTop() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setVisible(window.scrollY > SHOW_AFTER_PX);
+    const onScroll = () => {
+      const scrolled = window.scrollY;
+      // Hide when within ~120px of the page bottom so we don't sit on top of
+      // the footer.
+      const nearBottom =
+        scrolled + window.innerHeight >= document.body.scrollHeight - 120;
+      setVisible(scrolled > SHOW_AFTER_PX && !nearBottom);
+    };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    window.addEventListener("resize", onScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+    };
   }, []);
 
   return (

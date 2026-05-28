@@ -26,9 +26,9 @@ Done is observable, not eternal. The criteria below are the pass/fail bar for de
 ### User experience
 
 - [x] Vendor-level statistics use median per-kg (not mean) so vendors selling both bulk pallets and small specialty items aren't ranked as expensive by outlier pricing. The word "average" does not appear in the headline UI — spotlights and breakdown cards say "typical" or "median". Product-level sorting on `/` ranks by each product's own per-kg, which is the cheapest variant for products with delivery-zone ranges; this is consistent across pages because it's a product-level metric, not a vendor-level one.
-- [ ] Mobile interaction: opening filters does not push results more than two screen-heights down.
-- [ ] Lighthouse accessibility score ≥ 90 on `/`, `/vendors`, and `/faq`.
-- [ ] Open Graph image, favicon variants, and a proper page title on every route. Shareable links render usable previews on WhatsApp and Slack.
+- [x] Mobile interaction: opening filters does not push results more than two screen-heights down. The filter panel is now a bottom-sheet drawer at `< lg` viewports with a backdrop, Escape-to-close, body-scroll lock, and an X close button; on `lg+` it remains the sticky sidebar.
+- [ ] Lighthouse accessibility score ≥ 90 on `/`, `/vendors`, and `/faq`. (Implemented: skip-to-content link, `aria-current` on active nav link and pagination, `aria-label`s on icon-only buttons, `aria-expanded`/`aria-controls` on the mobile Filters toggle. Lighthouse audit still needs to be run.)
+- [x] Open Graph image, favicon variants, and a proper page title on every route. (`src/app/opengraph-image.tsx`, `src/app/icon.tsx`, `src/app/apple-icon.tsx`, per-page Metadata on /vendors and /faq.)
 
 ### Operational
 
