@@ -42,12 +42,27 @@ export default function OgImage() {
         </div>
 
         <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
-          <div style={{ fontSize: "84px", fontWeight: 700, lineHeight: 1.05, letterSpacing: "-0.03em" }}>
-            Cape Town firewood,
-            <br />
-            ranked by R/kg.
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              fontSize: "84px",
+              fontWeight: 700,
+              lineHeight: 1.05,
+              letterSpacing: "-0.03em",
+            }}
+          >
+            <div style={{ display: "flex" }}>Cape Town firewood,</div>
+            <div style={{ display: "flex" }}>ranked by R/kg.</div>
           </div>
-          <div style={{ fontSize: "32px", color: "#78350f", fontWeight: 500 }}>
+          <div
+            style={{
+              display: "flex",
+              fontSize: "32px",
+              color: "#78350f",
+              fontWeight: 500,
+            }}
+          >
             8 vendors. Daily refresh. No affiliate links.
           </div>
         </div>
