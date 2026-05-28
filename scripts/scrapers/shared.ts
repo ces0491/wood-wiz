@@ -88,7 +88,7 @@ export async function scrapeShopify(
 
 // WooCommerce Store API (public, no auth) lives at /wp-json/wc/store/v1/products
 // on modern WooCommerce installs. Older sites may need HTML scraping instead.
-interface WooProduct {
+export interface WooProduct {
   id: number;
   name: string;
   permalink: string;
@@ -103,6 +103,56 @@ interface WooProduct {
   variation: string;
   type: string;
   weight?: string;
+}
+
+export interface WooPriceExtraction {
+  priceZar: number;
+  maxPriceZar?: number;
+  regularPriceZar?: number;
+}
+
+// Pulls the customer-facing price (and optionally a max + sale-comparison
+// regular price) out of a WooCommerce Store API product. Variable products
+// are the awkward case: their parent `price` field is a stale default that
+// doesn't match any selectable variant. See FAQ "delivery zones or other
+// variants" for the user-facing version of this.
+export function extractWooPrice(p: WooProduct): WooPriceExtraction | null {
+  const minor = p.prices?.currency_minor_unit ?? 2;
+  const divisor = Math.pow(10, minor);
+
+  const isVariable = p.type === "variable";
+  const range = p.prices?.price_range;
+  let priceStr: string;
+  let maxPriceZar: number | undefined;
+  if (isVariable) {
+    // Storefront shows price_range when variants differ, else regular_price
+    // when all variants share a price. Both correspond to the same minimum.
+    // Using || instead of ?? so empty strings (which some Woo installs
+    // return for absent prices) fall through correctly.
+    priceStr = range?.min_amount || p.prices?.regular_price || p.prices?.price || "0";
+    if (range?.max_amount && range.max_amount !== range.min_amount) {
+      maxPriceZar = parseFloat(range.max_amount) / divisor;
+    }
+  } else {
+    priceStr = p.prices?.price || "0";
+  }
+
+  const price = parseFloat(priceStr) / divisor;
+  if (!Number.isFinite(price) || price <= 0) return null;
+
+  // Don't compute regular_price for variable products — we're already using
+  // it (or range min) as the displayed price, so a "Sale" badge would be
+  // structurally wrong.
+  const regular =
+    !isVariable && p.prices?.regular_price
+      ? parseFloat(p.prices.regular_price) / divisor
+      : undefined;
+
+  return {
+    priceZar: price,
+    maxPriceZar,
+    regularPriceZar: regular && regular !== price ? regular : undefined,
+  };
 }
 
 export async function scrapeWooCommerce(
@@ -123,48 +173,17 @@ export async function scrapeWooCommerce(
     }
     if (!Array.isArray(data) || data.length === 0) break;
     for (const p of data) {
-      const minor = p.prices?.currency_minor_unit ?? 2;
-      const divisor = Math.pow(10, minor);
-
-      // For variable products the parent's `price` field is a stale default
-      // that doesn't correspond to any selectable variant — trusting it
-      // produces ghost prices well below any real purchase option. The
-      // storefront shows either price_range (when variants differ) or
-      // regular_price (when all variants are the same price). Both resolve to
-      // the same min value, so regular_price is the reliable fallback.
-      const isVariable = p.type === "variable";
-      const range = p.prices?.price_range;
-      let priceStr: string;
-      let maxPriceZar: number | undefined;
-      if (isVariable) {
-        priceStr =
-          range?.min_amount ?? p.prices?.regular_price ?? p.prices?.price ?? "0";
-        if (range?.max_amount && range.max_amount !== range.min_amount) {
-          maxPriceZar = parseFloat(range.max_amount) / divisor;
-        }
-      } else {
-        priceStr = p.prices?.price ?? "0";
-      }
-      const price = parseFloat(priceStr) / divisor;
-      if (!Number.isFinite(price) || price <= 0) continue;
-
-      // Skip the regular_price comparison for variable products — we're
-      // already using regular_price (or range min) as the price, so a "sale"
-      // badge would be meaningless.
-      const regular =
-        !isVariable && p.prices?.regular_price
-          ? parseFloat(p.prices.regular_price) / divisor
-          : undefined;
-
+      const extracted = extractWooPrice(p);
+      if (!extracted) continue;
       out.push({
         vendorId,
         externalId: String(p.id),
         title: p.name,
         url: p.permalink,
         imageUrl: p.images?.[0]?.src,
-        priceZar: price,
-        maxPriceZar,
-        regularPriceZar: regular && regular !== price ? regular : undefined,
+        priceZar: extracted.priceZar,
+        maxPriceZar: extracted.maxPriceZar,
+        regularPriceZar: extracted.regularPriceZar,
         inStock: p.is_in_stock,
         rawWeightLabel: p.weight ? `${p.weight}kg` : undefined,
         scrapedAt: now,

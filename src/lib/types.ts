@@ -91,5 +91,14 @@ export interface Vendor {
 export interface ProductsFile {
   generatedAt: string;
   products: Product[];
-  vendorRunStatus: Record<string, { ok: boolean; count: number; error?: string; ranAt: string }>;
+  vendorRunStatus: Record<
+    string,
+    {
+      ok: boolean;
+      count: number;
+      rawCount?: number;
+      error?: string;
+      ranAt: string;
+    }
+  >;
 }

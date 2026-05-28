@@ -10,8 +10,8 @@ Done is observable, not eternal. The criteria below are the pass/fail bar for de
 
 ### Data quality
 
-- [ ] `extractWeight()` and `detectSpecies()` have unit tests covering each regex branch and a representative accessory-rejection set.
-- [ ] Post-scrape sanity check fails the CI scrape job if (a) any normalised product reports per-kg > R 50 without manual whitelist, (b) total product count drops by more than 40% between consecutive runs, or (c) any vendor reports > 10 raw items but normalises to 0.
+- [x] `extractWeight()` and `detectSpecies()` have unit tests covering each regex branch and a representative accessory-rejection set. (138 tests across `normalize.test.ts` and `shared.test.ts`.)
+- [x] Post-scrape sanity check fails the CI scrape job if (a) any normalised product reports per-kg > R 50 without specialty-product exemption, (b) total product count drops by more than 40% between consecutive runs, or (c) any vendor reports > 10 raw items but normalises to 0. Found and fixed 8 misparsed Namibian Hardwood titles on first run.
 - [ ] For any product spot-checked against its live vendor page, the published total price matches within 24 hours of the last refresh, or the discrepancy is documented in the FAQ.
 - [ ] At least 8 Cape Town vendors covered, with daily auto-refresh confirmed by the `scrape.yml` workflow.
 
@@ -35,7 +35,7 @@ Done is observable, not eternal. The criteria below are the pass/fail bar for de
 - [ ] Daily scrape runs on a schedule; vendor failures are isolated and surfaced in the UI on the next page render.
 - [ ] Own domain (not the Vercel preview URL).
 - [ ] Vercel Analytics enabled with at least one custom event (outbound vendor click).
-- [ ] CI green on every push to main: typecheck, lint, normalisation tests.
+- [x] CI green on every push to main: typecheck, lint, normalisation tests. (`.github/workflows/test.yml`)
 
 ## What is explicitly out of scope
 

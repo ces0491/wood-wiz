@@ -44,7 +44,7 @@ const NON_FIREWOOD_PATTERNS = [
   /\bwood\s*pellet/i,
 ];
 
-function isFirewood(title: string): boolean {
+export function isFirewood(title: string): boolean {
   return !NON_FIREWOOD_PATTERNS.some((p) => p.test(title));
 }
 
@@ -59,11 +59,47 @@ function decodeEntities(s: string): string {
     .replace(/&nbsp;/g, " ");
 }
 
-function extractWeight(text: string, densityKgPerM3: number): WeightResult | null {
+// Patterns are tried in priority order; earlier patterns short-circuit later
+// ones. More-specific must come before more-general. When adding a pattern,
+// audit the order against real titles — multi-pack signals like "5KG Bags —
+// 50 Bag" must match their dedicated branch before the direct "5KG" branch
+// picks them up as a single bag.
+export function extractWeight(text: string, densityKgPerM3: number): WeightResult | null {
   const lower = text.toLowerCase().replace(/,/g, ".");
 
-  // Tons: "34 ton", "1ton", "2.5 tonnes" — strong wholesale signal
-  const tonMatch = lower.match(/(\d+(?:\.\d+)?)\s*(?:ton(?:ne)?s?)\b/);
+  // 0. Explicit total weight as a postscript: "(750KG)", "(1-Ton)",
+  // "| 144KG" at the end of a title. Some vendors append the total in
+  // parens or after a separator; this is the most reliable signal when
+  // present, so it wins over per-bag math.
+  const parensTotal = lower.match(
+    /\(\s*(\d+(?:\.\d+)?)\s*[-\s]*(kg|ton(?:ne)?s?)\s*\)/,
+  );
+  if (parensTotal) {
+    const value = parseFloat(parensTotal[1]);
+    const isTon = parensTotal[2].startsWith("ton");
+    const kg = isTon ? value * 1000 : value;
+    if (kg > 0 && kg < 50000) {
+      return {
+        weightKg: kg,
+        estimated: false,
+        packFormat: kg >= 50 ? "pallet" : "bag",
+      };
+    }
+  }
+  const trailingTotal = lower.match(/[|)]\s*(\d+(?:\.\d+)?)\s*kg\s*$/);
+  if (trailingTotal) {
+    const kg = parseFloat(trailingTotal[1]);
+    if (kg > 0 && kg < 50000) {
+      return {
+        weightKg: kg,
+        estimated: false,
+        packFormat: kg >= 50 ? "pallet" : "bag",
+      };
+    }
+  }
+
+  // 1. Tons: "34 ton", "1ton", "2.5 tonnes", "1-Ton" — strong wholesale signal
+  const tonMatch = lower.match(/(\d+(?:\.\d+)?)[\s-]*(?:ton(?:ne)?s?)\b/);
   if (tonMatch) {
     const tons = parseFloat(tonMatch[1]);
     if (tons > 0 && tons < 100) {
@@ -128,8 +164,12 @@ function extractWeight(text: string, densityKgPerM3: number): WeightResult | nul
     return { weightKg: estimated, estimated: true, packFormat: "pieces" };
   }
 
-  // Volume: "0.5 m3", "1 cubic metre", "m^3"
-  const m3Match = lower.match(/(\d+(?:\.\d+)?)\s*(?:m3|m\^3|cubic\s*met(?:re|er)|m³)\b/);
+  // Volume: "0.5 m3", "1 cubic metre", "m^3", "2 m³". The trailing (?!\w)
+  // replaces \b because \b doesn't recognise the Unicode ³ as a word
+  // boundary, so "m³ pine" otherwise wouldn't match.
+  const m3Match = lower.match(
+    /(\d+(?:\.\d+)?)\s*(?:m3|m\^3|cubic\s*met(?:re|er)|m³)(?!\w)/,
+  );
   if (m3Match) {
     const m3 = parseFloat(m3Match[1]);
     const kg = m3 * densityKgPerM3;
@@ -147,7 +187,7 @@ function extractWeight(text: string, densityKgPerM3: number): WeightResult | nul
   return null;
 }
 
-function detectUsage(title: string, defaultUsage: WoodUsage): WoodUsage {
+export function detectUsage(title: string, defaultUsage: WoodUsage): WoodUsage {
   const lower = title.toLowerCase();
   const mentionsBraai = /\bbraai\b|\bbbq\b|barbecue/.test(lower);
   const mentionsFireplace = /\bfireplace\b|\bkaggel(hout)?\b|\bpizza\s*wood\b/.test(lower);
