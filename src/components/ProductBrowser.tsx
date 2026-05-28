@@ -64,6 +64,8 @@ export default function ProductBrowser({
   const [selectedVendors, setSelectedVendors] = useState<Set<string>>(new Set());
   const [inStockOnly, setInStockOnly] = useState(true);
   const [bulkOnly, setBulkOnly] = useState(false);
+  const [minPrice, setMinPrice] = useState<number | null>(null);
+  const [maxPrice, setMaxPrice] = useState<number | null>(null);
   const [sort, setSort] = useState<SortKey>("price-per-kg-asc");
   const [showFilters, setShowFilters] = useState(false);
   const [page, setPage] = useState(1);
@@ -75,8 +77,17 @@ export default function ProductBrowser({
     if (usage !== "all") {
       out = out.filter((p) => p.usage === usage || p.usage === "both");
     }
+    // Price filters: overlap-based so a variable product with a range of
+    // R 1,500–R 2,500 still appears when the budget is R 2,000 — the user
+    // can buy the cheapest variant within budget.
+    if (minPrice !== null) {
+      out = out.filter((p) => (p.maxPriceZar ?? p.priceZar) >= minPrice);
+    }
+    if (maxPrice !== null) {
+      out = out.filter((p) => p.priceZar <= maxPrice);
+    }
     return out;
-  }, [products, usage, inStockOnly, bulkOnly]);
+  }, [products, usage, inStockOnly, bulkOnly, minPrice, maxPrice]);
 
   const productsForSpeciesCount = useMemo(() => {
     if (selectedVendors.size === 0) return baseFiltered;
@@ -163,6 +174,8 @@ export default function ProductBrowser({
     setSelectedVendors(new Set());
     setInStockOnly(true);
     setBulkOnly(false);
+    setMinPrice(null);
+    setMaxPrice(null);
     setSort("price-per-kg-asc");
     setPage(1);
   }
@@ -173,7 +186,9 @@ export default function ProductBrowser({
     selectedSpecies.size > 0 ||
     selectedVendors.size > 0 ||
     !inStockOnly ||
-    bulkOnly;
+    bulkOnly ||
+    minPrice !== null ||
+    maxPrice !== null;
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
@@ -288,6 +303,48 @@ export default function ProductBrowser({
               Reset filters
             </button>
           )}
+          <FilterGroup title="Budget (total)">
+            <div className="grid grid-cols-2 gap-2">
+              <label className="flex items-center gap-1.5 rounded-md border border-stone-300 px-2 py-1.5 focus-within:ring-2 focus-within:ring-amber-400 dark:border-stone-700">
+                <span className="text-xs text-stone-500">Min R</span>
+                <input
+                  type="number"
+                  inputMode="numeric"
+                  min="0"
+                  step="100"
+                  placeholder="0"
+                  value={minPrice ?? ""}
+                  onChange={(e) => {
+                    const n = e.target.value === "" ? null : Number(e.target.value);
+                    setMinPrice(n !== null && n > 0 ? n : null);
+                    setPage(1);
+                  }}
+                  className="w-full bg-transparent text-sm tabular-nums outline-none [appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
+                />
+              </label>
+              <label className="flex items-center gap-1.5 rounded-md border border-stone-300 px-2 py-1.5 focus-within:ring-2 focus-within:ring-amber-400 dark:border-stone-700">
+                <span className="text-xs text-stone-500">Max R</span>
+                <input
+                  type="number"
+                  inputMode="numeric"
+                  min="0"
+                  step="100"
+                  placeholder="Any"
+                  value={maxPrice ?? ""}
+                  onChange={(e) => {
+                    const n = e.target.value === "" ? null : Number(e.target.value);
+                    setMaxPrice(n !== null && n > 0 ? n : null);
+                    setPage(1);
+                  }}
+                  className="w-full bg-transparent text-sm tabular-nums outline-none [appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
+                />
+              </label>
+            </div>
+            <p className="mt-1.5 text-xs text-stone-500">
+              Filters by total product price. Use this with &ldquo;Cheapest per kg
+              first&rdquo; sort to find the best value within your budget.
+            </p>
+          </FilterGroup>
           <FilterGroup title="Wood type">
             <div className="max-h-96 space-y-1 overflow-y-auto pr-1">
               {speciesOptions.map((s) => (

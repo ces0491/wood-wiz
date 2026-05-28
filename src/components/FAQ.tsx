@@ -91,6 +91,25 @@ const SECTIONS: FaqSection[] = [
         ),
       },
       {
+        q: "How do I find the best value within my budget?",
+        a: (
+          <>
+            <p>
+              Use the <strong>Budget (total)</strong> filter in the sidebar to set a
+              maximum total price (and optionally a minimum). Leave the sort on{" "}
+              <em>Cheapest per kg first</em> &mdash; the list will now show the
+              best-value-per-kg options that fit your budget at the top.
+            </p>
+            <p>
+              For a budget of <strong>R&nbsp;2,000</strong>, this gives you all the
+              ways to spend R&nbsp;2,000 or less, ranked by which one stretches your
+              rand the furthest. Products with delivery-zone variants are included if
+              the cheapest variant fits the budget.
+            </p>
+          </>
+        ),
+      },
+      {
         q: "What does the “Bulk” filter include?",
         a: (
           <p>

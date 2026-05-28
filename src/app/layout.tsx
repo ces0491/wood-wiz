@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/next";
 import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
+import ReturnToTop from "@/components/ReturnToTop";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -25,6 +26,7 @@ export default function RootLayout({
         <SiteNav />
         <div className="flex-1">{children}</div>
         <SiteFooter />
+        <ReturnToTop />
         <Analytics />
       </body>
     </html>
