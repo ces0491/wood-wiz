@@ -187,9 +187,13 @@ export function normalize(scraped: ScrapedProduct): Product | null {
     usage,
     packFormat: weight.packFormat,
     priceZar: scraped.priceZar,
+    maxPriceZar: scraped.maxPriceZar,
     regularPriceZar: scraped.regularPriceZar,
     weightKg: Math.round(weight.weightKg * 100) / 100,
     pricePerKgZar: Math.round((scraped.priceZar / weight.weightKg) * 100) / 100,
+    maxPricePerKgZar: scraped.maxPriceZar
+      ? Math.round((scraped.maxPriceZar / weight.weightKg) * 100) / 100
+      : undefined,
     weightEstimated: weight.estimated,
     inStock: scraped.inStock,
     scrapedAt: scraped.scrapedAt,

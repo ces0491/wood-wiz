@@ -39,6 +39,10 @@ export interface ScrapedProduct {
   url: string;
   imageUrl?: string;
   priceZar: number;
+  // Set only for variable products whose variants span a range (e.g. one
+  // product with different prices per delivery zone). When set, priceZar is
+  // the minimum and maxPriceZar is the maximum across variants.
+  maxPriceZar?: number;
   regularPriceZar?: number;
   inStock: boolean;
   rawWeightLabel?: string;
@@ -56,9 +60,11 @@ export interface Product {
   usage: WoodUsage;
   packFormat: PackFormat;
   priceZar: number;
+  maxPriceZar?: number;
   regularPriceZar?: number;
   weightKg: number;
   pricePerKgZar: number;
+  maxPricePerKgZar?: number;
   weightEstimated: boolean;
   inStock: boolean;
   scrapedAt: string;

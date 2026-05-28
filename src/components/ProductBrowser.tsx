@@ -412,12 +412,28 @@ function ProductRow({ product, vendor }: { product: Product; vendor?: Vendor }) 
         </div>
 
         <div className="text-right">
-          <div className="text-xl font-bold tabular-nums">
-            {formatZar(product.pricePerKgZar)}
+          <div
+            className="text-xl font-bold tabular-nums"
+            title={
+              product.maxPricePerKgZar
+                ? "Price varies by delivery zone — showing the full range. Click through for full pricing."
+                : undefined
+            }
+          >
+            {product.maxPricePerKgZar &&
+            product.maxPricePerKgZar !== product.pricePerKgZar
+              ? `${formatZar(product.pricePerKgZar)}–${formatZar(product.maxPricePerKgZar)}`
+              : formatZar(product.pricePerKgZar)}
             <span className="ml-1 text-xs font-normal text-stone-500">/kg</span>
           </div>
           <div className="mt-0.5 text-sm tabular-nums text-stone-600 dark:text-stone-400">
-            {formatZar(product.priceZar)}
+            {product.maxPriceZar && product.maxPriceZar !== product.priceZar ? (
+              <>
+                {formatZar(product.priceZar)}–{formatZar(product.maxPriceZar)}
+              </>
+            ) : (
+              formatZar(product.priceZar)
+            )}
             {onSale && product.regularPriceZar && (
               <span className="ml-1 text-xs text-stone-400 line-through">
                 {formatZar(product.regularPriceZar)}

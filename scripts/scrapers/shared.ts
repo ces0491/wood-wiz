@@ -126,18 +126,31 @@ export async function scrapeWooCommerce(
       const minor = p.prices?.currency_minor_unit ?? 2;
       const divisor = Math.pow(10, minor);
 
-      // Variable products expose a price_range whose min_amount is what the
-      // storefront actually displays. The parent's `price` field is a stale
-      // default that doesn't correspond to any selectable variant, so trusting
-      // it produces ghost prices well below any real purchase option.
+      // For variable products the parent's `price` field is a stale default
+      // that doesn't correspond to any selectable variant — trusting it
+      // produces ghost prices well below any real purchase option. The
+      // storefront shows either price_range (when variants differ) or
+      // regular_price (when all variants are the same price). Both resolve to
+      // the same min value, so regular_price is the reliable fallback.
       const isVariable = p.type === "variable";
       const range = p.prices?.price_range;
-      const priceStr = isVariable && range?.min_amount ? range.min_amount : p.prices?.price ?? "0";
+      let priceStr: string;
+      let maxPriceZar: number | undefined;
+      if (isVariable) {
+        priceStr =
+          range?.min_amount ?? p.prices?.regular_price ?? p.prices?.price ?? "0";
+        if (range?.max_amount && range.max_amount !== range.min_amount) {
+          maxPriceZar = parseFloat(range.max_amount) / divisor;
+        }
+      } else {
+        priceStr = p.prices?.price ?? "0";
+      }
       const price = parseFloat(priceStr) / divisor;
       if (!Number.isFinite(price) || price <= 0) continue;
 
-      // Skip the regular_price comparison for variable products — the min
-      // variant IS the regular price, not a sale.
+      // Skip the regular_price comparison for variable products — we're
+      // already using regular_price (or range min) as the price, so a "sale"
+      // badge would be meaningless.
       const regular =
         !isVariable && p.prices?.regular_price
           ? parseFloat(p.prices.regular_price) / divisor
@@ -150,6 +163,7 @@ export async function scrapeWooCommerce(
         url: p.permalink,
         imageUrl: p.images?.[0]?.src,
         priceZar: price,
+        maxPriceZar,
         regularPriceZar: regular && regular !== price ? regular : undefined,
         inStock: p.is_in_stock,
         rawWeightLabel: p.weight ? `${p.weight}kg` : undefined,

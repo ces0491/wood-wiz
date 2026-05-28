@@ -93,13 +93,25 @@ const SECTIONS: FaqSection[] = [
       {
         q: "What about products with delivery zones or other variants?",
         a: (
-          <p>
-            Some vendors list one product with a separate price per delivery zone (West
-            Coast vs Boland vs Cape Town, for example). We display the{" "}
-            <strong>lowest variant</strong> &mdash; the cheapest you could pay for that
-            product. Visit the vendor&apos;s page (linked from each row) to see the full
-            range and pick your zone.
-          </p>
+          <>
+            <p>
+              Some vendors list one product with a separate price per delivery zone
+              (West Coast vs Boland vs Cape Town, for example). For these, we show the
+              full <strong>price range</strong> &mdash; e.g. <em>R&nbsp;5,497&ndash;R&nbsp;6,325</em>{" "}
+              and <em>R&nbsp;1.22&ndash;R&nbsp;1.40&nbsp;/kg</em> &mdash; so you can see
+              the cheapest and most expensive options at a glance.
+            </p>
+            <p>
+              Sorting is always done by the cheapest price in the range, so products
+              are ranked by what you&apos;d pay if you happened to be in the cheapest
+              zone. Visit the vendor&apos;s page (linked from each row) to pick your
+              actual zone and confirm the exact figure.
+            </p>
+            <p>
+              When a variable product&apos;s variants all happen to be the same price
+              (no zone variance), you&apos;ll just see a single number.
+            </p>
+          </>
         ),
       },
     ],
