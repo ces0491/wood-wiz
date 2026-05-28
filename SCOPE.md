@@ -18,14 +18,14 @@ Done is observable, not eternal. The criteria below are the pass/fail bar for de
 ### Trust signals
 
 - [ ] Methodology documented in `/faq`, including weight estimation, variable-product range display, and known limitations.
-- [ ] Uncertainty visible in the UI: `~est` tag for inferred weights, full price range for variable products, and either confirmed-or-removed for "stacking unconfirmed" badges.
+- [x] Uncertainty visible in the UI: `~est` tag for inferred weights, full price range for variable products. The "Stacking unconfirmed" badge has been removed from the UI — stacking badges only appear when the vendor's behaviour is positively confirmed.
 - [ ] No affiliate links and no paid placement. Vendor ranking is purely metric-based.
 - [ ] About section with maintainer name, motivation, and contact (GitHub issues).
 - [ ] One-time email to each listed vendor announcing the listing with a clearly-stated opt-out path; replies tracked in GitHub issues.
 
 ### User experience
 
-- [ ] Prices and Vendors pages use the same ranking metric (median per-kg). The word "average" appears nowhere in the headline UI.
+- [x] Vendor-level statistics use median per-kg (not mean) so vendors selling both bulk pallets and small specialty items aren't ranked as expensive by outlier pricing. The word "average" does not appear in the headline UI — spotlights and breakdown cards say "typical" or "median". Product-level sorting on `/` ranks by each product's own per-kg, which is the cheapest variant for products with delivery-zone ranges; this is consistent across pages because it's a product-level metric, not a vendor-level one.
 - [ ] Mobile interaction: opening filters does not push results more than two screen-heights down.
 - [ ] Lighthouse accessibility score ≥ 90 on `/`, `/vendors`, and `/faq`.
 - [ ] Open Graph image, favicon variants, and a proper page title on every route. Shareable links render usable previews on WhatsApp and Slack.

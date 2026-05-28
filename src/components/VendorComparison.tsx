@@ -1,5 +1,4 @@
 import {
-  HelpCircle,
   Layers,
   Package,
   PiggyBank,
@@ -47,7 +46,7 @@ export default function VendorComparison({
   generatedAt,
 }: Props) {
   const vendorById = Object.fromEntries(vendors.map((v) => [v.id, v]));
-  const maxAvg = Math.max(...stats.map((s) => s.avgPricePerKgZar));
+  const maxMedian = Math.max(...stats.map((s) => s.medianPricePerKgZar));
   const maxVariety = Math.max(...stats.map((s) => s.speciesCount));
   const maxSales = Math.max(...stats.map((s) => s.salesCount));
   const maxProductCount = Math.max(...stats.map((s) => s.productCount));
@@ -68,13 +67,16 @@ export default function VendorComparison({
       </header>
 
       <section className="mb-8 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
-        {highlights.cheapestAvg && (
+        {highlights.cheapestMedian && (
           <SpotlightCard
             icon={TrendingDown}
             tone="emerald"
-            label="Cheapest on average"
-            value={vendorById[highlights.cheapestAvg.vendorId]?.name ?? highlights.cheapestAvg.vendorId}
-            sub={`${formatZar(highlights.cheapestAvg.avgPricePerKgZar)} avg per kg`}
+            label="Cheapest typical price"
+            value={
+              vendorById[highlights.cheapestMedian.vendorId]?.name ??
+              highlights.cheapestMedian.vendorId
+            }
+            sub={`${formatZar(highlights.cheapestMedian.medianPricePerKgZar)} median per kg`}
           />
         )}
         {highlights.cheapestSingleProduct && (
@@ -121,16 +123,16 @@ export default function VendorComparison({
       <section className="mb-8 grid grid-cols-1 gap-6 lg:grid-cols-2">
         <BarChart
           icon={TrendingDown}
-          title="Average price per kg"
-          subtitle="Lower is better"
+          title="Typical price per kg"
+          subtitle="Median across each vendor's catalogue — lower is better"
           rows={stats
             .map((s) => ({
               label: vendorById[s.vendorId]?.name ?? s.vendorId,
-              value: s.avgPricePerKgZar,
-              display: formatZar(s.avgPricePerKgZar),
+              value: s.medianPricePerKgZar,
+              display: formatZar(s.medianPricePerKgZar),
             }))
             .sort((a, b) => a.value - b.value)}
-          max={maxAvg}
+          max={maxMedian}
           tone="cheap"
         />
         <BarChart
@@ -183,7 +185,7 @@ export default function VendorComparison({
         <h2 className="mb-3 text-lg font-semibold">Vendor breakdown</h2>
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
           {[...stats]
-            .sort((a, b) => a.avgPricePerKgZar - b.avgPricePerKgZar)
+            .sort((a, b) => a.medianPricePerKgZar - b.medianPricePerKgZar)
             .map((s) => {
               const v = vendorById[s.vendorId];
               if (!v) return null;
@@ -212,7 +214,7 @@ export default function VendorComparison({
                   </div>
 
                   <dl className="grid grid-cols-2 gap-x-3 gap-y-2 text-sm">
-                    <Stat label="Avg per kg" value={formatZar(s.avgPricePerKgZar)} />
+                    <Stat label="Median per kg" value={formatZar(s.medianPricePerKgZar)} />
                     <Stat label="Cheapest per kg" value={formatZar(s.minPricePerKgZar)} />
                     <Stat label="Products" value={`${s.productCount}`} />
                     <Stat label="In stock" value={`${s.inStockCount} (${formatPct(inStockRate)})`} />
@@ -260,12 +262,11 @@ export default function VendorComparison({
                           Free delivery over {formatZar(freeDelivery, 0)}
                         </Badge>
                       )}
-                      <Badge
-                        tone={stacking.tone}
-                        icon={stacking.tone === "unknown" ? HelpCircle : Layers}
-                      >
-                        {stacking.text}
-                      </Badge>
+                      {stacking.tone !== "unknown" && (
+                        <Badge tone={stacking.tone} icon={Layers}>
+                          {stacking.text}
+                        </Badge>
+                      )}
                     </div>
                   </div>
                 </article>

@@ -19,7 +19,14 @@ import { formatKg, formatRelative, formatZar } from "@/lib/format";
 type UsageFilter = "all" | WoodUsage;
 type SortKey = "price-per-kg-asc" | "price-per-kg-desc" | "price-asc";
 
-const BULK_KG = 500;
+// Weight thresholds offered in the "Bulk only" dropdown. Null = no filter.
+const BULK_OPTIONS: { value: number | null; label: string }[] = [
+  { value: null, label: "Any size" },
+  { value: 100, label: "100 kg+" },
+  { value: 500, label: "500 kg+" },
+  { value: 1000, label: "1 ton+" },
+  { value: 2000, label: "2 tons+" },
+];
 
 interface Props {
   products: Product[];
@@ -63,7 +70,7 @@ export default function ProductBrowser({
   const [selectedSpecies, setSelectedSpecies] = useState<Set<WoodSpecies>>(new Set());
   const [selectedVendors, setSelectedVendors] = useState<Set<string>>(new Set());
   const [inStockOnly, setInStockOnly] = useState(true);
-  const [bulkOnly, setBulkOnly] = useState(false);
+  const [bulkMinKg, setBulkMinKg] = useState<number | null>(null);
   const [minPrice, setMinPrice] = useState<number | null>(null);
   const [maxPrice, setMaxPrice] = useState<number | null>(null);
   const [sort, setSort] = useState<SortKey>("price-per-kg-asc");
@@ -73,7 +80,7 @@ export default function ProductBrowser({
   const baseFiltered = useMemo(() => {
     let out = products;
     if (inStockOnly) out = out.filter((p) => p.inStock);
-    if (bulkOnly) out = out.filter((p) => p.weightKg >= BULK_KG);
+    if (bulkMinKg !== null) out = out.filter((p) => p.weightKg >= bulkMinKg);
     if (usage !== "all") {
       out = out.filter((p) => p.usage === usage || p.usage === "both");
     }
@@ -87,7 +94,7 @@ export default function ProductBrowser({
       out = out.filter((p) => p.priceZar <= maxPrice);
     }
     return out;
-  }, [products, usage, inStockOnly, bulkOnly, minPrice, maxPrice]);
+  }, [products, usage, inStockOnly, bulkMinKg, minPrice, maxPrice]);
 
   const productsForSpeciesCount = useMemo(() => {
     if (selectedVendors.size === 0) return baseFiltered;
@@ -173,7 +180,7 @@ export default function ProductBrowser({
     setSelectedSpecies(new Set());
     setSelectedVendors(new Set());
     setInStockOnly(true);
-    setBulkOnly(false);
+    setBulkMinKg(null);
     setMinPrice(null);
     setMaxPrice(null);
     setSort("price-per-kg-asc");
@@ -186,7 +193,7 @@ export default function ProductBrowser({
     selectedSpecies.size > 0 ||
     selectedVendors.size > 0 ||
     !inStockOnly ||
-    bulkOnly ||
+    bulkMinKg !== null ||
     minPrice !== null ||
     maxPrice !== null;
 
@@ -251,19 +258,24 @@ export default function ProductBrowser({
           </label>
           <label
             className="flex items-center gap-1.5 text-sm"
-            title={`Show only products of ${BULK_KG} kg or more — typically pallets and bakkie loads.`}
+            title="Show only products at or above this size — pallets and bakkie loads."
           >
-            <input
-              type="checkbox"
-              checked={bulkOnly}
+            <Layers className="size-4 text-stone-500" aria-hidden />
+            <span>Bulk</span>
+            <select
+              value={bulkMinKg ?? ""}
               onChange={(e) => {
-                setBulkOnly(e.target.checked);
+                setBulkMinKg(e.target.value === "" ? null : Number(e.target.value));
                 setPage(1);
               }}
-              className="h-4 w-4 rounded border-stone-300 accent-amber-700"
-            />
-            <Layers className="size-4 text-stone-500" aria-hidden />
-            Bulk (≥ {BULK_KG} kg)
+              className="rounded-md border border-stone-300 bg-white px-2 py-1 text-sm dark:border-stone-700 dark:bg-stone-900"
+            >
+              {BULK_OPTIONS.map((opt) => (
+                <option key={opt.label} value={opt.value ?? ""}>
+                  {opt.label}
+                </option>
+              ))}
+            </select>
           </label>
           <select
             value={sort}

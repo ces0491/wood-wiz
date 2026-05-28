@@ -15,7 +15,7 @@ export interface VendorStats {
 }
 
 export interface ComparisonHighlights {
-  cheapestAvg: VendorStats | null;
+  cheapestMedian: VendorStats | null;
   mostVariety: VendorStats | null;
   mostSales: VendorStats | null;
   cheapestSingleProduct: Product | null;
@@ -64,7 +64,7 @@ export function computeHighlights(
 ): ComparisonHighlights {
   if (stats.length === 0) {
     return {
-      cheapestAvg: null,
+      cheapestMedian: null,
       mostVariety: null,
       mostSales: null,
       cheapestSingleProduct: null,
@@ -72,7 +72,12 @@ export function computeHighlights(
       freeDeliveryThresholds: [],
     };
   }
-  const cheapestAvg = [...stats].sort((a, b) => a.avgPricePerKgZar - b.avgPricePerKgZar)[0];
+  // Use median rather than mean: vendors that sell both bulk pallets (R 2-5/kg)
+  // and specialty smoking boxes (R 100+/kg) would otherwise rank as expensive
+  // on the mean even though their bulk pricing is competitive.
+  const cheapestMedian = [...stats].sort(
+    (a, b) => a.medianPricePerKgZar - b.medianPricePerKgZar,
+  )[0];
   const mostVariety = [...stats].sort((a, b) => b.speciesCount - a.speciesCount)[0];
   const mostSales = [...stats].sort((a, b) => b.salesCount - a.salesCount)[0];
   const cheapestSingleProduct = [...products]
@@ -87,7 +92,7 @@ export function computeHighlights(
     .sort((a, b) => a.threshold - b.threshold);
 
   return {
-    cheapestAvg,
+    cheapestMedian,
     mostVariety,
     mostSales: mostSales.salesCount > 0 ? mostSales : null,
     cheapestSingleProduct: cheapestSingleProduct ?? null,

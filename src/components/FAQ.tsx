@@ -112,13 +112,19 @@ const SECTIONS: FaqSection[] = [
       {
         q: "What does the “Bulk” filter include?",
         a: (
-          <p>
-            Ticking <strong>Bulk (≥ 500 kg)</strong> limits the list to products
-            weighing at least half a ton &mdash; pallets, bakkie loads, and the larger
-            multi-bag bundles. Below that you&apos;re mostly looking at retail bag
-            quantities. Five hundred kilograms is roughly where vendors&apos; per-kg
-            pricing tends to drop into bulk territory.
-          </p>
+          <>
+            <p>
+              The <strong>Bulk</strong> dropdown lets you set a minimum weight:
+              100&nbsp;kg+, 500&nbsp;kg+, 1&nbsp;ton+, or 2&nbsp;tons+. Pick whichever
+              matches your buying scale &mdash; a homeowner stocking up for winter
+              usually wants 500&nbsp;kg+ or 1&nbsp;ton+; a restaurant or oven-owner
+              might want 2&nbsp;tons+.
+            </p>
+            <p>
+              Below 100&nbsp;kg you&apos;re mostly looking at retail bag quantities,
+              which is what you see when the dropdown is set to <em>Any size</em>.
+            </p>
+          </>
         ),
       },
       {
@@ -189,14 +195,16 @@ const SECTIONS: FaqSection[] = [
         ),
       },
       {
-        q: "Why are some vendor averages on the Vendors page so high?",
+        q: "How are vendors ranked on the Vendors page?",
         a: (
           <p>
-            A vendor that sells both bulk hardwood pallets (R&nbsp;2&ndash;5/kg) and
-            small specialty smoking-wood boxes (R&nbsp;100+/kg) will have a high{" "}
-            <em>average</em> even though their bulk product is competitive. For a fairer
-            sense of a vendor&apos;s typical bulk price, look at the &ldquo;Cheapest per
-            kg&rdquo; stat in each vendor&apos;s breakdown card.
+            By <strong>median</strong> price per kg, not the mean. A vendor that sells
+            both bulk hardwood pallets (R&nbsp;2&ndash;5/kg) and small specialty
+            smoking-wood boxes (R&nbsp;100+/kg) would look misleadingly expensive on
+            the mean, because the specialty items skew the average upward. The median
+            shows the typical price you&apos;d pay for a representative product in
+            their catalogue. The breakdown card also shows their cheapest-per-kg if
+            you specifically want the floor.
           </p>
         ),
       },
