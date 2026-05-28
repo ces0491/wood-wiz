@@ -1,4 +1,4 @@
-import { ChevronDown, Scale, ShieldCheck, Store } from "lucide-react";
+import { Banknote, ChevronDown, ShieldCheck, Store } from "lucide-react";
 
 function GithubMark({ className }: { className?: string }) {
   return (
@@ -15,14 +15,14 @@ interface FaqItem {
 
 interface FaqSection {
   title: string;
-  icon: typeof Scale;
+  icon: typeof Banknote;
   items: FaqItem[];
 }
 
 const SECTIONS: FaqSection[] = [
   {
     title: "How prices work",
-    icon: Scale,
+    icon: Banknote,
     items: [
       {
         q: "How is the price per kilogram calculated?",
@@ -87,6 +87,18 @@ const SECTIONS: FaqSection[] = [
             require assumptions we can&apos;t back. Each vendor card surfaces their
             stated delivery rule (free over R&nbsp;X, flat fee, zoned, &amp;c.) so you
             can factor it in yourself.
+          </p>
+        ),
+      },
+      {
+        q: "What does the “Bulk” filter include?",
+        a: (
+          <p>
+            Ticking <strong>Bulk (≥ 500 kg)</strong> limits the list to products
+            weighing at least half a ton &mdash; pallets, bakkie loads, and the larger
+            multi-bag bundles. Below that you&apos;re mostly looking at retail bag
+            quantities. Five hundred kilograms is roughly where vendors&apos; per-kg
+            pricing tends to drop into bulk territory.
           </p>
         ),
       },

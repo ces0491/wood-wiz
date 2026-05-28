@@ -6,6 +6,7 @@ import {
   ChevronRight,
   Flame,
   Home,
+  Layers,
   LayoutGrid,
   PackageCheck,
   SlidersHorizontal,
@@ -16,7 +17,9 @@ import { SPECIES } from "@/lib/wood-species";
 import { formatKg, formatRelative, formatZar } from "@/lib/format";
 
 type UsageFilter = "all" | WoodUsage;
-type SortKey = "price-per-kg-asc" | "price-per-kg-desc" | "price-asc" | "weight-desc";
+type SortKey = "price-per-kg-asc" | "price-per-kg-desc" | "price-asc";
+
+const BULK_KG = 500;
 
 interface Props {
   products: Product[];
@@ -47,7 +50,6 @@ const SORT_LABEL: Record<SortKey, string> = {
   "price-per-kg-asc": "Cheapest per kg first",
   "price-per-kg-desc": "Most expensive per kg first",
   "price-asc": "Lowest total price first",
-  "weight-desc": "Largest pack first",
 };
 
 
@@ -61,6 +63,7 @@ export default function ProductBrowser({
   const [selectedSpecies, setSelectedSpecies] = useState<Set<WoodSpecies>>(new Set());
   const [selectedVendors, setSelectedVendors] = useState<Set<string>>(new Set());
   const [inStockOnly, setInStockOnly] = useState(true);
+  const [bulkOnly, setBulkOnly] = useState(false);
   const [sort, setSort] = useState<SortKey>("price-per-kg-asc");
   const [showFilters, setShowFilters] = useState(false);
   const [page, setPage] = useState(1);
@@ -68,11 +71,12 @@ export default function ProductBrowser({
   const baseFiltered = useMemo(() => {
     let out = products;
     if (inStockOnly) out = out.filter((p) => p.inStock);
+    if (bulkOnly) out = out.filter((p) => p.weightKg >= BULK_KG);
     if (usage !== "all") {
       out = out.filter((p) => p.usage === usage || p.usage === "both");
     }
     return out;
-  }, [products, usage, inStockOnly]);
+  }, [products, usage, inStockOnly, bulkOnly]);
 
   const productsForSpeciesCount = useMemo(() => {
     if (selectedVendors.size === 0) return baseFiltered;
@@ -110,9 +114,6 @@ export default function ProductBrowser({
         break;
       case "price-asc":
         out = [...out].sort((a, b) => a.priceZar - b.priceZar);
-        break;
-      case "weight-desc":
-        out = [...out].sort((a, b) => b.weightKg - a.weightKg);
         break;
     }
     return out;
@@ -161,13 +162,18 @@ export default function ProductBrowser({
     setSelectedSpecies(new Set());
     setSelectedVendors(new Set());
     setInStockOnly(true);
+    setBulkOnly(false);
     setSort("price-per-kg-asc");
     setPage(1);
   }
 
   const failedVendors = Object.entries(vendorRunStatus).filter(([, s]) => !s.ok);
   const hasFilters =
-    usage !== "all" || selectedSpecies.size > 0 || selectedVendors.size > 0 || !inStockOnly;
+    usage !== "all" ||
+    selectedSpecies.size > 0 ||
+    selectedVendors.size > 0 ||
+    !inStockOnly ||
+    bulkOnly;
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
@@ -214,7 +220,7 @@ export default function ProductBrowser({
               </button>
             );
           })}
-        <div className="ml-auto flex items-center gap-2">
+        <div className="ml-auto flex flex-wrap items-center gap-x-3 gap-y-2">
           <label className="flex items-center gap-1.5 text-sm">
             <input
               type="checkbox"
@@ -227,6 +233,22 @@ export default function ProductBrowser({
             />
             <PackageCheck className="size-4 text-stone-500" aria-hidden />
             In stock only
+          </label>
+          <label
+            className="flex items-center gap-1.5 text-sm"
+            title={`Show only products of ${BULK_KG} kg or more — typically pallets and bakkie loads.`}
+          >
+            <input
+              type="checkbox"
+              checked={bulkOnly}
+              onChange={(e) => {
+                setBulkOnly(e.target.checked);
+                setPage(1);
+              }}
+              className="h-4 w-4 rounded border-stone-300 accent-amber-700"
+            />
+            <Layers className="size-4 text-stone-500" aria-hidden />
+            Bulk (≥ {BULK_KG} kg)
           </label>
           <select
             value={sort}
