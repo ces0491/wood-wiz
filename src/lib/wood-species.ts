@@ -10,12 +10,32 @@ interface SpeciesInfo {
   // wood's visual character where the name suggests one (red gum → red);
   // otherwise an earthy tone.
   color: string;
+  // Audit trail for the density figure. Lets us defend a per-kg number if
+  // a vendor disputes it. Most entries are "industry-typical estimate"
+  // because the South African indigenous-wood literature is thin;
+  // contributions of cited sources welcome via GitHub.
+  densitySource: string;
 }
 
-// Approximate air-dry densities (kg/m^3). These are mid-range estimates from
-// general wood-science references and are used only when a vendor doesn't
-// state the bag weight directly — products derived this way are flagged
-// `weightEstimated: true` in the UI.
+// Approximate air-dry densities (kg/m^3). These are mid-range estimates and
+// are used only when a vendor doesn't state the bag weight directly. Products
+// whose weight is derived from these are flagged `weightEstimated: true` in
+// the UI.
+//
+// Density methodology:
+// - Air-dry, ~12% moisture content. Green wood is substantially heavier
+//   (often 30–50% more); we assume vendors sell seasoned wood.
+// - Values are mid-range estimates that match what South African firewood
+//   vendors commonly cite. They are NOT pinned to specific cited sources.
+// - Recommended sources for future tightening: FAO Global Wood Density
+//   Database (Zanne et al., 2009) for widespread genera; Wagenführ's
+//   Holzatlas for Northern Hemisphere species; SANBI / national herbarium
+//   records for South African indigenous species.
+//
+// Auditability bar: every entry has a `densitySource` field. If you can
+// replace an "industry-typical estimate" with a real citation, PRs welcome.
+const ESTIMATE = "industry-typical estimate; air-dry; ranges with provenance";
+
 export const SPECIES: Record<WoodSpecies, SpeciesInfo> = {
   kameeldoring: {
     id: "kameeldoring",
@@ -32,6 +52,7 @@ export const SPECIES: Record<WoodSpecies, SpeciesInfo> = {
     densityKgPerM3: 1150,
     usage: "both",
     color: "bg-yellow-600",
+    densitySource: ESTIMATE,
   },
   sekelbos: {
     id: "sekelbos",
@@ -40,6 +61,7 @@ export const SPECIES: Record<WoodSpecies, SpeciesInfo> = {
     densityKgPerM3: 950,
     usage: "both",
     color: "bg-green-700",
+    densitySource: ESTIMATE,
   },
   mopane: {
     id: "mopane",
@@ -48,6 +70,7 @@ export const SPECIES: Record<WoodSpecies, SpeciesInfo> = {
     densityKgPerM3: 1150,
     usage: "both",
     color: "bg-amber-800",
+    densitySource: ESTIMATE,
   },
   rooikrans: {
     id: "rooikrans",
@@ -56,6 +79,7 @@ export const SPECIES: Record<WoodSpecies, SpeciesInfo> = {
     densityKgPerM3: 750,
     usage: "braai",
     color: "bg-orange-700",
+    densitySource: ESTIMATE,
   },
   "black-wattle": {
     id: "black-wattle",
@@ -64,6 +88,7 @@ export const SPECIES: Record<WoodSpecies, SpeciesInfo> = {
     densityKgPerM3: 700,
     usage: "both",
     color: "bg-stone-800",
+    densitySource: ESTIMATE,
   },
   "blue-gum": {
     id: "blue-gum",
@@ -72,6 +97,7 @@ export const SPECIES: Record<WoodSpecies, SpeciesInfo> = {
     densityKgPerM3: 800,
     usage: "both",
     color: "bg-sky-600",
+    densitySource: ESTIMATE,
   },
   "red-gum": {
     id: "red-gum",
@@ -80,6 +106,7 @@ export const SPECIES: Record<WoodSpecies, SpeciesInfo> = {
     densityKgPerM3: 850,
     usage: "both",
     color: "bg-red-600",
+    densitySource: ESTIMATE,
   },
   swarthaak: {
     id: "swarthaak",
@@ -88,6 +115,7 @@ export const SPECIES: Record<WoodSpecies, SpeciesInfo> = {
     densityKgPerM3: 950,
     usage: "both",
     color: "bg-stone-700",
+    densitySource: ESTIMATE,
   },
   soetdoring: {
     id: "soetdoring",
@@ -96,6 +124,7 @@ export const SPECIES: Record<WoodSpecies, SpeciesInfo> = {
     densityKgPerM3: 950,
     usage: "both",
     color: "bg-amber-500",
+    densitySource: ESTIMATE,
   },
   "port-jackson": {
     id: "port-jackson",
@@ -104,6 +133,7 @@ export const SPECIES: Record<WoodSpecies, SpeciesInfo> = {
     densityKgPerM3: 700,
     usage: "braai",
     color: "bg-lime-700",
+    densitySource: ESTIMATE,
   },
   "rooibos-hardwood": {
     id: "rooibos-hardwood",
@@ -120,6 +150,7 @@ export const SPECIES: Record<WoodSpecies, SpeciesInfo> = {
     densityKgPerM3: 950,
     usage: "both",
     color: "bg-red-800",
+    densitySource: ESTIMATE,
   },
   "grape-vine": {
     id: "grape-vine",
@@ -137,6 +168,7 @@ export const SPECIES: Record<WoodSpecies, SpeciesInfo> = {
     densityKgPerM3: 700,
     usage: "smoking",
     color: "bg-purple-700",
+    densitySource: ESTIMATE,
   },
   beefwood: {
     id: "beefwood",
@@ -145,6 +177,7 @@ export const SPECIES: Record<WoodSpecies, SpeciesInfo> = {
     densityKgPerM3: 850,
     usage: "both",
     color: "bg-rose-700",
+    densitySource: ESTIMATE,
   },
   oak: {
     id: "oak",
@@ -153,6 +186,7 @@ export const SPECIES: Record<WoodSpecies, SpeciesInfo> = {
     densityKgPerM3: 750,
     usage: "fireplace",
     color: "bg-amber-700",
+    densitySource: ESTIMATE,
   },
   olive: {
     id: "olive",
@@ -161,6 +195,7 @@ export const SPECIES: Record<WoodSpecies, SpeciesInfo> = {
     densityKgPerM3: 950,
     usage: "both",
     color: "bg-emerald-700",
+    densitySource: ESTIMATE,
   },
   pine: {
     id: "pine",
@@ -169,6 +204,7 @@ export const SPECIES: Record<WoodSpecies, SpeciesInfo> = {
     densityKgPerM3: 500,
     usage: "braai",
     color: "bg-green-800",
+    densitySource: ESTIMATE,
   },
   plum: {
     id: "plum",
@@ -177,6 +213,7 @@ export const SPECIES: Record<WoodSpecies, SpeciesInfo> = {
     densityKgPerM3: 750,
     usage: "smoking",
     color: "bg-purple-800",
+    densitySource: ESTIMATE,
   },
   marula: {
     id: "marula",
@@ -185,6 +222,7 @@ export const SPECIES: Record<WoodSpecies, SpeciesInfo> = {
     densityKgPerM3: 600,
     usage: "smoking",
     color: "bg-yellow-700",
+    densitySource: ESTIMATE,
   },
   karee: {
     id: "karee",
@@ -193,6 +231,7 @@ export const SPECIES: Record<WoodSpecies, SpeciesInfo> = {
     densityKgPerM3: 850,
     usage: "both",
     color: "bg-stone-600",
+    densitySource: ESTIMATE,
   },
   myrtle: {
     id: "myrtle",
@@ -201,6 +240,7 @@ export const SPECIES: Record<WoodSpecies, SpeciesInfo> = {
     densityKgPerM3: 700,
     usage: "both",
     color: "bg-emerald-600",
+    densitySource: ESTIMATE,
   },
   cherry: {
     id: "cherry",
@@ -209,6 +249,7 @@ export const SPECIES: Record<WoodSpecies, SpeciesInfo> = {
     densityKgPerM3: 650,
     usage: "smoking",
     color: "bg-pink-700",
+    densitySource: ESTIMATE,
   },
   pecan: {
     id: "pecan",
@@ -217,6 +258,7 @@ export const SPECIES: Record<WoodSpecies, SpeciesInfo> = {
     densityKgPerM3: 750,
     usage: "smoking",
     color: "bg-amber-600",
+    densitySource: ESTIMATE,
   },
   macadamia: {
     id: "macadamia",
@@ -225,6 +267,7 @@ export const SPECIES: Record<WoodSpecies, SpeciesInfo> = {
     densityKgPerM3: 800,
     usage: "smoking",
     color: "bg-orange-400",
+    densitySource: ESTIMATE,
   },
   mesquite: {
     id: "mesquite",
@@ -233,6 +276,7 @@ export const SPECIES: Record<WoodSpecies, SpeciesInfo> = {
     densityKgPerM3: 850,
     usage: "smoking",
     color: "bg-stone-700",
+    densitySource: ESTIMATE,
   },
   "namibian-hardwood-mix": {
     id: "namibian-hardwood-mix",
@@ -241,6 +285,7 @@ export const SPECIES: Record<WoodSpecies, SpeciesInfo> = {
     densityKgPerM3: 950,
     usage: "both",
     color: "bg-amber-900",
+    densitySource: ESTIMATE,
   },
   "doring-mix": {
     id: "doring-mix",
@@ -249,6 +294,7 @@ export const SPECIES: Record<WoodSpecies, SpeciesInfo> = {
     densityKgPerM3: 1000,
     usage: "both",
     color: "bg-yellow-800",
+    densitySource: ESTIMATE,
   },
   "smoking-mix": {
     id: "smoking-mix",
@@ -257,6 +303,7 @@ export const SPECIES: Record<WoodSpecies, SpeciesInfo> = {
     densityKgPerM3: 750,
     usage: "smoking",
     color: "bg-stone-500",
+    densitySource: ESTIMATE,
   },
   unknown: {
     id: "unknown",
@@ -265,6 +312,7 @@ export const SPECIES: Record<WoodSpecies, SpeciesInfo> = {
     densityKgPerM3: 800,
     usage: "both",
     color: "bg-stone-400",
+    densitySource: ESTIMATE,
   },
 };
 

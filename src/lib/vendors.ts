@@ -9,6 +9,7 @@ export const VENDORS: Vendor[] = [
     region: "cape-town",
     delivery: {
       description: "Free delivery & stacking over R1,000. R100 flat fee under R1,000.",
+      pricing: "free-over-threshold",
       freeOverZar: 1000,
       flatFeeZar: 100,
       stacking: "free-over-threshold",
@@ -22,6 +23,7 @@ export const VENDORS: Vendor[] = [
     region: "cape-town",
     delivery: {
       description: "Cape Town delivery — fee varies by zone, confirm at checkout.",
+      pricing: "by-zone",
       zoneNote: "Varies by suburb",
     },
   },
@@ -33,6 +35,8 @@ export const VENDORS: Vendor[] = [
     region: "cape-town",
     delivery: {
       description: "R250 minimum spend excluding delivery. Up to 2-ton local delivery.",
+      pricing: "by-quote",
+      minOrderZar: 250,
     },
   },
   {
@@ -43,6 +47,7 @@ export const VENDORS: Vendor[] = [
     region: "cape-town",
     delivery: {
       description: "Northern/Southern Suburbs, Atlantic Seaboard, CBD, Winelands.",
+      pricing: "by-zone",
       zoneNote: "By region",
     },
   },
@@ -54,6 +59,7 @@ export const VENDORS: Vendor[] = [
     region: "cape-town",
     delivery: {
       description: "Cape Town delivery service. Fees confirmed at checkout.",
+      pricing: "by-quote",
     },
   },
   {
@@ -64,6 +70,7 @@ export const VENDORS: Vendor[] = [
     region: "cape-town",
     delivery: {
       description: "Delivered and stacked. West Coast, Boland, Cape Town.",
+      pricing: "by-zone",
       zoneNote: "By region",
       stacking: "free",
     },
@@ -76,6 +83,7 @@ export const VENDORS: Vendor[] = [
     region: "cape-town",
     delivery: {
       description: "Free delivery over R1,000 in Cape Town & surrounds.",
+      pricing: "free-over-threshold",
       freeOverZar: 1000,
     },
   },
@@ -87,6 +95,7 @@ export const VENDORS: Vendor[] = [
     region: "cape-town",
     delivery: {
       description: "Cape Town delivery — fee confirmed at checkout.",
+      pricing: "by-quote",
     },
   },
 ];

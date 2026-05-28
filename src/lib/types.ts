@@ -70,10 +70,24 @@ export interface Product {
   scrapedAt: string;
 }
 
+// How a vendor's delivery pricing works at a structural level. Required so
+// every vendor is explicitly classified instead of falling through to the
+// freeform `description` string. We don't compute delivered totals (see
+// SCOPE: "Computed delivered totals" is out of scope) but knowing the
+// pricing model lets us surface the right badges and would be the right
+// foundation if SCOPE ever changes.
+export type DeliveryPricing =
+  | "free-over-threshold" // Free over a stated rand value, fee below
+  | "flat" // Single flat fee regardless of zone or value
+  | "by-zone" // Per-suburb / per-region; pricing decided at checkout
+  | "by-quote"; // No public pricing; vendor confirms after order
+
 export interface DeliveryRule {
   description: string;
+  pricing: DeliveryPricing;
   freeOverZar?: number;
   flatFeeZar?: number;
+  minOrderZar?: number;
   zoneNote?: string;
   stacking?: "free" | "free-over-threshold" | "extra" | "unknown";
 }

@@ -1,4 +1,5 @@
 import {
+  CircleDollarSign,
   Layers,
   Package,
   PiggyBank,
@@ -191,6 +192,7 @@ export default function VendorComparison({
               if (!v) return null;
               const stacking = stackingLabel(v.delivery.stacking);
               const freeDelivery = v.delivery.freeOverZar;
+              const minOrder = v.delivery.minOrderZar;
               const inStockRate = s.productCount > 0 ? s.inStockCount / s.productCount : 0;
               return (
                 <article
@@ -260,6 +262,11 @@ export default function VendorComparison({
                       {freeDelivery !== undefined && (
                         <Badge tone="good" icon={Truck}>
                           Free delivery over {formatZar(freeDelivery, 0)}
+                        </Badge>
+                      )}
+                      {minOrder !== undefined && (
+                        <Badge tone="neutral" icon={CircleDollarSign}>
+                          Min order {formatZar(minOrder, 0)}
                         </Badge>
                       )}
                       {stacking.tone !== "unknown" && (
