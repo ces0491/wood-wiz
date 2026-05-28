@@ -30,6 +30,12 @@ const SCRAPERS: ScraperModule[] = [
 
 // Sanity-check thresholds. See SCOPE.md > "Data quality".
 const SUSPECT_PRICE_PER_KG = 50;
+// Below R 1/kg with a bulk-scale weight is almost certainly a non-firewood
+// service that slipped past the accessory filter (e.g. "Garden Refuse Removal
+// Service — 1 Ton Bakkie Load" sold at R 549). Legitimate bulk firewood
+// bottoms out around R 1–2/kg.
+const FLOOR_PRICE_PER_KG = 1;
+const FLOOR_MIN_KG = 50;
 const COUNT_DROP_THRESHOLD = 0.6; // fail if new < old * this
 // Titles matching this pattern are allowed to exceed SUSPECT_PRICE_PER_KG —
 // these are legitimately-expensive small specialty products (smoking chunks,
@@ -55,22 +61,42 @@ function runSanityChecks(
   }
 
   // 2. Per-product: per-kg way above realistic firewood prices.
-  const suspects = products.filter(
+  const overpriced = products.filter(
     (p) =>
       p.pricePerKgZar > SUSPECT_PRICE_PER_KG &&
       !(p.weightKg < SPECIALTY_MAX_KG && SPECIALTY_PATTERN.test(p.title)),
   );
-  if (suspects.length > 0) {
+  if (overpriced.length > 0) {
     failures.push(
-      `${suspects.length} product(s) exceed R ${SUSPECT_PRICE_PER_KG}/kg without specialty exemption:`,
+      `${overpriced.length} product(s) exceed R ${SUSPECT_PRICE_PER_KG}/kg without specialty exemption:`,
     );
-    for (const p of suspects.slice(0, 8)) {
+    for (const p of overpriced.slice(0, 8)) {
       failures.push(
         `  R${p.pricePerKgZar.toFixed(2)}/kg | ${p.weightKg}kg | R${p.priceZar.toFixed(0)} | ${p.title}`,
       );
     }
-    if (suspects.length > 8) {
-      failures.push(`  ... and ${suspects.length - 8} more`);
+    if (overpriced.length > 8) {
+      failures.push(`  ... and ${overpriced.length - 8} more`);
+    }
+  }
+
+  // 2b. Per-product: per-kg suspiciously low for a bulk-scale weight. Catches
+  // non-firewood services (refuse removal, etc.) that priced their "1-ton"
+  // listings at R 549 and slipped past the accessory blocklist.
+  const underpriced = products.filter(
+    (p) => p.pricePerKgZar < FLOOR_PRICE_PER_KG && p.weightKg >= FLOOR_MIN_KG,
+  );
+  if (underpriced.length > 0) {
+    failures.push(
+      `${underpriced.length} product(s) below R ${FLOOR_PRICE_PER_KG}/kg at ${FLOOR_MIN_KG}kg+ (likely non-firewood):`,
+    );
+    for (const p of underpriced.slice(0, 8)) {
+      failures.push(
+        `  R${p.pricePerKgZar.toFixed(2)}/kg | ${p.weightKg}kg | R${p.priceZar.toFixed(0)} | ${p.title}`,
+      );
+    }
+    if (underpriced.length > 8) {
+      failures.push(`  ... and ${underpriced.length - 8} more`);
     }
   }
 

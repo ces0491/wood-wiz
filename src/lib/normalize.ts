@@ -42,6 +42,9 @@ const NON_FIREWOOD_PATTERNS = [
   /\bbag\s*opener\b/i,
   /\bbellow(s)?\b/i,
   /\bwood\s*pellet/i,
+  /\bgarden\s*refuse\b/i,
+  /\b(waste|refuse)\s*removal\b/i,
+  /\bremoval\s*service\b/i,
 ];
 
 export function isFirewood(title: string): boolean {

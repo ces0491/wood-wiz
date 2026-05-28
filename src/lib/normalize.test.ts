@@ -302,6 +302,10 @@ describe("isFirewood", () => {
       ["bellows", "Leather Bellows"],
       ["wood pellet", "Hardwood Wood Pellets 15kg"],
       ["bag opener", "Cement Bag Opener"],
+      ["garden refuse", "Garden Refuse & General Waste Removal Service — Half 1-Ton Bakkie Load"],
+      ["waste removal", "General Waste Removal Service — Full 1-Ton Bakkie Load"],
+      ["refuse removal", "Refuse Removal — Small Bakkie"],
+      ["removal service", "Garden Removal Service — Bakkie Load"],
     ];
     test.each(cases)("rejects %s: '%s'", (_, title) => {
       expect(isFirewood(title)).toBe(false);
