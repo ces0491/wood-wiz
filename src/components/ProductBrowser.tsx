@@ -16,6 +16,7 @@ import {
 import type { Product, Vendor, WoodSpecies, WoodUsage } from "@/lib/types";
 import { SPECIES } from "@/lib/wood-species";
 import { formatKg, formatRelative, formatZar } from "@/lib/format";
+import TrackedLink from "./TrackedLink";
 
 type UsageFilter = "all" | WoodUsage;
 type SortKey = "price-per-kg-asc" | "price-per-kg-desc" | "price-asc";
@@ -508,14 +509,18 @@ function ProductRow({ product, vendor }: { product: Product; vendor?: Vendor }) 
         <div className="flex-1 min-w-0">
           <div className="flex flex-wrap items-baseline gap-x-2 gap-y-1">
             <h2 className="text-base font-semibold leading-tight">
-              <a
+              <TrackedLink
                 href={product.url}
-                target="_blank"
-                rel="noopener noreferrer"
+                event="vendor_click"
+                data={{
+                  vendor: product.vendorId,
+                  product: product.id,
+                  source: "product-title",
+                }}
                 className="hover:underline"
               >
                 {product.title}
-              </a>
+              </TrackedLink>
             </h2>
             {!product.inStock && (
               <span className="rounded bg-stone-200 px-1.5 py-0.5 text-xs font-medium text-stone-700 dark:bg-stone-800 dark:text-stone-300">
@@ -581,14 +586,18 @@ function ProductRow({ product, vendor }: { product: Product; vendor?: Vendor }) 
               </span>
             )}
           </div>
-          <a
+          <TrackedLink
             href={product.url}
-            target="_blank"
-            rel="noopener noreferrer"
+            event="vendor_click"
+            data={{
+              vendor: product.vendorId,
+              product: product.id,
+              source: "buy-button",
+            }}
             className="mt-2 inline-flex items-center gap-1 rounded-md bg-stone-900 px-3 py-1.5 text-xs font-medium text-white hover:bg-stone-700 dark:bg-white dark:text-stone-900 dark:hover:bg-stone-200"
           >
             Buy at {vendor?.name ?? "vendor"} →
-          </a>
+          </TrackedLink>
         </div>
       </div>
     </li>

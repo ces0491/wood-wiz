@@ -20,8 +20,8 @@ Done is observable, not eternal. The criteria below are the pass/fail bar for de
 - [ ] Methodology documented in `/faq`, including weight estimation, variable-product range display, and known limitations.
 - [x] Uncertainty visible in the UI: `~est` tag for inferred weights, full price range for variable products. The "Stacking unconfirmed" badge has been removed from the UI — stacking badges only appear when the vendor's behaviour is positively confirmed.
 - [ ] No affiliate links and no paid placement. Vendor ranking is purely metric-based.
-- [ ] About section with maintainer name, motivation, and contact (GitHub issues).
-- [ ] One-time email to each listed vendor announcing the listing with a clearly-stated opt-out path; replies tracked in GitHub issues.
+- [x] About section with maintainer name, motivation, and contact (GitHub issues). Lives as the "Who runs this" section on `/faq` with four entries covering identity, no-affiliate disclosure, contact path, and vendor-correction process.
+- [ ] One-time email to each listed vendor announcing the listing with a clearly-stated opt-out path; replies tracked in GitHub issues. **Template drafted at `docs/vendor-announcement.md`; emails still need to be sent (your task).**
 
 ### User experience
 
@@ -34,7 +34,7 @@ Done is observable, not eternal. The criteria below are the pass/fail bar for de
 
 - [ ] Daily scrape runs on a schedule; vendor failures are isolated and surfaced in the UI on the next page render.
 - [ ] Own domain (not the Vercel preview URL).
-- [ ] Vercel Analytics enabled with at least one custom event (outbound vendor click).
+- [x] Vercel Analytics enabled with at least one custom event (outbound vendor click). Every "Buy at vendor" link, vendor-name link, and cheapest-product link routes through `TrackedLink` and fires a `vendor_click` event with `vendor`, `product`, and `source` properties (product-title, buy-button, spotlight, vendor-card-name, vendor-card-cheapest). **Analytics dashboard needs to be enabled in Vercel project settings to capture them.**
 - [x] CI green on every push to main: typecheck, lint, normalisation tests. (`.github/workflows/test.yml`)
 
 ## What is explicitly out of scope

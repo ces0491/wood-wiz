@@ -1,4 +1,4 @@
-import { Banknote, ChevronDown, ShieldCheck, Store } from "lucide-react";
+import { Banknote, ChevronDown, Hammer, ShieldCheck, Store } from "lucide-react";
 
 function GithubMark({ className }: { className?: string }) {
   return (
@@ -209,14 +209,15 @@ const SECTIONS: FaqSection[] = [
         ),
       },
       {
-        q: "What does Stacking unconfirmed mean?",
+        q: "Which vendors include stacking on delivery?",
         a: (
           <p>
-            Only Mother City Firewood and Lancehoudt explicitly state in their delivery
-            descriptions that wood is stacked on arrival (instead of dumped on the
-            driveway). The other six vendors don&apos;t say one way or the other &mdash;
-            so we label them as unconfirmed rather than guessing. If stacking matters to
-            you, ask at checkout.
+            Only Mother City Firewood and Lancehoudt explicitly state in their
+            delivery descriptions that wood is stacked on arrival (instead of dumped
+            on the driveway). They each get a &ldquo;Stacking included&rdquo; badge
+            on the Vendors page. The other six vendors don&apos;t say one way or the
+            other &mdash; we don&apos;t display a badge for them rather than
+            guessing. If stacking matters to you, ask at checkout.
           </p>
         ),
       },
@@ -274,6 +275,85 @@ const SECTIONS: FaqSection[] = [
             </a>
             . Bug reports, vendor suggestions, and scraper improvements welcome via the
             issue tracker.
+          </p>
+        ),
+      },
+    ],
+  },
+  {
+    title: "Who runs this",
+    icon: Hammer,
+    items: [
+      {
+        q: "Who built Wood Wiz, and why?",
+        a: (
+          <>
+            <p>
+              Wood Wiz is built and maintained by{" "}
+              <strong>Cesaire Tobias</strong> (
+              <a
+                href="https://github.com/ces0491"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-amber-700 hover:underline dark:text-amber-400"
+              >
+                @ces0491
+              </a>
+              ), a Cape Town-based developer who got tired of building spreadsheets
+              every winter to compare vendor pricing across incompatible units
+              (bags vs pieces vs pallets vs tons). The site automates what used to
+              be an afternoon of manual maths.
+            </p>
+            <p>
+              Wood Wiz is <strong>independent</strong> — there are no affiliate
+              links, no paid placement, and no vendor-sponsored ranking. Vendors are
+              listed because they have a public product catalogue and serve the
+              Cape Town area; rankings are purely metric-based.
+            </p>
+          </>
+        ),
+      },
+      {
+        q: "Are you affiliated with any of these vendors?",
+        a: (
+          <p>
+            No. We have no commercial relationship with any of the eight listed
+            vendors. We scrape their public product pages once a day; we don&apos;t
+            get a cut of anything you buy, and the &ldquo;Buy at vendor&rdquo;
+            links go straight to the vendor&apos;s own site without tracking
+            redirects.
+          </p>
+        ),
+      },
+      {
+        q: "How do I get in touch?",
+        a: (
+          <p>
+            All correspondence routes through GitHub issues at{" "}
+            <a
+              href="https://github.com/ces0491/wood-wiz/issues"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 text-amber-700 hover:underline dark:text-amber-400"
+            >
+              <GithubMark className="size-3.5" /> github.com/ces0491/wood-wiz/issues
+            </a>
+            . That includes bug reports, vendor corrections (your prices look
+            wrong, your bags are heavier than we estimated, etc.), suggestions for
+            new vendors, and opt-out requests if you&apos;re a vendor and would
+            prefer not to be listed.
+          </p>
+        ),
+      },
+      {
+        q: "I'm a vendor — how do I correct my pricing or opt out?",
+        a: (
+          <p>
+            Open a GitHub issue with the product or pricing you want corrected, or
+            a request to be removed from the comparison entirely. We&apos;ll act
+            within a few days. If your storefront changes and the scraper breaks,
+            we&apos;ll usually notice within 24 hours via the daily sanity checks;
+            otherwise let us know.
           </p>
         ),
       },

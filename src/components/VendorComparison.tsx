@@ -12,6 +12,7 @@ import type { ComparisonHighlights, VendorStats } from "@/lib/vendor-stats";
 import type { Vendor } from "@/lib/types";
 import { SPECIES } from "@/lib/wood-species";
 import { formatKg, formatPct, formatRelative, formatZar } from "@/lib/format";
+import TrackedLink from "./TrackedLink";
 
 type IconType = typeof Tag;
 
@@ -88,14 +89,18 @@ export default function VendorComparison({
             value={formatZar(highlights.cheapestSingleProduct.pricePerKgZar)}
             sub={
               <>
-                <a
+                <TrackedLink
                   href={highlights.cheapestSingleProduct.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  event="vendor_click"
+                  data={{
+                    vendor: highlights.cheapestSingleProduct.vendorId,
+                    product: highlights.cheapestSingleProduct.id,
+                    source: "spotlight",
+                  }}
                   className="hover:underline"
                 >
                   {highlights.cheapestSingleProduct.title}
-                </a>{" "}
+                </TrackedLink>{" "}
                 — {vendorById[highlights.cheapestSingleProduct.vendorId]?.name}
               </>
             }
@@ -201,14 +206,14 @@ export default function VendorComparison({
                 >
                   <div className="mb-3 flex flex-wrap items-baseline justify-between gap-2">
                     <h3 className="text-base font-semibold">
-                      <a
+                      <TrackedLink
                         href={v.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
+                        event="vendor_click"
+                        data={{ vendor: v.id, source: "vendor-card-name" }}
                         className="hover:underline"
                       >
                         {v.name}
-                      </a>
+                      </TrackedLink>
                     </h3>
                     <span className="text-xs uppercase tracking-wide text-stone-500">
                       {v.platform}
@@ -226,14 +231,18 @@ export default function VendorComparison({
 
                   <div className="mt-3 border-t border-stone-100 pt-3 dark:border-stone-800">
                     <p className="text-xs text-stone-500">Cheapest product</p>
-                    <a
+                    <TrackedLink
                       href={s.cheapestProduct.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                      event="vendor_click"
+                      data={{
+                        vendor: s.vendorId,
+                        product: s.cheapestProduct.id,
+                        source: "vendor-card-cheapest",
+                      }}
                       className="text-sm font-medium hover:underline"
                     >
                       {s.cheapestProduct.title}
-                    </a>
+                    </TrackedLink>
                     <p className="flex flex-wrap items-center gap-x-1.5 text-xs text-stone-500">
                       <span
                         aria-hidden
