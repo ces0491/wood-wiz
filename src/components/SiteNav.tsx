@@ -34,7 +34,7 @@ function StackedLogsMark({ className }: { className?: string }) {
 export default function SiteNav() {
   const pathname = usePathname();
   return (
-    <nav className="border-b border-stone-200/70 bg-white/80 backdrop-blur dark:border-stone-800/70 dark:bg-stone-950/70">
+    <nav className="sticky top-0 z-30 border-b border-stone-200/70 bg-white/80 backdrop-blur dark:border-stone-800/70 dark:bg-stone-950/70">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
         <Link
           href="/"

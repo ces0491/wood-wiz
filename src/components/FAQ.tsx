@@ -85,7 +85,7 @@ const SECTIONS: FaqSection[] = [
             Most vendors price delivery by suburb, with multiple tiers, and confirm the
             final charge at checkout. Folding that into a single per-kg number would
             require assumptions we can&apos;t back. Each vendor card surfaces their
-            stated delivery rule (free over R&nbsp;X, flat fee, zoned, &amp;c.) so you
+            stated delivery rule (free over R&nbsp;X, flat fee, zoned, etc.) so you
             can factor it in yourself.
           </p>
         ),
@@ -95,16 +95,18 @@ const SECTIONS: FaqSection[] = [
         a: (
           <>
             <p>
-              Use the <strong>Budget (total)</strong> filter in the sidebar to set a
-              maximum total price (and optionally a minimum). Leave the sort on{" "}
-              <em>Cheapest per kg first</em> &mdash; the list will now show the
+              Use the <strong>Budget (total)</strong> filter in the sidebar. Tap one
+              of the preset chips (&lt; R&nbsp;500, R&nbsp;500&ndash;1k,
+              R&nbsp;1k&ndash;3k, R&nbsp;3k&ndash;7k, R&nbsp;7k+) for a quick pick,
+              or type custom Min/Max values for full control. Leave the sort on{" "}
+              <em>Cheapest per kg first</em> &mdash; the list now shows the
               best-value-per-kg options that fit your budget at the top.
             </p>
             <p>
-              For a budget of <strong>R&nbsp;2,000</strong>, this gives you all the
-              ways to spend R&nbsp;2,000 or less, ranked by which one stretches your
-              rand the furthest. Products with delivery-zone variants are included if
-              the cheapest variant fits the budget.
+              For a budget of <strong>R&nbsp;2,000</strong>, picking the R&nbsp;1k&ndash;3k
+              preset gives you every product in that range, ranked by which one
+              stretches your rand the furthest. Products with delivery-zone variants
+              are included if the cheapest variant fits the budget.
             </p>
           </>
         ),
@@ -299,10 +301,12 @@ const SECTIONS: FaqSection[] = [
               >
                 @ces0491
               </a>
-              ), a Cape Town-based developer who got tired of building spreadsheets
-              every winter to compare vendor pricing across incompatible units
-              (bags vs pieces vs pallets vs tons). The site automates what used to
-              be an afternoon of manual maths.
+              ), a Cape Town-based braai lover who burns a lot of wood but can never  
+              reliably determine which vendor offers the best value. Whether its summer 
+              time braais or winter fires, every time I restock I ask: Should I buy bags 
+              or bakkie loads? Do I only want Rooikrantz or a combo? Do I really need R5000 
+              worth of wood even though the per kilo price is great? The site simplifies 
+              the process of comparing wood prices across vendors, types and quantities.
             </p>
             <p>
               Wood Wiz is <strong>independent</strong> — there are no affiliate

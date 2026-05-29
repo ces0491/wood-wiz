@@ -30,6 +30,16 @@ const BULK_OPTIONS: { value: number | null; label: string }[] = [
   { value: 2000, label: "2 tons+" },
 ];
 
+// Quick-pick budget presets. min/max nullable so "Any" resets both.
+const BUDGET_PRESETS: { label: string; min: number | null; max: number | null }[] = [
+  { label: "Any", min: null, max: null },
+  { label: "< R 500", min: null, max: 500 },
+  { label: "R 500–1k", min: 500, max: 1000 },
+  { label: "R 1k–3k", min: 1000, max: 3000 },
+  { label: "R 3k–7k", min: 3000, max: 7000 },
+  { label: "R 7k+", min: 7000, max: null },
+];
+
 interface Props {
   products: Product[];
   vendors: Vendor[];
@@ -53,7 +63,8 @@ const USAGE_ICON: Record<UsageFilter, typeof Flame> = {
   both: Flame,
 };
 
-const PAGE_SIZE = 25;
+const PAGE_SIZE_OPTIONS = [10, 25, 50, 100];
+const DEFAULT_PAGE_SIZE = 10;
 
 const SORT_LABEL: Record<SortKey, string> = {
   "price-per-kg-asc": "Cheapest per kg first",
@@ -78,6 +89,7 @@ export default function ProductBrowser({
   const [sort, setSort] = useState<SortKey>("price-per-kg-asc");
   const [showFilters, setShowFilters] = useState(false);
   const [page, setPage] = useState(1);
+  const [pageSize, setPageSize] = useState<number>(DEFAULT_PAGE_SIZE);
 
   // Close mobile filter drawer on Escape; lock background scroll while open.
   // Only active on mobile/tablet — on lg+ the sidebar is always visible so
@@ -103,7 +115,13 @@ export default function ProductBrowser({
     if (inStockOnly) out = out.filter((p) => p.inStock);
     if (bulkMinKg !== null) out = out.filter((p) => p.weightKg >= bulkMinKg);
     if (usage !== "all") {
-      out = out.filter((p) => p.usage === usage || p.usage === "both");
+      // "both" means "braai + fireplace" (indoor and outdoor fires); it does
+      // NOT include smoking-food applications. A resinous hardwood good for a
+      // braai is wrong for cold-smoking meat. So braai/fireplace inherit
+      // "both" products, but smoking is strict.
+      out = out.filter((p) =>
+        usage === "smoking" ? p.usage === "smoking" : p.usage === usage || p.usage === "both",
+      );
     }
     // Price filters: overlap-based so a variable product with a range of
     // R 1,500–R 2,500 still appears when the budget is R 2,000 — the user
@@ -161,13 +179,13 @@ export default function ProductBrowser({
   const speciesOptions = useMemo(() => {
     return Object.values(SPECIES)
       .filter((s) => (speciesCounts[s.id] ?? 0) > 0 || selectedSpecies.has(s.id))
-      .sort((a, b) => (speciesCounts[b.id] ?? 0) - (speciesCounts[a.id] ?? 0));
+      .sort((a, b) => a.displayName.localeCompare(b.displayName));
   }, [speciesCounts, selectedSpecies]);
 
   const vendorOptions = useMemo(() => {
     return vendors
       .filter((v) => (vendorCounts[v.id] ?? 0) > 0 || selectedVendors.has(v.id))
-      .sort((a, b) => (vendorCounts[b.id] ?? 0) - (vendorCounts[a.id] ?? 0));
+      .sort((a, b) => a.name.localeCompare(b.name));
   }, [vendors, vendorCounts, selectedVendors]);
 
   const vendorById = useMemo(() => {
@@ -338,7 +356,7 @@ export default function ProductBrowser({
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-[18rem_1fr]">
         <aside
           id="filter-panel"
-          className={`self-start space-y-6 lg:sticky lg:top-4 lg:block ${
+          className={`self-start space-y-6 lg:sticky lg:top-20 lg:block ${
             showFilters
               ? "fixed inset-x-0 bottom-0 z-50 max-h-[85vh] overflow-y-auto rounded-t-2xl border-t border-stone-200 bg-stone-50 p-4 shadow-2xl lg:static lg:max-h-none lg:overflow-visible lg:rounded-none lg:border-0 lg:bg-transparent lg:p-0 lg:shadow-none dark:border-stone-800 dark:bg-stone-950 dark:lg:bg-transparent"
               : "hidden"
@@ -367,6 +385,30 @@ export default function ProductBrowser({
             </button>
           )}
           <FilterGroup title="Budget (total)">
+            <div className="mb-2 flex flex-wrap gap-1">
+              {BUDGET_PRESETS.map((preset) => {
+                const active = minPrice === preset.min && maxPrice === preset.max;
+                return (
+                  <button
+                    key={preset.label}
+                    type="button"
+                    onClick={() => {
+                      setMinPrice(preset.min);
+                      setMaxPrice(preset.max);
+                      setPage(1);
+                    }}
+                    aria-pressed={active}
+                    className={`rounded-md px-2 py-1 text-xs font-medium transition ${
+                      active
+                        ? "bg-amber-700 text-white shadow-sm shadow-amber-900/30 dark:bg-amber-600 dark:text-stone-50"
+                        : "bg-white text-stone-700 ring-1 ring-stone-200 hover:bg-stone-100 dark:bg-stone-900 dark:text-stone-300 dark:ring-stone-700 dark:hover:bg-stone-800"
+                    }`}
+                  >
+                    {preset.label}
+                  </button>
+                );
+              })}
+            </div>
             <div className="grid grid-cols-2 gap-2">
               <label className="flex items-center gap-1.5 rounded-md border border-stone-300 px-2 py-1.5 focus-within:ring-2 focus-within:ring-amber-400 dark:border-stone-700">
                 <span className="text-xs text-stone-500">Min R</span>
@@ -442,6 +484,8 @@ export default function ProductBrowser({
           vendorById={vendorById}
           page={page}
           setPage={setPage}
+          pageSize={pageSize}
+          setPageSize={setPageSize}
           clearAll={clearAll}
         />
       </div>
@@ -609,28 +653,54 @@ function PagedList({
   vendorById,
   page,
   setPage,
+  pageSize,
+  setPageSize,
   clearAll,
 }: {
   products: Product[];
   vendorById: Record<string, Vendor>;
   page: number;
   setPage: (p: number) => void;
+  pageSize: number;
+  setPageSize: (n: number) => void;
   clearAll: () => void;
 }) {
   const total = products.length;
-  const totalPages = Math.max(1, Math.ceil(total / PAGE_SIZE));
+  const totalPages = Math.max(1, Math.ceil(total / pageSize));
   const safePage = Math.min(page, totalPages);
-  const start = (safePage - 1) * PAGE_SIZE;
-  const end = Math.min(start + PAGE_SIZE, total);
+  const start = (safePage - 1) * pageSize;
+  const end = Math.min(start + pageSize, total);
   const pageItems = products.slice(start, end);
 
   return (
     <main>
-      <p className="mb-3 text-sm text-stone-600 dark:text-stone-400">
-        {total === 0
-          ? "0 products match"
-          : `Showing ${start + 1}–${end} of ${total} ${total === 1 ? "product" : "products"}`}
-      </p>
+      <div className="mb-3 flex flex-wrap items-center justify-between gap-2 text-sm text-stone-600 dark:text-stone-400">
+        <p>
+          {total === 0
+            ? "0 products match"
+            : `Showing ${start + 1}–${end} of ${total} ${total === 1 ? "product" : "products"}`}
+        </p>
+        {total > PAGE_SIZE_OPTIONS[0] && (
+          <label className="flex items-center gap-1.5 text-xs">
+            Per page
+            <select
+              value={pageSize}
+              onChange={(e) => {
+                setPageSize(Number(e.target.value));
+                setPage(1);
+              }}
+              className="rounded-md border border-stone-300 bg-white px-2 py-1 text-xs tabular-nums dark:border-stone-700 dark:bg-stone-900"
+              aria-label="Results per page"
+            >
+              {PAGE_SIZE_OPTIONS.map((n) => (
+                <option key={n} value={n}>
+                  {n}
+                </option>
+              ))}
+            </select>
+          </label>
+        )}
+      </div>
       {total === 0 ? (
         <div className="rounded-lg border border-dashed border-stone-300 p-12 text-center text-sm text-stone-500 dark:border-stone-700">
           No products match your filters.{" "}

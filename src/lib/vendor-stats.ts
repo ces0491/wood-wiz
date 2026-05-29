@@ -12,6 +12,12 @@ export interface VendorStats {
   maxPricePerKgZar: number;
   cheapestProduct: Product;
   salesCount: number;
+  // True only when at least one product from this vendor has a
+  // regularPriceZar captured. Vendors whose scraper / API doesn't expose
+  // a regular price (Lancehoudt's variable products, WooCommerce variable
+  // products generally, Wix scraper which skips the field) get false here,
+  // and salesCount of 0 means "unknown", not "no sales".
+  hasSalesData: boolean;
 }
 
 export interface ComparisonHighlights {
@@ -52,6 +58,7 @@ export function computeVendorStats(products: Product[], vendors: Vendor[]): Vend
       salesCount: vProducts.filter(
         (p) => p.regularPriceZar !== undefined && p.regularPriceZar > p.priceZar && p.inStock,
       ).length,
+      hasSalesData: vProducts.some((p) => p.regularPriceZar !== undefined),
     });
   }
   return out;

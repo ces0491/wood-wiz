@@ -173,12 +173,12 @@ export default function VendorComparison({
           <BarChart
             icon={Tag}
             title="Active sales right now"
-            subtitle="In-stock products with a struck-through regular price"
+            subtitle="In-stock products with a struck-through regular price (— = vendor's API doesn't expose sale prices)"
             rows={stats
               .map((s) => ({
                 label: vendorById[s.vendorId]?.name ?? s.vendorId,
-                value: s.salesCount,
-                display: `${s.salesCount}`,
+                value: s.hasSalesData ? s.salesCount : 0,
+                display: s.hasSalesData ? `${s.salesCount}` : "—",
               }))
               .sort((a, b) => b.value - a.value)}
             max={maxSales}
@@ -226,7 +226,10 @@ export default function VendorComparison({
                     <Stat label="Products" value={`${s.productCount}`} />
                     <Stat label="In stock" value={`${s.inStockCount} (${formatPct(inStockRate)})`} />
                     <Stat label="Species" value={`${s.speciesCount}`} />
-                    <Stat label="On sale" value={`${s.salesCount}`} />
+                    <Stat
+                      label="On sale"
+                      value={s.hasSalesData ? `${s.salesCount}` : "—"}
+                    />
                   </dl>
 
                   <div className="mt-3 border-t border-stone-100 pt-3 dark:border-stone-800">
