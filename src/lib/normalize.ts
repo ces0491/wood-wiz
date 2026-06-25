@@ -20,6 +20,13 @@ interface WeightResult {
 // firewood-economics threshold. See scripts/scrape-all.ts > runSanityChecks.
 const ABSOLUTE_MIN_PRICE_PER_KG = 0.5;
 
+// Minimum piece count for a "pieces" listing to count as a comparable firewood
+// purchase. Excludes the single-piece variants on per-piece "SELECT YOUR
+// QUANTITY" configurators (1.5kg of wood) while keeping genuine bulk piece
+// counts ("1000 Pieces Bluegum"). Smoking-wood chunks are unaffected — they
+// carry explicit kg weights and parse as "bag", not "pieces".
+const MIN_BULK_PIECES = 2;
+
 // Titles that match these patterns are not firewood — they're accessories,
 // fuel substitutes, or tools sold alongside firewood.
 const NON_FIREWOOD_PATTERNS = [
@@ -171,10 +178,15 @@ export function extractWeight(text: string, densityKgPerM3: number): WeightResul
     }
   }
 
-  // Pieces: "500 pieces", "1000pc", "2000-piece"
+  // Pieces: "500 pieces", "1000pc", "2000-piece". A single piece ("1 PIECE OF
+  // ROOIKRANS" on Wood Gurus' per-piece configurator) is not a realistic
+  // firewood purchase, and its 1.5kg/piece estimate gives a per-kg that
+  // dominates the cheapest ranking on misleadingly tiny volume. Require at
+  // least MIN_BULK_PIECES before treating a pieces listing as comparable.
   const piecesMatch = lower.match(/(\d+)\s*[-]?\s*(?:piece|pieces|pc|pcs)\b/);
   if (piecesMatch) {
     const pieces = parseInt(piecesMatch[1], 10);
+    if (pieces < MIN_BULK_PIECES) return null;
     const estimated = pieces * 1.5;
     return { weightKg: estimated, estimated: true, packFormat: "pieces" };
   }

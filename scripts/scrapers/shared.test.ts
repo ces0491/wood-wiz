@@ -1,5 +1,17 @@
-import { describe, expect, test } from "vitest";
-import { extractWooPrice, type WooProduct } from "./shared";
+import { afterEach, describe, expect, test, vi } from "vitest";
+import { extractWooPrice, fetchText, isRetryableError, type WooProduct } from "./shared";
+
+function abortError(): Error {
+  const e = new Error("This operation was aborted");
+  e.name = "AbortError";
+  return e;
+}
+
+function networkError(): Error {
+  const e = new Error("fetch failed");
+  e.name = "TypeError";
+  return e;
+}
 
 // All amounts are in minor units (cents) per WooCommerce Store API
 // convention. R 100.00 = 10000.
@@ -199,5 +211,61 @@ describe("extractWooPrice", () => {
       );
       expect(r?.priceZar).toBe(100);
     });
+  });
+});
+
+describe("isRetryableError", () => {
+  test("retries timeouts (AbortError) and network errors (TypeError)", () => {
+    expect(isRetryableError(abortError())).toBe(true);
+    expect(isRetryableError(networkError())).toBe(true);
+  });
+
+  test("retries 5xx and transient socket errors", () => {
+    expect(isRetryableError(new Error("HTTP 503 for https://x"))).toBe(true);
+    expect(isRetryableError(new Error("ECONNRESET"))).toBe(true);
+  });
+
+  test("does not retry 4xx or non-Errors", () => {
+    expect(isRetryableError(new Error("HTTP 404 for https://x"))).toBe(false);
+    expect(isRetryableError("nope")).toBe(false);
+  });
+});
+
+describe("fetchText retry", () => {
+  afterEach(() => {
+    vi.unstubAllGlobals();
+  });
+
+  test("retries a transient timeout then returns the eventual success", async () => {
+    let calls = 0;
+    vi.stubGlobal(
+      "fetch",
+      vi.fn(async () => {
+        calls++;
+        if (calls < 3) throw abortError();
+        return new Response("ok", { status: 200 });
+      }),
+    );
+    const text = await fetchText("https://x", 1000, { backoffMs: 1 });
+    expect(text).toBe("ok");
+    expect(calls).toBe(3);
+  });
+
+  test("gives up after exhausting attempts and rethrows", async () => {
+    const fetchMock = vi.fn(async () => {
+      throw abortError();
+    });
+    vi.stubGlobal("fetch", fetchMock);
+    await expect(fetchText("https://x", 1000, { attempts: 2, backoffMs: 1 })).rejects.toThrow(
+      /aborted/i,
+    );
+    expect(fetchMock).toHaveBeenCalledTimes(2);
+  });
+
+  test("does not retry a non-retryable 4xx", async () => {
+    const fetchMock = vi.fn(async () => new Response("nope", { status: 404 }));
+    vi.stubGlobal("fetch", fetchMock);
+    await expect(fetchText("https://x", 1000, { backoffMs: 1 })).rejects.toThrow(/HTTP 404/);
+    expect(fetchMock).toHaveBeenCalledTimes(1);
   });
 });

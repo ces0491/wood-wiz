@@ -3,23 +3,70 @@ import type { ScrapedProduct } from "../../src/lib/types";
 const USER_AGENT =
   "wood-wiz/0.1 (+https://github.com/ces0491/wood-wiz; price comparison bot)";
 
-export async function fetchText(url: string, timeoutMs = 20000): Promise<string> {
-  const ctrl = new AbortController();
-  const timer = setTimeout(() => ctrl.abort(), timeoutMs);
-  try {
-    const res = await fetch(url, {
-      headers: { "User-Agent": USER_AGENT, Accept: "text/html,application/json,*/*" },
-      signal: ctrl.signal,
-    });
-    if (!res.ok) throw new Error(`HTTP ${res.status} for ${url}`);
-    return await res.text();
-  } finally {
-    clearTimeout(timer);
-  }
+const DEFAULT_ATTEMPTS = 3;
+const DEFAULT_BACKOFF_MS = 1000;
+
+const sleep = (ms: number) => new Promise<void>((resolve) => setTimeout(resolve, ms));
+
+// Transient failures worth retrying: request timeouts (the AbortController
+// fired — surfaces as AbortError), network-level errors (DNS, reset sockets —
+// fetch reports these as a TypeError "fetch failed"), and 5xx responses.
+// 4xx responses and JSON parse errors are NOT retried — they won't fix
+// themselves on a second attempt, and retrying end-of-pagination 4xx would
+// just add latency before scrapeWooCommerce breaks the loop.
+export function isRetryableError(err: unknown): boolean {
+  if (!(err instanceof Error)) return false;
+  if (err.name === "AbortError") return true; // request timed out
+  if (err.name === "TypeError") return true; // network-level fetch failure
+  return /HTTP 5\d\d|ECONNRESET|ETIMEDOUT|EAI_AGAIN|ENOTFOUND|socket hang up/i.test(err.message);
 }
 
-export async function fetchJson<T = unknown>(url: string, timeoutMs = 20000): Promise<T> {
-  const text = await fetchText(url, timeoutMs);
+export interface FetchRetryOptions {
+  attempts?: number;
+  backoffMs?: number;
+}
+
+// Single-vendor scrapes used to abort the whole run on one transient timeout
+// (e.g. Lancehoudt's WooCommerce API occasionally exceeds the 20s budget under
+// load). Retry transient failures with linear backoff before giving up.
+export async function fetchText(
+  url: string,
+  timeoutMs = 20000,
+  opts: FetchRetryOptions = {},
+): Promise<string> {
+  const { attempts = DEFAULT_ATTEMPTS, backoffMs = DEFAULT_BACKOFF_MS } = opts;
+  let lastErr: unknown;
+  for (let attempt = 1; attempt <= attempts; attempt++) {
+    const ctrl = new AbortController();
+    const timer = setTimeout(() => ctrl.abort(), timeoutMs);
+    try {
+      const res = await fetch(url, {
+        headers: { "User-Agent": USER_AGENT, Accept: "text/html,application/json,*/*" },
+        signal: ctrl.signal,
+      });
+      if (!res.ok) throw new Error(`HTTP ${res.status} for ${url}`);
+      return await res.text();
+    } catch (err) {
+      lastErr = err;
+      if (attempt < attempts && isRetryableError(err)) {
+        // Linear backoff: 1s, then 2s. Give a slow origin room to recover.
+        await sleep(backoffMs * attempt);
+        continue;
+      }
+      throw err;
+    } finally {
+      clearTimeout(timer);
+    }
+  }
+  throw lastErr; // unreachable: the final attempt always returns or throws
+}
+
+export async function fetchJson<T = unknown>(
+  url: string,
+  timeoutMs = 20000,
+  opts: FetchRetryOptions = {},
+): Promise<T> {
+  const text = await fetchText(url, timeoutMs, opts);
   return JSON.parse(text) as T;
 }
 

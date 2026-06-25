@@ -452,7 +452,10 @@ describe("normalize (integration)", () => {
     expect(result).toBeNull();
   });
 
-  test("keeps a legitimate single loose piece (~R 1/kg)", () => {
+  test("drops single-piece configurator listings (not a comparable quantity)", () => {
+    // "1 PIECE OF ROOIKRANS" on a per-piece configurator: 1.5kg of wood that
+    // would otherwise top the cheapest-per-kg ranking. Bulk piece counts and
+    // smoking chunks are kept (covered below / by extractWeight tests).
     const result = normalize(
       makeScraped({
         vendorId: "wood-gurus",
@@ -461,8 +464,20 @@ describe("normalize (integration)", () => {
         rawWeightLabel: "1 PIECE OF ROOIKRANS",
       }),
     );
+    expect(result).toBeNull();
+  });
+
+  test("keeps bulk piece-count listings (e.g. 1000 pieces)", () => {
+    const result = normalize(
+      makeScraped({
+        vendorId: "wood-gurus",
+        title: "Bluegum 1000 pieces",
+        priceZar: 2000,
+      }),
+    );
     expect(result).not.toBeNull();
-    expect(result!.pricePerKgZar).toBeCloseTo(0.99, 2);
+    expect(result!.packFormat).toBe("pieces");
+    expect(result!.weightKg).toBe(1500);
   });
 
   test("passes through maxPriceZar and computes maxPricePerKgZar", () => {
