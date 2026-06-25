@@ -8,6 +8,18 @@ interface WeightResult {
   packFormat: PackFormat;
 }
 
+// Hard per-kg floor. No firewood sells anywhere near this cheap at any weight —
+// the cheapest real listing is ~R 1/kg (single loose pieces), bulk bottoms out
+// around R 1.2/kg. A computed price below this is always a structural artifact,
+// most commonly a price/weight unit mismatch on a "SELECT YOUR QUANTITY" Shopify
+// configurator: the weight parser reads a multi-unit variant label ("100 PIECES"
+// → 150kg) while the variant price is per *single* unit (R 2.19/piece). We can't
+// recover the intended price, so we drop the record rather than publish garbage.
+// This is intentionally below the build-time sanity FLOOR_PRICE_PER_KG (R 1, but
+// only enforced at >= 50kg) — it's a universal "this cannot be real" guard, not a
+// firewood-economics threshold. See scripts/scrape-all.ts > runSanityChecks.
+const ABSOLUTE_MIN_PRICE_PER_KG = 0.5;
+
 // Titles that match these patterns are not firewood — they're accessories,
 // fuel substitutes, or tools sold alongside firewood.
 const NON_FIREWOOD_PATTERNS = [
@@ -219,6 +231,11 @@ export function normalize(scraped: ScrapedProduct): Product | null {
 
   const usage = detectUsage(title, speciesInfo.usage);
 
+  const pricePerKgZar = Math.round((scraped.priceZar / weight.weightKg) * 100) / 100;
+  // Structural artifact (e.g. per-piece price applied to a multi-piece weight).
+  // Drop rather than emit a record that would trip the build sanity floor.
+  if (pricePerKgZar < ABSOLUTE_MIN_PRICE_PER_KG) return null;
+
   return {
     id: `${scraped.vendorId}::${scraped.externalId}`,
     vendorId: scraped.vendorId,
@@ -233,7 +250,7 @@ export function normalize(scraped: ScrapedProduct): Product | null {
     maxPriceZar: scraped.maxPriceZar,
     regularPriceZar: scraped.regularPriceZar,
     weightKg: Math.round(weight.weightKg * 100) / 100,
-    pricePerKgZar: Math.round((scraped.priceZar / weight.weightKg) * 100) / 100,
+    pricePerKgZar,
     maxPricePerKgZar: scraped.maxPriceZar
       ? Math.round((scraped.maxPriceZar / weight.weightKg) * 100) / 100
       : undefined,

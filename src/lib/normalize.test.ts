@@ -430,9 +430,39 @@ describe("normalize (integration)", () => {
   });
 
   test("flags weightEstimated for piece-count listings", () => {
-    const result = normalize(makeScraped({ title: "Bluegum 1000 pieces" }));
+    // 1000 pieces ≈ 1500kg; price it realistically (~R 1.3/kg) so it clears the
+    // sub-floor guard and we're actually testing the estimation path.
+    const result = normalize(makeScraped({ title: "Bluegum 1000 pieces", priceZar: 2000 }));
     expect(result!.weightEstimated).toBe(true);
     expect(result!.weightKg).toBe(1500);
+  });
+
+  test("drops per-piece price applied to a multi-piece weight (sub-floor per-kg)", () => {
+    // The Wood Gurus "SELECT YOUR QUANTITY" configurator: variant labelled
+    // "100 PIECES" but priced per single piece (R 2.19). Weight parses to 150kg,
+    // giving R 0.01/kg — a structural artifact we must not publish.
+    const result = normalize(
+      makeScraped({
+        vendorId: "wood-gurus",
+        title: "Black Wattle (+/- 75-85% Dry) | SELECT YOUR QUANTITY",
+        priceZar: 2.19,
+        rawWeightLabel: "100 PIECES",
+      }),
+    );
+    expect(result).toBeNull();
+  });
+
+  test("keeps a legitimate single loose piece (~R 1/kg)", () => {
+    const result = normalize(
+      makeScraped({
+        vendorId: "wood-gurus",
+        title: "LOOSE WOOD SOLD PER SINGLE PIECE",
+        priceZar: 1.49,
+        rawWeightLabel: "1 PIECE OF ROOIKRANS",
+      }),
+    );
+    expect(result).not.toBeNull();
+    expect(result!.pricePerKgZar).toBeCloseTo(0.99, 2);
   });
 
   test("passes through maxPriceZar and computes maxPricePerKgZar", () => {
