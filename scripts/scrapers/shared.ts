@@ -5,20 +5,67 @@ const USER_AGENT =
 
 const DEFAULT_ATTEMPTS = 3;
 const DEFAULT_BACKOFF_MS = 1000;
+// Ceiling on a server-supplied Retry-After. Shopify and Cloudflare typically
+// ask for a few seconds; an origin asking for minutes is telling us the run is
+// a write-off, and blocking that long would eat the workflow's 15m budget.
+const MAX_RETRY_AFTER_MS = 15000;
 
 const sleep = (ms: number) => new Promise<void>((resolve) => setTimeout(resolve, ms));
 
+// Thrown for any non-ok response. Carries the status and any Retry-After the
+// origin sent, both of which are lost if we only stringify into the message.
+export class HttpError extends Error {
+  readonly status: number;
+  readonly retryAfterMs?: number;
+
+  constructor(status: number, url: string, retryAfterMs?: number) {
+    super(`HTTP ${status} for ${url}`);
+    this.name = "HttpError";
+    this.status = status;
+    this.retryAfterMs = retryAfterMs;
+  }
+}
+
+// Retry-After is either delta-seconds ("120") or an HTTP-date
+// ("Wed, 21 Oct 2026 07:28:00 GMT"). Returns undefined for an absent or
+// unparseable header, and clamps past dates to 0.
+export function parseRetryAfter(header: string | null): number | undefined {
+  if (!header) return undefined;
+  const trimmed = header.trim();
+
+  if (/^\d+$/.test(trimmed)) return parseInt(trimmed, 10) * 1000;
+
+  const date = Date.parse(trimmed);
+  if (Number.isNaN(date)) return undefined;
+  return Math.max(0, date - Date.now());
+}
+
 // Transient failures worth retrying: request timeouts (the AbortController
 // fired — surfaces as AbortError), network-level errors (DNS, reset sockets —
-// fetch reports these as a TypeError "fetch failed"), and 5xx responses.
-// 4xx responses and JSON parse errors are NOT retried — they won't fix
+// fetch reports these as a TypeError "fetch failed"), 5xx responses, and 429.
+// 429 is the one 4xx that is definitionally transient — the origin is asking
+// us to slow down, not telling us the URL is wrong. Runner IPs are shared, so
+// a scheduled scrape can land mid-cooldown from someone else's traffic.
+// Other 4xx responses and JSON parse errors are NOT retried — they won't fix
 // themselves on a second attempt, and retrying end-of-pagination 4xx would
 // just add latency before scrapeWooCommerce breaks the loop.
 export function isRetryableError(err: unknown): boolean {
   if (!(err instanceof Error)) return false;
   if (err.name === "AbortError") return true; // request timed out
   if (err.name === "TypeError") return true; // network-level fetch failure
-  return /HTTP 5\d\d|ECONNRESET|ETIMEDOUT|EAI_AGAIN|ENOTFOUND|socket hang up/i.test(err.message);
+  if (err instanceof HttpError) return err.status === 429 || err.status >= 500;
+  return /HTTP (?:5\d\d|429)|ECONNRESET|ETIMEDOUT|EAI_AGAIN|ENOTFOUND|socket hang up/i.test(
+    err.message,
+  );
+}
+
+// How long to wait before the next attempt. Honours a server-supplied
+// Retry-After, but never retries sooner than our own linear backoff would have
+// (a "Retry-After: 0" is no licence to hammer) and never blocks longer than
+// MAX_RETRY_AFTER_MS.
+export function retryDelayMs(err: unknown, backoffMs: number, attempt: number): number {
+  const retryAfter = err instanceof HttpError ? err.retryAfterMs : undefined;
+  return Math.max(Math.min(retryAfter ?? 0, MAX_RETRY_AFTER_MS), backoffMs * attempt);
 }
 
 export interface FetchRetryOptions {
@@ -44,13 +91,15 @@ export async function fetchText(
         headers: { "User-Agent": USER_AGENT, Accept: "text/html,application/json,*/*" },
         signal: ctrl.signal,
       });
-      if (!res.ok) throw new Error(`HTTP ${res.status} for ${url}`);
+      if (!res.ok) {
+        throw new HttpError(res.status, url, parseRetryAfter(res.headers.get("retry-after")));
+      }
       return await res.text();
     } catch (err) {
       lastErr = err;
       if (attempt < attempts && isRetryableError(err)) {
         // Linear backoff: 1s, then 2s. Give a slow origin room to recover.
-        await sleep(backoffMs * attempt);
+        await sleep(retryDelayMs(err, backoffMs, attempt));
         continue;
       }
       throw err;

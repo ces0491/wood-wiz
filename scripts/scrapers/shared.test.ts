@@ -1,5 +1,13 @@
 import { afterEach, describe, expect, test, vi } from "vitest";
-import { extractWooPrice, fetchText, isRetryableError, type WooProduct } from "./shared";
+import {
+  extractWooPrice,
+  fetchText,
+  HttpError,
+  isRetryableError,
+  parseRetryAfter,
+  retryDelayMs,
+  type WooProduct,
+} from "./shared";
 
 function abortError(): Error {
   const e = new Error("This operation was aborted");
@@ -229,6 +237,46 @@ describe("isRetryableError", () => {
     expect(isRetryableError(new Error("HTTP 404 for https://x"))).toBe(false);
     expect(isRetryableError("nope")).toBe(false);
   });
+
+  test("retries 429 — the origin is asking us to slow down, not to stop", () => {
+    expect(isRetryableError(new HttpError(429, "https://x"))).toBe(true);
+    expect(isRetryableError(new Error("HTTP 429 for https://x"))).toBe(true);
+  });
+
+  test("classifies HttpError by status, not message text", () => {
+    expect(isRetryableError(new HttpError(503, "https://x"))).toBe(true);
+    expect(isRetryableError(new HttpError(403, "https://x"))).toBe(false);
+    // A 404 whose URL happens to contain "429" must not read as retryable.
+    expect(isRetryableError(new HttpError(404, "https://x/products/429"))).toBe(false);
+  });
+});
+
+describe("parseRetryAfter", () => {
+  test("parses delta-seconds", () => {
+    expect(parseRetryAfter("120")).toBe(120000);
+    expect(parseRetryAfter("  5 ")).toBe(5000);
+    expect(parseRetryAfter("0")).toBe(0);
+  });
+
+  test("parses an HTTP-date as a delta from now", () => {
+    vi.useFakeTimers();
+    vi.setSystemTime(new Date("2026-10-21T07:28:00Z"));
+    expect(parseRetryAfter("Wed, 21 Oct 2026 07:28:30 GMT")).toBe(30000);
+    vi.useRealTimers();
+  });
+
+  test("clamps a past HTTP-date to 0", () => {
+    vi.useFakeTimers();
+    vi.setSystemTime(new Date("2026-10-21T07:28:00Z"));
+    expect(parseRetryAfter("Wed, 21 Oct 2026 07:27:00 GMT")).toBe(0);
+    vi.useRealTimers();
+  });
+
+  test("returns undefined for absent or unparseable headers", () => {
+    expect(parseRetryAfter(null)).toBeUndefined();
+    expect(parseRetryAfter("")).toBeUndefined();
+    expect(parseRetryAfter("soon")).toBeUndefined();
+  });
 });
 
 describe("fetchText retry", () => {
@@ -267,5 +315,56 @@ describe("fetchText retry", () => {
     vi.stubGlobal("fetch", fetchMock);
     await expect(fetchText("https://x", 1000, { backoffMs: 1 })).rejects.toThrow(/HTTP 404/);
     expect(fetchMock).toHaveBeenCalledTimes(1);
+  });
+
+  // The 15 July CI failure: Shopify returned 429 to the runner's shared IP and
+  // the scrape gave up on the first attempt, dropping two vendors.
+  test("retries a 429 then returns the eventual success", async () => {
+    let calls = 0;
+    const fetchMock = vi.fn(async () => {
+      calls++;
+      if (calls === 1) {
+        return new Response("slow down", {
+          status: 429,
+          headers: { "retry-after": "0" },
+        });
+      }
+      return new Response("ok", { status: 200 });
+    });
+    vi.stubGlobal("fetch", fetchMock);
+    await expect(fetchText("https://x", 1000, { backoffMs: 1 })).resolves.toBe("ok");
+    expect(fetchMock).toHaveBeenCalledTimes(2);
+  });
+
+  test("surfaces the status and Retry-After on the thrown HttpError", async () => {
+    vi.stubGlobal(
+      "fetch",
+      vi.fn(async () => new Response("nope", { status: 429, headers: { "retry-after": "0" } })),
+    );
+    const err = await fetchText("https://x", 1000, { attempts: 1 }).catch((e) => e);
+    expect(err).toBeInstanceOf(HttpError);
+    expect(err.status).toBe(429);
+    expect(err.retryAfterMs).toBe(0);
+  });
+});
+
+describe("retryDelayMs", () => {
+  test("falls back to linear backoff when there is no Retry-After", () => {
+    expect(retryDelayMs(new HttpError(503, "https://x"), 1000, 1)).toBe(1000);
+    expect(retryDelayMs(new HttpError(503, "https://x"), 1000, 2)).toBe(2000);
+    expect(retryDelayMs(new Error("boom"), 1000, 2)).toBe(2000);
+  });
+
+  test("honours a Retry-After longer than the backoff", () => {
+    expect(retryDelayMs(new HttpError(429, "https://x", 5000), 1000, 1)).toBe(5000);
+  });
+
+  test("never retries sooner than the linear backoff", () => {
+    // Retry-After: 0 must not collapse into an immediate re-request.
+    expect(retryDelayMs(new HttpError(429, "https://x", 0), 1000, 2)).toBe(2000);
+  });
+
+  test("caps an unreasonable Retry-After so one origin cannot stall the run", () => {
+    expect(retryDelayMs(new HttpError(429, "https://x", 600_000), 1000, 1)).toBe(15000);
   });
 });
