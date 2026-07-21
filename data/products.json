@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-20T05:57:26.012Z",
+  "generatedAt": "2026-07-21T05:38:48.043Z",
   "products": [
     {
       "id": "lancehoudt::2173",
@@ -18,7 +18,7 @@
       "maxPricePerKgZar": 1.41,
       "weightEstimated": true,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:40.346Z"
+      "scrapedAt": "2026-07-21T05:38:18.784Z"
     },
     {
       "id": "lancehoudt::2169",
@@ -37,7 +37,7 @@
       "maxPricePerKgZar": 1.41,
       "weightEstimated": true,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:40.346Z"
+      "scrapedAt": "2026-07-21T05:38:18.784Z"
     },
     {
       "id": "lancehoudt::2181",
@@ -54,7 +54,7 @@
       "pricePerKgZar": 1.26,
       "weightEstimated": true,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:40.346Z"
+      "scrapedAt": "2026-07-21T05:38:18.784Z"
     },
     {
       "id": "lancehoudt::2177",
@@ -71,7 +71,7 @@
       "pricePerKgZar": 1.26,
       "weightEstimated": true,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:40.346Z"
+      "scrapedAt": "2026-07-21T05:38:18.784Z"
     },
     {
       "id": "lancehoudt::468",
@@ -90,7 +90,7 @@
       "maxPricePerKgZar": 1.48,
       "weightEstimated": true,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:40.346Z"
+      "scrapedAt": "2026-07-21T05:38:18.784Z"
     },
     {
       "id": "lancehoudt::2189",
@@ -109,7 +109,7 @@
       "maxPricePerKgZar": 1.5,
       "weightEstimated": true,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:40.346Z"
+      "scrapedAt": "2026-07-21T05:38:18.784Z"
     },
     {
       "id": "lancehoudt::2185",
@@ -128,7 +128,7 @@
       "maxPricePerKgZar": 1.5,
       "weightEstimated": true,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:40.346Z"
+      "scrapedAt": "2026-07-21T05:38:18.784Z"
     },
     {
       "id": "lancehoudt::471",
@@ -145,7 +145,7 @@
       "pricePerKgZar": 1.33,
       "weightEstimated": true,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:40.346Z"
+      "scrapedAt": "2026-07-21T05:38:18.784Z"
     },
     {
       "id": "wood-bros::black-wattle-firewood-1000-pieces",
@@ -162,7 +162,7 @@
       "pricePerKgZar": 1.37,
       "weightEstimated": true,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:57.683Z"
+      "scrapedAt": "2026-07-21T05:38:41.860Z"
     },
     {
       "id": "wood-bros::blue-gum-wood",
@@ -179,7 +179,7 @@
       "pricePerKgZar": 1.37,
       "weightEstimated": true,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:57:18.260Z"
+      "scrapedAt": "2026-07-21T05:38:44.998Z"
     },
     {
       "id": "lancehoudt::472",
@@ -196,7 +196,7 @@
       "pricePerKgZar": 1.38,
       "weightEstimated": true,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:40.346Z"
+      "scrapedAt": "2026-07-21T05:38:18.784Z"
     },
     {
       "id": "lancehoudt::454",
@@ -215,25 +215,7 @@
       "maxPricePerKgZar": 1.58,
       "weightEstimated": true,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:40.346Z"
-    },
-    {
-      "id": "wood-gurus::8433525653662-45970015912094",
-      "vendorId": "wood-gurus",
-      "vendorName": "The Wood Gurus",
-      "title": "Black Wattle (+/- 75-85% Dry) | SELECT YOUR QUANTITY | The Wood Gurus",
-      "url": "https://thewoodgurus.co.za/products/proper-black-wattle-20-moisture-select-your-quantity-the-wood-gurus?variant=45970015912094",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/1451/2466/files/LooseBW_9d88829a-7882-4d5f-86b3-0cdfa8372bcd.png?v=1757749093",
-      "species": "black-wattle",
-      "usage": "both",
-      "packFormat": "pieces",
-      "priceZar": 219,
-      "regularPriceZar": 299,
-      "weightKg": 150,
-      "pricePerKgZar": 1.46,
-      "weightEstimated": true,
-      "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:35.115Z"
+      "scrapedAt": "2026-07-21T05:38:18.784Z"
     },
     {
       "id": "firewood-company::591381",
@@ -250,7 +232,7 @@
       "pricePerKgZar": 1.47,
       "weightEstimated": true,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:37.147Z"
+      "scrapedAt": "2026-07-21T05:38:15.366Z"
     },
     {
       "id": "firewood-company::591383",
@@ -267,24 +249,7 @@
       "pricePerKgZar": 1.47,
       "weightEstimated": true,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:37.147Z"
-    },
-    {
-      "id": "wood-bros::red-gum-firewood-1000-pieces",
-      "vendorId": "wood-bros",
-      "vendorName": "The Wood Bros",
-      "title": "Bulk Red Gum Wood (1000 Pieces)",
-      "url": "https://www.thewoodbros.co.za/product-page/red-gum-firewood-1000-pieces",
-      "imageUrl": "https://static.wixstatic.com/media/b4fa82_f6ccfc7387754b87be9247a0d8a2cfea~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
-      "species": "red-gum",
-      "usage": "both",
-      "packFormat": "pieces",
-      "priceZar": 2200,
-      "weightKg": 1500,
-      "pricePerKgZar": 1.47,
-      "weightEstimated": true,
-      "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:51.820Z"
+      "scrapedAt": "2026-07-21T05:38:15.366Z"
     },
     {
       "id": "wood-bros::black-wattle-firewood-500-pieces",
@@ -301,7 +266,24 @@
       "pricePerKgZar": 1.47,
       "weightEstimated": true,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:53.732Z"
+      "scrapedAt": "2026-07-21T05:38:30.532Z"
+    },
+    {
+      "id": "wood-bros::red-gum-firewood-1000-pieces",
+      "vendorId": "wood-bros",
+      "vendorName": "The Wood Bros",
+      "title": "Bulk Red Gum Wood (1000 Pieces)",
+      "url": "https://www.thewoodbros.co.za/product-page/red-gum-firewood-1000-pieces",
+      "imageUrl": "https://static.wixstatic.com/media/b4fa82_f6ccfc7387754b87be9247a0d8a2cfea~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
+      "species": "red-gum",
+      "usage": "both",
+      "packFormat": "pieces",
+      "priceZar": 2200,
+      "weightKg": 1500,
+      "pricePerKgZar": 1.47,
+      "weightEstimated": true,
+      "inStock": false,
+      "scrapedAt": "2026-07-21T05:38:32.078Z"
     },
     {
       "id": "wood-bros::wood-for-fireplace",
@@ -318,7 +300,7 @@
       "pricePerKgZar": 1.47,
       "weightEstimated": true,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:57:16.288Z"
+      "scrapedAt": "2026-07-21T05:38:38.535Z"
     },
     {
       "id": "lancehoudt::469",
@@ -337,7 +319,7 @@
       "maxPricePerKgZar": 1.66,
       "weightEstimated": true,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:40.346Z"
+      "scrapedAt": "2026-07-21T05:38:18.784Z"
     },
     {
       "id": "lancehoudt::473",
@@ -354,7 +336,7 @@
       "pricePerKgZar": 1.49,
       "weightEstimated": true,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:40.346Z"
+      "scrapedAt": "2026-07-21T05:38:18.784Z"
     },
     {
       "id": "mother-city-firewood::8597518647459-45242672447651",
@@ -372,7 +354,7 @@
       "pricePerKgZar": 1.5,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "mother-city-firewood::8597518647459-45242672480419",
@@ -390,7 +372,7 @@
       "pricePerKgZar": 1.5,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "mother-city-firewood::8597518647459-46341517410467",
@@ -408,7 +390,7 @@
       "pricePerKgZar": 1.5,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "mother-city-firewood::8597518647459-45242672545955",
@@ -426,7 +408,7 @@
       "pricePerKgZar": 1.5,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "mother-city-firewood::8597518647459-45242672414883",
@@ -444,7 +426,7 @@
       "pricePerKgZar": 1.5,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "mother-city-firewood::8597518647459-45242672513187",
@@ -462,7 +444,7 @@
       "pricePerKgZar": 1.5,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "firewood-company::591386",
@@ -479,7 +461,7 @@
       "pricePerKgZar": 1.53,
       "weightEstimated": true,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:37.147Z"
+      "scrapedAt": "2026-07-21T05:38:15.366Z"
     },
     {
       "id": "firewood-company::589048",
@@ -496,7 +478,7 @@
       "pricePerKgZar": 1.53,
       "weightEstimated": true,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:37.147Z"
+      "scrapedAt": "2026-07-21T05:38:15.366Z"
     },
     {
       "id": "mother-city-firewood::8597515862179-45280541573283",
@@ -514,7 +496,7 @@
       "pricePerKgZar": 1.55,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "mother-city-firewood::8597515862179-45280541606051",
@@ -532,7 +514,7 @@
       "pricePerKgZar": 1.55,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "mother-city-firewood::8597515862179-45280541638819",
@@ -550,7 +532,7 @@
       "pricePerKgZar": 1.55,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "mother-city-firewood::8597515862179-45280541671587",
@@ -568,7 +550,7 @@
       "pricePerKgZar": 1.55,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "mother-city-firewood::8597515862179-45280541704355",
@@ -586,7 +568,7 @@
       "pricePerKgZar": 1.55,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "mother-city-firewood::8597515862179-46433247002787",
@@ -604,7 +586,7 @@
       "pricePerKgZar": 1.55,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "lancehoudt::470",
@@ -623,7 +605,7 @@
       "maxPricePerKgZar": 1.77,
       "weightEstimated": true,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:40.346Z"
+      "scrapedAt": "2026-07-21T05:38:18.784Z"
     },
     {
       "id": "lancehoudt::455",
@@ -642,7 +624,7 @@
       "maxPricePerKgZar": 1.77,
       "weightEstimated": true,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:40.346Z"
+      "scrapedAt": "2026-07-21T05:38:18.784Z"
     },
     {
       "id": "mother-city-firewood::8597519761571-45252890755235",
@@ -659,7 +641,7 @@
       "pricePerKgZar": 1.6,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "mother-city-firewood::8597519761571-45252890788003",
@@ -676,7 +658,7 @@
       "pricePerKgZar": 1.6,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "mother-city-firewood::8597519761571-45252890722467",
@@ -693,7 +675,7 @@
       "pricePerKgZar": 1.6,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "mother-city-firewood::8597519761571-45252890820771",
@@ -710,7 +692,7 @@
       "pricePerKgZar": 1.6,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "mother-city-firewood::8597519761571-46432055066787",
@@ -728,7 +710,7 @@
       "pricePerKgZar": 1.6,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "mother-city-firewood::8597519761571-45252890853539",
@@ -745,7 +727,7 @@
       "pricePerKgZar": 1.6,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "firewood-company::624782",
@@ -762,7 +744,7 @@
       "pricePerKgZar": 1.6,
       "weightEstimated": true,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:37.147Z"
+      "scrapedAt": "2026-07-21T05:38:15.366Z"
     },
     {
       "id": "firewood-company::624779",
@@ -779,7 +761,7 @@
       "pricePerKgZar": 1.6,
       "weightEstimated": true,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:37.147Z"
+      "scrapedAt": "2026-07-21T05:38:15.366Z"
     },
     {
       "id": "wood-bros::red-gum-wood",
@@ -796,7 +778,25 @@
       "pricePerKgZar": 1.67,
       "weightEstimated": true,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:57:14.335Z"
+      "scrapedAt": "2026-07-21T05:38:26.771Z"
+    },
+    {
+      "id": "wood-gurus::8433525653662-45970015912094",
+      "vendorId": "wood-gurus",
+      "vendorName": "The Wood Gurus",
+      "title": "Black Wattle (+/- 70-80% Dry) | SELECT YOUR QUANTITY | The Wood Gurus",
+      "url": "https://thewoodgurus.co.za/products/proper-black-wattle-20-moisture-select-your-quantity-the-wood-gurus?variant=45970015912094",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/1451/2466/files/LooseBW_9d88829a-7882-4d5f-86b3-0cdfa8372bcd.png?v=1757749093",
+      "species": "black-wattle",
+      "usage": "both",
+      "packFormat": "pieces",
+      "priceZar": 259,
+      "regularPriceZar": 299,
+      "weightKg": 150,
+      "pricePerKgZar": 1.73,
+      "weightEstimated": true,
+      "inStock": true,
+      "scrapedAt": "2026-07-21T05:38:13.431Z"
     },
     {
       "id": "lancehoudt::456",
@@ -815,7 +815,7 @@
       "maxPricePerKgZar": 1.97,
       "weightEstimated": true,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:40.346Z"
+      "scrapedAt": "2026-07-21T05:38:18.784Z"
     },
     {
       "id": "lancehoudt::2198",
@@ -834,7 +834,7 @@
       "maxPricePerKgZar": 2.02,
       "weightEstimated": true,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:40.346Z"
+      "scrapedAt": "2026-07-21T05:38:18.784Z"
     },
     {
       "id": "lancehoudt::2194",
@@ -853,7 +853,7 @@
       "maxPricePerKgZar": 2.02,
       "weightEstimated": true,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:40.346Z"
+      "scrapedAt": "2026-07-21T05:38:18.784Z"
     },
     {
       "id": "cape-town-firewood::8037403885858-44165376377122",
@@ -871,7 +871,7 @@
       "pricePerKgZar": 1.9,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "lancehoudt::451",
@@ -890,7 +890,7 @@
       "maxPricePerKgZar": 2.13,
       "weightEstimated": true,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:40.346Z"
+      "scrapedAt": "2026-07-21T05:38:18.784Z"
     },
     {
       "id": "cape-town-firewood::8079111880994-44312846270754",
@@ -908,7 +908,7 @@
       "pricePerKgZar": 1.95,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8079106146594-44312777031970",
@@ -926,7 +926,7 @@
       "pricePerKgZar": 1.95,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8079110603042-44312821170466",
@@ -944,7 +944,7 @@
       "pricePerKgZar": 1.97,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8079103328546-44312762843426",
@@ -962,7 +962,7 @@
       "pricePerKgZar": 1.97,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "firewood-company::345008",
@@ -979,7 +979,7 @@
       "pricePerKgZar": 1.97,
       "weightEstimated": true,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:37.147Z"
+      "scrapedAt": "2026-07-21T05:38:15.366Z"
     },
     {
       "id": "cape-town-firewood::8859877572898-47412107641122",
@@ -997,7 +997,7 @@
       "pricePerKgZar": 2,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8037404311842-44165377032482",
@@ -1015,7 +1015,7 @@
       "pricePerKgZar": 2,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8037404049698-44165376639266",
@@ -1033,7 +1033,7 @@
       "pricePerKgZar": 2,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8117752332578-44458084925730",
@@ -1051,7 +1051,7 @@
       "pricePerKgZar": 2,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8037403820322-44165376311586",
@@ -1068,7 +1068,7 @@
       "pricePerKgZar": 2,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "firewood-company::210290",
@@ -1085,7 +1085,7 @@
       "pricePerKgZar": 2,
       "weightEstimated": true,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:37.147Z"
+      "scrapedAt": "2026-07-21T05:38:15.366Z"
     },
     {
       "id": "lancehoudt::453",
@@ -1104,7 +1104,7 @@
       "maxPricePerKgZar": 2.6,
       "weightEstimated": true,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:40.346Z"
+      "scrapedAt": "2026-07-21T05:38:18.784Z"
     },
     {
       "id": "lancehoudt::452",
@@ -1123,7 +1123,7 @@
       "maxPricePerKgZar": 2.38,
       "weightEstimated": true,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:40.346Z"
+      "scrapedAt": "2026-07-21T05:38:18.784Z"
     },
     {
       "id": "cape-town-firewood::8117738930466-44458014703906",
@@ -1141,7 +1141,7 @@
       "pricePerKgZar": 2.13,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8037404410146-44165377130786",
@@ -1159,7 +1159,7 @@
       "pricePerKgZar": 2.13,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8037404115234-44165376704802",
@@ -1177,7 +1177,7 @@
       "pricePerKgZar": 2.13,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "firewood-company::624778",
@@ -1194,7 +1194,7 @@
       "pricePerKgZar": 2.13,
       "weightEstimated": true,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:37.147Z"
+      "scrapedAt": "2026-07-21T05:38:15.366Z"
     },
     {
       "id": "cape-town-firewood::8037404475682-44165377229090",
@@ -1212,7 +1212,7 @@
       "pricePerKgZar": 2.2,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8037404180770-44165376770338",
@@ -1230,7 +1230,7 @@
       "pricePerKgZar": 2.2,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8117724676386-44457922396450",
@@ -1248,7 +1248,7 @@
       "pricePerKgZar": 2.2,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "wood-gurus::8149961080990-44580522918046",
@@ -1266,7 +1266,7 @@
       "pricePerKgZar": 2.26,
       "weightEstimated": true,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.115Z"
+      "scrapedAt": "2026-07-21T05:38:13.431Z"
     },
     {
       "id": "cape-town-firewood::8117702852898-44457860530466",
@@ -1284,7 +1284,7 @@
       "pricePerKgZar": 2.28,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8037404541218-44165377294626",
@@ -1302,7 +1302,7 @@
       "pricePerKgZar": 2.28,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8037403984162-44165376573730",
@@ -1320,7 +1320,7 @@
       "pricePerKgZar": 2.28,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8079120302370-44312922390818",
@@ -1338,7 +1338,7 @@
       "pricePerKgZar": 2.29,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8079116992802-44312911610146",
@@ -1356,7 +1356,7 @@
       "pricePerKgZar": 2.29,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8117662023970-44457701769506",
@@ -1374,7 +1374,7 @@
       "pricePerKgZar": 2.29,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "wood-bros::bulk-sekelbos-wood",
@@ -1391,7 +1391,7 @@
       "pricePerKgZar": 2.33,
       "weightEstimated": true,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:49.811Z"
+      "scrapedAt": "2026-07-21T05:38:33.810Z"
     },
     {
       "id": "wood-bros::soetdoring-fire-pace-wood-1000-pieces",
@@ -1408,7 +1408,7 @@
       "pricePerKgZar": 2.37,
       "weightEstimated": true,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:55.943Z"
+      "scrapedAt": "2026-07-21T05:38:41.747Z"
     },
     {
       "id": "wood-bros::soetdoring-fire-pace-wood-500-pieces",
@@ -1425,7 +1425,7 @@
       "pricePerKgZar": 2.47,
       "weightEstimated": true,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:57:10.517Z"
+      "scrapedAt": "2026-07-21T05:38:28.656Z"
     },
     {
       "id": "cape-town-firewood::8088290394402-44340949778722",
@@ -1443,7 +1443,7 @@
       "pricePerKgZar": 2.5,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::9268108493090-48567928488226",
@@ -1461,7 +1461,7 @@
       "pricePerKgZar": 2.5,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::9592727568674-49488589750562",
@@ -1478,7 +1478,7 @@
       "pricePerKgZar": 2.53,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::9592727568674-49488589783330",
@@ -1495,7 +1495,7 @@
       "pricePerKgZar": 2.55,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "mother-city-firewood::8597519564963-46517862957219",
@@ -1513,7 +1513,7 @@
       "pricePerKgZar": 2.6,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "cape-town-firewood::9592727568674-49488589717794",
@@ -1531,7 +1531,7 @@
       "pricePerKgZar": 2.6,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8088290394402-44340949745954",
@@ -1549,7 +1549,7 @@
       "pricePerKgZar": 2.6,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "mother-city-firewood::8879024242851-46319075262627",
@@ -1567,7 +1567,7 @@
       "pricePerKgZar": 2.62,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "mother-city-firewood::8879024242851-46319075229859",
@@ -1585,7 +1585,7 @@
       "pricePerKgZar": 2.67,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "mother-city-firewood::8597519564963-45355914100899",
@@ -1603,7 +1603,7 @@
       "pricePerKgZar": 2.67,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "mother-city-firewood::8597519564963-45355914068131",
@@ -1621,7 +1621,7 @@
       "pricePerKgZar": 2.7,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "cape-town-firewood::8120726290722-44468362838306",
@@ -1638,7 +1638,7 @@
       "pricePerKgZar": 2.7,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "mother-city-firewood::8879024242851-46319075164323",
@@ -1656,7 +1656,7 @@
       "pricePerKgZar": 2.75,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "cape-town-firewood::8310227763490-45291982029090",
@@ -1674,7 +1674,7 @@
       "pricePerKgZar": 2.75,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "mother-city-firewood::8879024242851-46319075131555",
@@ -1692,7 +1692,7 @@
       "pricePerKgZar": 2.8,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "mother-city-firewood::8597519564963-45355914035363",
@@ -1710,7 +1710,7 @@
       "pricePerKgZar": 2.8,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "cape-town-firewood::9592727568674-49488589685026",
@@ -1727,7 +1727,7 @@
       "pricePerKgZar": 2.8,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8120684183842-44468237238562",
@@ -1745,7 +1745,7 @@
       "pricePerKgZar": 2.8,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "mother-city-firewood::8597519564963-45355914002595",
@@ -1763,7 +1763,7 @@
       "pricePerKgZar": 2.83,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "mother-city-firewood::8597519564963-45355913969827",
@@ -1781,7 +1781,7 @@
       "pricePerKgZar": 2.89,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "cape-town-firewood::9592727568674-49488589652258",
@@ -1798,7 +1798,7 @@
       "pricePerKgZar": 2.89,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "wood-bros::rooibos-braai-wood-1000-pieces",
@@ -1815,7 +1815,7 @@
       "pricePerKgZar": 2.92,
       "weightEstimated": true,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:57:22.286Z"
+      "scrapedAt": "2026-07-21T05:38:46.531Z"
     },
     {
       "id": "mother-city-firewood::8879024242851-46319075098787",
@@ -1833,7 +1833,7 @@
       "pricePerKgZar": 2.93,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "cape-town-firewood::8079124857122-44312952897826",
@@ -1851,7 +1851,7 @@
       "pricePerKgZar": 2.95,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8079122727202-44312935366946",
@@ -1869,7 +1869,7 @@
       "pricePerKgZar": 2.97,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "mother-city-firewood::8879024242851-46319075066019",
@@ -1887,7 +1887,61 @@
       "pricePerKgZar": 2.99,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
+    },
+    {
+      "id": "mother-city-firewood::9042147246243-47408201466019",
+      "vendorId": "mother-city-firewood",
+      "vendorName": "Mother City Firewood",
+      "title": "Kaggel Wood Jumbo Bags | Premium Cape Kaggel Hout — 50 Bags",
+      "url": "https://www.mothercityfirewood.co.za/products/kaggel-wood-hout-jumbo-bags-cape-town?variant=47408201466019",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0670/1508/2147/files/Kaggel_Wood_Hout_Mix_-_Fireplace_and_Pizza_Oven_Jumbo_Bags_Cape_Town.jpg?v=1772983796",
+      "species": "unknown",
+      "usage": "fireplace",
+      "packFormat": "pallet",
+      "priceZar": 4499,
+      "regularPriceZar": 0,
+      "weightKg": 1500,
+      "pricePerKgZar": 3,
+      "weightEstimated": false,
+      "inStock": true,
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
+    },
+    {
+      "id": "mother-city-firewood::8917031649443-46470842319011",
+      "vendorId": "mother-city-firewood",
+      "vendorName": "Mother City Firewood",
+      "title": "Wattle Wood Bulk | Jumbo Bags (XL) — 50 Bags",
+      "url": "https://www.mothercityfirewood.co.za/products/wattle-wood-bulk-jumbo-bags?variant=46470842319011",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0670/1508/2147/files/wattle-wood-bulk-jumbo-bags-cape-town.jpg?v=1761956644",
+      "species": "black-wattle",
+      "usage": "both",
+      "packFormat": "pallet",
+      "priceZar": 4499,
+      "regularPriceZar": 0,
+      "weightKg": 1500,
+      "pricePerKgZar": 3,
+      "weightEstimated": false,
+      "inStock": true,
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
+    },
+    {
+      "id": "mother-city-firewood::8762063716515-46431971639459",
+      "vendorId": "mother-city-firewood",
+      "vendorName": "Mother City Firewood",
+      "title": "Blue Gum Wood Bulk | Jumbo Bags (XL) — 50 Bags",
+      "url": "https://www.mothercityfirewood.co.za/products/blue-gum-wood-bulk-jumbo-bags?variant=46431971639459",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0670/1508/2147/files/Blue_Gum_Wood_Bulk_-_Jumbo_Bags_XL.jpg?v=1755411694",
+      "species": "blue-gum",
+      "usage": "both",
+      "packFormat": "pallet",
+      "priceZar": 4499,
+      "regularPriceZar": 0,
+      "weightKg": 1500,
+      "pricePerKgZar": 3,
+      "weightEstimated": false,
+      "inStock": true,
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "cape-town-firewood::8037404639522-44165377524002",
@@ -1905,7 +1959,7 @@
       "pricePerKgZar": 3,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "wood-bros::sekelbos-braai-wood-500-pieces",
@@ -1922,7 +1976,7 @@
       "pricePerKgZar": 3,
       "weightEstimated": true,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:57:12.534Z"
+      "scrapedAt": "2026-07-21T05:38:43.429Z"
     },
     {
       "id": "wood-bros::kameeldoring-braai-wood",
@@ -1939,7 +1993,7 @@
       "pricePerKgZar": 3.05,
       "weightEstimated": true,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:57:08.177Z"
+      "scrapedAt": "2026-07-21T05:38:48.039Z"
     },
     {
       "id": "cape-town-firewood::8037404770594-44165377655074",
@@ -1957,43 +2011,61 @@
       "pricePerKgZar": 3.1,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
-      "id": "mother-city-firewood::8917031649443-46470842319011",
+      "id": "mother-city-firewood::9042147246243-47408201433251",
       "vendorId": "mother-city-firewood",
       "vendorName": "Mother City Firewood",
-      "title": "Wattle Wood Bulk | Jumbo Bags (XL) — 50 Bags",
-      "url": "https://www.mothercityfirewood.co.za/products/wattle-wood-bulk-jumbo-bags?variant=46470842319011",
+      "title": "Kaggel Wood Jumbo Bags | Premium Cape Kaggel Hout — 40 Bags",
+      "url": "https://www.mothercityfirewood.co.za/products/kaggel-wood-hout-jumbo-bags-cape-town?variant=47408201433251",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0670/1508/2147/files/Kaggel_Wood_Hout_Mix_-_Fireplace_and_Pizza_Oven_Jumbo_Bags_Cape_Town.jpg?v=1772983796",
+      "species": "unknown",
+      "usage": "fireplace",
+      "packFormat": "pallet",
+      "priceZar": 3749,
+      "regularPriceZar": 0,
+      "weightKg": 1200,
+      "pricePerKgZar": 3.12,
+      "weightEstimated": false,
+      "inStock": true,
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
+    },
+    {
+      "id": "mother-city-firewood::8917031649443-46470842286243",
+      "vendorId": "mother-city-firewood",
+      "vendorName": "Mother City Firewood",
+      "title": "Wattle Wood Bulk | Jumbo Bags (XL) — 40 Bags",
+      "url": "https://www.mothercityfirewood.co.za/products/wattle-wood-bulk-jumbo-bags?variant=46470842286243",
       "imageUrl": "https://cdn.shopify.com/s/files/1/0670/1508/2147/files/wattle-wood-bulk-jumbo-bags-cape-town.jpg?v=1761956644",
       "species": "black-wattle",
       "usage": "both",
       "packFormat": "pallet",
-      "priceZar": 4699,
+      "priceZar": 3749,
       "regularPriceZar": 0,
-      "weightKg": 1500,
-      "pricePerKgZar": 3.13,
+      "weightKg": 1200,
+      "pricePerKgZar": 3.12,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
-      "id": "mother-city-firewood::8762063716515-46431971639459",
+      "id": "mother-city-firewood::8762063716515-45836274663587",
       "vendorId": "mother-city-firewood",
       "vendorName": "Mother City Firewood",
-      "title": "Blue Gum Wood Bulk | Jumbo Bags (XL) — 50 Bags",
-      "url": "https://www.mothercityfirewood.co.za/products/blue-gum-wood-bulk-jumbo-bags?variant=46431971639459",
+      "title": "Blue Gum Wood Bulk | Jumbo Bags (XL) — 40 Bags",
+      "url": "https://www.mothercityfirewood.co.za/products/blue-gum-wood-bulk-jumbo-bags?variant=45836274663587",
       "imageUrl": "https://cdn.shopify.com/s/files/1/0670/1508/2147/files/Blue_Gum_Wood_Bulk_-_Jumbo_Bags_XL.jpg?v=1755411694",
       "species": "blue-gum",
       "usage": "both",
       "packFormat": "pallet",
-      "priceZar": 4699,
+      "priceZar": 3749,
       "regularPriceZar": 0,
-      "weightKg": 1500,
-      "pricePerKgZar": 3.13,
+      "weightKg": 1200,
+      "pricePerKgZar": 3.12,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "wood-gurus::8433528340638-45970048123038",
@@ -2011,7 +2083,7 @@
       "pricePerKgZar": 3.14,
       "weightEstimated": true,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.115Z"
+      "scrapedAt": "2026-07-21T05:38:13.431Z"
     },
     {
       "id": "cape-town-firewood::9897617129762-50480507846946",
@@ -2029,7 +2101,7 @@
       "pricePerKgZar": 3.14,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8037404836130-44165377720610",
@@ -2047,25 +2119,7 @@
       "pricePerKgZar": 3.16,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
-    },
-    {
-      "id": "mother-city-firewood::8917031649443-46470842286243",
-      "vendorId": "mother-city-firewood",
-      "vendorName": "Mother City Firewood",
-      "title": "Wattle Wood Bulk | Jumbo Bags (XL) — 40 Bags",
-      "url": "https://www.mothercityfirewood.co.za/products/wattle-wood-bulk-jumbo-bags?variant=46470842286243",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0670/1508/2147/files/wattle-wood-bulk-jumbo-bags-cape-town.jpg?v=1761956644",
-      "species": "black-wattle",
-      "usage": "both",
-      "packFormat": "pallet",
-      "priceZar": 3799,
-      "regularPriceZar": 0,
-      "weightKg": 1200,
-      "pricePerKgZar": 3.17,
-      "weightEstimated": false,
-      "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "mother-city-firewood::8915949912227-46467919380643",
@@ -2083,25 +2137,7 @@
       "pricePerKgZar": 3.17,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
-    },
-    {
-      "id": "mother-city-firewood::8762063716515-45836274663587",
-      "vendorId": "mother-city-firewood",
-      "vendorName": "Mother City Firewood",
-      "title": "Blue Gum Wood Bulk | Jumbo Bags (XL) — 40 Bags",
-      "url": "https://www.mothercityfirewood.co.za/products/blue-gum-wood-bulk-jumbo-bags?variant=45836274663587",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0670/1508/2147/files/Blue_Gum_Wood_Bulk_-_Jumbo_Bags_XL.jpg?v=1755411694",
-      "species": "blue-gum",
-      "usage": "both",
-      "packFormat": "pallet",
-      "priceZar": 3799,
-      "regularPriceZar": 0,
-      "weightKg": 1200,
-      "pricePerKgZar": 3.17,
-      "weightEstimated": false,
-      "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "cape-town-firewood::8079126004002-44312961188130",
@@ -2119,7 +2155,25 @@
       "pricePerKgZar": 3.19,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
+    },
+    {
+      "id": "mother-city-firewood::9042147246243-47408201400483",
+      "vendorId": "mother-city-firewood",
+      "vendorName": "Mother City Firewood",
+      "title": "Kaggel Wood Jumbo Bags | Premium Cape Kaggel Hout — 30 Bags",
+      "url": "https://www.mothercityfirewood.co.za/products/kaggel-wood-hout-jumbo-bags-cape-town?variant=47408201400483",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0670/1508/2147/files/Kaggel_Wood_Hout_Mix_-_Fireplace_and_Pizza_Oven_Jumbo_Bags_Cape_Town.jpg?v=1772983796",
+      "species": "unknown",
+      "usage": "fireplace",
+      "packFormat": "pallet",
+      "priceZar": 2899,
+      "regularPriceZar": 0,
+      "weightKg": 900,
+      "pricePerKgZar": 3.22,
+      "weightEstimated": false,
+      "inStock": true,
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "mother-city-firewood::8917031649443-46470842253475",
@@ -2137,7 +2191,7 @@
       "pricePerKgZar": 3.22,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "mother-city-firewood::8762063716515-45836274630819",
@@ -2154,7 +2208,7 @@
       "pricePerKgZar": 3.22,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "wood-bros::swarthaak-braai-wood-1000-pieces",
@@ -2171,25 +2225,7 @@
       "pricePerKgZar": 3.24,
       "weightEstimated": true,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:59.561Z"
-    },
-    {
-      "id": "mother-city-firewood::8917031649443-46470842220707",
-      "vendorId": "mother-city-firewood",
-      "vendorName": "Mother City Firewood",
-      "title": "Wattle Wood Bulk | Jumbo Bags (XL) — 20 Bags",
-      "url": "https://www.mothercityfirewood.co.za/products/wattle-wood-bulk-jumbo-bags?variant=46470842220707",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0670/1508/2147/files/wattle-wood-bulk-jumbo-bags-cape-town.jpg?v=1761956644",
-      "species": "black-wattle",
-      "usage": "both",
-      "packFormat": "pallet",
-      "priceZar": 1949,
-      "regularPriceZar": 0,
-      "weightKg": 600,
-      "pricePerKgZar": 3.25,
-      "weightEstimated": false,
-      "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:38.442Z"
     },
     {
       "id": "mother-city-firewood::8915949912227-46467919347875",
@@ -2207,24 +2243,7 @@
       "pricePerKgZar": 3.25,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
-    },
-    {
-      "id": "mother-city-firewood::8762063716515-45836274598051",
-      "vendorId": "mother-city-firewood",
-      "vendorName": "Mother City Firewood",
-      "title": "Blue Gum Wood Bulk | Jumbo Bags (XL) — 20 Bags",
-      "url": "https://www.mothercityfirewood.co.za/products/blue-gum-wood-bulk-jumbo-bags?variant=45836274598051",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0670/1508/2147/files/Blue_Gum_Wood_Bulk_-_Jumbo_Bags_XL.jpg?v=1755411694",
-      "species": "blue-gum",
-      "usage": "both",
-      "packFormat": "pallet",
-      "priceZar": 1949,
-      "weightKg": 600,
-      "pricePerKgZar": 3.25,
-      "weightEstimated": false,
-      "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "wood-bros::swarthaak-braai-wood-500-pieces",
@@ -2241,42 +2260,60 @@
       "pricePerKgZar": 3.32,
       "weightEstimated": true,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:57:06.197Z"
+      "scrapedAt": "2026-07-21T05:38:30.452Z"
     },
     {
-      "id": "mother-city-firewood::8917031649443-46470842187939",
+      "id": "mother-city-firewood::9042147246243-47408201367715",
       "vendorId": "mother-city-firewood",
       "vendorName": "Mother City Firewood",
-      "title": "Wattle Wood Bulk | Jumbo Bags (XL) — 10 Bags",
-      "url": "https://www.mothercityfirewood.co.za/products/wattle-wood-bulk-jumbo-bags?variant=46470842187939",
+      "title": "Kaggel Wood Jumbo Bags | Premium Cape Kaggel Hout — 20 Bags",
+      "url": "https://www.mothercityfirewood.co.za/products/kaggel-wood-hout-jumbo-bags-cape-town?variant=47408201367715",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0670/1508/2147/files/Kaggel_Wood_Hout_Mix_-_Fireplace_and_Pizza_Oven_Jumbo_Bags_Cape_Town.jpg?v=1772983796",
+      "species": "unknown",
+      "usage": "fireplace",
+      "packFormat": "pallet",
+      "priceZar": 1999,
+      "regularPriceZar": 0,
+      "weightKg": 600,
+      "pricePerKgZar": 3.33,
+      "weightEstimated": false,
+      "inStock": true,
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
+    },
+    {
+      "id": "mother-city-firewood::8917031649443-46470842220707",
+      "vendorId": "mother-city-firewood",
+      "vendorName": "Mother City Firewood",
+      "title": "Wattle Wood Bulk | Jumbo Bags (XL) — 20 Bags",
+      "url": "https://www.mothercityfirewood.co.za/products/wattle-wood-bulk-jumbo-bags?variant=46470842220707",
       "imageUrl": "https://cdn.shopify.com/s/files/1/0670/1508/2147/files/wattle-wood-bulk-jumbo-bags-cape-town.jpg?v=1761956644",
       "species": "black-wattle",
       "usage": "both",
       "packFormat": "pallet",
-      "priceZar": 999,
+      "priceZar": 1999,
       "regularPriceZar": 0,
-      "weightKg": 300,
+      "weightKg": 600,
       "pricePerKgZar": 3.33,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
-      "id": "mother-city-firewood::8762063716515-45836274565283",
+      "id": "mother-city-firewood::8762063716515-45836274598051",
       "vendorId": "mother-city-firewood",
       "vendorName": "Mother City Firewood",
-      "title": "Blue Gum Wood Bulk | Jumbo Bags (XL) — 10 Bags",
-      "url": "https://www.mothercityfirewood.co.za/products/blue-gum-wood-bulk-jumbo-bags?variant=45836274565283",
+      "title": "Blue Gum Wood Bulk | Jumbo Bags (XL) — 20 Bags",
+      "url": "https://www.mothercityfirewood.co.za/products/blue-gum-wood-bulk-jumbo-bags?variant=45836274598051",
       "imageUrl": "https://cdn.shopify.com/s/files/1/0670/1508/2147/files/Blue_Gum_Wood_Bulk_-_Jumbo_Bags_XL.jpg?v=1755411694",
       "species": "blue-gum",
       "usage": "both",
       "packFormat": "pallet",
-      "priceZar": 999,
-      "weightKg": 300,
+      "priceZar": 1999,
+      "weightKg": 600,
       "pricePerKgZar": 3.33,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "cape-town-firewood::9602864513314-49525103657250",
@@ -2294,7 +2331,7 @@
       "pricePerKgZar": 3.33,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "mother-city-firewood::8915949912227-46467919315107",
@@ -2312,7 +2349,114 @@
       "pricePerKgZar": 3.44,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
+    },
+    {
+      "id": "mother-city-firewood::9042147246243-47408201334947",
+      "vendorId": "mother-city-firewood",
+      "vendorName": "Mother City Firewood",
+      "title": "Kaggel Wood Jumbo Bags | Premium Cape Kaggel Hout — 10 Bags",
+      "url": "https://www.mothercityfirewood.co.za/products/kaggel-wood-hout-jumbo-bags-cape-town?variant=47408201334947",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0670/1508/2147/files/Kaggel_Wood_Hout_Mix_-_Fireplace_and_Pizza_Oven_Jumbo_Bags_Cape_Town.jpg?v=1772983796",
+      "species": "unknown",
+      "usage": "fireplace",
+      "packFormat": "pallet",
+      "priceZar": 1049,
+      "regularPriceZar": 0,
+      "weightKg": 300,
+      "pricePerKgZar": 3.5,
+      "weightEstimated": false,
+      "inStock": true,
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
+    },
+    {
+      "id": "mother-city-firewood::8917031649443-46470842187939",
+      "vendorId": "mother-city-firewood",
+      "vendorName": "Mother City Firewood",
+      "title": "Wattle Wood Bulk | Jumbo Bags (XL) — 10 Bags",
+      "url": "https://www.mothercityfirewood.co.za/products/wattle-wood-bulk-jumbo-bags?variant=46470842187939",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0670/1508/2147/files/wattle-wood-bulk-jumbo-bags-cape-town.jpg?v=1761956644",
+      "species": "black-wattle",
+      "usage": "both",
+      "packFormat": "pallet",
+      "priceZar": 1049,
+      "regularPriceZar": 0,
+      "weightKg": 300,
+      "pricePerKgZar": 3.5,
+      "weightEstimated": false,
+      "inStock": true,
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
+    },
+    {
+      "id": "mother-city-firewood::8597516189859-45280024363171",
+      "vendorId": "mother-city-firewood",
+      "vendorName": "Mother City Firewood",
+      "title": "Kaggelhout Bulk | Pizza Wood | Large Bags — 50 Bags",
+      "url": "https://www.mothercityfirewood.co.za/products/kaggelhout-firewood-mix-pizza-wood-large-bags?variant=45280024363171",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0670/1508/2147/files/Kaggelhout-Firewood-Mix-Pizza-Wood-Large-Bags.jpg?v=1734808703",
+      "species": "unknown",
+      "usage": "fireplace",
+      "packFormat": "pallet",
+      "priceZar": 3499,
+      "regularPriceZar": 0,
+      "weightKg": 1000,
+      "pricePerKgZar": 3.5,
+      "weightEstimated": false,
+      "inStock": true,
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
+    },
+    {
+      "id": "mother-city-firewood::8762063716515-45836274565283",
+      "vendorId": "mother-city-firewood",
+      "vendorName": "Mother City Firewood",
+      "title": "Blue Gum Wood Bulk | Jumbo Bags (XL) — 10 Bags",
+      "url": "https://www.mothercityfirewood.co.za/products/blue-gum-wood-bulk-jumbo-bags?variant=45836274565283",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0670/1508/2147/files/Blue_Gum_Wood_Bulk_-_Jumbo_Bags_XL.jpg?v=1755411694",
+      "species": "blue-gum",
+      "usage": "both",
+      "packFormat": "pallet",
+      "priceZar": 1049,
+      "weightKg": 300,
+      "pricePerKgZar": 3.5,
+      "weightEstimated": false,
+      "inStock": true,
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
+    },
+    {
+      "id": "mother-city-firewood::8597519728803-45243861205155",
+      "vendorId": "mother-city-firewood",
+      "vendorName": "Mother City Firewood",
+      "title": "Blue Gum Firewood Bulk | Large Bags — 50 Bags",
+      "url": "https://www.mothercityfirewood.co.za/products/blue-gum-firewood-large-bags?variant=45243861205155",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0670/1508/2147/files/Blue_Gum_Firewood_Large_Bags.jpg?v=1752785328",
+      "species": "blue-gum",
+      "usage": "both",
+      "packFormat": "pallet",
+      "priceZar": 3499,
+      "regularPriceZar": 0,
+      "weightKg": 1000,
+      "pricePerKgZar": 3.5,
+      "weightEstimated": false,
+      "inStock": true,
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
+    },
+    {
+      "id": "mother-city-firewood::8597518483619-46341456461987",
+      "vendorId": "mother-city-firewood",
+      "vendorName": "Mother City Firewood",
+      "title": "Black Wattle Firewood Bulk | Large Bags — 50 Bags",
+      "url": "https://www.mothercityfirewood.co.za/products/black-wattle-firewood-large-bags?variant=46341456461987",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0670/1508/2147/files/Black-Wattle-Firewood-Large-Bags.jpg?v=1755411130",
+      "species": "black-wattle",
+      "usage": "both",
+      "packFormat": "pallet",
+      "priceZar": 3499,
+      "regularPriceZar": 0,
+      "weightKg": 1000,
+      "pricePerKgZar": 3.5,
+      "weightEstimated": false,
+      "inStock": true,
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "cape-town-firewood::8412487057698-45716565131554",
@@ -2330,7 +2474,25 @@
       "pricePerKgZar": 3.57,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
+    },
+    {
+      "id": "mother-city-firewood::9042147246243-47408201302179",
+      "vendorId": "mother-city-firewood",
+      "vendorName": "Mother City Firewood",
+      "title": "Kaggel Wood Jumbo Bags | Premium Cape Kaggel Hout — 5 Bags",
+      "url": "https://www.mothercityfirewood.co.za/products/kaggel-wood-hout-jumbo-bags-cape-town?variant=47408201302179",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0670/1508/2147/files/Kaggel_Wood_Hout_Mix_-_Fireplace_and_Pizza_Oven_Jumbo_Bags_Cape_Town.jpg?v=1772983796",
+      "species": "unknown",
+      "usage": "fireplace",
+      "packFormat": "pallet",
+      "priceZar": 549,
+      "regularPriceZar": 0,
+      "weightKg": 150,
+      "pricePerKgZar": 3.66,
+      "weightEstimated": false,
+      "inStock": true,
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "mother-city-firewood::8917031649443-46470842155171",
@@ -2348,7 +2510,7 @@
       "pricePerKgZar": 3.66,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "mother-city-firewood::8762063716515-45836274532515",
@@ -2365,25 +2527,7 @@
       "pricePerKgZar": 3.66,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
-    },
-    {
-      "id": "mother-city-firewood::9042147246243-47408201466019",
-      "vendorId": "mother-city-firewood",
-      "vendorName": "Mother City Firewood",
-      "title": "Kaggel Wood Jumbo Bags | Premium Cape Kaggel Hout — 50 Bags",
-      "url": "https://www.mothercityfirewood.co.za/products/kaggel-wood-hout-jumbo-bags-cape-town?variant=47408201466019",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0670/1508/2147/files/Kaggel_Wood_Hout_Mix_-_Fireplace_and_Pizza_Oven_Jumbo_Bags_Cape_Town.jpg?v=1772983796",
-      "species": "unknown",
-      "usage": "fireplace",
-      "packFormat": "pallet",
-      "priceZar": 5499,
-      "regularPriceZar": 0,
-      "weightKg": 1500,
-      "pricePerKgZar": 3.67,
-      "weightEstimated": false,
-      "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "cape-town-firewood::8114477072674-44443045331234",
@@ -2401,7 +2545,7 @@
       "pricePerKgZar": 3.71,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8114952896802-44444851994914",
@@ -2419,7 +2563,7 @@
       "pricePerKgZar": 3.71,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "mother-city-firewood::8915949912227-46467919282339",
@@ -2437,7 +2581,61 @@
       "pricePerKgZar": 3.75,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
+    },
+    {
+      "id": "mother-city-firewood::8597516189859-45280024330403",
+      "vendorId": "mother-city-firewood",
+      "vendorName": "Mother City Firewood",
+      "title": "Kaggelhout Bulk | Pizza Wood | Large Bags — 40 Bags",
+      "url": "https://www.mothercityfirewood.co.za/products/kaggelhout-firewood-mix-pizza-wood-large-bags?variant=45280024330403",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0670/1508/2147/files/Kaggelhout-Firewood-Mix-Pizza-Wood-Large-Bags.jpg?v=1734808703",
+      "species": "unknown",
+      "usage": "fireplace",
+      "packFormat": "pallet",
+      "priceZar": 2999,
+      "regularPriceZar": 0,
+      "weightKg": 800,
+      "pricePerKgZar": 3.75,
+      "weightEstimated": false,
+      "inStock": true,
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
+    },
+    {
+      "id": "mother-city-firewood::8597519728803-45243861172387",
+      "vendorId": "mother-city-firewood",
+      "vendorName": "Mother City Firewood",
+      "title": "Blue Gum Firewood Bulk | Large Bags — 40 Bags",
+      "url": "https://www.mothercityfirewood.co.za/products/blue-gum-firewood-large-bags?variant=45243861172387",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0670/1508/2147/files/Blue_Gum_Firewood_Large_Bags.jpg?v=1752785328",
+      "species": "blue-gum",
+      "usage": "both",
+      "packFormat": "pallet",
+      "priceZar": 2999,
+      "regularPriceZar": 0,
+      "weightKg": 800,
+      "pricePerKgZar": 3.75,
+      "weightEstimated": false,
+      "inStock": true,
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
+    },
+    {
+      "id": "mother-city-firewood::8597518483619-45242011254947",
+      "vendorId": "mother-city-firewood",
+      "vendorName": "Mother City Firewood",
+      "title": "Black Wattle Firewood Bulk | Large Bags — 40 Bags",
+      "url": "https://www.mothercityfirewood.co.za/products/black-wattle-firewood-large-bags?variant=45242011254947",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0670/1508/2147/files/Black-Wattle-Firewood-Large-Bags.jpg?v=1755411130",
+      "species": "black-wattle",
+      "usage": "both",
+      "packFormat": "pallet",
+      "priceZar": 2999,
+      "regularPriceZar": 0,
+      "weightKg": 800,
+      "pricePerKgZar": 3.75,
+      "weightEstimated": false,
+      "inStock": true,
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "mother-city-firewood::8597520253091-45446594199715",
@@ -2455,24 +2653,7 @@
       "pricePerKgZar": 3.75,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
-    },
-    {
-      "id": "wood-bros::firewood-for-restaurants",
-      "vendorId": "wood-bros",
-      "vendorName": "The Wood Bros",
-      "title": "Restaurant Blue Gum Bundle FireWood Bags (20x20kg)",
-      "url": "https://www.thewoodbros.co.za/product-page/firewood-for-restaurants",
-      "imageUrl": "https://static.wixstatic.com/media/b4fa82_617b3c38c62d4faabc0582cb40d92161~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
-      "species": "blue-gum",
-      "usage": "both",
-      "packFormat": "pallet",
-      "priceZar": 1500,
-      "weightKg": 400,
-      "pricePerKgZar": 3.75,
-      "weightEstimated": false,
-      "inStock": false,
-      "scrapedAt": "2026-07-20T05:57:04.085Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "wood-bros::black-wattle-firewood-bags-20x20kg",
@@ -2489,7 +2670,24 @@
       "pricePerKgZar": 3.75,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:57:26.007Z"
+      "scrapedAt": "2026-07-21T05:38:28.751Z"
+    },
+    {
+      "id": "wood-bros::firewood-for-restaurants",
+      "vendorId": "wood-bros",
+      "vendorName": "The Wood Bros",
+      "title": "Restaurant Blue Gum Bundle FireWood Bags (20x20kg)",
+      "url": "https://www.thewoodbros.co.za/product-page/firewood-for-restaurants",
+      "imageUrl": "https://static.wixstatic.com/media/b4fa82_617b3c38c62d4faabc0582cb40d92161~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
+      "species": "blue-gum",
+      "usage": "both",
+      "packFormat": "pallet",
+      "priceZar": 1500,
+      "weightKg": 400,
+      "pricePerKgZar": 3.75,
+      "weightEstimated": false,
+      "inStock": false,
+      "scrapedAt": "2026-07-21T05:38:40.076Z"
     },
     {
       "id": "mother-city-firewood::8597520253091-45446594166947",
@@ -2507,7 +2705,7 @@
       "pricePerKgZar": 3.78,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "cape-town-firewood::8037403754786-44514407448866",
@@ -2525,7 +2723,7 @@
       "pricePerKgZar": 3.8,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "mother-city-firewood::8597520253091-45446594134179",
@@ -2543,25 +2741,7 @@
       "pricePerKgZar": 3.81,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
-    },
-    {
-      "id": "mother-city-firewood::9042147246243-47408201433251",
-      "vendorId": "mother-city-firewood",
-      "vendorName": "Mother City Firewood",
-      "title": "Kaggel Wood Jumbo Bags | Premium Cape Kaggel Hout — 40 Bags",
-      "url": "https://www.mothercityfirewood.co.za/products/kaggel-wood-hout-jumbo-bags-cape-town?variant=47408201433251",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0670/1508/2147/files/Kaggel_Wood_Hout_Mix_-_Fireplace_and_Pizza_Oven_Jumbo_Bags_Cape_Town.jpg?v=1772983796",
-      "species": "unknown",
-      "usage": "fireplace",
-      "packFormat": "pallet",
-      "priceZar": 4599,
-      "regularPriceZar": 0,
-      "weightKg": 1200,
-      "pricePerKgZar": 3.83,
-      "weightEstimated": false,
-      "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "mother-city-firewood::8915949912227-46467919249571",
@@ -2579,7 +2759,7 @@
       "pricePerKgZar": 3.83,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "mother-city-firewood::8771185410211-45871823880355",
@@ -2597,7 +2777,61 @@
       "pricePerKgZar": 3.83,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
+    },
+    {
+      "id": "mother-city-firewood::8597516189859-45280024297635",
+      "vendorId": "mother-city-firewood",
+      "vendorName": "Mother City Firewood",
+      "title": "Kaggelhout Bulk | Pizza Wood | Large Bags — 30 Bags",
+      "url": "https://www.mothercityfirewood.co.za/products/kaggelhout-firewood-mix-pizza-wood-large-bags?variant=45280024297635",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0670/1508/2147/files/Kaggelhout-Firewood-Mix-Pizza-Wood-Large-Bags.jpg?v=1734808703",
+      "species": "unknown",
+      "usage": "fireplace",
+      "packFormat": "pallet",
+      "priceZar": 2299,
+      "regularPriceZar": 0,
+      "weightKg": 600,
+      "pricePerKgZar": 3.83,
+      "weightEstimated": false,
+      "inStock": true,
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
+    },
+    {
+      "id": "mother-city-firewood::8597519728803-45243861139619",
+      "vendorId": "mother-city-firewood",
+      "vendorName": "Mother City Firewood",
+      "title": "Blue Gum Firewood Bulk | Large Bags — 30 Bags",
+      "url": "https://www.mothercityfirewood.co.za/products/blue-gum-firewood-large-bags?variant=45243861139619",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0670/1508/2147/files/Blue_Gum_Firewood_Large_Bags.jpg?v=1752785328",
+      "species": "blue-gum",
+      "usage": "both",
+      "packFormat": "pallet",
+      "priceZar": 2299,
+      "regularPriceZar": 0,
+      "weightKg": 600,
+      "pricePerKgZar": 3.83,
+      "weightEstimated": false,
+      "inStock": true,
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
+    },
+    {
+      "id": "mother-city-firewood::8597518483619-45240751227043",
+      "vendorId": "mother-city-firewood",
+      "vendorName": "Mother City Firewood",
+      "title": "Black Wattle Firewood Bulk | Large Bags — 30 Bags",
+      "url": "https://www.mothercityfirewood.co.za/products/black-wattle-firewood-large-bags?variant=45240751227043",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0670/1508/2147/files/Black-Wattle-Firewood-Large-Bags.jpg?v=1755411130",
+      "species": "black-wattle",
+      "usage": "both",
+      "packFormat": "pallet",
+      "priceZar": 2299,
+      "regularPriceZar": 0,
+      "weightKg": 600,
+      "pricePerKgZar": 3.83,
+      "weightEstimated": false,
+      "inStock": true,
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "mother-city-firewood::8597520253091-45446594101411",
@@ -2615,7 +2849,7 @@
       "pricePerKgZar": 3.86,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "cape-town-firewood::8037403754786-44514407416098",
@@ -2633,7 +2867,7 @@
       "pricePerKgZar": 3.87,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "mother-city-firewood::8917031649443-46470842122403",
@@ -2651,7 +2885,7 @@
       "pricePerKgZar": 3.88,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "mother-city-firewood::8762063716515-45836274499747",
@@ -2668,25 +2902,7 @@
       "pricePerKgZar": 3.88,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
-    },
-    {
-      "id": "mother-city-firewood::9042147246243-47408201400483",
-      "vendorId": "mother-city-firewood",
-      "vendorName": "Mother City Firewood",
-      "title": "Kaggel Wood Jumbo Bags | Premium Cape Kaggel Hout — 30 Bags",
-      "url": "https://www.mothercityfirewood.co.za/products/kaggel-wood-hout-jumbo-bags-cape-town?variant=47408201400483",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0670/1508/2147/files/Kaggel_Wood_Hout_Mix_-_Fireplace_and_Pizza_Oven_Jumbo_Bags_Cape_Town.jpg?v=1772983796",
-      "species": "unknown",
-      "usage": "fireplace",
-      "packFormat": "pallet",
-      "priceZar": 3499,
-      "regularPriceZar": 0,
-      "weightKg": 900,
-      "pricePerKgZar": 3.89,
-      "weightEstimated": false,
-      "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "mother-city-firewood::8771185410211-45871823847587",
@@ -2704,7 +2920,7 @@
       "pricePerKgZar": 3.92,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "mother-city-firewood::8597520253091-45446594068643",
@@ -2722,7 +2938,7 @@
       "pricePerKgZar": 3.92,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "cape-town-firewood::8037403754786-44514407383330",
@@ -2740,7 +2956,7 @@
       "pricePerKgZar": 3.93,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "mother-city-firewood::8771185410211-45871823814819",
@@ -2758,7 +2974,7 @@
       "pricePerKgZar": 3.94,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "cape-town-firewood::8037403754786-44514407350562",
@@ -2776,7 +2992,7 @@
       "pricePerKgZar": 3.95,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "mother-city-firewood::8915949912227-46467919216803",
@@ -2794,7 +3010,7 @@
       "pricePerKgZar": 3.99,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "cape-town-firewood::8037403754786-44514407317794",
@@ -2812,25 +3028,61 @@
       "pricePerKgZar": 3.99,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
-      "id": "mother-city-firewood::9042147246243-47408201367715",
+      "id": "mother-city-firewood::8597516189859-45280024232099",
       "vendorId": "mother-city-firewood",
       "vendorName": "Mother City Firewood",
-      "title": "Kaggel Wood Jumbo Bags | Premium Cape Kaggel Hout — 20 Bags",
-      "url": "https://www.mothercityfirewood.co.za/products/kaggel-wood-hout-jumbo-bags-cape-town?variant=47408201367715",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0670/1508/2147/files/Kaggel_Wood_Hout_Mix_-_Fireplace_and_Pizza_Oven_Jumbo_Bags_Cape_Town.jpg?v=1772983796",
+      "title": "Kaggelhout Bulk | Pizza Wood | Large Bags — 20 Bags",
+      "url": "https://www.mothercityfirewood.co.za/products/kaggelhout-firewood-mix-pizza-wood-large-bags?variant=45280024232099",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0670/1508/2147/files/Kaggelhout-Firewood-Mix-Pizza-Wood-Large-Bags.jpg?v=1734808703",
       "species": "unknown",
       "usage": "fireplace",
       "packFormat": "pallet",
-      "priceZar": 2399,
+      "priceZar": 1599,
       "regularPriceZar": 0,
-      "weightKg": 600,
+      "weightKg": 400,
       "pricePerKgZar": 4,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
+    },
+    {
+      "id": "mother-city-firewood::8597519728803-45243861074083",
+      "vendorId": "mother-city-firewood",
+      "vendorName": "Mother City Firewood",
+      "title": "Blue Gum Firewood Bulk | Large Bags — 20 Bags",
+      "url": "https://www.mothercityfirewood.co.za/products/blue-gum-firewood-large-bags?variant=45243861074083",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0670/1508/2147/files/Blue_Gum_Firewood_Large_Bags.jpg?v=1752785328",
+      "species": "blue-gum",
+      "usage": "both",
+      "packFormat": "pallet",
+      "priceZar": 1599,
+      "regularPriceZar": 0,
+      "weightKg": 400,
+      "pricePerKgZar": 4,
+      "weightEstimated": false,
+      "inStock": true,
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
+    },
+    {
+      "id": "mother-city-firewood::8597518483619-45240751194275",
+      "vendorId": "mother-city-firewood",
+      "vendorName": "Mother City Firewood",
+      "title": "Black Wattle Firewood Bulk | Large Bags — 20 Bags",
+      "url": "https://www.mothercityfirewood.co.za/products/black-wattle-firewood-large-bags?variant=45240751194275",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0670/1508/2147/files/Black-Wattle-Firewood-Large-Bags.jpg?v=1755411130",
+      "species": "black-wattle",
+      "usage": "both",
+      "packFormat": "pallet",
+      "priceZar": 1599,
+      "regularPriceZar": 0,
+      "weightKg": 400,
+      "pricePerKgZar": 4,
+      "weightEstimated": false,
+      "inStock": true,
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "mother-city-firewood::8803779772579-46434475671715",
@@ -2848,7 +3100,7 @@
       "pricePerKgZar": 4,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "mother-city-firewood::8597520253091-45216035504291",
@@ -2866,7 +3118,7 @@
       "pricePerKgZar": 4,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "cape-town-firewood::9617905713442-49615697543458",
@@ -2884,7 +3136,7 @@
       "pricePerKgZar": 4,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8037404606754-44507078852898",
@@ -2902,7 +3154,7 @@
       "pricePerKgZar": 4,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8088314020130-44508890136866",
@@ -2920,7 +3172,7 @@
       "pricePerKgZar": 4,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "mother-city-firewood::8771185410211-45871823749283",
@@ -2938,7 +3190,7 @@
       "pricePerKgZar": 4.08,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "cape-town-firewood::8383468011810-45562049167650",
@@ -2956,7 +3208,7 @@
       "pricePerKgZar": 4.1,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "mother-city-firewood::8597520253091-45216035471523",
@@ -2974,7 +3226,7 @@
       "pricePerKgZar": 4.12,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "cape-town-firewood::8037404606754-44507078820130",
@@ -2992,7 +3244,7 @@
       "pricePerKgZar": 4.12,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8088314020130-44508890104098",
@@ -3010,7 +3262,7 @@
       "pricePerKgZar": 4.12,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8114959843618-44444890235170",
@@ -3028,25 +3280,7 @@
       "pricePerKgZar": 4.14,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
-    },
-    {
-      "id": "mother-city-firewood::9042147246243-47408201334947",
-      "vendorId": "mother-city-firewood",
-      "vendorName": "Mother City Firewood",
-      "title": "Kaggel Wood Jumbo Bags | Premium Cape Kaggel Hout — 10 Bags",
-      "url": "https://www.mothercityfirewood.co.za/products/kaggel-wood-hout-jumbo-bags-cape-town?variant=47408201334947",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0670/1508/2147/files/Kaggel_Wood_Hout_Mix_-_Fireplace_and_Pizza_Oven_Jumbo_Bags_Cape_Town.jpg?v=1772983796",
-      "species": "unknown",
-      "usage": "fireplace",
-      "packFormat": "pallet",
-      "priceZar": 1249,
-      "regularPriceZar": 0,
-      "weightKg": 300,
-      "pricePerKgZar": 4.16,
-      "weightEstimated": false,
-      "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "mother-city-firewood::8771185410211-45871823716515",
@@ -3064,7 +3298,7 @@
       "pricePerKgZar": 4.16,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "mother-city-firewood::8597520253091-45216035438755",
@@ -3082,7 +3316,7 @@
       "pricePerKgZar": 4.16,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "cape-town-firewood::8037404606754-44507078787362",
@@ -3100,7 +3334,7 @@
       "pricePerKgZar": 4.16,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8088314020130-44508890071330",
@@ -3118,7 +3352,7 @@
       "pricePerKgZar": 4.16,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "mother-city-firewood::8803779772579-45998478164131",
@@ -3136,25 +3370,7 @@
       "pricePerKgZar": 4.17,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
-    },
-    {
-      "id": "mother-city-firewood::9042147246243-47408201302179",
-      "vendorId": "mother-city-firewood",
-      "vendorName": "Mother City Firewood",
-      "title": "Kaggel Wood Jumbo Bags | Premium Cape Kaggel Hout — 5 Bags",
-      "url": "https://www.mothercityfirewood.co.za/products/kaggel-wood-hout-jumbo-bags-cape-town?variant=47408201302179",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0670/1508/2147/files/Kaggel_Wood_Hout_Mix_-_Fireplace_and_Pizza_Oven_Jumbo_Bags_Cape_Town.jpg?v=1772983796",
-      "species": "unknown",
-      "usage": "fireplace",
-      "packFormat": "pallet",
-      "priceZar": 629,
-      "regularPriceZar": 0,
-      "weightKg": 150,
-      "pricePerKgZar": 4.19,
-      "weightEstimated": false,
-      "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "mother-city-firewood::8771185410211-45871823683747",
@@ -3172,7 +3388,7 @@
       "pricePerKgZar": 4.19,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "cape-town-firewood::8037404246306-44507047657762",
@@ -3190,7 +3406,61 @@
       "pricePerKgZar": 4.2,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
+    },
+    {
+      "id": "mother-city-firewood::8597516189859-45280024199331",
+      "vendorId": "mother-city-firewood",
+      "vendorName": "Mother City Firewood",
+      "title": "Kaggelhout Bulk | Pizza Wood | Large Bags — 10 Bags",
+      "url": "https://www.mothercityfirewood.co.za/products/kaggelhout-firewood-mix-pizza-wood-large-bags?variant=45280024199331",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0670/1508/2147/files/Kaggelhout-Firewood-Mix-Pizza-Wood-Large-Bags.jpg?v=1734808703",
+      "species": "unknown",
+      "usage": "fireplace",
+      "packFormat": "pallet",
+      "priceZar": 849,
+      "regularPriceZar": 0,
+      "weightKg": 200,
+      "pricePerKgZar": 4.25,
+      "weightEstimated": false,
+      "inStock": true,
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
+    },
+    {
+      "id": "mother-city-firewood::8597519728803-45243861041315",
+      "vendorId": "mother-city-firewood",
+      "vendorName": "Mother City Firewood",
+      "title": "Blue Gum Firewood Bulk | Large Bags — 10 Bags",
+      "url": "https://www.mothercityfirewood.co.za/products/blue-gum-firewood-large-bags?variant=45243861041315",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0670/1508/2147/files/Blue_Gum_Firewood_Large_Bags.jpg?v=1752785328",
+      "species": "blue-gum",
+      "usage": "both",
+      "packFormat": "pallet",
+      "priceZar": 849,
+      "regularPriceZar": 0,
+      "weightKg": 200,
+      "pricePerKgZar": 4.25,
+      "weightEstimated": false,
+      "inStock": true,
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
+    },
+    {
+      "id": "mother-city-firewood::8597518483619-45240751161507",
+      "vendorId": "mother-city-firewood",
+      "vendorName": "Mother City Firewood",
+      "title": "Black Wattle Firewood Bulk | Large Bags — 10 Bags",
+      "url": "https://www.mothercityfirewood.co.za/products/black-wattle-firewood-large-bags?variant=45240751161507",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0670/1508/2147/files/Black-Wattle-Firewood-Large-Bags.jpg?v=1755411130",
+      "species": "black-wattle",
+      "usage": "both",
+      "packFormat": "pallet",
+      "priceZar": 849,
+      "regularPriceZar": 0,
+      "weightKg": 200,
+      "pricePerKgZar": 4.25,
+      "weightEstimated": false,
+      "inStock": true,
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "mother-city-firewood::8597520253091-45216035405987",
@@ -3208,7 +3478,7 @@
       "pricePerKgZar": 4.25,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "cape-town-firewood::9617905713442-49615697477922",
@@ -3226,7 +3496,7 @@
       "pricePerKgZar": 4.25,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8037404606754-44507078754594",
@@ -3244,7 +3514,7 @@
       "pricePerKgZar": 4.25,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8037404246306-44507047624994",
@@ -3262,7 +3532,7 @@
       "pricePerKgZar": 4.25,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8088314020130-44508890038562",
@@ -3280,25 +3550,7 @@
       "pricePerKgZar": 4.25,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
-    },
-    {
-      "id": "mother-city-firewood::9042147246243-47408201269411",
-      "vendorId": "mother-city-firewood",
-      "vendorName": "Mother City Firewood",
-      "title": "Kaggel Wood Jumbo Bags | Premium Cape Kaggel Hout — 1 Bag",
-      "url": "https://www.mothercityfirewood.co.za/products/kaggel-wood-hout-jumbo-bags-cape-town?variant=47408201269411",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0670/1508/2147/files/Kaggel_Wood_Hout_Mix_-_Fireplace_and_Pizza_Oven_Jumbo_Bags_Cape_Town.jpg?v=1772983796",
-      "species": "unknown",
-      "usage": "fireplace",
-      "packFormat": "bag",
-      "priceZar": 129,
-      "regularPriceZar": 0,
-      "weightKg": 30,
-      "pricePerKgZar": 4.3,
-      "weightEstimated": false,
-      "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "mother-city-firewood::8915949912227-46467919184035",
@@ -3316,7 +3568,7 @@
       "pricePerKgZar": 4.3,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "mother-city-firewood::8771185410211-45871823650979",
@@ -3334,7 +3586,7 @@
       "pricePerKgZar": 4.3,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "mother-city-firewood::8803779772579-45998478065827",
@@ -3352,7 +3604,7 @@
       "pricePerKgZar": 4.33,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "mother-city-firewood::8803779772579-45998478131363",
@@ -3370,7 +3622,7 @@
       "pricePerKgZar": 4.33,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "cape-town-firewood::8037404246306-44507047592226",
@@ -3388,7 +3640,7 @@
       "pricePerKgZar": 4.33,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "mother-city-firewood::8597520253091-45216035373219",
@@ -3406,43 +3658,7 @@
       "pricePerKgZar": 4.39,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
-    },
-    {
-      "id": "mother-city-firewood::8597519728803-45243861205155",
-      "vendorId": "mother-city-firewood",
-      "vendorName": "Mother City Firewood",
-      "title": "Blue Gum Firewood Bulk | Large Bags — 50 Bags",
-      "url": "https://www.mothercityfirewood.co.za/products/blue-gum-firewood-large-bags?variant=45243861205155",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0670/1508/2147/files/Blue_Gum_Firewood_Large_Bags.jpg?v=1752785328",
-      "species": "blue-gum",
-      "usage": "both",
-      "packFormat": "pallet",
-      "priceZar": 4399,
-      "regularPriceZar": 0,
-      "weightKg": 1000,
-      "pricePerKgZar": 4.4,
-      "weightEstimated": false,
-      "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
-    },
-    {
-      "id": "mother-city-firewood::8597518483619-46341456461987",
-      "vendorId": "mother-city-firewood",
-      "vendorName": "Mother City Firewood",
-      "title": "Black Wattle Firewood Bulk | Large Bags — 50 Bags",
-      "url": "https://www.mothercityfirewood.co.za/products/black-wattle-firewood-large-bags?variant=46341456461987",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0670/1508/2147/files/Black-Wattle-Firewood-Large-Bags.jpg?v=1755411130",
-      "species": "black-wattle",
-      "usage": "both",
-      "packFormat": "pallet",
-      "priceZar": 4399,
-      "regularPriceZar": 0,
-      "weightKg": 1000,
-      "pricePerKgZar": 4.4,
-      "weightEstimated": false,
-      "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "cape-town-firewood::9454036353314-49071312011554",
@@ -3460,7 +3676,7 @@
       "pricePerKgZar": 4.4,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "mother-city-firewood::8597520253091-46518054256803",
@@ -3478,7 +3694,79 @@
       "pricePerKgZar": 4.45,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
+    },
+    {
+      "id": "wood-gurus::8680839938206-46697620799646",
+      "vendorId": "wood-gurus",
+      "vendorName": "The Wood Gurus",
+      "title": "Blue Gum Seasoned Kaggel Bags (18-20kg) | SELECT YOUR QUANTITY  | The Wood Gurus",
+      "url": "https://thewoodgurus.co.za/products/blue-gum-large-pieces-kaggel-bags-18-20kg-select-your-quantity-the-wood-gurus?variant=46697620799646",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/1451/2466/files/unnamed_eba58692-75f9-402c-b54f-d26dfdc8268c.png?v=1775727026",
+      "species": "blue-gum",
+      "usage": "fireplace",
+      "packFormat": "bag",
+      "priceZar": 89,
+      "regularPriceZar": 109,
+      "weightKg": 20,
+      "pricePerKgZar": 4.45,
+      "weightEstimated": false,
+      "inStock": true,
+      "scrapedAt": "2026-07-21T05:38:13.431Z"
+    },
+    {
+      "id": "mother-city-firewood::8597516189859-45280024166563",
+      "vendorId": "mother-city-firewood",
+      "vendorName": "Mother City Firewood",
+      "title": "Kaggelhout Bulk | Pizza Wood | Large Bags — 5 Bags",
+      "url": "https://www.mothercityfirewood.co.za/products/kaggelhout-firewood-mix-pizza-wood-large-bags?variant=45280024166563",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0670/1508/2147/files/Kaggelhout-Firewood-Mix-Pizza-Wood-Large-Bags.jpg?v=1734808703",
+      "species": "unknown",
+      "usage": "fireplace",
+      "packFormat": "pallet",
+      "priceZar": 449,
+      "regularPriceZar": 0,
+      "weightKg": 100,
+      "pricePerKgZar": 4.49,
+      "weightEstimated": false,
+      "inStock": true,
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
+    },
+    {
+      "id": "mother-city-firewood::8597519728803-45243861008547",
+      "vendorId": "mother-city-firewood",
+      "vendorName": "Mother City Firewood",
+      "title": "Blue Gum Firewood Bulk | Large Bags — 5 Bags",
+      "url": "https://www.mothercityfirewood.co.za/products/blue-gum-firewood-large-bags?variant=45243861008547",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0670/1508/2147/files/Blue_Gum_Firewood_Large_Bags.jpg?v=1752785328",
+      "species": "blue-gum",
+      "usage": "both",
+      "packFormat": "pallet",
+      "priceZar": 449,
+      "regularPriceZar": 0,
+      "weightKg": 100,
+      "pricePerKgZar": 4.49,
+      "weightEstimated": false,
+      "inStock": true,
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
+    },
+    {
+      "id": "mother-city-firewood::8597518483619-45240751128739",
+      "vendorId": "mother-city-firewood",
+      "vendorName": "Mother City Firewood",
+      "title": "Black Wattle Firewood Bulk | Large Bags — 5 Bags",
+      "url": "https://www.mothercityfirewood.co.za/products/black-wattle-firewood-large-bags?variant=45240751128739",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0670/1508/2147/files/Black-Wattle-Firewood-Large-Bags.jpg?v=1755411130",
+      "species": "black-wattle",
+      "usage": "both",
+      "packFormat": "pallet",
+      "priceZar": 449,
+      "regularPriceZar": 0,
+      "weightKg": 100,
+      "pricePerKgZar": 4.49,
+      "weightEstimated": false,
+      "inStock": true,
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "cape-town-firewood::9617905713442-49615697412386",
@@ -3496,7 +3784,7 @@
       "pricePerKgZar": 4.49,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8037404606754-44507078721826",
@@ -3514,7 +3802,7 @@
       "pricePerKgZar": 4.49,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8088314020130-44508890005794",
@@ -3532,7 +3820,7 @@
       "pricePerKgZar": 4.49,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8332278628642-45369966100770",
@@ -3550,7 +3838,7 @@
       "pricePerKgZar": 4.49,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "mother-city-firewood::8597516583075-45692559982755",
@@ -3568,61 +3856,7 @@
       "pricePerKgZar": 4.5,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
-    },
-    {
-      "id": "mother-city-firewood::8597516189859-45280024363171",
-      "vendorId": "mother-city-firewood",
-      "vendorName": "Mother City Firewood",
-      "title": "Kaggelhout Bulk | Pizza Wood | Large Bags — 50 Bags",
-      "url": "https://www.mothercityfirewood.co.za/products/kaggelhout-firewood-mix-pizza-wood-large-bags?variant=45280024363171",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0670/1508/2147/files/Kaggelhout-Firewood-Mix-Pizza-Wood-Large-Bags.jpg?v=1734808703",
-      "species": "unknown",
-      "usage": "fireplace",
-      "packFormat": "pallet",
-      "priceZar": 4499,
-      "regularPriceZar": 0,
-      "weightKg": 1000,
-      "pricePerKgZar": 4.5,
-      "weightEstimated": false,
-      "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
-    },
-    {
-      "id": "mother-city-firewood::8597519728803-45243861172387",
-      "vendorId": "mother-city-firewood",
-      "vendorName": "Mother City Firewood",
-      "title": "Blue Gum Firewood Bulk | Large Bags — 40 Bags",
-      "url": "https://www.mothercityfirewood.co.za/products/blue-gum-firewood-large-bags?variant=45243861172387",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0670/1508/2147/files/Blue_Gum_Firewood_Large_Bags.jpg?v=1752785328",
-      "species": "blue-gum",
-      "usage": "both",
-      "packFormat": "pallet",
-      "priceZar": 3599,
-      "regularPriceZar": 0,
-      "weightKg": 800,
-      "pricePerKgZar": 4.5,
-      "weightEstimated": false,
-      "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
-    },
-    {
-      "id": "mother-city-firewood::8597518483619-45242011254947",
-      "vendorId": "mother-city-firewood",
-      "vendorName": "Mother City Firewood",
-      "title": "Black Wattle Firewood Bulk | Large Bags — 40 Bags",
-      "url": "https://www.mothercityfirewood.co.za/products/black-wattle-firewood-large-bags?variant=45242011254947",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0670/1508/2147/files/Black-Wattle-Firewood-Large-Bags.jpg?v=1755411130",
-      "species": "black-wattle",
-      "usage": "both",
-      "packFormat": "pallet",
-      "priceZar": 3599,
-      "regularPriceZar": 0,
-      "weightKg": 800,
-      "pricePerKgZar": 4.5,
-      "weightEstimated": false,
-      "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "mother-city-firewood::8803779772579-45998478033059",
@@ -3640,7 +3874,7 @@
       "pricePerKgZar": 4.5,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "mother-city-firewood::8597519499427-45358428029091",
@@ -3658,7 +3892,7 @@
       "pricePerKgZar": 4.5,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "cape-town-firewood::9454036353314-49071311978786",
@@ -3676,7 +3910,7 @@
       "pricePerKgZar": 4.5,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8037404246306-44507047559458",
@@ -3694,7 +3928,7 @@
       "pricePerKgZar": 4.5,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "mother-city-firewood::8597516583075-45692559949987",
@@ -3712,7 +3946,7 @@
       "pricePerKgZar": 4.56,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "mother-city-firewood::8597519499427-45358427996323",
@@ -3730,7 +3964,7 @@
       "pricePerKgZar": 4.56,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "mother-city-firewood::8597516583075-45692559917219",
@@ -3748,43 +3982,7 @@
       "pricePerKgZar": 4.58,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
-    },
-    {
-      "id": "mother-city-firewood::8597519728803-45243861139619",
-      "vendorId": "mother-city-firewood",
-      "vendorName": "Mother City Firewood",
-      "title": "Blue Gum Firewood Bulk | Large Bags — 30 Bags",
-      "url": "https://www.mothercityfirewood.co.za/products/blue-gum-firewood-large-bags?variant=45243861139619",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0670/1508/2147/files/Blue_Gum_Firewood_Large_Bags.jpg?v=1752785328",
-      "species": "blue-gum",
-      "usage": "both",
-      "packFormat": "pallet",
-      "priceZar": 2749,
-      "regularPriceZar": 0,
-      "weightKg": 600,
-      "pricePerKgZar": 4.58,
-      "weightEstimated": false,
-      "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
-    },
-    {
-      "id": "mother-city-firewood::8597518483619-45240751227043",
-      "vendorId": "mother-city-firewood",
-      "vendorName": "Mother City Firewood",
-      "title": "Black Wattle Firewood Bulk | Large Bags — 30 Bags",
-      "url": "https://www.mothercityfirewood.co.za/products/black-wattle-firewood-large-bags?variant=45240751227043",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0670/1508/2147/files/Black-Wattle-Firewood-Large-Bags.jpg?v=1755411130",
-      "species": "black-wattle",
-      "usage": "both",
-      "packFormat": "pallet",
-      "priceZar": 2749,
-      "regularPriceZar": 0,
-      "weightKg": 600,
-      "pricePerKgZar": 4.58,
-      "weightEstimated": false,
-      "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "mother-city-firewood::8597519499427-45358427963555",
@@ -3802,7 +4000,7 @@
       "pricePerKgZar": 4.58,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "cape-town-firewood::8037404705058-44165377589538",
@@ -3820,7 +4018,7 @@
       "pricePerKgZar": 4.6,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8910904754466-47605468758306",
@@ -3838,7 +4036,7 @@
       "pricePerKgZar": 4.6,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8088270635298-44508431417634",
@@ -3856,7 +4054,7 @@
       "pricePerKgZar": 4.6,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8037404901666-44508896166178",
@@ -3874,7 +4072,7 @@
       "pricePerKgZar": 4.6,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "mother-city-firewood::8597516583075-45692559851683",
@@ -3892,43 +4090,7 @@
       "pricePerKgZar": 4.62,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
-    },
-    {
-      "id": "mother-city-firewood::8597519728803-45243861074083",
-      "vendorId": "mother-city-firewood",
-      "vendorName": "Mother City Firewood",
-      "title": "Blue Gum Firewood Bulk | Large Bags — 20 Bags",
-      "url": "https://www.mothercityfirewood.co.za/products/blue-gum-firewood-large-bags?variant=45243861074083",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0670/1508/2147/files/Blue_Gum_Firewood_Large_Bags.jpg?v=1752785328",
-      "species": "blue-gum",
-      "usage": "both",
-      "packFormat": "pallet",
-      "priceZar": 1849,
-      "regularPriceZar": 0,
-      "weightKg": 400,
-      "pricePerKgZar": 4.62,
-      "weightEstimated": false,
-      "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
-    },
-    {
-      "id": "mother-city-firewood::8597518483619-45240751194275",
-      "vendorId": "mother-city-firewood",
-      "vendorName": "Mother City Firewood",
-      "title": "Black Wattle Firewood Bulk | Large Bags — 20 Bags",
-      "url": "https://www.mothercityfirewood.co.za/products/black-wattle-firewood-large-bags?variant=45240751194275",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0670/1508/2147/files/Black-Wattle-Firewood-Large-Bags.jpg?v=1755411130",
-      "species": "black-wattle",
-      "usage": "both",
-      "packFormat": "pallet",
-      "priceZar": 1849,
-      "regularPriceZar": 0,
-      "weightKg": 400,
-      "pricePerKgZar": 4.62,
-      "weightEstimated": false,
-      "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "mother-city-firewood::8597519499427-45358427930787",
@@ -3946,7 +4108,7 @@
       "pricePerKgZar": 4.62,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "cape-town-firewood::8910904754466-47605468725538",
@@ -3964,7 +4126,7 @@
       "pricePerKgZar": 4.62,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8088270635298-44508431384866",
@@ -3982,7 +4144,7 @@
       "pricePerKgZar": 4.62,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8037404901666-44508896133410",
@@ -4000,7 +4162,7 @@
       "pricePerKgZar": 4.62,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "wood-gurus::8507031126174-46168069800094",
@@ -4018,7 +4180,43 @@
       "pricePerKgZar": 4.63,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:35.115Z"
+      "scrapedAt": "2026-07-21T05:38:13.431Z"
+    },
+    {
+      "id": "mother-city-firewood::8597519728803-45243860975779",
+      "vendorId": "mother-city-firewood",
+      "vendorName": "Mother City Firewood",
+      "title": "Blue Gum Firewood Bulk | Large Bags — 3 Bags",
+      "url": "https://www.mothercityfirewood.co.za/products/blue-gum-firewood-large-bags?variant=45243860975779",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0670/1508/2147/files/Blue_Gum_Firewood_Large_Bags.jpg?v=1752785328",
+      "species": "blue-gum",
+      "usage": "both",
+      "packFormat": "pallet",
+      "priceZar": 279,
+      "regularPriceZar": 0,
+      "weightKg": 60,
+      "pricePerKgZar": 4.65,
+      "weightEstimated": false,
+      "inStock": true,
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
+    },
+    {
+      "id": "mother-city-firewood::8597518483619-45240751095971",
+      "vendorId": "mother-city-firewood",
+      "vendorName": "Mother City Firewood",
+      "title": "Black Wattle Firewood Bulk | Large Bags — 3 Bags",
+      "url": "https://www.mothercityfirewood.co.za/products/black-wattle-firewood-large-bags?variant=45240751095971",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0670/1508/2147/files/Black-Wattle-Firewood-Large-Bags.jpg?v=1755411130",
+      "species": "black-wattle",
+      "usage": "both",
+      "packFormat": "pallet",
+      "priceZar": 279,
+      "regularPriceZar": 0,
+      "weightKg": 60,
+      "pricePerKgZar": 4.65,
+      "weightEstimated": false,
+      "inStock": true,
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "mother-city-firewood::8803779772579-45998478000291",
@@ -4036,7 +4234,7 @@
       "pricePerKgZar": 4.66,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "cape-town-firewood::8910904754466-47605468692770",
@@ -4054,7 +4252,7 @@
       "pricePerKgZar": 4.66,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8088270635298-44508431352098",
@@ -4072,7 +4270,7 @@
       "pricePerKgZar": 4.66,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8037404901666-44508896100642",
@@ -4090,7 +4288,7 @@
       "pricePerKgZar": 4.66,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8037404246306-44507047526690",
@@ -4108,7 +4306,7 @@
       "pricePerKgZar": 4.69,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "mother-city-firewood::8597516058787-45497068322979",
@@ -4126,7 +4324,7 @@
       "pricePerKgZar": 4.7,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "mother-city-firewood::8597516583075-45692559818915",
@@ -4144,61 +4342,7 @@
       "pricePerKgZar": 4.75,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
-    },
-    {
-      "id": "mother-city-firewood::8597516189859-45280024330403",
-      "vendorId": "mother-city-firewood",
-      "vendorName": "Mother City Firewood",
-      "title": "Kaggelhout Bulk | Pizza Wood | Large Bags — 40 Bags",
-      "url": "https://www.mothercityfirewood.co.za/products/kaggelhout-firewood-mix-pizza-wood-large-bags?variant=45280024330403",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0670/1508/2147/files/Kaggelhout-Firewood-Mix-Pizza-Wood-Large-Bags.jpg?v=1734808703",
-      "species": "unknown",
-      "usage": "fireplace",
-      "packFormat": "pallet",
-      "priceZar": 3799,
-      "regularPriceZar": 0,
-      "weightKg": 800,
-      "pricePerKgZar": 4.75,
-      "weightEstimated": false,
-      "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
-    },
-    {
-      "id": "mother-city-firewood::8597519728803-45243861041315",
-      "vendorId": "mother-city-firewood",
-      "vendorName": "Mother City Firewood",
-      "title": "Blue Gum Firewood Bulk | Large Bags — 10 Bags",
-      "url": "https://www.mothercityfirewood.co.za/products/blue-gum-firewood-large-bags?variant=45243861041315",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0670/1508/2147/files/Blue_Gum_Firewood_Large_Bags.jpg?v=1752785328",
-      "species": "blue-gum",
-      "usage": "both",
-      "packFormat": "pallet",
-      "priceZar": 949,
-      "regularPriceZar": 0,
-      "weightKg": 200,
-      "pricePerKgZar": 4.75,
-      "weightEstimated": false,
-      "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
-    },
-    {
-      "id": "mother-city-firewood::8597518483619-45240751161507",
-      "vendorId": "mother-city-firewood",
-      "vendorName": "Mother City Firewood",
-      "title": "Black Wattle Firewood Bulk | Large Bags — 10 Bags",
-      "url": "https://www.mothercityfirewood.co.za/products/black-wattle-firewood-large-bags?variant=45240751161507",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0670/1508/2147/files/Black-Wattle-Firewood-Large-Bags.jpg?v=1755411130",
-      "species": "black-wattle",
-      "usage": "both",
-      "packFormat": "pallet",
-      "priceZar": 949,
-      "regularPriceZar": 0,
-      "weightKg": 200,
-      "pricePerKgZar": 4.75,
-      "weightEstimated": false,
-      "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "mother-city-firewood::8597516058787-45497068257443",
@@ -4216,7 +4360,7 @@
       "pricePerKgZar": 4.75,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "mother-city-firewood::8597519499427-45358427898019",
@@ -4234,7 +4378,7 @@
       "pricePerKgZar": 4.75,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "cape-town-firewood::8910904754466-47605468660002",
@@ -4252,7 +4396,7 @@
       "pricePerKgZar": 4.75,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8088270635298-44508431319330",
@@ -4270,7 +4414,7 @@
       "pricePerKgZar": 4.75,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8037404901666-44508896067874",
@@ -4288,7 +4432,7 @@
       "pricePerKgZar": 4.75,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "mother-city-firewood::8597516058787-45497068224675",
@@ -4306,7 +4450,7 @@
       "pricePerKgZar": 4.78,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "mother-city-firewood::8597516058787-45497068290211",
@@ -4324,43 +4468,7 @@
       "pricePerKgZar": 4.78,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
-    },
-    {
-      "id": "mother-city-firewood::8597519728803-45243861008547",
-      "vendorId": "mother-city-firewood",
-      "vendorName": "Mother City Firewood",
-      "title": "Blue Gum Firewood Bulk | Large Bags — 5 Bags",
-      "url": "https://www.mothercityfirewood.co.za/products/blue-gum-firewood-large-bags?variant=45243861008547",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0670/1508/2147/files/Blue_Gum_Firewood_Large_Bags.jpg?v=1752785328",
-      "species": "blue-gum",
-      "usage": "both",
-      "packFormat": "pallet",
-      "priceZar": 479,
-      "regularPriceZar": 0,
-      "weightKg": 100,
-      "pricePerKgZar": 4.79,
-      "weightEstimated": false,
-      "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
-    },
-    {
-      "id": "mother-city-firewood::8597518483619-45240751128739",
-      "vendorId": "mother-city-firewood",
-      "vendorName": "Mother City Firewood",
-      "title": "Black Wattle Firewood Bulk | Large Bags — 5 Bags",
-      "url": "https://www.mothercityfirewood.co.za/products/black-wattle-firewood-large-bags?variant=45240751128739",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0670/1508/2147/files/Black-Wattle-Firewood-Large-Bags.jpg?v=1755411130",
-      "species": "black-wattle",
-      "usage": "both",
-      "packFormat": "pallet",
-      "priceZar": 479,
-      "regularPriceZar": 0,
-      "weightKg": 100,
-      "pricePerKgZar": 4.79,
-      "weightEstimated": false,
-      "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "mother-city-firewood::8597519237283-45283034333347",
@@ -4378,24 +4486,7 @@
       "pricePerKgZar": 4.8,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
-    },
-    {
-      "id": "wood-bros::red-gum-firewood-bags",
-      "vendorId": "wood-bros",
-      "vendorName": "The Wood Bros",
-      "title": "Red Gum FireWood Bags (100kg)",
-      "url": "https://www.thewoodbros.co.za/product-page/red-gum-firewood-bags",
-      "imageUrl": "https://static.wixstatic.com/media/b4fa82_617b3c38c62d4faabc0582cb40d92161~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
-      "species": "red-gum",
-      "usage": "both",
-      "packFormat": "pallet",
-      "priceZar": 480,
-      "weightKg": 100,
-      "pricePerKgZar": 4.8,
-      "weightEstimated": false,
-      "inStock": false,
-      "scrapedAt": "2026-07-20T05:57:20.040Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "wood-bros::blue-gum-firewood-bags-100kg",
@@ -4412,25 +4503,24 @@
       "pricePerKgZar": 4.8,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:57:24.274Z"
+      "scrapedAt": "2026-07-21T05:38:35.417Z"
     },
     {
-      "id": "mother-city-firewood::8597516189859-45280024297635",
-      "vendorId": "mother-city-firewood",
-      "vendorName": "Mother City Firewood",
-      "title": "Kaggelhout Bulk | Pizza Wood | Large Bags — 30 Bags",
-      "url": "https://www.mothercityfirewood.co.za/products/kaggelhout-firewood-mix-pizza-wood-large-bags?variant=45280024297635",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0670/1508/2147/files/Kaggelhout-Firewood-Mix-Pizza-Wood-Large-Bags.jpg?v=1734808703",
-      "species": "unknown",
-      "usage": "fireplace",
+      "id": "wood-bros::red-gum-firewood-bags",
+      "vendorId": "wood-bros",
+      "vendorName": "The Wood Bros",
+      "title": "Red Gum FireWood Bags (100kg)",
+      "url": "https://www.thewoodbros.co.za/product-page/red-gum-firewood-bags",
+      "imageUrl": "https://static.wixstatic.com/media/b4fa82_617b3c38c62d4faabc0582cb40d92161~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
+      "species": "red-gum",
+      "usage": "both",
       "packFormat": "pallet",
-      "priceZar": 2899,
-      "regularPriceZar": 0,
-      "weightKg": 600,
-      "pricePerKgZar": 4.83,
+      "priceZar": 480,
+      "weightKg": 100,
+      "pricePerKgZar": 4.8,
       "weightEstimated": false,
-      "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "inStock": false,
+      "scrapedAt": "2026-07-21T05:38:36.906Z"
     },
     {
       "id": "mother-city-firewood::8597516058787-45216023314595",
@@ -4448,7 +4538,7 @@
       "pricePerKgZar": 4.83,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "mother-city-firewood::8597519237283-45283034300579",
@@ -4466,7 +4556,7 @@
       "pricePerKgZar": 4.85,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "mother-city-firewood::8597516058787-45216023249059",
@@ -4484,7 +4574,7 @@
       "pricePerKgZar": 4.87,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "mother-city-firewood::8597516583075-45692559786147",
@@ -4502,7 +4592,7 @@
       "pricePerKgZar": 4.89,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "mother-city-firewood::8597519499427-45358427865251",
@@ -4520,7 +4610,7 @@
       "pricePerKgZar": 4.89,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "mother-city-firewood::8597516058787-45216023281827",
@@ -4538,7 +4628,7 @@
       "pricePerKgZar": 4.9,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "mother-city-firewood::8597519237283-45283034267811",
@@ -4556,7 +4646,7 @@
       "pricePerKgZar": 4.9,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "mother-city-firewood::8597516583075-45692559753379",
@@ -4574,7 +4664,7 @@
       "pricePerKgZar": 4.95,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "mother-city-firewood::8597519499427-45358427799715",
@@ -4592,7 +4682,7 @@
       "pricePerKgZar": 4.95,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "mother-city-firewood::8597519237283-45283034235043",
@@ -4610,25 +4700,7 @@
       "pricePerKgZar": 4.95,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
-    },
-    {
-      "id": "wood-gurus::8680839938206-46697620799646",
-      "vendorId": "wood-gurus",
-      "vendorName": "The Wood Gurus",
-      "title": "Blue Gum Seasoned Kaggel Bags (18-20kg) | SELECT YOUR QUANTITY  | The Wood Gurus",
-      "url": "https://thewoodgurus.co.za/products/blue-gum-large-pieces-kaggel-bags-18-20kg-select-your-quantity-the-wood-gurus?variant=46697620799646",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/1451/2466/files/unnamed_eba58692-75f9-402c-b54f-d26dfdc8268c.png?v=1775727026",
-      "species": "blue-gum",
-      "usage": "fireplace",
-      "packFormat": "bag",
-      "priceZar": 99,
-      "regularPriceZar": 109,
-      "weightKg": 20,
-      "pricePerKgZar": 4.95,
-      "weightEstimated": false,
-      "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.115Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "mother-city-firewood::8803779772579-45998477967523",
@@ -4646,43 +4718,7 @@
       "pricePerKgZar": 4.97,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
-    },
-    {
-      "id": "mother-city-firewood::8597519728803-45243860975779",
-      "vendorId": "mother-city-firewood",
-      "vendorName": "Mother City Firewood",
-      "title": "Blue Gum Firewood Bulk | Large Bags — 3 Bags",
-      "url": "https://www.mothercityfirewood.co.za/products/blue-gum-firewood-large-bags?variant=45243860975779",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0670/1508/2147/files/Blue_Gum_Firewood_Large_Bags.jpg?v=1752785328",
-      "species": "blue-gum",
-      "usage": "both",
-      "packFormat": "pallet",
-      "priceZar": 299,
-      "regularPriceZar": 0,
-      "weightKg": 60,
-      "pricePerKgZar": 4.98,
-      "weightEstimated": false,
-      "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
-    },
-    {
-      "id": "mother-city-firewood::8597518483619-45240751095971",
-      "vendorId": "mother-city-firewood",
-      "vendorName": "Mother City Firewood",
-      "title": "Black Wattle Firewood Bulk | Large Bags — 3 Bags",
-      "url": "https://www.mothercityfirewood.co.za/products/black-wattle-firewood-large-bags?variant=45240751095971",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0670/1508/2147/files/Black-Wattle-Firewood-Large-Bags.jpg?v=1755411130",
-      "species": "black-wattle",
-      "usage": "both",
-      "packFormat": "pallet",
-      "priceZar": 299,
-      "regularPriceZar": 0,
-      "weightKg": 60,
-      "pricePerKgZar": 4.98,
-      "weightEstimated": false,
-      "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "cape-town-firewood::8910904754466-47605468627234",
@@ -4700,7 +4736,7 @@
       "pricePerKgZar": 4.99,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8088270635298-44508431286562",
@@ -4718,7 +4754,7 @@
       "pricePerKgZar": 4.99,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8037404901666-44508896035106",
@@ -4736,25 +4772,7 @@
       "pricePerKgZar": 4.99,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
-    },
-    {
-      "id": "mother-city-firewood::8597516189859-45280024232099",
-      "vendorId": "mother-city-firewood",
-      "vendorName": "Mother City Firewood",
-      "title": "Kaggelhout Bulk | Pizza Wood | Large Bags — 20 Bags",
-      "url": "https://www.mothercityfirewood.co.za/products/kaggelhout-firewood-mix-pizza-wood-large-bags?variant=45280024232099",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0670/1508/2147/files/Kaggelhout-Firewood-Mix-Pizza-Wood-Large-Bags.jpg?v=1734808703",
-      "species": "unknown",
-      "usage": "fireplace",
-      "packFormat": "pallet",
-      "priceZar": 1999,
-      "regularPriceZar": 0,
-      "weightKg": 400,
-      "pricePerKgZar": 5,
-      "weightEstimated": false,
-      "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "mother-city-firewood::8597519237283-45283034202275",
@@ -4772,7 +4790,7 @@
       "pricePerKgZar": 5,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "mother-city-firewood::8597516058787-45216023216291",
@@ -4790,7 +4808,7 @@
       "pricePerKgZar": 5.16,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "cape-town-firewood::9871009579298-50400619954466",
@@ -4808,7 +4826,7 @@
       "pricePerKgZar": 5.16,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "lancehoudt::459",
@@ -4825,7 +4843,7 @@
       "pricePerKgZar": 5.19,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:40.346Z"
+      "scrapedAt": "2026-07-21T05:38:18.784Z"
     },
     {
       "id": "fire-man::4635",
@@ -4842,7 +4860,7 @@
       "pricePerKgZar": 5.23,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:38.978Z"
+      "scrapedAt": "2026-07-21T05:38:17.692Z"
     },
     {
       "id": "mother-city-firewood::8597516058787-45216023183523",
@@ -4860,7 +4878,7 @@
       "pricePerKgZar": 5.25,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "cape-town-firewood::8080095707426-44316775711010",
@@ -4878,7 +4896,7 @@
       "pricePerKgZar": 5.25,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8612830183714-47142948176162",
@@ -4896,7 +4914,7 @@
       "pricePerKgZar": 5.25,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "firewood-company::625773",
@@ -4913,7 +4931,7 @@
       "pricePerKgZar": 5.25,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:37.147Z"
+      "scrapedAt": "2026-07-21T05:38:15.366Z"
     },
     {
       "id": "fire-man::2875",
@@ -4930,7 +4948,7 @@
       "pricePerKgZar": 5.3,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:38.978Z"
+      "scrapedAt": "2026-07-21T05:38:17.692Z"
     },
     {
       "id": "mother-city-firewood::8597516058787-47375623028899",
@@ -4948,7 +4966,7 @@
       "pricePerKgZar": 5.32,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "cape-town-firewood::8080092299554-44316763947298",
@@ -4966,7 +4984,7 @@
       "pricePerKgZar": 5.33,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8612830183714-46687110005026",
@@ -4984,7 +5002,7 @@
       "pricePerKgZar": 5.34,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "mother-city-firewood::8597516058787-45216023150755",
@@ -5002,7 +5020,7 @@
       "pricePerKgZar": 5.39,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "cape-town-firewood::8612830183714-46687109972258",
@@ -5020,7 +5038,7 @@
       "pricePerKgZar": 5.4,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8037405163810-44165378179362",
@@ -5038,7 +5056,7 @@
       "pricePerKgZar": 5.4,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8067052372258-44268143411490",
@@ -5056,7 +5074,7 @@
       "pricePerKgZar": 5.41,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "wood-gurus::5552012722334-35576033640606",
@@ -5073,8 +5091,8 @@
       "weightKg": 20,
       "pricePerKgZar": 5.45,
       "weightEstimated": false,
-      "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.115Z"
+      "inStock": false,
+      "scrapedAt": "2026-07-21T05:38:13.431Z"
     },
     {
       "id": "firewood-company::209359",
@@ -5091,7 +5109,7 @@
       "pricePerKgZar": 5.45,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:37.147Z"
+      "scrapedAt": "2026-07-21T05:38:15.366Z"
     },
     {
       "id": "firewood-company::209371",
@@ -5108,7 +5126,7 @@
       "pricePerKgZar": 5.45,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:37.147Z"
+      "scrapedAt": "2026-07-21T05:38:15.366Z"
     },
     {
       "id": "cape-town-firewood::8037405262114-44165378343202",
@@ -5126,25 +5144,7 @@
       "pricePerKgZar": 5.47,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
-    },
-    {
-      "id": "mother-city-firewood::8597516189859-45280024199331",
-      "vendorId": "mother-city-firewood",
-      "vendorName": "Mother City Firewood",
-      "title": "Kaggelhout Bulk | Pizza Wood | Large Bags — 10 Bags",
-      "url": "https://www.mothercityfirewood.co.za/products/kaggelhout-firewood-mix-pizza-wood-large-bags?variant=45280024199331",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0670/1508/2147/files/Kaggelhout-Firewood-Mix-Pizza-Wood-Large-Bags.jpg?v=1734808703",
-      "species": "unknown",
-      "usage": "fireplace",
-      "packFormat": "pallet",
-      "priceZar": 1099,
-      "regularPriceZar": 0,
-      "weightKg": 200,
-      "pricePerKgZar": 5.5,
-      "weightEstimated": false,
-      "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8037405557026-44165378670882",
@@ -5162,7 +5162,7 @@
       "pricePerKgZar": 5.5,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "mother-city-firewood::8597518909603-45284068819107",
@@ -5180,7 +5180,7 @@
       "pricePerKgZar": 5.56,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "mother-city-firewood::8597518909603-45284068851875",
@@ -5198,7 +5198,7 @@
       "pricePerKgZar": 5.56,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "mother-city-firewood::8597518909603-45284068917411",
@@ -5216,7 +5216,7 @@
       "pricePerKgZar": 5.56,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "mother-city-firewood::8597518909603-45284068982947",
@@ -5234,7 +5234,7 @@
       "pricePerKgZar": 5.56,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "mother-city-firewood::8597518909603-45284068884643",
@@ -5252,7 +5252,7 @@
       "pricePerKgZar": 5.56,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "mother-city-firewood::8597518909603-45284069015715",
@@ -5270,7 +5270,7 @@
       "pricePerKgZar": 5.56,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "cape-town-firewood::8037405622562-44165378736418",
@@ -5288,7 +5288,7 @@
       "pricePerKgZar": 5.6,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8612830183714-46687109939490",
@@ -5306,7 +5306,7 @@
       "pricePerKgZar": 5.62,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8620144820514-47143012335906",
@@ -5324,7 +5324,7 @@
       "pricePerKgZar": 5.65,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8612095164706-47142923796770",
@@ -5342,7 +5342,7 @@
       "pricePerKgZar": 5.65,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8620144820514-46701260210466",
@@ -5360,7 +5360,7 @@
       "pricePerKgZar": 5.73,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8612095164706-46684184805666",
@@ -5378,7 +5378,7 @@
       "pricePerKgZar": 5.73,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8088527405346-44507852669218",
@@ -5396,25 +5396,7 @@
       "pricePerKgZar": 5.77,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
-    },
-    {
-      "id": "mother-city-firewood::8597516189859-45280024166563",
-      "vendorId": "mother-city-firewood",
-      "vendorName": "Mother City Firewood",
-      "title": "Kaggelhout Bulk | Pizza Wood | Large Bags — 5 Bags",
-      "url": "https://www.mothercityfirewood.co.za/products/kaggelhout-firewood-mix-pizza-wood-large-bags?variant=45280024166563",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0670/1508/2147/files/Kaggelhout-Firewood-Mix-Pizza-Wood-Large-Bags.jpg?v=1734808703",
-      "species": "unknown",
-      "usage": "fireplace",
-      "packFormat": "pallet",
-      "priceZar": 579,
-      "regularPriceZar": 0,
-      "weightKg": 100,
-      "pricePerKgZar": 5.79,
-      "weightEstimated": false,
-      "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "mother-city-firewood::9154375975075-47785209692323",
@@ -5432,7 +5414,7 @@
       "pricePerKgZar": 5.88,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "mother-city-firewood::9154375975075-47785209725091",
@@ -5450,7 +5432,7 @@
       "pricePerKgZar": 5.88,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "mother-city-firewood::9154375975075-47785209757859",
@@ -5468,7 +5450,7 @@
       "pricePerKgZar": 5.88,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "mother-city-firewood::9154375975075-47785209790627",
@@ -5486,7 +5468,7 @@
       "pricePerKgZar": 5.88,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "mother-city-firewood::9154375975075-47785209823395",
@@ -5504,7 +5486,7 @@
       "pricePerKgZar": 5.88,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "mother-city-firewood::9154375975075-47785209856163",
@@ -5522,7 +5504,7 @@
       "pricePerKgZar": 5.88,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "cape-town-firewood::8620144820514-46701260177698",
@@ -5540,7 +5522,7 @@
       "pricePerKgZar": 5.9,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8612095164706-46684184772898",
@@ -5558,7 +5540,7 @@
       "pricePerKgZar": 5.9,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "lancehoudt::460",
@@ -5575,25 +5557,7 @@
       "pricePerKgZar": 5.9,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:40.346Z"
-    },
-    {
-      "id": "mother-city-firewood::8597516189859-45280024133795",
-      "vendorId": "mother-city-firewood",
-      "vendorName": "Mother City Firewood",
-      "title": "Kaggelhout Bulk | Pizza Wood | Large Bags — 1 Bag",
-      "url": "https://www.mothercityfirewood.co.za/products/kaggelhout-firewood-mix-pizza-wood-large-bags?variant=45280024133795",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0670/1508/2147/files/Kaggelhout-Firewood-Mix-Pizza-Wood-Large-Bags.jpg?v=1734808703",
-      "species": "unknown",
-      "usage": "fireplace",
-      "packFormat": "bag",
-      "priceZar": 119,
-      "regularPriceZar": 0,
-      "weightKg": 20,
-      "pricePerKgZar": 5.95,
-      "weightEstimated": false,
-      "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:18.784Z"
     },
     {
       "id": "mother-city-firewood::8597518811299-45359177498787",
@@ -5610,7 +5574,7 @@
       "pricePerKgZar": 5.95,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "mother-city-firewood::8597519270051-45285738283171",
@@ -5627,7 +5591,7 @@
       "pricePerKgZar": 5.95,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "cape-town-firewood::8332146606370-45369368248610",
@@ -5645,7 +5609,7 @@
       "pricePerKgZar": 5.99,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::9617905713442-49615697510690",
@@ -5663,7 +5627,7 @@
       "pricePerKgZar": 6,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8620144820514-46701260144930",
@@ -5681,7 +5645,7 @@
       "pricePerKgZar": 6,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8612095164706-46684184740130",
@@ -5699,7 +5663,7 @@
       "pricePerKgZar": 6,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8096017285410-45317612896546",
@@ -5717,7 +5681,7 @@
       "pricePerKgZar": 6,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8096017285410-45317612863778",
@@ -5735,7 +5699,7 @@
       "pricePerKgZar": 6.04,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "mother-city-firewood::8597518811299-45216031637667",
@@ -5752,7 +5716,7 @@
       "pricePerKgZar": 6.1,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "mother-city-firewood::8597519270051-45285738250403",
@@ -5769,7 +5733,7 @@
       "pricePerKgZar": 6.1,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "mother-city-firewood::8597516091555-45507154280611",
@@ -5787,7 +5751,7 @@
       "pricePerKgZar": 6.11,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "cape-town-firewood::8088527405346-44507852636450",
@@ -5805,7 +5769,7 @@
       "pricePerKgZar": 6.11,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "mother-city-firewood::8597518811299-45216031604899",
@@ -5822,7 +5786,7 @@
       "pricePerKgZar": 6.15,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "mother-city-firewood::8597519270051-45285738217635",
@@ -5839,7 +5803,7 @@
       "pricePerKgZar": 6.15,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "mother-city-firewood::8597516091555-45507154247843",
@@ -5857,7 +5821,7 @@
       "pricePerKgZar": 6.17,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "mother-city-firewood::8597518811299-45216031572131",
@@ -5874,7 +5838,7 @@
       "pricePerKgZar": 6.2,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "mother-city-firewood::8597519270051-45285738184867",
@@ -5891,7 +5855,7 @@
       "pricePerKgZar": 6.2,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "cape-town-firewood::8037405786402-44507760754978",
@@ -5909,7 +5873,7 @@
       "pricePerKgZar": 6.22,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "mother-city-firewood::8597516091555-45507154215075",
@@ -5927,7 +5891,7 @@
       "pricePerKgZar": 6.25,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "mother-city-firewood::8597518811299-45216031539363",
@@ -5944,7 +5908,7 @@
       "pricePerKgZar": 6.25,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "mother-city-firewood::8597519270051-45285738152099",
@@ -5961,7 +5925,7 @@
       "pricePerKgZar": 6.25,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "wood-gurus::8433556324510-45970138529950",
@@ -5974,12 +5938,12 @@
       "usage": "both",
       "packFormat": "bag",
       "priceZar": 125,
-      "regularPriceZar": 145,
+      "regularPriceZar": 169,
       "weightKg": 20,
       "pricePerKgZar": 6.25,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.115Z"
+      "scrapedAt": "2026-07-21T05:38:13.431Z"
     },
     {
       "id": "cape-town-firewood::8080147972386-44509097787682",
@@ -5997,7 +5961,7 @@
       "pricePerKgZar": 6.25,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8080147972386-44509097820450",
@@ -6015,7 +5979,7 @@
       "pricePerKgZar": 6.25,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8037405786402-44507760722210",
@@ -6033,7 +5997,7 @@
       "pricePerKgZar": 6.25,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8088527405346-44507852603682",
@@ -6051,7 +6015,7 @@
       "pricePerKgZar": 6.29,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8037405786402-44507760689442",
@@ -6069,7 +6033,7 @@
       "pricePerKgZar": 6.29,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8097285701922-44375478599970",
@@ -6087,7 +6051,7 @@
       "pricePerKgZar": 6.31,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8096017285410-45317612765474",
@@ -6105,7 +6069,7 @@
       "pricePerKgZar": 6.33,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "mother-city-firewood::8597516091555-45507154182307",
@@ -6123,7 +6087,7 @@
       "pricePerKgZar": 6.35,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "cape-town-firewood::8620144820514-46701260112162",
@@ -6141,7 +6105,7 @@
       "pricePerKgZar": 6.38,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8612095164706-46684184707362",
@@ -6159,7 +6123,7 @@
       "pricePerKgZar": 6.38,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8037405786402-44507760656674",
@@ -6177,7 +6141,7 @@
       "pricePerKgZar": 6.38,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8612830183714-46687109873954",
@@ -6195,7 +6159,7 @@
       "pricePerKgZar": 6.43,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8088527405346-44507852570914",
@@ -6213,7 +6177,7 @@
       "pricePerKgZar": 6.43,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "mother-city-firewood::8597516091555-45216023478435",
@@ -6231,7 +6195,7 @@
       "pricePerKgZar": 6.44,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "mother-city-firewood::8597516091555-45216023511203",
@@ -6249,7 +6213,7 @@
       "pricePerKgZar": 6.44,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "cape-town-firewood::8080147972386-44509097754914",
@@ -6267,7 +6231,7 @@
       "pricePerKgZar": 6.45,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::9617905713442-49615697445154",
@@ -6285,7 +6249,7 @@
       "pricePerKgZar": 6.49,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8080147972386-44509097722146",
@@ -6303,7 +6267,7 @@
       "pricePerKgZar": 6.56,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "mother-city-firewood::8597516091555-45216023445667",
@@ -6321,7 +6285,7 @@
       "pricePerKgZar": 6.58,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "lancehoudt::461",
@@ -6338,7 +6302,7 @@
       "pricePerKgZar": 6.61,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:40.346Z"
+      "scrapedAt": "2026-07-21T05:38:18.784Z"
     },
     {
       "id": "cape-town-firewood::8088527405346-44507852538146",
@@ -6356,7 +6320,7 @@
       "pricePerKgZar": 6.64,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "mother-city-firewood::8597518057635-45291946311843",
@@ -6374,7 +6338,7 @@
       "pricePerKgZar": 6.66,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "mother-city-firewood::8597516091555-45216023412899",
@@ -6392,7 +6356,7 @@
       "pricePerKgZar": 6.66,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "cape-town-firewood::8620144820514-46701260079394",
@@ -6410,7 +6374,7 @@
       "pricePerKgZar": 6.66,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8612095164706-46684184674594",
@@ -6428,7 +6392,7 @@
       "pricePerKgZar": 6.66,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8037405786402-44507760623906",
@@ -6446,7 +6410,7 @@
       "pricePerKgZar": 6.66,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "firewood-company::626943",
@@ -6463,7 +6427,7 @@
       "pricePerKgZar": 6.67,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:37.147Z"
+      "scrapedAt": "2026-07-21T05:38:15.366Z"
     },
     {
       "id": "firewood-company::609",
@@ -6480,7 +6444,7 @@
       "pricePerKgZar": 6.67,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:37.147Z"
+      "scrapedAt": "2026-07-21T05:38:15.366Z"
     },
     {
       "id": "firewood-company::605",
@@ -6497,7 +6461,7 @@
       "pricePerKgZar": 6.67,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:37.147Z"
+      "scrapedAt": "2026-07-21T05:38:15.366Z"
     },
     {
       "id": "mother-city-firewood::8597518057635-45291946279075",
@@ -6515,7 +6479,7 @@
       "pricePerKgZar": 6.77,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "namibian-hardwood::28786",
@@ -6532,7 +6496,7 @@
       "pricePerKgZar": 6.78,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:43.695Z"
+      "scrapedAt": "2026-07-21T05:38:21.351Z"
     },
     {
       "id": "cape-town-firewood::8097326989602-44375660560674",
@@ -6550,7 +6514,7 @@
       "pricePerKgZar": 6.84,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8097311129890-44375596564770",
@@ -6568,7 +6532,7 @@
       "pricePerKgZar": 6.84,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8080147972386-44509097689378",
@@ -6586,7 +6550,7 @@
       "pricePerKgZar": 6.86,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "mother-city-firewood::8597518057635-45216029474979",
@@ -6604,7 +6568,7 @@
       "pricePerKgZar": 6.87,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "cape-town-firewood::8080146432290-44316967272738",
@@ -6622,7 +6586,7 @@
       "pricePerKgZar": 6.9,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8080783802658-44319208440098",
@@ -6640,7 +6604,7 @@
       "pricePerKgZar": 6.9,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "lancehoudt::457",
@@ -6659,7 +6623,7 @@
       "maxPricePerKgZar": 8.39,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:40.346Z"
+      "scrapedAt": "2026-07-21T05:38:18.784Z"
     },
     {
       "id": "mother-city-firewood::8597516091555-45216023380131",
@@ -6677,7 +6641,7 @@
       "pricePerKgZar": 6.94,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "mother-city-firewood::8597518057635-45216029442211",
@@ -6695,7 +6659,7 @@
       "pricePerKgZar": 6.97,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "cape-town-firewood::9617905713442-49615697379618",
@@ -6713,7 +6677,7 @@
       "pricePerKgZar": 6.98,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "mother-city-firewood::8597516091555-45216023347363",
@@ -6731,7 +6695,7 @@
       "pricePerKgZar": 6.99,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "cape-town-firewood::8080144269602-44316953837858",
@@ -6749,7 +6713,7 @@
       "pricePerKgZar": 7,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8080781639970-44319193694498",
@@ -6767,7 +6731,7 @@
       "pricePerKgZar": 7,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8037405720866-44508906914082",
@@ -6785,7 +6749,7 @@
       "pricePerKgZar": 7,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8037405720866-44508906946850",
@@ -6803,7 +6767,7 @@
       "pricePerKgZar": 7,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8037405688098-44507891630370",
@@ -6821,7 +6785,7 @@
       "pricePerKgZar": 7,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8037405688098-44507891663138",
@@ -6839,7 +6803,7 @@
       "pricePerKgZar": 7,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8037405294882-44165378375970",
@@ -6857,7 +6821,7 @@
       "pricePerKgZar": 7,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8037404967202-44165377982754",
@@ -6875,7 +6839,7 @@
       "pricePerKgZar": 7,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "firewood-company::209283",
@@ -6892,7 +6856,7 @@
       "pricePerKgZar": 7,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:37.147Z"
+      "scrapedAt": "2026-07-21T05:38:15.366Z"
     },
     {
       "id": "firewood-company::629813",
@@ -6909,7 +6873,7 @@
       "pricePerKgZar": 7,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:37.147Z"
+      "scrapedAt": "2026-07-21T05:38:15.366Z"
     },
     {
       "id": "mother-city-firewood::8597518057635-45216029409443",
@@ -6927,7 +6891,7 @@
       "pricePerKgZar": 7.06,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "namibian-hardwood::28811",
@@ -6946,7 +6910,7 @@
       "maxPricePerKgZar": 8.72,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:43.695Z"
+      "scrapedAt": "2026-07-21T05:38:21.351Z"
     },
     {
       "id": "cape-town-firewood::8037405360418-44165378441506",
@@ -6964,7 +6928,7 @@
       "pricePerKgZar": 7.07,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8037404999970-44165378015522",
@@ -6982,7 +6946,7 @@
       "pricePerKgZar": 7.07,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8037405458722-44165378572578",
@@ -7000,7 +6964,7 @@
       "pricePerKgZar": 7.1,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8037405065506-44165378081058",
@@ -7018,7 +6982,7 @@
       "pricePerKgZar": 7.1,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "fire-man::41621",
@@ -7035,7 +6999,7 @@
       "pricePerKgZar": 7.14,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:38.978Z"
+      "scrapedAt": "2026-07-21T05:38:17.692Z"
     },
     {
       "id": "mother-city-firewood::8597516091555-47374340784291",
@@ -7053,7 +7017,7 @@
       "pricePerKgZar": 7.17,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "lancehoudt::1522",
@@ -7072,7 +7036,7 @@
       "maxPricePerKgZar": 8.01,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:40.346Z"
+      "scrapedAt": "2026-07-21T05:38:18.784Z"
     },
     {
       "id": "namibian-hardwood::28699",
@@ -7091,7 +7055,7 @@
       "maxPricePerKgZar": 8.83,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:43.695Z"
+      "scrapedAt": "2026-07-21T05:38:21.351Z"
     },
     {
       "id": "mother-city-firewood::8597518057635-45216029376675",
@@ -7109,7 +7073,7 @@
       "pricePerKgZar": 7.19,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "cape-town-firewood::8037405491490-44165378605346",
@@ -7127,7 +7091,7 @@
       "pricePerKgZar": 7.2,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8037405098274-44165378113826",
@@ -7145,7 +7109,7 @@
       "pricePerKgZar": 7.2,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "namibian-hardwood::28710",
@@ -7164,7 +7128,7 @@
       "maxPricePerKgZar": 8.89,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:43.695Z"
+      "scrapedAt": "2026-07-21T05:38:21.351Z"
     },
     {
       "id": "cape-town-firewood::8037405720866-44508906881314",
@@ -7182,7 +7146,7 @@
       "pricePerKgZar": 7.25,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8037405688098-44507891597602",
@@ -7200,7 +7164,7 @@
       "pricePerKgZar": 7.25,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "lancehoudt::458",
@@ -7219,7 +7183,7 @@
       "maxPricePerKgZar": 8.86,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:40.346Z"
+      "scrapedAt": "2026-07-21T05:38:18.784Z"
     },
     {
       "id": "fire-man::2986",
@@ -7236,7 +7200,7 @@
       "pricePerKgZar": 7.43,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:38.978Z"
+      "scrapedAt": "2026-07-21T05:38:17.692Z"
     },
     {
       "id": "cape-town-firewood::8037405720866-44508906848546",
@@ -7254,7 +7218,7 @@
       "pricePerKgZar": 7.49,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8037405688098-44507891564834",
@@ -7272,7 +7236,7 @@
       "pricePerKgZar": 7.49,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "firewood-company::1029",
@@ -7289,7 +7253,7 @@
       "pricePerKgZar": 7.5,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:37.147Z"
+      "scrapedAt": "2026-07-21T05:38:15.366Z"
     },
     {
       "id": "namibian-hardwood::28821",
@@ -7308,7 +7272,7 @@
       "maxPricePerKgZar": 9.17,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:43.695Z"
+      "scrapedAt": "2026-07-21T05:38:21.351Z"
     },
     {
       "id": "namibian-hardwood::28543",
@@ -7325,7 +7289,7 @@
       "pricePerKgZar": 7.67,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:43.695Z"
+      "scrapedAt": "2026-07-21T05:38:21.351Z"
     },
     {
       "id": "mother-city-firewood::8744211054755-45771749752995",
@@ -7343,7 +7307,7 @@
       "pricePerKgZar": 7.99,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "cape-town-firewood::9617905713442-49578013491490",
@@ -7361,7 +7325,7 @@
       "pricePerKgZar": 7.99,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "mother-city-firewood::8744211054755-45771749785763",
@@ -7379,7 +7343,7 @@
       "pricePerKgZar": 8,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "namibian-hardwood::28555",
@@ -7396,7 +7360,7 @@
       "pricePerKgZar": 8,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:43.695Z"
+      "scrapedAt": "2026-07-21T05:38:21.351Z"
     },
     {
       "id": "namibian-hardwood::28538",
@@ -7413,7 +7377,7 @@
       "pricePerKgZar": 8.39,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:43.695Z"
+      "scrapedAt": "2026-07-21T05:38:21.351Z"
     },
     {
       "id": "mother-city-firewood::8744211054755-45771749720227",
@@ -7431,7 +7395,7 @@
       "pricePerKgZar": 8.58,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "namibian-hardwood::28528",
@@ -7448,7 +7412,7 @@
       "pricePerKgZar": 8.67,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:43.695Z"
+      "scrapedAt": "2026-07-21T05:38:21.351Z"
     },
     {
       "id": "namibian-hardwood::28518",
@@ -7464,8 +7428,8 @@
       "weightKg": 18,
       "pricePerKgZar": 8.67,
       "weightEstimated": false,
-      "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:43.695Z"
+      "inStock": true,
+      "scrapedAt": "2026-07-21T05:38:21.351Z"
     },
     {
       "id": "namibian-hardwood::28427",
@@ -7482,7 +7446,7 @@
       "pricePerKgZar": 8.72,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:43.695Z"
+      "scrapedAt": "2026-07-21T05:38:21.351Z"
     },
     {
       "id": "cape-town-firewood::8080099213602-44507778744610",
@@ -7500,7 +7464,7 @@
       "pricePerKgZar": 8.85,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "lancehoudt::1528",
@@ -7519,7 +7483,7 @@
       "maxPricePerKgZar": 9.8,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:40.346Z"
+      "scrapedAt": "2026-07-21T05:38:18.784Z"
     },
     {
       "id": "mother-city-firewood::8744211054755-45771749687459",
@@ -7537,7 +7501,7 @@
       "pricePerKgZar": 8.9,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "cape-town-firewood::8080099213602-44507778711842",
@@ -7555,7 +7519,7 @@
       "pricePerKgZar": 8.92,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::9617905713442-49578013458722",
@@ -7573,7 +7537,7 @@
       "pricePerKgZar": 8.98,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "namibian-hardwood::28441",
@@ -7590,7 +7554,7 @@
       "pricePerKgZar": 9,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:43.695Z"
+      "scrapedAt": "2026-07-21T05:38:21.351Z"
     },
     {
       "id": "namibian-hardwood::28840",
@@ -7607,7 +7571,7 @@
       "pricePerKgZar": 9,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:43.695Z"
+      "scrapedAt": "2026-07-21T05:38:21.351Z"
     },
     {
       "id": "cape-town-firewood::8080099213602-44507778679074",
@@ -7625,7 +7589,7 @@
       "pricePerKgZar": 9.04,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8080099213602-44507778646306",
@@ -7643,7 +7607,7 @@
       "pricePerKgZar": 9.27,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "namibian-hardwood::28432",
@@ -7660,7 +7624,7 @@
       "pricePerKgZar": 9.33,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:43.695Z"
+      "scrapedAt": "2026-07-21T05:38:21.351Z"
     },
     {
       "id": "cape-town-firewood::9617905713442-49578013425954",
@@ -7678,7 +7642,7 @@
       "pricePerKgZar": 9.96,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8080099213602-44507778613538",
@@ -7696,7 +7660,7 @@
       "pricePerKgZar": 9.97,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8088722243874-49883335557410",
@@ -7714,7 +7678,7 @@
       "pricePerKgZar": 10.5,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8088722243874-49883335524642",
@@ -7732,7 +7696,7 @@
       "pricePerKgZar": 10.55,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8088722243874-49883335491874",
@@ -7750,7 +7714,7 @@
       "pricePerKgZar": 10.62,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8088722243874-49883335459106",
@@ -7768,7 +7732,7 @@
       "pricePerKgZar": 10.71,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8088722243874-49883335426338",
@@ -7786,7 +7750,7 @@
       "pricePerKgZar": 10.83,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8088722243874-44507144323362",
@@ -7804,7 +7768,7 @@
       "pricePerKgZar": 11,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8088722243874-44507144290594",
@@ -7822,7 +7786,7 @@
       "pricePerKgZar": 11.25,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8088722243874-44507144257826",
@@ -7840,7 +7804,7 @@
       "pricePerKgZar": 11.33,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8088577212706-44507687813410",
@@ -7858,7 +7822,7 @@
       "pricePerKgZar": 11.4,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8088722243874-44507144225058",
@@ -7876,7 +7840,7 @@
       "pricePerKgZar": 11.5,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8088577212706-44507687780642",
@@ -7894,7 +7858,7 @@
       "pricePerKgZar": 11.5,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "firewood-company::622",
@@ -7911,7 +7875,25 @@
       "pricePerKgZar": 11.5,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:37.147Z"
+      "scrapedAt": "2026-07-21T05:38:15.366Z"
+    },
+    {
+      "id": "mother-city-firewood::9042147246243-47408201269411",
+      "vendorId": "mother-city-firewood",
+      "vendorName": "Mother City Firewood",
+      "title": "Kaggel Wood Jumbo Bags | Premium Cape Kaggel Hout — 3 Bags",
+      "url": "https://www.mothercityfirewood.co.za/products/kaggel-wood-hout-jumbo-bags-cape-town?variant=47408201269411",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0670/1508/2147/files/Kaggel_Wood_Hout_Mix_-_Fireplace_and_Pizza_Oven_Jumbo_Bags_Cape_Town.jpg?v=1772983796",
+      "species": "unknown",
+      "usage": "fireplace",
+      "packFormat": "bag",
+      "priceZar": 349,
+      "regularPriceZar": 0,
+      "weightKg": 30,
+      "pricePerKgZar": 11.63,
+      "weightEstimated": false,
+      "inStock": true,
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "cape-town-firewood::8332146606370-45369368281378",
@@ -7929,7 +7911,7 @@
       "pricePerKgZar": 11.66,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8088577212706-44507687747874",
@@ -7947,7 +7929,7 @@
       "pricePerKgZar": 11.66,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8088577212706-44507687715106",
@@ -7965,7 +7947,7 @@
       "pricePerKgZar": 11.79,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8088577212706-44507687682338",
@@ -7983,7 +7965,7 @@
       "pricePerKgZar": 11.98,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8088722243874-44507144192290",
@@ -8001,7 +7983,7 @@
       "pricePerKgZar": 11.99,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8088892997922-44507562639650",
@@ -8019,7 +8001,7 @@
       "pricePerKgZar": 12,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "fire-man::42547",
@@ -8036,7 +8018,7 @@
       "pricePerKgZar": 12,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:38.978Z"
+      "scrapedAt": "2026-07-21T05:38:17.692Z"
     },
     {
       "id": "cape-town-firewood::8088892997922-44507562606882",
@@ -8054,7 +8036,7 @@
       "pricePerKgZar": 12.5,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8096017285410-45317612798242",
@@ -8072,7 +8054,7 @@
       "pricePerKgZar": 12.5,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "namibian-hardwood::28564",
@@ -8089,7 +8071,7 @@
       "pricePerKgZar": 12.5,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:43.695Z"
+      "scrapedAt": "2026-07-21T05:38:21.351Z"
     },
     {
       "id": "cape-town-firewood::8088892997922-44507562574114",
@@ -8107,7 +8089,7 @@
       "pricePerKgZar": 12.66,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8612830183714-46687109906722",
@@ -8125,7 +8107,7 @@
       "pricePerKgZar": 12.77,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8088892997922-44507562541346",
@@ -8143,7 +8125,7 @@
       "pricePerKgZar": 12.99,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "fire-man::41422",
@@ -8160,7 +8142,25 @@
       "pricePerKgZar": 13.75,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:38.978Z"
+      "scrapedAt": "2026-07-21T05:38:17.692Z"
+    },
+    {
+      "id": "mother-city-firewood::8597516189859-45280024133795",
+      "vendorId": "mother-city-firewood",
+      "vendorName": "Mother City Firewood",
+      "title": "Kaggelhout Bulk | Pizza Wood | Large Bags — 3 Bags",
+      "url": "https://www.mothercityfirewood.co.za/products/kaggelhout-firewood-mix-pizza-wood-large-bags?variant=45280024133795",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0670/1508/2147/files/Kaggelhout-Firewood-Mix-Pizza-Wood-Large-Bags.jpg?v=1734808703",
+      "species": "unknown",
+      "usage": "fireplace",
+      "packFormat": "bag",
+      "priceZar": 279,
+      "regularPriceZar": 0,
+      "weightKg": 20,
+      "pricePerKgZar": 13.95,
+      "weightEstimated": false,
+      "inStock": true,
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "cape-town-firewood::8088892997922-44507523350818",
@@ -8178,7 +8178,7 @@
       "pricePerKgZar": 13.98,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8332146606370-45369368314146",
@@ -8196,7 +8196,7 @@
       "pricePerKgZar": 17.33,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8096017285410-45317612831010",
@@ -8214,7 +8214,7 @@
       "pricePerKgZar": 18.33,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8332146606370-45369368346914",
@@ -8232,7 +8232,7 @@
       "pricePerKgZar": 22.99,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8332146606370-45369368379682",
@@ -8250,7 +8250,7 @@
       "pricePerKgZar": 28.66,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8866151039266-47435988435234",
@@ -8268,7 +8268,7 @@
       "pricePerKgZar": 29.35,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8332146606370-45369392136482",
@@ -8286,7 +8286,7 @@
       "pricePerKgZar": 33.99,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8797046145314-47197904339234",
@@ -8303,7 +8303,7 @@
       "pricePerKgZar": 49.9,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8089667141922-44348050768162",
@@ -8321,7 +8321,7 @@
       "pricePerKgZar": 86,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8089656230178-44348001386786",
@@ -8339,7 +8339,7 @@
       "pricePerKgZar": 86,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8089647120674-44347963998498",
@@ -8357,7 +8357,7 @@
       "pricePerKgZar": 86,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8089610813730-44347850850594",
@@ -8375,7 +8375,7 @@
       "pricePerKgZar": 86,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8089588793634-44347781382434",
@@ -8393,7 +8393,7 @@
       "pricePerKgZar": 86,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8089570541858-44347668594978",
@@ -8411,7 +8411,7 @@
       "pricePerKgZar": 86,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8089539215650-44347523760418",
@@ -8429,7 +8429,7 @@
       "pricePerKgZar": 86,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8089526239522-44347425915170",
@@ -8447,7 +8447,7 @@
       "pricePerKgZar": 86,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8089514869026-44347352711458",
@@ -8465,7 +8465,7 @@
       "pricePerKgZar": 86,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8089496355106-44347289862434",
@@ -8483,7 +8483,7 @@
       "pricePerKgZar": 86,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8089422987554-44346723008802",
@@ -8501,7 +8501,7 @@
       "pricePerKgZar": 86,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8089403031842-44346608091426",
@@ -8519,7 +8519,7 @@
       "pricePerKgZar": 86,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8089390121250-44346510278946",
@@ -8537,7 +8537,7 @@
       "pricePerKgZar": 86,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "cape-town-firewood::8089368658210-44346413908258",
@@ -8555,43 +8555,7 @@
       "pricePerKgZar": 86,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:35.785Z"
-    },
-    {
-      "id": "mother-city-firewood::8743908245667-45770438639779",
-      "vendorId": "mother-city-firewood",
-      "vendorName": "Mother City Firewood",
-      "title": "Brandy Barrel Wood Smoking Chunks | Per Box",
-      "url": "https://www.mothercityfirewood.co.za/products/brandy-barrel-wood-smoking-chunks?variant=45770438639779",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0670/1508/2147/files/Brandy-Barrel-Wood-Smoking-Chunks.jpg?v=1744838355",
-      "species": "smoking-mix",
-      "usage": "smoking",
-      "packFormat": "bag",
-      "priceZar": 139,
-      "regularPriceZar": 0,
-      "weightKg": 1.5,
-      "pricePerKgZar": 92.67,
-      "weightEstimated": false,
-      "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
-    },
-    {
-      "id": "mother-city-firewood::8743718551715-45769951412387",
-      "vendorId": "mother-city-firewood",
-      "vendorName": "Mother City Firewood",
-      "title": "Bourbon Barrel Wood Smoking Chunks | Per Box",
-      "url": "https://www.mothercityfirewood.co.za/products/bourbon-barrel-wood-smoking-chunks?variant=45769951412387",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0670/1508/2147/files/bourbon-barrel-wood-smoking-chunks.png?v=1751662518",
-      "species": "smoking-mix",
-      "usage": "smoking",
-      "packFormat": "bag",
-      "priceZar": 139,
-      "regularPriceZar": 0,
-      "weightKg": 1.5,
-      "pricePerKgZar": 92.67,
-      "weightEstimated": false,
-      "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:14.254Z"
     },
     {
       "id": "mother-city-firewood::8597517435043-45216026984611",
@@ -8609,7 +8573,7 @@
       "pricePerKgZar": 92.67,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "mother-city-firewood::8597517500579-45216027345059",
@@ -8627,7 +8591,43 @@
       "pricePerKgZar": 92.67,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
+    },
+    {
+      "id": "mother-city-firewood::8743908245667-45770438639779",
+      "vendorId": "mother-city-firewood",
+      "vendorName": "Mother City Firewood",
+      "title": "Brandy Barrel Wood Smoking Chunks | Per Box",
+      "url": "https://www.mothercityfirewood.co.za/products/brandy-barrel-wood-smoking-chunks?variant=45770438639779",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0670/1508/2147/files/Brandy-Barrel-Wood-Smoking-Chunks.jpg?v=1744838355",
+      "species": "smoking-mix",
+      "usage": "smoking",
+      "packFormat": "bag",
+      "priceZar": 149,
+      "regularPriceZar": 0,
+      "weightKg": 1.5,
+      "pricePerKgZar": 99.33,
+      "weightEstimated": false,
+      "inStock": true,
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
+    },
+    {
+      "id": "mother-city-firewood::8743718551715-45769951412387",
+      "vendorId": "mother-city-firewood",
+      "vendorName": "Mother City Firewood",
+      "title": "Bourbon Barrel Wood Smoking Chunks | Per Box",
+      "url": "https://www.mothercityfirewood.co.za/products/bourbon-barrel-wood-smoking-chunks?variant=45769951412387",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0670/1508/2147/files/bourbon-barrel-wood-smoking-chunks.png?v=1751662518",
+      "species": "smoking-mix",
+      "usage": "smoking",
+      "packFormat": "bag",
+      "priceZar": 149,
+      "regularPriceZar": 0,
+      "weightKg": 1.5,
+      "pricePerKgZar": 99.33,
+      "weightEstimated": false,
+      "inStock": false,
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "mother-city-firewood::8597517533347-45216027377827",
@@ -8639,13 +8639,13 @@
       "species": "smoking-mix",
       "usage": "smoking",
       "packFormat": "bag",
-      "priceZar": 139,
+      "priceZar": 149,
       "regularPriceZar": 0,
       "weightKg": 1.5,
-      "pricePerKgZar": 92.67,
+      "pricePerKgZar": 99.33,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "mother-city-firewood::8597517566115-45240584208547",
@@ -8657,13 +8657,13 @@
       "species": "smoking-mix",
       "usage": "smoking",
       "packFormat": "bag",
-      "priceZar": 139,
+      "priceZar": 149,
       "regularPriceZar": 0,
       "weightKg": 1.5,
-      "pricePerKgZar": 92.67,
+      "pricePerKgZar": 99.33,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "mother-city-firewood::8751378989219-45790650663075",
@@ -8681,7 +8681,7 @@
       "pricePerKgZar": 99.83,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "mother-city-firewood::8751122743459-45789128032419",
@@ -8699,7 +8699,7 @@
       "pricePerKgZar": 99.83,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "mother-city-firewood::8750769209507-45788571959459",
@@ -8717,7 +8717,7 @@
       "pricePerKgZar": 99.83,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "mother-city-firewood::8750307147939-45787193999523",
@@ -8735,7 +8735,7 @@
       "pricePerKgZar": 99.83,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "mother-city-firewood::8751540437155-45790984208547",
@@ -8753,7 +8753,7 @@
       "pricePerKgZar": 132.67,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "mother-city-firewood::8743949500579-45770548904099",
@@ -8771,7 +8771,7 @@
       "pricePerKgZar": 132.67,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "mother-city-firewood::8743645511843-45769319547043",
@@ -8789,7 +8789,7 @@
       "pricePerKgZar": 132.67,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "mother-city-firewood::8597517402275-45216026951843",
@@ -8807,7 +8807,7 @@
       "pricePerKgZar": 132.67,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "mother-city-firewood::8597517369507-45216026919075",
@@ -8825,7 +8825,7 @@
       "pricePerKgZar": 132.67,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "mother-city-firewood::8597517107363-45216026362019",
@@ -8843,7 +8843,7 @@
       "pricePerKgZar": 132.67,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "mother-city-firewood::8597517172899-45216026722467",
@@ -8861,7 +8861,7 @@
       "pricePerKgZar": 132.67,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "mother-city-firewood::8597517074595-45216026329251",
@@ -8879,7 +8879,7 @@
       "pricePerKgZar": 132.67,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "mother-city-firewood::8597517238435-45216026788003",
@@ -8897,7 +8897,7 @@
       "pricePerKgZar": 132.67,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "mother-city-firewood::8597517271203-45216026820771",
@@ -8915,7 +8915,7 @@
       "pricePerKgZar": 132.67,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "mother-city-firewood::8597517336739-45216026886307",
@@ -8933,7 +8933,7 @@
       "pricePerKgZar": 132.67,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "mother-city-firewood::8597517303971-45216026853539",
@@ -8951,7 +8951,7 @@
       "pricePerKgZar": 132.67,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     },
     {
       "id": "mother-city-firewood::8597517205667-45216026755235",
@@ -8969,7 +8969,7 @@
       "pricePerKgZar": 132.67,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-07-20T05:56:34.259Z"
+      "scrapedAt": "2026-07-21T05:38:12.804Z"
     }
   ],
   "vendorRunStatus": {
@@ -8977,49 +8977,49 @@
       "ok": true,
       "count": 200,
       "rawCount": 234,
-      "ranAt": "2026-07-20T05:56:34.259Z"
+      "ranAt": "2026-07-21T05:38:12.803Z"
     },
     "wood-gurus": {
       "ok": true,
       "count": 7,
       "rawCount": 36,
-      "ranAt": "2026-07-20T05:56:35.115Z"
+      "ranAt": "2026-07-21T05:38:13.431Z"
     },
     "cape-town-firewood": {
       "ok": true,
       "count": 210,
       "rawCount": 261,
-      "ranAt": "2026-07-20T05:56:35.784Z"
+      "ranAt": "2026-07-21T05:38:14.253Z"
     },
     "firewood-company": {
       "ok": true,
       "count": 19,
       "rawCount": 38,
-      "ranAt": "2026-07-20T05:56:37.147Z"
+      "ranAt": "2026-07-21T05:38:15.366Z"
     },
     "fire-man": {
       "ok": true,
       "count": 6,
       "rawCount": 17,
-      "ranAt": "2026-07-20T05:56:38.978Z"
+      "ranAt": "2026-07-21T05:38:17.692Z"
     },
     "lancehoudt": {
       "ok": true,
       "count": 27,
       "rawCount": 36,
-      "ranAt": "2026-07-20T05:56:40.346Z"
+      "ranAt": "2026-07-21T05:38:18.784Z"
     },
     "namibian-hardwood": {
       "ok": true,
       "count": 15,
       "rawCount": 69,
-      "ranAt": "2026-07-20T05:56:43.695Z"
+      "ranAt": "2026-07-21T05:38:21.351Z"
     },
     "wood-bros": {
       "ok": true,
       "count": 18,
       "rawCount": 18,
-      "ranAt": "2026-07-20T05:56:46.985Z"
+      "ranAt": "2026-07-21T05:38:24.490Z"
     }
   }
 }
