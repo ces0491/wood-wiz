@@ -89,6 +89,14 @@ function decodeEntities(s: string): string {
 export function extractWeight(text: string, densityKgPerM3: number): WeightResult | null {
   const lower = text.toLowerCase().replace(/,/g, ".");
 
+  // Set when a bag-count multiplier ("— 25 Bags", "40x Bags") is present but we
+  // couldn't pair it with a per-bag unit weight. In that state any later piece
+  // count is per-bag, not total (e.g. Cape Town Firewood's "Large 20pcs — 25
+  // Bags" once they replaced the per-bag grams with a 100 g placeholder), so the
+  // pieces branch below must refuse rather than emit a per-bag figure as the
+  // whole order. See scripts/scrape-all.ts > runSanityChecks.
+  let unresolvedBagMultiplier = false;
+
   // 0. Explicit total weight as a postscript: "(750KG)", "(1-Ton)",
   // "| 144KG" at the end of a title. Some vendors append the total in
   // parens or after a separator; this is the most reliable signal when
@@ -151,6 +159,7 @@ export function extractWeight(text: string, densityKgPerM3: number): WeightResul
         return { weightKg: total, estimated: false, packFormat: "pallet" };
       }
     }
+    unresolvedBagMultiplier = true;
   }
 
   // Multi-pack variant: unit weight followed by separator (em-dash, en-dash, or
@@ -167,6 +176,7 @@ export function extractWeight(text: string, densityKgPerM3: number): WeightResul
         return { weightKg: total, estimated: false, packFormat: "pallet" };
       }
     }
+    unresolvedBagMultiplier = true;
   }
 
   // Direct kg: "18kg", "±20 kg", "approx 30kg", "100 kg bag"
@@ -185,6 +195,9 @@ export function extractWeight(text: string, densityKgPerM3: number): WeightResul
   // least MIN_BULK_PIECES before treating a pieces listing as comparable.
   const piecesMatch = lower.match(/(\d+)\s*[-]?\s*(?:piece|pieces|pc|pcs)\b/);
   if (piecesMatch) {
+    // A piece count under an unresolved bag multiplier is pieces-per-bag, not a
+    // total — refuse rather than publish a per-bag figure as the whole order.
+    if (unresolvedBagMultiplier) return null;
     const pieces = parseInt(piecesMatch[1], 10);
     if (pieces < MIN_BULK_PIECES) return null;
     const estimated = pieces * 1.5;

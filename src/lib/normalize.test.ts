@@ -200,6 +200,35 @@ describe("extractWeight", () => {
     test("'2000-piece' hyphenated", () => {
       expect(extractWeight("Bluegum 2000-piece pallet", DENSITY)?.weightKg).toBe(3000);
     });
+
+    // Cape Town Firewood replaced the per-bag grams on their "Firewood Bags"
+    // products with a 100 g placeholder. With no kg token left, the pieces
+    // branch used to read the per-bag piece count ("Large 20pcs") as a total,
+    // pinning every bag-count variant to a bogus 30 kg. A bag-count multiplier
+    // we can't resolve to a real weight must drop, not guess from per-bag pcs.
+    test("per-bag pieces under an unresolved bag count are dropped, not guessed", () => {
+      expect(
+        extractWeight("Bluegum Firewood Bags (Local) | Large 20pcs — 20 Bags 20 Bags", DENSITY),
+      ).toBeNull();
+      expect(
+        extractWeight(
+          "Rooikrans Braai Wood Bags (Local) | 5x 24pc or more | Large — 25 Bags 25 Bags",
+          DENSITY,
+        ),
+      ).toBeNull();
+    });
+
+    test("a resolvable bag count still wins over a stray piece count", () => {
+      // "18KG Bags — 25 Bags" resolves to 450 kg; a per-bag "20pcs" must not
+      // hijack it via the pieces branch.
+      const r = extractWeight("Kameeldoring | Large 20pcs 18KG Bags — 25 Bags", DENSITY);
+      expect(r?.weightKg).toBe(450);
+      expect(r?.packFormat).toBe("pallet");
+    });
+
+    test("a plain bulk piece count with no bag multiplier is unaffected", () => {
+      expect(extractWeight("Bluegum 500 pieces", DENSITY)?.weightKg).toBe(750);
+    });
   });
 
   describe("volume m³", () => {
