@@ -522,6 +522,58 @@ describe("normalize (integration)", () => {
     expect(result!.maxPricePerKgZar).toBeCloseTo(1.2, 2);
   });
 
+  test("drops a jumbo-bag order whose only kg is a free-gift bag", () => {
+    // Cape Town Firewood's jumbo bags carry a placeholder grams, so the scraper
+    // falls back to the variant title. The only kg belongs to the promo bag; read
+    // as the total it gives a 20-bag order at 20kg (R95/kg). No real per-bag
+    // weight is recoverable, so the listing must drop, not publish the gift's kg.
+    const result = normalize(
+      makeScraped({
+        vendorId: "cape-town-firewood",
+        title:
+          "Kaggel Wood Jumbo Bags | Premium Cape Kaggel Hout — 20 Bags + 1x FREE 20KG Namibian Hardwood Bag",
+        priceZar: 1899,
+        rawWeightLabel: "20 Bags + 1x FREE 20KG Namibian Hardwood Bag",
+      }),
+    );
+    expect(result).toBeNull();
+  });
+
+  test("recovers the real total shadowed by a free-gift bag's own weight", () => {
+    // The production case: the vendor publishes a real per-variant total in grams
+    // (600kg for the 20-bag jumbo), which the scraper prepends. The promo bag's
+    // "20KG" sits earlier in the title, so without stripping, the first-match kg
+    // parser locks onto 20kg (R95/kg). Stripping the promo lets the real 600kg win.
+    const result = normalize(
+      makeScraped({
+        vendorId: "cape-town-firewood",
+        title:
+          "Kaggel Wood Jumbo Bags | Premium Cape Kaggel Hout — 20 Bags + 1x FREE 20KG Namibian Hardwood Bag",
+        priceZar: 1899,
+        rawWeightLabel: "600kg 20 Bags + 1x FREE 20KG Namibian Hardwood Bag",
+      }),
+    );
+    expect(result!.weightKg).toBe(600);
+    expect(result!.pricePerKgZar).toBeCloseTo(3.17, 2); // 1899 / 600
+  });
+
+  test("keeps a real total when a free-gift promo has no weight of its own", () => {
+    // Same shape, but the vendor published a real per-variant total in grams, so
+    // the scraper prepends it ("400kg ...") and the promo ("2x FREE Blitz Packs")
+    // carries no kg. Stripping the promo must not eat the real 400kg.
+    const result = normalize(
+      makeScraped({
+        vendorId: "mother-city-firewood",
+        title: "Rooikrans Braai Wood Bulk | Large Bags (Premium) — 20 Bags + 2x FREE Blitz Packs",
+        priceZar: 1849,
+        rawWeightLabel: "400kg 20 Bags + 2x FREE Blitz Packs",
+      }),
+    );
+    expect(result).not.toBeNull();
+    expect(result!.weightKg).toBe(400);
+    expect(result!.title).toContain("FREE Blitz Packs");
+  });
+
   test("decodes HTML entities in titles", () => {
     const result = normalize(
       makeScraped({ title: "Kameeldoring &amp; Sekelbos 18kg" }),

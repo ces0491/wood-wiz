@@ -70,6 +70,19 @@ export function isFirewood(title: string): boolean {
   return !NON_FIREWOOD_PATTERNS.some((p) => p.test(title));
 }
 
+// Free-gift promos tack a bonus item onto the end of a variant title, e.g.
+// "... — 20 Bags + 1x FREE 20KG Namibian Hardwood Bag". The bonus sometimes
+// carries its own weight, which extractWeight otherwise reads as the order
+// total — a 20-bag jumbo order measured as the free bag's 20kg → R95/kg. The
+// gift is never the purchased weight, so drop the clause before measuring.
+// Applied per field (not to the joined string) so that a real total the Shopify
+// scraper prepends to the variant label ("400kg 20 Bags + 2x FREE ...") is kept
+// while its trailing promo is removed. The promo is always title-final, so the
+// greedy tail is safe.
+export function stripFreeGift(s: string): string {
+  return s.replace(/\s*\+\s*\d*\s*x?\s*free\b.*$/i, "");
+}
+
 function decodeEntities(s: string): string {
   return s
     .replace(/&#(\d+);/g, (_, n) => String.fromCharCode(parseInt(n, 10)))
@@ -246,11 +259,13 @@ export function normalize(scraped: ScrapedProduct): Product | null {
   const title = decodeEntities(scraped.title);
   if (!isFirewood(title)) return null;
 
-  const species = detectSpecies(`${title} ${scraped.rawWeightLabel ?? ""}`);
+  // Measure against the title with any free-gift promo removed; the displayed
+  // title below keeps it. See stripFreeGift.
+  const measured = `${stripFreeGift(title)} ${stripFreeGift(scraped.rawWeightLabel ?? "")}`;
+  const species = detectSpecies(measured);
   const speciesInfo = getSpecies(species);
 
-  const searchText = `${title} ${scraped.rawWeightLabel ?? ""}`;
-  const weight = extractWeight(searchText, speciesInfo.densityKgPerM3);
+  const weight = extractWeight(measured, speciesInfo.densityKgPerM3);
   if (!weight || weight.weightKg < 1) return null;
   if (scraped.priceZar <= 0) return null;
 
