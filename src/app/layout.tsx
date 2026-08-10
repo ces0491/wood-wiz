@@ -1,8 +1,9 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Analytics } from "@vercel/analytics/next";
 import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
 import ReturnToTop from "@/components/ReturnToTop";
+import InstallBanner from "@/components/InstallBanner";
 import "./globals.css";
 
 // metadataBase is what Next.js uses to absolutise OG image URLs in social
@@ -27,6 +28,22 @@ export const metadata: Metadata = {
     description:
       "8 Cape Town vendors ranked by rand per kilogram. Daily refresh, no affiliate links.",
   },
+  // Standalone launch metadata for iOS "Add to Home Screen" — the manifest
+  // covers Android/Chromium. capable + title give the installed shortcut its
+  // own name and a full-screen, browser-chrome-free launch.
+  appleWebApp: {
+    capable: true,
+    title: "Wood Wiz",
+    statusBarStyle: "default",
+  },
+};
+
+// Tint the mobile browser toolbar to match the page surface in each scheme.
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#fafaf9" },
+    { media: "(prefers-color-scheme: dark)", color: "#0c0a09" },
+  ],
 };
 
 export default function RootLayout({
@@ -48,6 +65,7 @@ export default function RootLayout({
           Skip to content
         </a>
         <SiteNav />
+        <InstallBanner />
         <div id="main" className="flex-1">
           {children}
         </div>
