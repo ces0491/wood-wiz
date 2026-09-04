@@ -27,3 +27,26 @@ jobs:
 
       - name: Unit tests
         run: npm test
+
+      # Layout regressions don't show up in markup. Adding the city switcher
+      # pushed the mobile nav to 456px inside a 375px viewport and every city
+      # page scrolled sideways; the HTML was valid and every class plausible.
+      # These assertions run a real browser at three widths in both themes.
+      #
+      # Pixel-diff baselines are deliberately not run here: they are stored per
+      # platform, so a Windows-authored set is unusable on this runner, and the
+      # design is still moving enough that they would mostly report intended
+      # changes. See README > Visual regression.
+      - name: Install Chromium for Playwright
+        run: npx playwright install --with-deps chromium
+
+      - name: Visual regression (layout invariants)
+        run: npm run test:visual
+
+      - name: Upload Playwright report on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 7

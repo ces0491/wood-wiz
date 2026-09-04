@@ -10,7 +10,10 @@
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "test:watch": "vitest",
-    "scrape": "tsx scripts/scrape-all.ts"
+    "scrape": "tsx scripts/scrape-all.ts",
+    "test:visual": "playwright test --grep-invert @pixel",
+    "test:visual:pixel": "playwright test --grep @pixel",
+    "test:visual:baseline": "playwright test --grep @pixel --update-snapshots"
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",
@@ -22,6 +25,7 @@
     "zod": "^4.4.3"
   },
   "devDependencies": {
+    "@playwright/test": "^1.62.1",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20.19.41",
     "@types/react": "^19",
