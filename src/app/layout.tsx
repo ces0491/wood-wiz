@@ -4,29 +4,31 @@ import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
 import ReturnToTop from "@/components/ReturnToTop";
 import InstallBanner from "@/components/InstallBanner";
+import { SITE_URL } from "@/lib/site";
 import "./globals.css";
 
-// metadataBase is what Next.js uses to absolutise OG image URLs in social
-// previews. Override via NEXT_PUBLIC_SITE_URL once we have a real domain.
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://wood-wiz.vercel.app";
-
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
-  title: "Wood Wiz — Cape Town firewood prices per kg",
+  // What Next.js absolutises OG image URLs against in social previews. Shared
+  // with the sitemap and robots policy so all three name the same origin.
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: "Wood Wiz — South African firewood prices per kg",
+    template: "%s",
+  },
   description:
-    "Compare braai, fireplace and smoking wood prices across 8 Cape Town vendors, normalised to rand per kilogram. Daily refresh, no affiliate links.",
+    "Compare braai, fireplace and smoking wood prices from the vendors who deliver to your city, normalised to rand per kilogram. Daily refresh, no affiliate links.",
   openGraph: {
     type: "website",
     siteName: "Wood Wiz",
-    title: "Wood Wiz — Cape Town firewood prices per kg",
+    title: "Wood Wiz — South African firewood prices per kg",
     description:
-      "8 Cape Town vendors ranked by rand per kilogram. Daily refresh, no affiliate links.",
+      "Firewood vendors ranked by rand per kilogram, city by city. Daily refresh, no affiliate links.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Wood Wiz — Cape Town firewood prices per kg",
+    title: "Wood Wiz — South African firewood prices per kg",
     description:
-      "8 Cape Town vendors ranked by rand per kilogram. Daily refresh, no affiliate links.",
+      "Firewood vendors ranked by rand per kilogram, city by city. Daily refresh, no affiliate links.",
   },
   // Standalone launch metadata for iOS "Add to Home Screen" — the manifest
   // covers Android/Chromium. capable + title give the installed shortcut its
