@@ -48,7 +48,7 @@ npm run scrape   # populate data/products.json (~60-90s)
 npm run dev      # http://localhost:3000
 ```
 
-`npm run scrape` runs every vendor scraper, normalizes results to a price-per-kg figure, and writes `data/products.json`. The dev server reads that file at request time, so re-running `scrape` and refreshing is enough — no rebuild needed. In production it's read at build time instead, since `/` and `/vendors` prerender to static HTML.
+`npm run scrape` runs every vendor scraper, normalizes results to a price-per-kg figure, and writes `data/products.json`. The dev server reads that file at request time, so re-running `scrape` and refreshing is enough — no rebuild needed. In production it's read at build time instead, since every route prerenders to static HTML.
 
 Other scripts:
 
@@ -122,16 +122,17 @@ Densities used are mid-range air-dry estimates from general wood-science referen
 
 ## Architecture
 
-```
+```text
 src/
   app/
     layout.tsx               # Nav, footer, install banner, <main> landmark, skip link
-    page.tsx                 # Price browser (server component, loads data)
-    vendors/page.tsx         # Vendor comparison (server component)
+    page.tsx                 # City picker (server component, counts only)
+    [region]/page.tsx        # Price browser for one city (server component)
+    [region]/vendors/page.tsx # Vendor comparison for one city
     faq/page.tsx             # Methodology / trust page
     manifest.ts              # Web app manifest (PWA install)
     robots.ts                # Crawl policy; preview builds refuse indexing
-    sitemap.ts               # Three routes, dated from the catalogue
+    sitemap.ts               # Six routes, dated from the catalogue
     icon.tsx                 # Favicon, generated via ImageResponse
     apple-icon.tsx           # iOS touch icon
     opengraph-image.tsx      # Social preview card
@@ -275,7 +276,11 @@ Propagation is usually minutes. Vercel issues the certificate on its own once th
 
 `NEXT_PUBLIC_SITE_URL` overrides all three and is the one environment variable the project takes. It is optional; set it only for a deployment that genuinely serves somewhere else.
 
-`robots.txt` and `sitemap.xml` are generated from the same value. A preview build disallows crawling outright — it serves production's content on another hostname, which competes with production for the same queries — so only production emits an `Allow` and a `Sitemap` line. The sitemap dates `/` and `/vendors` from the catalogue's `generatedAt` and leaves `/faq` undated, since hand-written copy doesn't change when a price does.
+`robots.txt` and `sitemap.xml` are generated from the same value. A preview build disallows crawling outright — it serves production's content on another hostname, which competes with production for the same queries — so only production emits an `Allow` and a `Sitemap` line. The sitemap dates the picker and the per-city pages from the catalogue's `generatedAt` and leaves `/faq` undated, since hand-written copy doesn't change when a price does.
+
+**`wood-wiz.vercel.app` 308s to the custom domain**, via a host-matched redirect in `next.config.ts`. Vercel keeps answering on a project's generated alias after a custom domain is attached, and until 2026-09-04 the alias served the whole site — two hostnames with identical content, splitting whatever authority the pages earn. The `has` clause matches that exact alias, so preview deployments on their own generated hostnames are untouched and go on serving themselves for review.
+
+**Every page sets its own `alternates.canonical`**, rather than the root layout setting one for all of them. A layout-level canonical is inherited by any page that doesn't override it, so a page added without one would quietly claim to be the home page — and a wrong canonical costs that page its indexing, where a missing one merely fails to consolidate. `/` and `/faq` went without canonicals until 2026-09-04 for exactly this reason: only the two `[region]` routes had ever set them.
 
 Note that a `CNAME` **file** in the repository does nothing here. That is a GitHub Pages mechanism, which is how `rbr.sheetsolved.com` is wired; Vercel reads its domains from project settings.
 
@@ -319,7 +324,7 @@ Both workflows fire on the same push, so `Test` runs `npm ci` against the Window
 
 - **Delivery prices are descriptive, not computed.** The vendor record stores a free-form description and (where known) a `freeOverZar` threshold and `stacking` flag. The UI shows the description on each card but doesn't compute a delivered total — most vendors price delivery by suburb at checkout.
 - **Stacking flags only confirmed for two vendors.** `delivery.stacking` is explicitly set for Mother City Firewood (`free-over-threshold`) and Lancehoudt (`free`) — the only two whose product descriptions stated it. The other six are unset and render no stacking badge at all; the earlier "Stacking unconfirmed" badge was removed as UI noise, since a badge that says nothing still reads as a verdict.
-- **Vendor ranking uses the median, never the mean.** CTF and Mother City Firewood sell premium smoking-chunk boxes at R 100–130/kg alongside bulk pallets at R 2–5/kg. The arithmetic mean ranks them as expensive (R 16–20/kg) even though their bulk product is cheap, so `/vendors` ranks and displays the median throughout — the word "average" is kept out of the headline UI on purpose. `avgPricePerKgZar` is still computed in `vendor-stats.ts` but isn't shown anywhere.
+- **Vendor ranking uses the median, never the mean.** CTF and Mother City Firewood sell premium smoking-chunk boxes at R 100–130/kg alongside bulk pallets at R 2–5/kg. The arithmetic mean ranks them as expensive (R 16–20/kg) even though their bulk product is cheap, so `/[region]/vendors` ranks and displays the median throughout — the word "average" is kept out of the headline UI on purpose. `avgPricePerKgZar` is still computed in `vendor-stats.ts` but isn't shown anywhere.
 - **Medians rest on very different sample sizes.** The Wood Gurus normalise to a handful of products because most of their catalogue is a per-piece configurator, while Mother City Firewood contribute ~200. The bar charts print each vendor's product count beside their name, and the "cheapest typical price" spotlight skips vendors below `MIN_SPOTLIGHT_SAMPLE` (8) so a four-product median can't take the headline.
 - **Regional price levels are not comparable, and the site doesn't try.** Cape Town bulk runs R 1–5/kg against Gauteng's R 4–11, driven mostly by distance from source. Rankings are scoped per city and `/` shows no prices. The sanity gate's R 1/kg floor and R 50/kg ceiling are still global, though, and were derived from Cape Town pricing — they hold for Gauteng today but should become per-region if a city with a very different price level is added.
 - **The species table is coastal Western Cape–biased.** Rooikrans and Port Jackson are local invasives. `detectSpecies` returns `unknown` for anything unlisted, which silently applies the 800 kg/m³ default density to volume-priced listings. Gauteng vendors already surfaced this — Stompies' "Sekelbush" spelling needed an alias.
