@@ -51,3 +51,35 @@ jobs:
           name: playwright-report
           path: playwright-report/
           retention-days: 7
+
+  # A separate job so a dependency advisory and a test failure are two distinct
+  # red marks rather than one hiding the other, and so this answers in seconds
+  # instead of waiting behind a browser suite.
+  #
+  # `npm audit` reads package-lock.json and needs no install, so there is no
+  # `npm ci` here. That also means it runs against whatever lockfile the push
+  # carried; a Windows-shaped one resolves slightly differently, which the
+  # lockfile-sync re-dispatch covers.
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: "24"
+
+      # high, not low. Dev dependencies are in scope — the scrape job holds
+      # `contents: write` and reaches eight third-party sites, and what it
+      # commits deploys itself — so this deliberately does not pass
+      # `--omit=dev`. But a moderate advisory in a build-time transitive should
+      # not block a price refresh at 03:00; those get picked up by review.
+      #
+      # If an advisory lands with no fix published, this blocks with nothing to
+      # do about it. The escape hatch is a documented `overrides` entry in
+      # package.json pinning the patched transitive, or raising this threshold
+      # in a commit that says why — not deleting the gate.
+      - name: Audit dependencies
+        run: npm audit --audit-level=high
+

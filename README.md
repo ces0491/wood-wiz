@@ -178,7 +178,7 @@ data/
   products.json              # Output of `npm run scrape`; ~480 products
 .github/workflows/
   scrape.yml                 # Daily cron at 03:00 UTC, commits refreshed JSON
-  test.yml                   # Lint, typecheck, unit tests and layout invariants
+  test.yml                   # Lint, typecheck, unit tests, layout invariants, audit gate
   lockfile.yml               # On package.json/lock changes: regenerate lockfile on Linux and auto-commit
 ```
 
@@ -285,12 +285,29 @@ Note that a `CNAME` **file** in the repository does nothing here. That is a GitH
 caret range — the framework moves fast and this is a live site, so a version
 change should be a commit someone reviewed. Everything else takes a caret.
 
-`npm audit` should report zero. When it doesn't, check whether the advisory
-reaches anything the site actually does before reaching for `--force`: this is
-static HTML on a CDN with no Server Actions, no middleware, no custom server
-and no `next/image`, so most Next advisories describe surfaces that don't
-exist here. Patch anyway — "we don't use that feature" expires the moment
-someone adds a Server Action — but that context decides whether it is urgent.
+`npm audit --audit-level=high` is a CI gate, in its own job in `test.yml` so a
+dependency advisory and a test failure show as two distinct red marks rather
+than one hiding the other. It reads `package-lock.json` and needs no install,
+so it answers in seconds.
+
+The threshold is **high**, and dev dependencies are deliberately in scope (no
+`--omit=dev`): the scrape job holds `contents: write`, reaches eight
+third-party sites, and what it commits deploys itself, so a compromised build
+tool is a real path to the live site. A moderate advisory in a build-time
+transitive shouldn't block a 03:00 price refresh, though, so those surface at
+review rather than as a failure.
+
+When it fires, check whether the advisory reaches anything the site actually
+does before reaching for `--force`: this is static HTML on a CDN with no Server
+Actions, no middleware, no custom server and no `next/image`, so most Next
+advisories describe surfaces that don't exist here. Patch anyway — "we don't
+use that feature" expires the moment someone adds a Server Action — but that
+context decides whether it is urgent.
+
+If an advisory lands with no published fix, the gate blocks with nothing to do
+about it. The escape hatch is an `overrides` entry in `package.json` pinning
+the patched transitive, or raising the threshold in a commit that says why —
+not deleting the gate.
 
 ### Lockfile sync (Windows contributors)
 
