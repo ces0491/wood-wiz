@@ -1,4 +1,6 @@
 import { Banknote, ChevronDown, Hammer, ShieldCheck, Store } from "lucide-react";
+import { REGIONS } from "@/lib/regions";
+import { VENDORS } from "@/lib/vendors";
 
 function GithubMark({ className }: { className?: string }) {
   return (
@@ -165,18 +167,31 @@ const SECTIONS: FaqSection[] = [
           <>
             <p>
               An automated job scrapes each vendor&apos;s public product catalogue daily.
-              We currently cover 8 Cape Town vendors:
+              We currently cover {VENDORS.length} vendors across {REGIONS.length} cities:
             </p>
-            <ul className="ml-5 list-disc space-y-1">
-              <li>Mother City Firewood</li>
-              <li>The Wood Gurus</li>
-              <li>Cape Town Firewood (CTF)</li>
-              <li>The Firewood Company</li>
-              <li>The Fire Man</li>
-              <li>Lancehoudt</li>
-              <li>Namibian Hardwood</li>
-              <li>The Wood Bros</li>
-            </ul>
+            {REGIONS.map((region) => {
+              const vendors = VENDORS.filter((v) => v.regions.includes(region.id));
+              return (
+                <div key={region.id}>
+                  <p className="font-medium text-stone-800 dark:text-stone-200">
+                    {region.name}
+                  </p>
+                  <ul className="ml-5 list-disc space-y-1">
+                    {vendors.map((v) => (
+                      <li key={v.id}>{v.name}</li>
+                    ))}
+                  </ul>
+                </div>
+              );
+            })}
+            <p>
+              A vendor delivering to more than one city is listed under each. Prices are
+              always compared <strong>within</strong> a city &mdash; each page ranks the
+              vendors who deliver to that doorstep against one another, never one city
+              against another. Cape Town bulk wood is cheaper than Gauteng&apos;s largely
+              because it is nearer the source, which tells you nothing useful if you live
+              in Johannesburg.
+            </p>
             <p>
               We&apos;re not affiliated with any of them. There&apos;s no paid placement
               or ranking adjustment &mdash; vendors are ordered purely by the metric you
@@ -241,6 +256,10 @@ const SECTIONS: FaqSection[] = [
             We can only include vendors with a public, machine-readable product
             catalogue (most use Shopify, WooCommerce, or have a sitemap we can parse).
             Adding a new vendor requires writing a small scraper for their site format.
+            It is also why some cities aren&apos;t listed at all: Durban and the Garden
+            Route have firewood sellers, but as of September 2026 none of them publishes
+            a catalogue we can read, and a city page with one vendor on it wouldn&apos;t
+            be a comparison.
             Suggest one via the{" "}
             <a
               href="https://github.com/ces0491/wood-wiz/issues"
@@ -325,7 +344,7 @@ const SECTIONS: FaqSection[] = [
               Wood Wiz is <strong>independent</strong> — there are no affiliate
               links, no paid placement, and no vendor-sponsored ranking. Vendors are
               listed because they have a public product catalogue and serve the
-              Cape Town area; rankings are purely metric-based.
+              cities we cover; rankings are purely metric-based.
             </p>
           </>
         ),
@@ -334,8 +353,7 @@ const SECTIONS: FaqSection[] = [
         q: "Are you affiliated with any of these vendors?",
         a: (
           <p>
-            No. We have no commercial relationship with any of the eight listed
-            vendors. We scrape their public product pages once a day; we don&apos;t
+            No. We have no commercial relationship with any of the listed vendors. We scrape their public product pages once a day; we don&apos;t
             get a cut of anything you buy, and the &ldquo;Buy at vendor&rdquo;
             links go straight to the vendor&apos;s own site without tracking
             redirects.
@@ -404,9 +422,13 @@ export default function FAQ() {
                 {section.items.map((item) => (
                   <details key={item.q} className="group px-4 py-3">
                     <summary className="flex cursor-pointer list-none items-center justify-between gap-3 text-sm font-medium">
-                      <span>{item.q}</span>
+                      {/* A heading inside the summary so the questions show up
+                          in heading navigation. Without it a reader jumping by
+                          heading gets four section titles for the whole page,
+                          and this is the page that explains the method. */}
+                      <h3 className="text-sm font-medium">{item.q}</h3>
                       <ChevronDown
-                        className="size-4 shrink-0 text-stone-500 transition group-open:rotate-180"
+                        className="size-4 shrink-0 text-stone-500 transition group-open:rotate-180 motion-reduce:transition-none dark:text-stone-400"
                         aria-hidden
                       />
                     </summary>

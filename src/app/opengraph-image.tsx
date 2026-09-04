@@ -1,6 +1,8 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "Wood Wiz — Cape Town firewood prices per kilogram";
+import { VENDORS } from "@/lib/vendors";
+
+export const alt = "Wood Wiz — South African firewood prices per kilogram";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -52,7 +54,7 @@ export default function OgImage() {
               letterSpacing: "-0.03em",
             }}
           >
-            <div style={{ display: "flex" }}>Cape Town firewood,</div>
+            <div style={{ display: "flex" }}>Firewood,</div>
             <div style={{ display: "flex" }}>ranked by R/kg.</div>
           </div>
           <div
@@ -63,7 +65,7 @@ export default function OgImage() {
               fontWeight: 500,
             }}
           >
-            8 vendors. Daily refresh. No affiliate links.
+            {`${VENDORS.length} vendors. Daily refresh. No affiliate links.`}
           </div>
         </div>
       </div>

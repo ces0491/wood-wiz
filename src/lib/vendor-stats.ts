@@ -1,4 +1,28 @@
 import type { Product, Vendor, WoodSpecies } from "./types";
+import type { RegionId } from "./regions";
+
+/**
+ * The vendors serving a metro, and the products a reader there can actually buy.
+ *
+ * Every comparison on the site is within one metro: vendors are ranked against
+ * the others delivering to the same doorstep, never against another city's.
+ * Cape Town bulk runs R 1–5/kg against Gauteng's R 4–11, and a combined
+ * ranking would read as a verdict on the vendors when it is a fact about
+ * distance from the source.
+ *
+ * A vendor serving two metros appears in both with the same catalogue — one
+ * storefront, one set of prices — so their figures are identical on each page
+ * and are still only ever compared with that page's other vendors.
+ */
+export function forRegion(
+  region: RegionId,
+  products: Product[],
+  vendors: Vendor[],
+): { products: Product[]; vendors: Vendor[] } {
+  const inRegion = vendors.filter((v) => v.regions.includes(region));
+  const ids = new Set(inRegion.map((v) => v.id));
+  return { products: products.filter((p) => ids.has(p.vendorId)), vendors: inRegion };
+}
 
 export interface VendorStats {
   vendorId: string;
@@ -89,15 +113,21 @@ export function computeHighlights(
   // on the mean even though their bulk pricing is competitive.
   //
   // The spotlight also needs a sample floor. A median over a handful of
-  // products is not a "typical price" — The Wood Gurus normalise to 4 listings
-  // because most of their catalogue is a per-piece configurator, and four
-  // products could take the headline off a vendor with two hundred. Vendors
-  // below the floor still appear in every chart and breakdown card, with their
-  // product count shown; they just can't win the award. If nobody clears the
-  // floor, fall back to the full set rather than showing nothing.
+  // products is not a "typical price" — The Wood Gurus normalise to 8 listings
+  // because most of their catalogue is a per-piece configurator, and a vendor
+  // with four products could take the headline off one with two hundred.
+  // Vendors below the floor still appear in every chart and breakdown card,
+  // with their product count shown; they just can't win the award.
+  //
+  // It takes **two** eligible vendors to award it at all. With one, "cheapest"
+  // ranks a field of one and the card states the opposite of what it means:
+  // on Johannesburg's first run the floor excluded Just Get Wood at R 3.91/kg
+  // for having five products, which would have handed "cheapest typical price"
+  // to the only survivor — Stompies, at R 9.66/kg, two and a half times dearer.
+  // A superlative over a set of one is not a superlative.
   const byMedian = [...stats].sort((a, b) => a.medianPricePerKgZar - b.medianPricePerKgZar);
   const eligible = byMedian.filter((s) => s.productCount >= MIN_SPOTLIGHT_SAMPLE);
-  const cheapestMedian = (eligible.length > 0 ? eligible : byMedian)[0];
+  const cheapestMedian = eligible.length >= 2 ? eligible[0] : null;
   const mostVariety = [...stats].sort((a, b) => b.speciesCount - a.speciesCount)[0];
   const mostSales = [...stats].sort((a, b) => b.salesCount - a.salesCount)[0];
   const cheapestSingleProduct = [...products]

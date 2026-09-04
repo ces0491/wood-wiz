@@ -10,6 +10,7 @@ import {
 } from "lucide-react";
 import type { ComparisonHighlights, VendorStats } from "@/lib/vendor-stats";
 import type { Vendor } from "@/lib/types";
+import type { Region } from "@/lib/regions";
 import { SPECIES } from "@/lib/wood-species";
 import { formatKg, formatPct, formatZar } from "@/lib/format";
 import RefreshedAt from "./RefreshedAt";
@@ -18,6 +19,7 @@ import TrackedLink from "./TrackedLink";
 type IconType = typeof Tag;
 
 interface Props {
+  region: Region;
   vendors: Vendor[];
   stats: VendorStats[];
   highlights: ComparisonHighlights;
@@ -42,6 +44,7 @@ function stackingLabel(s: Vendor["delivery"]["stacking"]): {
 }
 
 export default function VendorComparison({
+  region,
   vendors,
   stats,
   highlights,
@@ -58,18 +61,27 @@ export default function VendorComparison({
     <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
       <header className="mb-6">
         <div className="flex flex-wrap items-baseline justify-between gap-2">
-          <h1 className="text-2xl font-bold tracking-tight sm:text-3xl">Vendor comparison</h1>
+          <h1 className="text-2xl font-bold tracking-tight sm:text-3xl">
+            {region.name} vendor comparison
+          </h1>
           <span className="rounded-full bg-amber-100 px-3 py-1 text-xs font-medium text-amber-900 ring-1 ring-amber-200 dark:bg-amber-900/40 dark:text-amber-200 dark:ring-amber-800/50">
-            Cape Town
+            {region.name}
           </span>
         </div>
         <p className="mt-1 text-sm text-stone-600 dark:text-stone-400">
-          {totalProducts} products across {stats.length} vendors. Data refreshed{" "}
+          {totalProducts} products across {stats.length} {region.name} vendor
+          {stats.length === 1 ? "" : "s"}, ranked against each other. Data refreshed{" "}
           <RefreshedAt iso={generatedAt} />.
         </p>
       </header>
 
-      <section className="mb-8 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
+      <h2 id="highlights-heading" className="sr-only">
+        Highlights
+      </h2>
+      <section
+        className="mb-8 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4"
+        aria-labelledby="highlights-heading"
+      >
         {highlights.cheapestMedian && (
           <SpotlightCard
             icon={TrendingDown}
@@ -127,7 +139,13 @@ export default function VendorComparison({
         )}
       </section>
 
-      <section className="mb-8 grid grid-cols-1 gap-6 lg:grid-cols-2">
+      <h2 id="charts-heading" className="mb-3 text-lg font-semibold">
+        How they compare
+      </h2>
+      <section
+        className="mb-8 grid grid-cols-1 gap-6 lg:grid-cols-2"
+        aria-labelledby="charts-heading"
+      >
         <BarChart
           icon={TrendingDown}
           title="Typical price per kg"
@@ -217,7 +235,7 @@ export default function VendorComparison({
                         {v.name}
                       </TrackedLink>
                     </h3>
-                    <span className="text-xs uppercase tracking-wide text-stone-500">
+                    <span className="text-xs uppercase tracking-wide text-stone-500 dark:text-stone-400">
                       {v.platform}
                     </span>
                   </div>
@@ -235,7 +253,7 @@ export default function VendorComparison({
                   </dl>
 
                   <div className="mt-3 border-t border-stone-100 pt-3 dark:border-stone-800">
-                    <p className="text-xs text-stone-500">Cheapest product</p>
+                    <p className="text-xs text-stone-500 dark:text-stone-400">Cheapest product</p>
                     <TrackedLink
                       href={s.cheapestProduct.url}
                       event="vendor_click"
@@ -248,7 +266,7 @@ export default function VendorComparison({
                     >
                       {s.cheapestProduct.title}
                     </TrackedLink>
-                    <p className="flex flex-wrap items-center gap-x-1.5 text-xs text-stone-500">
+                    <p className="flex flex-wrap items-center gap-x-1.5 text-xs text-stone-500 dark:text-stone-400">
                       <span
                         aria-hidden
                         className={`size-2 shrink-0 rounded-full ${SPECIES[s.cheapestProduct.species].color}`}
@@ -259,18 +277,18 @@ export default function VendorComparison({
                       <span>•</span>
                       <span>{formatKg(s.cheapestProduct.weightKg)}</span>
                       {s.cheapestProduct.weightEstimated && (
-                        <span
+                        <abbr
                           title="Weight estimated from piece count or volume — not stated by vendor"
-                          className="text-amber-700 dark:text-amber-300"
+                          className="cursor-help font-medium text-amber-700 no-underline dark:text-amber-300"
                         >
                           ~est
-                        </span>
+                        </abbr>
                       )}
                     </p>
                   </div>
 
                   <div className="mt-3 border-t border-stone-100 pt-3 dark:border-stone-800">
-                    <p className="text-xs text-stone-500">Delivery</p>
+                    <p className="text-xs text-stone-500 dark:text-stone-400">Delivery</p>
                     <p className="text-sm">{v.delivery.description}</p>
                     <div className="mt-2 flex flex-wrap gap-1.5">
                       {freeDelivery !== undefined && (
@@ -350,7 +368,7 @@ function SpotlightCard({
           <Icon className={`size-5 ${t.iconColor}`} />
         </span>
         <div className="min-w-0">
-          <p className="text-xs uppercase tracking-wide text-stone-500">{label}</p>
+          <p className="text-xs uppercase tracking-wide text-stone-500 dark:text-stone-400">{label}</p>
           <p className="mt-0.5 text-lg font-semibold leading-tight">{value}</p>
           {sub !== undefined && (
             <p className="mt-1 text-xs text-stone-600 dark:text-stone-400">{sub}</p>
@@ -364,7 +382,7 @@ function SpotlightCard({
 function Stat({ label, value }: { label: string; value: string }) {
   return (
     <div>
-      <dt className="text-xs text-stone-500">{label}</dt>
+      <dt className="text-xs text-stone-500 dark:text-stone-400">{label}</dt>
       <dd className="font-medium tabular-nums">{value}</dd>
     </div>
   );
@@ -427,7 +445,7 @@ function BarChart({
         {Icon && <Icon className={`size-4 ${iconColor}`} aria-hidden />}
         <h3 className="text-sm font-semibold">{title}</h3>
       </div>
-      <p className="text-xs text-stone-500">{subtitle}</p>
+      <p className="text-xs text-stone-500 dark:text-stone-400">{subtitle}</p>
       <ul className="mt-3 space-y-2">
         {rows.map((r) => {
           const pct = max > 0 ? (r.value / max) * 100 : 0;
@@ -436,7 +454,11 @@ function BarChart({
               <div className="mb-0.5 flex justify-between text-xs">
                 <span className="truncate pr-2">
                   {r.label}
-                  {r.meta && <span className="ml-1.5 text-stone-400">{r.meta}</span>}
+                  {r.meta && (
+                    <span className="ml-1.5 text-stone-500 dark:text-stone-400">
+                      {r.meta}
+                    </span>
+                  )}
                 </span>
                 <span className="shrink-0 tabular-nums text-stone-600 dark:text-stone-400">
                   {r.display}

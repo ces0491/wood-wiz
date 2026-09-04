@@ -14,10 +14,13 @@ import {
   X,
 } from "lucide-react";
 import type { Product, Vendor, WoodSpecies, WoodUsage } from "@/lib/types";
+import type { Region } from "@/lib/regions";
 import { SPECIES } from "@/lib/wood-species";
 import { formatKg, formatZar } from "@/lib/format";
 import RefreshedAt from "./RefreshedAt";
+import Link from "next/link";
 import TrackedLink from "./TrackedLink";
+import { scrollToTop } from "@/lib/scroll";
 
 type UsageFilter = "all" | WoodUsage;
 type SortKey = "price-per-kg-asc" | "price-per-kg-desc" | "price-asc";
@@ -42,6 +45,7 @@ const BUDGET_PRESETS: { label: string; min: number | null; max: number | null }[
 ];
 
 interface Props {
+  region: Region;
   products: Product[];
   vendors: Vendor[];
   generatedAt: string;
@@ -75,6 +79,7 @@ const SORT_LABEL: Record<SortKey, string> = {
 
 
 export default function ProductBrowser({
+  region,
   products,
   vendors,
   generatedAt,
@@ -186,6 +191,92 @@ export default function ProductBrowser({
     return baseFiltered.filter((p) => selectedSpecies.has(p.species));
   }, [baseFiltered, selectedSpecies]);
 
+  // The species and vendor chips have always hidden themselves at zero and
+  // shown counts. The usage tabs, the Bulk sizes and the Budget presets were
+  // static arrays tuned against a 500-product Cape Town catalogue, and shipping
+  // them unchanged to Johannesburg's 20 left five of twelve controls as
+  // guaranteed dead ends — "1 ton+", "2 tons+", "R 500–1k", "R 7k+" and
+  // Smoking all returned nothing. An empty result reads as a fault rather than
+  // as "we don't have that here", so each group is now counted the same way.
+  //
+  // Each count excludes its own dimension: a Bulk size is counted against the
+  // catalogue with every other filter applied but no size filter, or the
+  // options would all collapse to the one already chosen.
+  const withoutUsage = useMemo(() => {
+    let out = products;
+    if (inStockOnly) out = out.filter((p) => p.inStock);
+    if (bulkMinKg !== null) out = out.filter((p) => p.weightKg >= bulkMinKg);
+    if (minPrice !== null) out = out.filter((p) => (p.maxPriceZar ?? p.priceZar) >= minPrice);
+    if (maxPrice !== null) out = out.filter((p) => p.priceZar <= maxPrice);
+    if (selectedSpecies.size > 0) out = out.filter((p) => selectedSpecies.has(p.species));
+    if (selectedVendors.size > 0) out = out.filter((p) => selectedVendors.has(p.vendorId));
+    return out;
+  }, [products, inStockOnly, bulkMinKg, minPrice, maxPrice, selectedSpecies, selectedVendors]);
+
+  const usageCounts = useMemo(() => {
+    const count = (u: UsageFilter) =>
+      u === "all"
+        ? withoutUsage.length
+        : withoutUsage.filter((p) =>
+            u === "smoking" ? p.usage === "smoking" : p.usage === u || p.usage === "both",
+          ).length;
+    return { all: count("all"), braai: count("braai"), fireplace: count("fireplace"), smoking: count("smoking") };
+  }, [withoutUsage]);
+
+  const withoutSize = useMemo(() => {
+    let out = products;
+    if (inStockOnly) out = out.filter((p) => p.inStock);
+    if (usage !== "all") {
+      out = out.filter((p) =>
+        usage === "smoking" ? p.usage === "smoking" : p.usage === usage || p.usage === "both",
+      );
+    }
+    if (minPrice !== null) out = out.filter((p) => (p.maxPriceZar ?? p.priceZar) >= minPrice);
+    if (maxPrice !== null) out = out.filter((p) => p.priceZar <= maxPrice);
+    if (selectedSpecies.size > 0) out = out.filter((p) => selectedSpecies.has(p.species));
+    if (selectedVendors.size > 0) out = out.filter((p) => selectedVendors.has(p.vendorId));
+    return out;
+  }, [products, inStockOnly, usage, minPrice, maxPrice, selectedSpecies, selectedVendors]);
+
+  const bulkOptions = useMemo(
+    () =>
+      BULK_OPTIONS.filter(
+        (o) =>
+          o.value === null ||
+          o.value === bulkMinKg ||
+          withoutSize.some((p) => p.weightKg >= o.value!),
+      ),
+    [withoutSize, bulkMinKg],
+  );
+
+  const withoutBudget = useMemo(() => {
+    let out = products;
+    if (inStockOnly) out = out.filter((p) => p.inStock);
+    if (bulkMinKg !== null) out = out.filter((p) => p.weightKg >= bulkMinKg);
+    if (usage !== "all") {
+      out = out.filter((p) =>
+        usage === "smoking" ? p.usage === "smoking" : p.usage === usage || p.usage === "both",
+      );
+    }
+    if (selectedSpecies.size > 0) out = out.filter((p) => selectedSpecies.has(p.species));
+    if (selectedVendors.size > 0) out = out.filter((p) => selectedVendors.has(p.vendorId));
+    return out;
+  }, [products, inStockOnly, bulkMinKg, usage, selectedSpecies, selectedVendors]);
+
+  const budgetPresets = useMemo(
+    () =>
+      BUDGET_PRESETS.filter((preset) => {
+        if (preset.min === null && preset.max === null) return true;
+        if (preset.min === minPrice && preset.max === maxPrice) return true;
+        return withoutBudget.some(
+          (p) =>
+            (preset.min === null || (p.maxPriceZar ?? p.priceZar) >= preset.min) &&
+            (preset.max === null || p.priceZar <= preset.max),
+        );
+      }),
+    [withoutBudget, minPrice, maxPrice],
+  );
+
   const speciesCounts = useMemo(() => {
     const c: Partial<Record<WoodSpecies, number>> = {};
     for (const p of productsForSpeciesCount) c[p.species] = (c[p.species] ?? 0) + 1;
@@ -281,13 +372,16 @@ export default function ProductBrowser({
     <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
       <header className="mb-6">
         <div className="flex flex-wrap items-baseline justify-between gap-2">
-          <h1 className="text-2xl font-bold tracking-tight sm:text-3xl">Wood Wiz</h1>
+          <h1 className="text-2xl font-bold tracking-tight sm:text-3xl">
+            {region.name} firewood prices
+          </h1>
           <span className="rounded-full bg-amber-100 px-3 py-1 text-xs font-medium text-amber-900 ring-1 ring-amber-200 dark:bg-amber-900/40 dark:text-amber-200 dark:ring-amber-800/50">
-            Cape Town
+            {region.name}
           </span>
         </div>
         <p className="mt-1 text-sm text-stone-600 dark:text-stone-400">
-          Ranked by rand per kilogram across {vendors.length} Cape Town vendors. Data refreshed{" "}
+          Ranked by rand per kilogram across {vendors.length} {region.name} vendor
+          {vendors.length === 1 ? "" : "s"}. Data refreshed{" "}
           <RefreshedAt iso={generatedAt} />.
         </p>
         {failedVendors.length > 0 && (
@@ -303,22 +397,33 @@ export default function ProductBrowser({
           .filter((u) => u !== "both")
           .map((u) => {
             const Icon = USAGE_ICON[u];
+            const count = usageCounts[u as keyof typeof usageCounts] ?? 0;
+            // Disabled rather than hidden: these are the primary controls and
+            // a row that reflows as you filter is worse than a dimmed tab.
+            const empty = count === 0 && usage !== u;
             return (
               <button
                 key={u}
                 type="button"
+                disabled={empty}
+                title={empty ? `No ${USAGE_LABEL[u].toLowerCase()} wood listed here` : undefined}
                 onClick={() => {
                   setUsage(u);
                   setPage(1);
                 }}
-                className={`inline-flex items-center gap-1.5 rounded-md px-3 py-1.5 text-sm font-medium transition ${
+                className={`inline-flex items-center gap-1.5 rounded-md px-3 py-1.5 text-sm font-medium transition motion-reduce:transition-none ${
                   usage === u
                     ? "bg-amber-700 text-white shadow-sm shadow-amber-900/30 dark:bg-amber-600 dark:text-stone-50"
-                    : "bg-white text-stone-700 ring-1 ring-stone-200 hover:bg-stone-100 dark:bg-stone-900 dark:text-stone-300 dark:ring-stone-700 dark:hover:bg-stone-800"
+                    : empty
+                      ? "cursor-not-allowed bg-white text-stone-400 ring-1 ring-stone-200 dark:bg-stone-900 dark:text-stone-600 dark:ring-stone-800"
+                      : "bg-white text-stone-700 ring-1 ring-stone-200 hover:bg-stone-100 dark:bg-stone-900 dark:text-stone-300 dark:ring-stone-700 dark:hover:bg-stone-800"
                 }`}
               >
                 <Icon className="size-4" aria-hidden />
                 {USAGE_LABEL[u]}
+                <span className={usage === u ? "text-amber-100" : "text-stone-500 dark:text-stone-400"}>
+                  {count}
+                </span>
               </button>
             );
           })}
@@ -333,14 +438,14 @@ export default function ProductBrowser({
               }}
               className="h-4 w-4 rounded border-stone-300 accent-amber-700"
             />
-            <PackageCheck className="size-4 text-stone-500" aria-hidden />
+            <PackageCheck className="size-4 text-stone-500 dark:text-stone-400" aria-hidden />
             In stock only
           </label>
           <label
             className="flex items-center gap-1.5 text-sm"
             title="Show only products at or above this size — pallets and bakkie loads."
           >
-            <Layers className="size-4 text-stone-500" aria-hidden />
+            <Layers className="size-4 text-stone-500 dark:text-stone-400" aria-hidden />
             <span>Bulk</span>
             <select
               value={bulkMinKg ?? ""}
@@ -350,7 +455,7 @@ export default function ProductBrowser({
               }}
               className="rounded-md border border-stone-300 bg-white px-2 py-1 text-sm dark:border-stone-700 dark:bg-stone-900"
             >
-              {BULK_OPTIONS.map((opt) => (
+              {bulkOptions.map((opt) => (
                 <option key={opt.label} value={opt.value ?? ""}>
                   {opt.label}
                 </option>
@@ -359,6 +464,7 @@ export default function ProductBrowser({
           </label>
           <select
             value={sort}
+            aria-label="Sort products"
             onChange={(e) => {
               setSort(e.target.value as SortKey);
               setPage(1);
@@ -406,14 +512,15 @@ export default function ProductBrowser({
           }`}
           aria-label="Filters"
         >
-          {/* Sheet header — mobile only */}
-          <div className="flex items-center justify-between border-b border-stone-200 pb-3 lg:hidden dark:border-stone-800">
-            <h2 className="text-base font-semibold">Filters</h2>
+          {/* The heading stays in the accessibility tree at every width; only
+              the sheet chrome around it is mobile-only. */}
+          <div className="flex items-center justify-between border-b border-stone-200 pb-3 lg:block lg:border-0 lg:pb-0 dark:border-stone-800">
+            <h2 className="text-base font-semibold lg:sr-only">Filters</h2>
             <button
               type="button"
               onClick={() => setShowFilters(false)}
               aria-label="Close filters"
-              className="rounded-md p-1 text-stone-500 hover:bg-stone-100 hover:text-stone-900 dark:hover:bg-stone-800 dark:hover:text-stone-100"
+              className="rounded-md p-1.5 text-stone-500 hover:bg-stone-100 hover:text-stone-900 lg:hidden dark:text-stone-400 dark:hover:bg-stone-800 dark:hover:text-stone-100"
             >
               <X className="size-5" aria-hidden />
             </button>
@@ -429,7 +536,7 @@ export default function ProductBrowser({
           )}
           <FilterGroup title="Budget (total)">
             <div className="mb-2 flex flex-wrap gap-1">
-              {BUDGET_PRESETS.map((preset) => {
+              {budgetPresets.map((preset) => {
                 const active = minPrice === preset.min && maxPrice === preset.max;
                 return (
                   <button
@@ -454,7 +561,7 @@ export default function ProductBrowser({
             </div>
             <div className="grid grid-cols-2 gap-2">
               <label className="flex items-center gap-1.5 rounded-md border border-stone-300 px-2 py-1.5 focus-within:ring-2 focus-within:ring-amber-400 dark:border-stone-700">
-                <span className="text-xs text-stone-500">Min R</span>
+                <span className="text-xs text-stone-500 dark:text-stone-400">Min R</span>
                 <input
                   type="number"
                   inputMode="numeric"
@@ -471,7 +578,7 @@ export default function ProductBrowser({
                 />
               </label>
               <label className="flex items-center gap-1.5 rounded-md border border-stone-300 px-2 py-1.5 focus-within:ring-2 focus-within:ring-amber-400 dark:border-stone-700">
-                <span className="text-xs text-stone-500">Max R</span>
+                <span className="text-xs text-stone-500 dark:text-stone-400">Max R</span>
                 <input
                   type="number"
                   inputMode="numeric"
@@ -488,7 +595,7 @@ export default function ProductBrowser({
                 />
               </label>
             </div>
-            <p className="mt-1.5 text-xs text-stone-500">
+            <p className="mt-1.5 text-xs text-stone-500 dark:text-stone-400">
               Filters by total product price. Use this with &ldquo;Cheapest per kg
               first&rdquo; sort to find the best value within your budget.
             </p>
@@ -539,7 +646,7 @@ export default function ProductBrowser({
 function FilterGroup({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <div>
-      <h3 className="mb-2 text-xs font-semibold uppercase tracking-wide text-stone-500">{title}</h3>
+      <h3 className="mb-2 text-xs font-semibold uppercase tracking-wide text-stone-500 dark:text-stone-400">{title}</h3>
       {children}
     </div>
   );
@@ -575,7 +682,7 @@ function FilterChip({
       {count !== undefined && (
         <span
           className={`ml-2 shrink-0 text-xs ${
-            active ? "text-amber-100 dark:text-amber-100" : "text-stone-500"
+            active ? "text-amber-100 dark:text-amber-100" : "text-stone-500 dark:text-stone-400"
           }`}
         >
           {count}
@@ -592,8 +699,8 @@ function ProductRow({ product, vendor }: { product: Product; vendor?: Vendor }) 
 
   return (
     <li className="rounded-lg border border-stone-200 bg-white p-4 transition hover:shadow-md dark:border-stone-800 dark:bg-stone-900">
-      <div className="flex flex-wrap items-start gap-4">
-        <div className="flex-1 min-w-0">
+      <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-start sm:gap-4">
+        <div className="min-w-0 flex-1">
           <div className="flex flex-wrap items-baseline gap-x-2 gap-y-1">
             <h2 className="text-base font-semibold leading-tight">
               <TrackedLink
@@ -632,19 +739,22 @@ function ProductRow({ product, vendor }: { product: Product; vendor?: Vendor }) 
             <span className="text-stone-300 dark:text-stone-700">•</span>
             <span>{formatKg(product.weightKg)}</span>
             {product.weightEstimated && (
-              <span title="Weight estimated from density — not stated by vendor" className="text-amber-700 dark:text-amber-300">
+              <abbr
+                title="Weight estimated from piece count or volume — not stated by vendor"
+                className="cursor-help font-medium text-amber-700 no-underline dark:text-amber-300"
+              >
                 ~est
-              </span>
+              </abbr>
             )}
           </div>
           {vendor && (
-            <p className="mt-2 text-xs text-stone-500" title={vendor.delivery.description}>
+            <p className="mt-2 text-xs text-stone-500 dark:text-stone-400">
               <span className="font-medium">Delivery:</span> {vendor.delivery.description}
             </p>
           )}
         </div>
 
-        <div className="text-right">
+        <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-2 border-t border-stone-100 pt-3 sm:block sm:border-0 sm:pt-0 sm:text-right dark:border-stone-800 sm:dark:border-0">
           <div
             className="text-xl font-bold tabular-nums"
             title={
@@ -657,7 +767,7 @@ function ProductRow({ product, vendor }: { product: Product; vendor?: Vendor }) 
             product.maxPricePerKgZar !== product.pricePerKgZar
               ? `${formatZar(product.pricePerKgZar)}–${formatZar(product.maxPricePerKgZar)}`
               : formatZar(product.pricePerKgZar)}
-            <span className="ml-1 text-xs font-normal text-stone-500">/kg</span>
+            <span className="ml-1 text-xs font-normal text-stone-500 dark:text-stone-400">/kg</span>
           </div>
           <div className="mt-0.5 text-sm tabular-nums text-stone-600 dark:text-stone-400">
             {product.maxPriceZar && product.maxPriceZar !== product.priceZar ? (
@@ -668,7 +778,7 @@ function ProductRow({ product, vendor }: { product: Product; vendor?: Vendor }) 
               formatZar(product.priceZar)
             )}
             {onSale && product.regularPriceZar && (
-              <span className="ml-1 text-xs text-stone-400 line-through">
+              <span className="ml-1 text-xs text-stone-500 line-through dark:text-stone-400">
                 {formatZar(product.regularPriceZar)}
               </span>
             )}
@@ -744,8 +854,29 @@ function PagedList({
           </label>
         )}
       </div>
+      {(pageItems.some((p) => p.weightEstimated) ||
+        pageItems.some((p) => p.maxPricePerKgZar && p.maxPricePerKgZar !== p.pricePerKgZar)) && (
+        <p className="mb-3 text-xs text-stone-600 dark:text-stone-400">
+          {pageItems.some((p) => p.weightEstimated) && (
+            <>
+              <span className="font-medium text-amber-700 dark:text-amber-300">~est</span>{" "}
+              means the vendor didn&apos;t state a weight and we estimated it from piece
+              count or volume.{" "}
+            </>
+          )}
+          {pageItems.some((p) => p.maxPricePerKgZar && p.maxPricePerKgZar !== p.pricePerKgZar) && (
+            <>A price range means the product costs different amounts by delivery zone.{" "}</>
+          )}
+          <Link
+            href="/faq"
+            className="text-amber-700 underline hover:no-underline dark:text-amber-400"
+          >
+            How we work it out
+          </Link>
+        </p>
+      )}
       {total === 0 ? (
-        <div className="rounded-lg border border-dashed border-stone-300 p-12 text-center text-sm text-stone-500 dark:border-stone-700">
+        <div className="rounded-lg border border-dashed border-stone-300 p-12 text-center text-sm text-stone-500 dark:border-stone-700 dark:text-stone-400">
           No products match your filters.{" "}
           <button onClick={clearAll} className="underline">
             Reset
@@ -764,9 +895,7 @@ function PagedList({
               totalPages={totalPages}
               onChange={(p) => {
                 setPage(p);
-                if (typeof window !== "undefined") {
-                  window.scrollTo({ top: 0, behavior: "smooth" });
-                }
+                scrollToTop();
               }}
             />
           )}
@@ -803,7 +932,7 @@ function Pagination({
       </PageButton>
       {pages.map((p, i) =>
         p === "…" ? (
-          <span key={`gap-${i}`} aria-hidden className="px-2 text-stone-500">
+          <span key={`gap-${i}`} aria-hidden className="px-2 text-stone-500 dark:text-stone-400">
             …
           </span>
         ) : (

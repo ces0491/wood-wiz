@@ -30,7 +30,21 @@ const MIN_BULK_PIECES = 2;
 // Titles that match these patterns are not firewood — they're accessories,
 // fuel substitutes, or tools sold alongside firewood.
 const NON_FIREWOOD_PATTERNS = [
+  // Any "... Lighters", not only "fire lighters". The Wood Gurus sell
+  // "Braai Lighters - Natural Wood Fibre - Jumbo Tub (30 pieces)", which the
+  // narrower pattern missed — and because the pieces branch estimated it at
+  // 45kg for R49 it became the cheapest per-kg product on the entire site,
+  // taking the "Lowest price per kg" card on /cape-town/vendors. A tub of
+  // firelighters was the headline number on a firewood price comparison.
+  // Both forms are needed. "Firelighters" is one word, so there is no word
+  // boundary before "lighters" and the second pattern alone misses it — the
+  // build sanity gate caught exactly that, refusing a run in which six
+  // Espresso Firelighters listings reappeared at R 52–100/kg.
   /\bfire\s*lighters?\b/i,
+  /\blighters?\b/i,
+  // SCOPE lists kindling as out of scope and states the normaliser filters
+  // it out. It did not — three kindling bags were in the published catalogue.
+  /\bkindling\b/i,
   /\bfire\s*starters?\b/i,
   /\bgas\s*lighter\b/i,
   /\blid\s*lifter\b/i,

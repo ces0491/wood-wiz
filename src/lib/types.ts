@@ -1,3 +1,5 @@
+import type { RegionId } from "./regions";
+
 export type WoodUsage = "braai" | "fireplace" | "smoking" | "both";
 
 export type PackFormat = "bag" | "loose" | "bundle" | "pieces" | "pallet" | "bakkie";
@@ -97,7 +99,11 @@ export interface Vendor {
   name: string;
   url: string;
   platform: "shopify" | "woocommerce" | "wix" | "custom";
-  region: "cape-town";
+  // Plural because a vendor can genuinely serve more than one metro from one
+  // storefront — Stompies delivers to both Cape Town and Gauteng, and listing
+  // them in only one would hide a real option from half their customers.
+  // Their products appear in every region named here.
+  regions: RegionId[];
   delivery: DeliveryRule;
   notes?: string;
 }

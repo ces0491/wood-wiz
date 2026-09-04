@@ -643,3 +643,49 @@ describe("volume bound", () => {
     expect(result).toEqual({ weightKg: 400, estimated: true, packFormat: "loose" });
   });
 });
+
+describe("regional species spellings", () => {
+  // Each of these is a real vendor title. A spelling only one region uses is
+  // invisible until that region is added, and an undetected species silently
+  // takes the 800 kg/m3 default density on any volume-priced listing.
+  test("sekelbush (Gauteng spelling) resolves to sekelbos", () => {
+    expect(detectSpecies("Dry Namibian Sekelbush Wood — 15 bags")).toBe("sekelbos");
+  });
+
+  test("the Cape Town spellings still resolve", () => {
+    expect(detectSpecies("Sekelbos braai wood 20kg")).toBe("sekelbos");
+    expect(detectSpecies("Sickle Bush 20kg")).toBe("sekelbos");
+  });
+});
+
+describe("lighters and kindling are not firewood", () => {
+  // A tub of firelighters was the cheapest per-kg product on the whole site
+  // and took the "Lowest price per kg" card on /cape-town/vendors, because the
+  // blocklist only knew the compound "firelighters" and not "Braai Lighters".
+  test.each([
+    "Braai Lighters - Natural Wood Fibre - Jumbo Tub (30 pieces)",
+    "Espresso Firelighters - From Recycled Coffee Grounds — 5 Packs",
+    "Firelighters – Box of 24",
+    "Blitz Firelighters",
+    "Gas Lighter",
+  ])("drops %s", (title) => {
+    expect(isFirewood(title)).toBe(false);
+  });
+
+  // SCOPE lists kindling as out of scope and says the normaliser filters it.
+  test.each(["4kg Kindling", "Blue Gum Kindling 4kg", "Kameeldoring Kindling 4KG"])(
+    "drops %s",
+    (title) => {
+      expect(isFirewood(title)).toBe(false);
+    },
+  );
+
+  test.each([
+    "Blue Gum 18kg Bag",
+    "1000 Pieces Bluegum Fire Wood",
+    "Kameeldoring Braai Wood 20kg",
+  ])("keeps %s", (title) => {
+    expect(isFirewood(title)).toBe(true);
+  });
+});
+

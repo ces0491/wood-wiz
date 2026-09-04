@@ -19,10 +19,10 @@ export default function manifest(): MetadataRoute.Manifest {
     // the installed app on start_url, so changing that later would orphan the
     // icon already on a user's home screen.
     id: "/",
-    name: "Wood Wiz — Cape Town firewood prices per kg",
+    name: "Wood Wiz — South African firewood prices per kg",
     short_name: "Wood Wiz",
     description:
-      "Compare braai, fireplace and smoking wood prices across Cape Town vendors, normalised to rand per kilogram.",
+      "Compare braai, fireplace and smoking wood prices from the vendors who deliver to your city, normalised to rand per kilogram.",
     start_url: "/",
     scope: "/",
     display: "standalone",

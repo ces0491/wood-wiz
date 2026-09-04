@@ -18,7 +18,7 @@ export default function SiteFooter() {
     <footer className="mt-12 border-t border-stone-200/70 bg-white/60 backdrop-blur dark:border-stone-800/70 dark:bg-stone-950/60">
       <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-3 px-4 py-4 text-xs text-stone-600 dark:text-stone-400 sm:px-6 lg:px-8">
         <p>
-          Wood Wiz · Cape Town firewood prices per kg · Not affiliated with any vendor
+          Wood Wiz · Firewood prices per kg · Not affiliated with any vendor
         </p>
         <div className="flex items-center gap-4">
           <Link href="/faq" className="hover:text-amber-700 dark:hover:text-amber-400">

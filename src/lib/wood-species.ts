@@ -57,7 +57,9 @@ export const SPECIES: Record<WoodSpecies, SpeciesInfo> = {
   sekelbos: {
     id: "sekelbos",
     displayName: "Sekelbos (Sickle Bush)",
-    aliases: ["sekelbos", "sickle bush", "dichrostachys"],
+    // "sekelbush" is Stompies' spelling — an Afrikaans/English hybrid that no
+    // Cape Town vendor used, so it parsed as unknown until Gauteng was added.
+    aliases: ["sekelbos", "sekelbush", "sickle bush", "dichrostachys"],
     densityKgPerM3: 950,
     usage: "both",
     color: "bg-green-700",

@@ -12,6 +12,8 @@ import * as fireMan from "./scrapers/fire-man";
 import * as lancehoudt from "./scrapers/lancehoudt";
 import * as namibianHardwood from "./scrapers/namibian-hardwood";
 import * as woodBros from "./scrapers/wood-bros";
+import * as justGetWood from "./scrapers/just-get-wood";
+import * as stompies from "./scrapers/stompies";
 
 interface ScraperModule {
   vendorId: string;
@@ -27,6 +29,8 @@ const SCRAPERS: ScraperModule[] = [
   lancehoudt,
   namibianHardwood,
   woodBros,
+  justGetWood,
+  stompies,
 ];
 
 // Tells the workflow whether prices actually moved, so the commit message can
