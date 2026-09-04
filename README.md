@@ -296,6 +296,8 @@ someone adds a Server Action — but that context decides whether it is urgent.
 
 `.github/workflows/lockfile.yml` regenerates `package-lock.json` on the Linux CI runner whenever `package.json` or the lockfile change on a push or PR, and auto-commits any drift back to the branch. This exists because npm on Windows skips wasm32-targeted optional deps (e.g. `@tailwindcss/oxide-wasm32-wasi`, `@unrs/resolver-binding-wasm32-wasi`) and their transitive deps (`@emnapi/core`, `@emnapi/runtime`), producing a lockfile that fails `npm ci` on Linux with `Missing: @emnapi/runtime from lock file`. Letting CI own the lockfile means Windows contributors never have to think about it — just push and pull.
 
+Both workflows fire on the same push, so `Test` runs `npm ci` against the Windows-shaped lockfile and fails seconds before the sync lands. The sync commit is pushed with `GITHUB_TOKEN`, which by GitHub's design triggers no further runs, so nothing would re-run the job it just repaired — the sync job therefore dispatches `test.yml` itself, and `test.yml` carries `workflow_dispatch` for that. Expect one red `Test` immediately after a dependency change from Windows, followed by a green dispatched run. `npm install --package-lock-only --os=linux --cpu=x64` does **not** avoid it: it reshapes the lockfile but still omits `@emnapi/core` and `@emnapi/runtime`, which are the packages `npm ci` complains about.
+
 ## Known limitations
 
 - **Delivery prices are descriptive, not computed.** The vendor record stores a free-form description and (where known) a `freeOverZar` threshold and `stacking` flag. The UI shows the description on each card but doesn't compute a delivered total — most vendors price delivery by suburb at checkout.
