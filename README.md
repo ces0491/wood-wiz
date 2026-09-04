@@ -73,8 +73,10 @@ was checked against that regression: reintroduce it and eight assertions fail,
 naming the routes and the width.
 
 The suite builds and serves the app against `tests/fixtures/products.json`
-rather than the live catalogue, via `WOOD_WIZ_DATA_FILE` (see
-`src/lib/load-products.ts`). The scrape rewrites `data/products.json` every
+rather than the live catalogue, via `WOOD_WIZ_DATA=fixture` (see
+`src/lib/load-products.ts` — a flag rather than an env var holding a path,
+because a non-literal path defeats Turbopack's file tracing and pulls the whole
+project into the server output). The scrape rewrites `data/products.json` every
 morning, so anything asserted against real data would be stale by breakfast.
 The fixture is a curated 53-product subset carrying each state the UI can
 render: price ranges, estimated weights, sale badges, out-of-stock, long
@@ -276,6 +278,19 @@ Propagation is usually minutes. Vercel issues the certificate on its own once th
 `robots.txt` and `sitemap.xml` are generated from the same value. A preview build disallows crawling outright — it serves production's content on another hostname, which competes with production for the same queries — so only production emits an `Allow` and a `Sitemap` line. The sitemap dates `/` and `/vendors` from the catalogue's `generatedAt` and leaves `/faq` undated, since hand-written copy doesn't change when a price does.
 
 Note that a `CNAME` **file** in the repository does nothing here. That is a GitHub Pages mechanism, which is how `rbr.sheetsolved.com` is wired; Vercel reads its domains from project settings.
+
+### Dependency updates
+
+`next` and `eslint-config-next` are pinned to an exact version rather than a
+caret range — the framework moves fast and this is a live site, so a version
+change should be a commit someone reviewed. Everything else takes a caret.
+
+`npm audit` should report zero. When it doesn't, check whether the advisory
+reaches anything the site actually does before reaching for `--force`: this is
+static HTML on a CDN with no Server Actions, no middleware, no custom server
+and no `next/image`, so most Next advisories describe surfaces that don't
+exist here. Patch anyway — "we don't use that feature" expires the moment
+someone adds a Server Action — but that context decides whether it is urgent.
 
 ### Lockfile sync (Windows contributors)
 

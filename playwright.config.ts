@@ -42,7 +42,7 @@ export default defineConfig({
     command: "npm run build && npm run start -- -p 3210",
     // Set here rather than inline in the command so the same config works on
     // Windows and on the Linux runner without a cross-env dependency.
-    env: { WOOD_WIZ_DATA_FILE: "tests/fixtures/products.json" },
+    env: { WOOD_WIZ_DATA: "fixture" },
     url: "http://127.0.0.1:3210",
     reuseExistingServer: !process.env.CI,
     timeout: 180_000,
