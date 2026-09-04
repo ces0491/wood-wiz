@@ -26,3 +26,24 @@ body {
   color: var(--foreground);
   font-family: var(--font-sans);
 }
+
+/*
+ * Honour a stated motion preference.
+ *
+ * Transitions and animations are decoration; for some readers they are a
+ * trigger rather than a nicety, and the OS setting is how they say so. Kept as
+ * a blanket rule instead of per-component `motion-reduce:` variants so a new
+ * component can't quietly opt itself back in. `scroll-behavior: auto` covers
+ * CSS-driven scrolling; the two scripted smooth scrolls check the same media
+ * query themselves in src/lib/scroll.ts.
+ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
