@@ -47,7 +47,7 @@ These are decisions, not deferrals. We explicitly will **not** do:
 - **Real-time prices.** Daily refresh is sufficient; the vendor's site is always authoritative for exact pricing at purchase time.
 - **Computed delivered totals.** Vendors price delivery by suburb at checkout; we surface their stated rule and let the user factor it in.
 - **Other regions** (Johannesburg, Durban, the Garden Route, etc.). Cape Town only. Multi-region is a possible v2, not this version.
-- **Mobile apps.** Web only.
+- **Native mobile apps.** Web only — no App Store or Play Store build, no React Native, no platform SDKs. The site is installable to a home screen as a PWA (web app manifest, generated icons, standalone display); that is still the same web page, deliberately with no service worker so a cache layer can never serve stale prices.
 - **Charcoal, briquettes, eco logs, kindling, accessories.** Filtered out by the normaliser; not in the catalogue we publish.
 - **Vendor-managed listings.** Vendors don't edit the site; corrections route through GitHub issues.
 - **Historical price tracking, sparklines, or trend charts.** v2 candidate; not this version.
@@ -66,4 +66,4 @@ Vendor or user disputes route to [GitHub Issues](https://github.com/ces0491/wood
 
 ## Status
 
-This document is updated when any of the above changes. Reviewed at least quarterly. Last updated: initial creation.
+This document is updated when any of the above changes. Reviewed at least quarterly. Last updated: 2026-09-04 — narrowed the “mobile apps” exclusion to native apps to record the PWA install decision.

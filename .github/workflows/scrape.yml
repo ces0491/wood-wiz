@@ -26,16 +26,26 @@ jobs:
       - run: npm ci
 
       - name: Run scrapers
+        id: scrape
         run: npm run scrape
 
+      # generatedAt, scrapedAt and ranAt all advance on every run, so the file
+      # always differs and "no changes" was unreachable — every commit claimed
+      # a price refresh whether or not one happened. The scraper compares the
+      # catalogue with the timestamps stripped and reports which it was.
       - name: Commit updated data
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           if git diff --quiet data/products.json; then
-            echo "No price changes to commit."
-          else
-            git add data/products.json
-            git commit -m "chore(data): refresh wood prices"
-            git push
+            echo "Nothing to commit."
+            exit 0
           fi
+          if [ "${{ steps.scrape.outputs.catalogue_changed }}" = "true" ]; then
+            MSG="chore(data): refresh wood prices"
+          else
+            MSG="chore(data): no price changes, refresh timestamps only"
+          fi
+          git add data/products.json
+          git commit -m "$MSG"
+          git push

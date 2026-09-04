@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import {
   ChevronLeft,
   ChevronRight,
@@ -15,7 +15,8 @@ import {
 } from "lucide-react";
 import type { Product, Vendor, WoodSpecies, WoodUsage } from "@/lib/types";
 import { SPECIES } from "@/lib/wood-species";
-import { formatKg, formatRelative, formatZar } from "@/lib/format";
+import { formatKg, formatZar } from "@/lib/format";
+import RefreshedAt from "./RefreshedAt";
 import TrackedLink from "./TrackedLink";
 
 type UsageFilter = "all" | WoodUsage;
@@ -91,22 +92,62 @@ export default function ProductBrowser({
   const [page, setPage] = useState(1);
   const [pageSize, setPageSize] = useState<number>(DEFAULT_PAGE_SIZE);
 
-  // Close mobile filter drawer on Escape; lock background scroll while open.
-  // Only active on mobile/tablet — on lg+ the sidebar is always visible so
-  // showFilters has no visible effect there.
+  const panelRef = useRef<HTMLElement>(null);
+
+  // Mobile filter drawer: Escape to close, Tab cycles inside it, background
+  // scroll is locked, and focus goes in on open and back to the trigger on
+  // close. Only on mobile/tablet — on lg+ the sidebar is always visible, so
+  // showFilters has no visible effect and trapping focus there would be wrong.
+  //
+  // The desktop test is a live matchMedia listener, not a one-shot read:
+  // opening the drawer on a phone-width window and then widening past lg used
+  // to leave body scroll locked with no visible drawer to close.
   useEffect(() => {
     if (!showFilters) return;
-    const isDesktop = window.matchMedia("(min-width: 1024px)").matches;
-    if (isDesktop) return;
+    const desktop = window.matchMedia("(min-width: 1024px)");
+    if (desktop.matches) return;
+
+    const trigger = document.activeElement as HTMLElement | null;
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setShowFilters(false);
+      if (e.key === "Escape") {
+        setShowFilters(false);
+        return;
+      }
+      if (e.key !== "Tab") return;
+      const panel = panelRef.current;
+      if (!panel) return;
+      const focusable = panel.querySelectorAll<HTMLElement>(
+        'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])',
+      );
+      if (focusable.length === 0) return;
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      const active = document.activeElement;
+      if (e.shiftKey && (active === first || !panel.contains(active))) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && active === last) {
+        e.preventDefault();
+        first.focus();
+      }
     };
+
     document.addEventListener("keydown", onKey);
     const prevOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
+    // Close rather than try to reconcile a drawer that is no longer rendered.
+    const onBreakpoint = (e: MediaQueryListEvent) => {
+      if (e.matches) setShowFilters(false);
+    };
+    desktop.addEventListener("change", onBreakpoint);
+
+    panelRef.current?.querySelector<HTMLElement>("button")?.focus();
+
     return () => {
       document.removeEventListener("keydown", onKey);
+      desktop.removeEventListener("change", onBreakpoint);
       document.body.style.overflow = prevOverflow;
+      trigger?.focus?.();
     };
   }, [showFilters]);
 
@@ -247,7 +288,7 @@ export default function ProductBrowser({
         </div>
         <p className="mt-1 text-sm text-stone-600 dark:text-stone-400">
           Ranked by rand per kilogram across {vendors.length} Cape Town vendors. Data refreshed{" "}
-          {formatRelative(generatedAt)}.
+          <RefreshedAt iso={generatedAt} />.
         </p>
         {failedVendors.length > 0 && (
           <p className="mt-2 text-xs text-amber-700 dark:text-amber-300">
@@ -332,7 +373,7 @@ export default function ProductBrowser({
           </select>
           <button
             type="button"
-            onClick={() => setShowFilters(true)}
+            onClick={() => setShowFilters((v) => !v)}
             aria-expanded={showFilters}
             aria-controls="filter-panel"
             className="inline-flex items-center gap-1.5 rounded-md bg-white px-3 py-1.5 text-sm font-medium ring-1 ring-stone-200 hover:bg-stone-100 dark:bg-stone-900 dark:ring-stone-700 dark:hover:bg-stone-800 lg:hidden"
@@ -348,13 +389,15 @@ export default function ProductBrowser({
         <button
           type="button"
           onClick={() => setShowFilters(false)}
-          aria-label="Close filters"
+          aria-hidden
+          tabIndex={-1}
           className="fixed inset-0 z-40 bg-stone-900/50 backdrop-blur-sm lg:hidden"
         />
       )}
 
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-[18rem_1fr]">
         <aside
+          ref={panelRef}
           id="filter-panel"
           className={`self-start space-y-6 lg:sticky lg:top-20 lg:block ${
             showFilters
@@ -673,7 +716,7 @@ function PagedList({
   const pageItems = products.slice(start, end);
 
   return (
-    <main>
+    <div>
       <div className="mb-3 flex flex-wrap items-center justify-between gap-2 text-sm text-stone-600 dark:text-stone-400">
         <p>
           {total === 0
@@ -729,7 +772,7 @@ function PagedList({
           )}
         </>
       )}
-    </main>
+    </div>
   );
 }
 

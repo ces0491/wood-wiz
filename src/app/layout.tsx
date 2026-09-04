@@ -66,9 +66,9 @@ export default function RootLayout({
         </a>
         <SiteNav />
         <InstallBanner />
-        <div id="main" className="flex-1">
+        <main id="main" className="flex-1">
           {children}
-        </div>
+        </main>
         <SiteFooter />
         <ReturnToTop />
         <Analytics />

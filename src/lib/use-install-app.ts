@@ -7,6 +7,7 @@ import {
   type InstallPlatform,
   detectInstallPlatform,
   isMobileUserAgent,
+  needsManualInstallInstructions,
   parseDismissedAt,
   shouldAutoPromptInstall,
 } from "@/lib/install-app";
@@ -89,8 +90,6 @@ export type UseInstallApp = {
   platform: InstallPlatform;
   isMobile: boolean;
   isStandalone: boolean;
-  /** True when there is any install path available on this device. */
-  canInstall: boolean;
   /** True when we must show manual steps because no native prompt exists. */
   needsInstructions: boolean;
   /** Triggers the native prompt. Returns false when unavailable or declined. */
@@ -195,8 +194,7 @@ export function useInstallApp(options?: { onAutoPrompt?: () => void }): UseInsta
     platform,
     isMobile,
     isStandalone,
-    canInstall: !isStandalone && (hasDeferredPrompt || platform === "ios"),
-    needsInstructions: !hasDeferredPrompt,
+    needsInstructions: needsManualInstallInstructions(platform, hasDeferredPrompt),
     promptInstall,
     dismiss,
   };

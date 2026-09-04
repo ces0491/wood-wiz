@@ -189,25 +189,36 @@ const SECTIONS: FaqSection[] = [
         q: "How fresh is the data?",
         a: (
           <p>
-            Refreshed every 24 hours. The exact time of the last refresh is shown in the
-            header of the Prices and Vendors pages (e.g. &ldquo;Data refreshed 6 hours
-            ago&rdquo;). If you need real-time accuracy &mdash; before placing a large
-            order, say &mdash; click through to the vendor&apos;s page to confirm.
+            Refreshed every 24 hours. The time of the last refresh is shown in the
+            header of the Prices and Vendors pages &mdash; as &ldquo;Data refreshed 6
+            hours ago&rdquo; once the page is open in your browser, and hover it for the
+            exact timestamp. If you need real-time accuracy &mdash; before placing a
+            large order, say &mdash; click through to the vendor&apos;s page to confirm.
           </p>
         ),
       },
       {
         q: "How are vendors ranked on the Vendors page?",
         a: (
-          <p>
-            By <strong>median</strong> price per kg, not the mean. A vendor that sells
-            both bulk hardwood pallets (R&nbsp;2&ndash;5/kg) and small specialty
-            smoking-wood boxes (R&nbsp;100+/kg) would look misleadingly expensive on
-            the mean, because the specialty items skew the average upward. The median
-            shows the typical price you&apos;d pay for a representative product in
-            their catalogue. The breakdown card also shows their cheapest-per-kg if
-            you specifically want the floor.
-          </p>
+          <>
+            <p>
+              By <strong>median</strong> price per kg, not the mean. A vendor that
+              sells both bulk hardwood pallets (R&nbsp;2&ndash;5/kg) and small
+              specialty smoking-wood boxes (R&nbsp;100+/kg) would look misleadingly
+              expensive on the mean, because the specialty items skew the average
+              upward. The median shows the typical price you&apos;d pay for a
+              representative product in their catalogue. The breakdown card also shows
+              their cheapest-per-kg if you specifically want the floor.
+            </p>
+            <p>
+              A median is only as good as the catalogue behind it, so the
+              &ldquo;Cheapest typical price&rdquo; card at the top of the page passes
+              over vendors with fewer than 8 listed products and gives it to the
+              cheapest vendor above that line. Every vendor still appears in the charts
+              and breakdown cards either way, with their product count next to the bar
+              so you can weigh it yourself.
+            </p>
+          </>
         ),
       },
       {
@@ -301,12 +312,14 @@ const SECTIONS: FaqSection[] = [
               >
                 @ces0491
               </a>
-              ), a Cape Town-based braai lover who burns a lot of wood but can never  
-              reliably determine which vendor offers the best value. Whether its summer 
-              time braais or winter fires, every time I restock I ask: Should I buy bags 
-              or bakkie loads? Do I only want Rooikrantz or a combo? Do I really need R5000 
-              worth of wood even though the per kilo price is great? The site simplifies 
-              the process of comparing wood prices across vendors, types and quantities.
+              ). I&apos;m a Cape Town-based braai lover who burns a lot of wood but can
+              never reliably determine which vendor offers the best value. Whether
+              it&apos;s
+              summer time braais or winter fires, every time I restock I ask: Should I
+              buy bags or bakkie loads? Do I only want Rooikrans or a combo? Do I really
+              need R5000 worth of wood even though the per kilo price is great? The site
+              simplifies the process of comparing wood prices across vendors, types and
+              quantities.
             </p>
             <p>
               Wood Wiz is <strong>independent</strong> — there are no affiliate

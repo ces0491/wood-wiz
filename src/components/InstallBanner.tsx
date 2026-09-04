@@ -28,13 +28,19 @@ export default function InstallBanner() {
   const handleAdd = useCallback(async () => {
     if (install.needsInstructions) {
       // iOS / no native prompt: reveal the manual steps rather than no-op.
+      // Opening the steps counts as answering the banner — iOS gives us no
+      // way to detect a completed "Add to Home Screen", so without snoozing
+      // here we'd re-ask on every visit of someone who has already added it.
       setShowSteps((s) => !s);
+      install.dismiss();
       return;
     }
     const accepted = await install.promptInstall();
-    // Accepted → `appinstalled` flips isStandalone and this unmounts. Declined
-    // → treat as "not now" and snooze so we don't nag on the next visit.
-    if (!accepted) dismiss();
+    // Either way the banner has done its job and comes down. Accepting doesn't
+    // put the originating tab into standalone display-mode, so nothing else
+    // takes it away; declining snoozes so we don't nag on the next visit.
+    if (accepted) setVisible(false);
+    else dismiss();
   }, [install, dismiss]);
 
   if (!visible) return null;
@@ -53,6 +59,7 @@ export default function InstallBanner() {
             type="button"
             onClick={handleAdd}
             aria-expanded={install.needsInstructions ? showSteps : undefined}
+            aria-controls={install.needsInstructions ? "install-steps" : undefined}
             className="shrink-0 rounded-md bg-amber-700 px-3 py-1.5 text-sm font-medium text-white shadow-sm transition hover:bg-amber-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:ring-offset-2 focus-visible:ring-offset-amber-50 dark:bg-amber-600 dark:hover:bg-amber-500 dark:focus-visible:ring-offset-amber-950"
           >
             {install.needsInstructions ? "How" : "Add"}
@@ -68,7 +75,10 @@ export default function InstallBanner() {
         </div>
 
         {showSteps && (
-          <ol className="mt-2 flex flex-col gap-1.5 pl-12 text-sm text-stone-600 dark:text-stone-400">
+          <ol
+            id="install-steps"
+            className="mt-2 flex flex-col gap-1.5 pl-12 text-sm text-stone-600 dark:text-stone-400"
+          >
             <li className="flex items-center gap-2">
               <Share className="size-4 shrink-0 text-amber-700 dark:text-amber-500" aria-hidden />
               <span>

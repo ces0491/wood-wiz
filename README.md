@@ -2,12 +2,15 @@
 
 Ranks firewood from Cape Town vendors by **rand per kilogram**, with delivery costs and stock status surfaced up front.
 
-Two pages:
+Three pages:
 
-- **`/`** — paginated price list (25/page). Filter by wood type (kameeldoring, blue gum, etc.), vendor, and intended use (braai, fireplace, smoking). Facet counts update live as you filter, so you always see how many products match the *other* axes you haven't picked yet.
-- **`/vendors`** — vendor comparison: who's cheapest on average, who has the most species variety, who's running the most sales right now, and per-vendor breakdown with delivery and stacking info.
+- **`/`** — paginated price list (10/page, adjustable to 100). Filter by wood type (kameeldoring, blue gum, etc.), vendor, intended use (braai, fireplace, smoking), total budget, and minimum bulk weight. Facet counts update live as you filter, so you always see how many products match the *other* axes you haven't picked yet. On phones and tablets the filters are a bottom-sheet drawer; from `lg` up they're a sticky sidebar.
+- **`/vendors`** — vendor comparison: cheapest typical (median) price per kg, most species variety, most sales running right now, and a per-vendor breakdown with delivery and stacking info.
+- **`/faq`** — the methodology: how per-kg is computed, what `~est` means, how delivery-zone variants are handled, how fresh the data is, and who runs the site.
 
-Data is scraped daily from each vendor's storefront and committed to `data/products.json`. The Next.js front-end reads that file directly — no database required.
+Data is scraped daily from each vendor's storefront and committed to `data/products.json`. The Next.js front-end reads that file directly — no database required. Every route is statically prerendered, so a data commit is what triggers the redeploy that publishes new prices.
+
+The site is installable to a home screen as a PWA (manifest, generated icons, standalone display). There is deliberately no service worker — a cache layer over daily-refreshed prices would risk showing stale numbers.
 
 ## Vendors covered (8)
 
@@ -30,7 +33,15 @@ npm run scrape   # populate data/products.json (~60-90s)
 npm run dev      # http://localhost:3000
 ```
 
-`npm run scrape` runs every vendor scraper, normalizes results to a price-per-kg figure, and writes `data/products.json`. The dev server reads that file at request time, so re-running `scrape` and refreshing is enough — no rebuild needed.
+`npm run scrape` runs every vendor scraper, normalizes results to a price-per-kg figure, and writes `data/products.json`. The dev server reads that file at request time, so re-running `scrape` and refreshing is enough — no rebuild needed. In production it's read at build time instead, since `/` and `/vendors` prerender to static HTML.
+
+Other scripts:
+
+```powershell
+npm run lint
+npm run typecheck
+npm test         # vitest: normalisation, scraper helpers, sanity gate, install eligibility
+```
 
 ### Testing from another device on your LAN
 
@@ -66,24 +77,39 @@ Densities used are mid-range air-dry estimates from general wood-science referen
 ```
 src/
   app/
-    layout.tsx               # Mounts the top nav around every page
+    layout.tsx               # Nav, footer, install banner, <main> landmark, skip link
     page.tsx                 # Price browser (server component, loads data)
     vendors/page.tsx         # Vendor comparison (server component)
+    faq/page.tsx             # Methodology / trust page
+    manifest.ts              # Web app manifest (PWA install)
+    icon.tsx                 # Favicon, generated via ImageResponse
+    apple-icon.tsx           # iOS touch icon
+    opengraph-image.tsx      # Social preview card
+    pwa-icon/[variant]/      # 192 / 512 / maskable home-screen icons
     globals.css              # Tailwind v4
   components/
     SiteNav.tsx              # Top nav with active-route highlighting
-    ProductBrowser.tsx       # Client: facet filters, sort, pagination
+    SiteFooter.tsx           # Footer with independence note + GitHub link
+    ProductBrowser.tsx       # Client: facet filters, sort, pagination, filter drawer
     VendorComparison.tsx     # Server-rendered spotlights + CSS bar charts
+    FAQ.tsx                  # Server-rendered accordion sections
+    RefreshedAt.tsx          # Client: absolute stamp on the server, relative once hydrated
+    TrackedLink.tsx          # Outbound <a> that fires the vendor_click event
+    InstallBanner.tsx        # Client: dismissible "Add to Home Screen" bar
+    ReturnToTop.tsx          # Client: scroll-to-top affordance
   lib/
     types.ts                 # Product, Vendor, ScrapedProduct, ProductsFile
     wood-species.ts          # Density table + alias detection + usage map
     vendors.ts               # Vendor registry + delivery rules + stacking flags
     normalize.ts             # Raw scrape → normalized Product (price/kg)
     vendor-stats.ts          # Per-vendor aggregates and comparison highlights
-    format.ts                # Deterministic currency/weight formatters (SSR-safe)
+    format.ts                # Deterministic currency/weight/date formatters (SSR-safe)
     load-products.ts         # Server-side JSON loader
+    install-app.ts           # DOM-free PWA install eligibility rules
+    use-install-app.ts       # Client hook wrapping beforeinstallprompt
 scripts/
   scrape-all.ts              # Orchestrator: runs every scraper, writes JSON
+  sanity-checks.ts           # Build gate: price bounds, per-vendor yield, count drop
   scrapers/
     shared.ts                # Shopify (/products.json) + WooCommerce (/wp-json/wc/store/v1/products) helpers
     mother-city-firewood.ts  # Each scraper exports { vendorId, scrape() }
@@ -95,9 +121,10 @@ scripts/
     namibian-hardwood.ts
     wood-bros.ts             # Wix: sitemap → per-page meta tag scrape
 data/
-  products.json              # Output of `npm run scrape`; ~500 products
+  products.json              # Output of `npm run scrape`; ~480 products
 .github/workflows/
   scrape.yml                 # Daily cron at 03:00 UTC, commits refreshed JSON
+  test.yml                   # Lint, typecheck and unit tests on every push and PR
   lockfile.yml               # On package.json/lock changes: regenerate lockfile on Linux and auto-commit
 ```
 
@@ -109,6 +136,18 @@ data/
 4. `npm run scrape` to verify it produces sensible products. Check the cheapest/most expensive items — extreme outliers usually mean a weight-parsing miss.
 
 For non-Shopify/WooCommerce sites, look for JSON-LD Product schema, OpenGraph `product:price:amount`, or a public store API before falling back to HTML scraping. The Wix scraper (`wood-bros.ts`) is a worked example of meta-tag extraction.
+
+### The sanity gate
+
+`scripts/sanity-checks.ts` runs before anything is written, and a failure exits non-zero so the workflow leaves the previous `data/products.json` in place. It fails on:
+
+- any product over R 50/kg without a small-specialty exemption (a misparse that looks expensive — a bag pretending to be a pallet);
+- any product under R 1/kg at 50 kg or more (a non-firewood service that slipped past the accessory blocklist);
+- a vendor returning more than 10 raw items but normalising to zero;
+- a vendor normalising less than 15% of at least 20 raw items — the partial-breakage case, where a title format changes and most listings stop parsing while a few still do;
+- the total product count dropping more than 40% against the previous run.
+
+A new vendor whose catalogue legitimately sits under the yield floor needs an entry in `YIELD_OVERRIDES` with a comment saying why. The Wood Gurus are the existing case: most of their storefront is a per-piece "SELECT YOUR QUANTITY" configurator whose variants are dropped by design in `normalize.ts`.
 
 ## Adding a new species
 
@@ -141,8 +180,9 @@ The GitHub Actions workflow needs `contents: write` permission to push the refre
 ## Known limitations
 
 - **Delivery prices are descriptive, not computed.** The vendor record stores a free-form description and (where known) a `freeOverZar` threshold and `stacking` flag. The UI shows the description on each card but doesn't compute a delivered total — most vendors price delivery by suburb at checkout.
-- **Stacking flags only confirmed for two vendors.** `delivery.stacking` is explicitly set for Mother City Firewood (`free-over-threshold`) and Lancehoudt (`free`) — the only two whose product descriptions stated it. The other six are unset and show "Stacking unconfirmed" on `/vendors`.
-- **Vendor averages skew high for catalogs with specialty smoking wood.** CTF and Mother City Firewood sell premium smoking-chunk boxes at R 100–130/kg alongside bulk pallets at R 2–5/kg. The arithmetic mean ranks them as expensive (R 16–20/kg) even though their bulk product is cheap. The per-vendor breakdown shows both avg and min; consider the median (already computed in `vendor-stats.ts`) for a fairer headline if this bothers you.
+- **Stacking flags only confirmed for two vendors.** `delivery.stacking` is explicitly set for Mother City Firewood (`free-over-threshold`) and Lancehoudt (`free`) — the only two whose product descriptions stated it. The other six are unset and render no stacking badge at all; the earlier "Stacking unconfirmed" badge was removed as UI noise, since a badge that says nothing still reads as a verdict.
+- **Vendor ranking uses the median, never the mean.** CTF and Mother City Firewood sell premium smoking-chunk boxes at R 100–130/kg alongside bulk pallets at R 2–5/kg. The arithmetic mean ranks them as expensive (R 16–20/kg) even though their bulk product is cheap, so `/vendors` ranks and displays the median throughout — the word "average" is kept out of the headline UI on purpose. `avgPricePerKgZar` is still computed in `vendor-stats.ts` but isn't shown anywhere.
+- **Medians rest on very different sample sizes.** The Wood Gurus normalise to a handful of products because most of their catalogue is a per-piece configurator, while Mother City Firewood contribute ~200. The bar charts print each vendor's product count beside their name, and the "cheapest typical price" spotlight skips vendors below `MIN_SPOTLIGHT_SAMPLE` (8) so a four-product median can't take the headline.
 - **Region is Cape Town only.** Vendor registry has `region: "cape-town"` baked in. Adding Johannesburg/Durban would mean a region selector + filtering vendors by region.
 - **Combo/bundle products** (e.g. `Hout Bay Firewood Combo - Kameelhout & Rooipitjie`) classify as `unknown` species because they contain multiple woods. The price/kg is still computed and they show in "All" filters.
 - **Eco logs, briquettes, charcoal, and wood pellets** are filtered out by the normaliser since they're processed wood rather than firewood. Edit `NON_FIREWOOD_PATTERNS` in `src/lib/normalize.ts` to change this.

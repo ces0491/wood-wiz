@@ -27,7 +27,11 @@ export async function GET(
   { params }: { params: Promise<{ variant: string }> },
 ) {
   const { variant } = await params;
-  const spec = VARIANTS[variant] ?? VARIANTS["512"];
+  const spec = VARIANTS[variant];
+  // dynamicParams = false already 404s anything generateStaticParams didn't
+  // emit, so this is belt-and-braces rather than a live path — but it keeps
+  // the type honest without inventing a silent fallback icon.
+  if (!spec) return new Response("Not found", { status: 404 });
   const mark = Math.round(spec.size * spec.scale);
 
   return new ImageResponse(

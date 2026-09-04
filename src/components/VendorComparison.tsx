@@ -11,7 +11,8 @@ import {
 import type { ComparisonHighlights, VendorStats } from "@/lib/vendor-stats";
 import type { Vendor } from "@/lib/types";
 import { SPECIES } from "@/lib/wood-species";
-import { formatKg, formatPct, formatRelative, formatZar } from "@/lib/format";
+import { formatKg, formatPct, formatZar } from "@/lib/format";
+import RefreshedAt from "./RefreshedAt";
 import TrackedLink from "./TrackedLink";
 
 type IconType = typeof Tag;
@@ -64,7 +65,7 @@ export default function VendorComparison({
         </div>
         <p className="mt-1 text-sm text-stone-600 dark:text-stone-400">
           {totalProducts} products across {stats.length} vendors. Data refreshed{" "}
-          {formatRelative(generatedAt)}.
+          <RefreshedAt iso={generatedAt} />.
         </p>
       </header>
 
@@ -78,7 +79,7 @@ export default function VendorComparison({
               vendorById[highlights.cheapestMedian.vendorId]?.name ??
               highlights.cheapestMedian.vendorId
             }
-            sub={`${formatZar(highlights.cheapestMedian.medianPricePerKgZar)} median per kg`}
+            sub={`${formatZar(highlights.cheapestMedian.medianPricePerKgZar)} median per kg across ${highlights.cheapestMedian.productCount} products`}
           />
         )}
         {highlights.cheapestSingleProduct && (
@@ -130,10 +131,11 @@ export default function VendorComparison({
         <BarChart
           icon={TrendingDown}
           title="Typical price per kg"
-          subtitle="Median across each vendor's catalogue — lower is better"
+          subtitle="Median across each vendor's catalogue — lower is better. Read it against the catalogue size beside each name."
           rows={stats
             .map((s) => ({
               label: vendorById[s.vendorId]?.name ?? s.vendorId,
+              meta: `${s.productCount} product${s.productCount === 1 ? "" : "s"}`,
               value: s.medianPricePerKgZar,
               display: formatZar(s.medianPricePerKgZar),
             }))
@@ -403,7 +405,7 @@ function BarChart({
 }: {
   title: string;
   subtitle: string;
-  rows: { label: string; value: number; display: string }[];
+  rows: { label: string; meta?: string; value: number; display: string }[];
   max: number;
   tone: "cheap" | "abundant" | "sale";
   icon?: IconType;
@@ -432,7 +434,10 @@ function BarChart({
           return (
             <li key={r.label}>
               <div className="mb-0.5 flex justify-between text-xs">
-                <span className="truncate pr-2">{r.label}</span>
+                <span className="truncate pr-2">
+                  {r.label}
+                  {r.meta && <span className="ml-1.5 text-stone-400">{r.meta}</span>}
+                </span>
                 <span className="shrink-0 tabular-nums text-stone-600 dark:text-stone-400">
                   {r.display}
                 </span>

@@ -318,13 +318,16 @@ export const SPECIES: Record<WoodSpecies, SpeciesInfo> = {
 
 const ALL_SPECIES = Object.values(SPECIES);
 
+// Longest alias first, so "kameel doring" wins over a shorter substring match.
+// Built once at module load rather than per call — detectSpecies runs on every
+// scraped listing (~500 a run) and used to rebuild and re-sort this each time.
+const ALIASES_BY_LENGTH: { id: WoodSpecies; alias: string }[] = ALL_SPECIES.flatMap((s) =>
+  s.aliases.map((alias) => ({ id: s.id, alias: alias.toLowerCase() })),
+).sort((a, b) => b.alias.length - a.alias.length);
+
 export function detectSpecies(text: string): WoodSpecies {
   const lower = text.toLowerCase();
-  const byLength = ALL_SPECIES.flatMap((s) =>
-    s.aliases.map((alias) => ({ id: s.id, alias: alias.toLowerCase() })),
-  ).sort((a, b) => b.alias.length - a.alias.length);
-
-  for (const { id, alias } of byLength) {
+  for (const { id, alias } of ALIASES_BY_LENGTH) {
     if (lower.includes(alias)) return id;
   }
   return "unknown";
@@ -334,6 +337,3 @@ export function getSpecies(id: WoodSpecies): SpeciesInfo {
   return SPECIES[id];
 }
 
-export function listSpecies(): SpeciesInfo[] {
-  return ALL_SPECIES.filter((s) => s.id !== "unknown");
-}

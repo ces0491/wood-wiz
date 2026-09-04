@@ -1,4 +1,4 @@
-const NBSP = " ";
+const NBSP = "\u00A0";
 
 export function formatZar(n: number, maxFractionDigits?: number): string {
   const negative = n < 0;
@@ -28,4 +28,25 @@ export function formatRelative(iso: string): string {
   if (h < 24) return `${h} hour${h === 1 ? "" : "s"} ago`;
   const d = Math.floor(h / 24);
   return `${d} day${d === 1 ? "" : "s"} ago`;
+}
+
+const MONTHS = [
+  "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+  "Jul", "Aug", "Sep", "Oct", "Nov", "Dec",
+];
+
+// Fixed +02:00 offset rather than a locale/timezone lookup. Two reasons: the
+// audience is Cape Town only, and the value has to render identically on the
+// server (UTC on Vercel) and in the browser or hydration mismatches. South
+// Africa has never observed DST, so the offset is a constant, not a guess.
+const SAST_OFFSET_MS = 2 * 60 * 60 * 1000;
+
+/** "10 Aug 2026, 06:19 SAST" — deterministic, no Intl, no local clock. */
+export function formatSast(iso: string): string {
+  const d = new Date(new Date(iso).getTime() + SAST_OFFSET_MS);
+  const pad = (n: number) => String(n).padStart(2, "0");
+  return (
+    `${d.getUTCDate()} ${MONTHS[d.getUTCMonth()]} ${d.getUTCFullYear()}, ` +
+    `${pad(d.getUTCHours())}:${pad(d.getUTCMinutes())} SAST`
+  );
 }

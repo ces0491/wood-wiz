@@ -20,6 +20,11 @@ export interface VendorStats {
   hasSalesData: boolean;
 }
 
+// Fewest products a vendor can have and still be eligible for the "cheapest
+// typical price" spotlight. Below this the median is describing too small a
+// catalogue to call typical.
+export const MIN_SPOTLIGHT_SAMPLE = 8;
+
 export interface ComparisonHighlights {
   cheapestMedian: VendorStats | null;
   mostVariety: VendorStats | null;
@@ -82,9 +87,17 @@ export function computeHighlights(
   // Use median rather than mean: vendors that sell both bulk pallets (R 2-5/kg)
   // and specialty smoking boxes (R 100+/kg) would otherwise rank as expensive
   // on the mean even though their bulk pricing is competitive.
-  const cheapestMedian = [...stats].sort(
-    (a, b) => a.medianPricePerKgZar - b.medianPricePerKgZar,
-  )[0];
+  //
+  // The spotlight also needs a sample floor. A median over a handful of
+  // products is not a "typical price" — The Wood Gurus normalise to 4 listings
+  // because most of their catalogue is a per-piece configurator, and four
+  // products could take the headline off a vendor with two hundred. Vendors
+  // below the floor still appear in every chart and breakdown card, with their
+  // product count shown; they just can't win the award. If nobody clears the
+  // floor, fall back to the full set rather than showing nothing.
+  const byMedian = [...stats].sort((a, b) => a.medianPricePerKgZar - b.medianPricePerKgZar);
+  const eligible = byMedian.filter((s) => s.productCount >= MIN_SPOTLIGHT_SAMPLE);
+  const cheapestMedian = (eligible.length > 0 ? eligible : byMedian)[0];
   const mostVariety = [...stats].sort((a, b) => b.speciesCount - a.speciesCount)[0];
   const mostSales = [...stats].sort((a, b) => b.salesCount - a.salesCount)[0];
   const cheapestSingleProduct = [...products]

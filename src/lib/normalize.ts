@@ -85,7 +85,12 @@ export function stripFreeGift(s: string): string {
 
 function decodeEntities(s: string): string {
   return s
-    .replace(/&#(\d+);/g, (_, n) => String.fromCharCode(parseInt(n, 10)))
+    // Numeric entities first, both bases. Hex matters more than it looks:
+    // the em-dash multi-pack branch in extractWeight keys off a literal
+    // "—", so a title arriving as "&#x2014;" would silently miss it.
+    // fromCodePoint (not fromCharCode) so astral code points survive.
+    .replace(/&#x([0-9a-f]+);/gi, (_, n) => String.fromCodePoint(parseInt(n, 16)))
+    .replace(/&#(\d+);/g, (_, n) => String.fromCodePoint(parseInt(n, 10)))
     .replace(/&amp;/g, "&")
     .replace(/&quot;/g, '"')
     .replace(/&#x27;|&apos;/g, "'")
@@ -226,7 +231,11 @@ export function extractWeight(text: string, densityKgPerM3: number): WeightResul
   if (m3Match) {
     const m3 = parseFloat(m3Match[1]);
     const kg = m3 * densityKgPerM3;
-    return { weightKg: kg, estimated: true, packFormat: "loose" };
+    // Same 50-ton ceiling every other branch applies. A volume that parses
+    // above it is a misread, not a listing anyone can buy.
+    if (kg > 0 && kg < 50000) {
+      return { weightKg: kg, estimated: true, packFormat: "loose" };
+    }
   }
 
   // Litres: bags are loose-stacked so apply 0.5 packing factor

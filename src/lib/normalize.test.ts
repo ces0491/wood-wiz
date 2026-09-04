@@ -587,3 +587,59 @@ describe("normalize (integration)", () => {
     expect(result!.pricePerKgZar).toBe(5.56);
   });
 });
+
+describe("HTML entity decoding", () => {
+  function makeScraped(overrides: Partial<ScrapedProduct> = {}): ScrapedProduct {
+    return {
+      vendorId: "mother-city-firewood",
+      externalId: "test-1",
+      title: "Blue Gum 18kg",
+      url: "https://example.com/p/1",
+      priceZar: 100,
+      inStock: true,
+      scrapedAt: "2026-01-01T00:00:00Z",
+      ...overrides,
+    };
+  }
+
+  // The multi-pack branch keys off a literal em-dash. A title that arrives
+  // entity-encoded has to decode to one before extractWeight ever sees it,
+  // or a 50-bag order is measured as a single 5kg bag.
+  test("hex em-dash still reaches the multi-pack branch", () => {
+    const result = normalize(
+      makeScraped({ title: "Bluegum 5KG Bags &#x2014; 50 Bag", priceZar: 2500 }),
+    );
+    expect(result!.weightKg).toBe(250);
+  });
+
+  test("decimal em-dash does too", () => {
+    const result = normalize(
+      makeScraped({ title: "Bluegum 5KG Bags &#8212; 50 Bag", priceZar: 2500 }),
+    );
+    expect(result!.weightKg).toBe(250);
+  });
+
+  test("hex entities decode case-insensitively", () => {
+    const result = normalize(
+      makeScraped({ title: "Bluegum 5KG Bags &#X2014; 50 Bag", priceZar: 2500 }),
+    );
+    expect(result!.weightKg).toBe(250);
+  });
+
+  test("named entities are unaffected", () => {
+    const result = normalize(makeScraped({ title: "Oak &amp; Pine 18kg", priceZar: 200 }));
+    expect(result!.title).toBe("Oak & Pine 18kg");
+  });
+});
+
+describe("volume bound", () => {
+  test("a volume that parses past the 50-ton ceiling is refused", () => {
+    // 100 m3 of blue gum computes to 80,000 kg — a misread, not a listing.
+    expect(extractWeight("100 m3 bluegum", 800)).toBeNull();
+  });
+
+  test("a realistic volume still parses", () => {
+    const result = extractWeight("0.5 m3 bluegum", 800);
+    expect(result).toEqual({ weightKg: 400, estimated: true, packFormat: "loose" });
+  });
+});
