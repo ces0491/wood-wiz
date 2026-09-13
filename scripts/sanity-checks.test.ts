@@ -1,8 +1,15 @@
 import { describe, expect, test } from "vitest";
-import type { Product, ProductsFile } from "../src/lib/types";
+import type { Product, ProductsFile, Vendor } from "../src/lib/types";
 import { MIN_YIELD, YIELD_OVERRIDES, catalogueChanged, runSanityChecks } from "./sanity-checks";
 
-const NO_PREV = "does/not/exist/products.json";
+const NO_PREV = null;
+
+const vendorBase: Omit<Vendor, "id" | "regions"> = {
+  name: "Vendor",
+  url: "https://vendor.test",
+  platform: "woocommerce",
+  delivery: { description: "Delivery", pricing: "by-quote" },
+};
 
 function status(
   entries: Record<string, { count: number; rawCount?: number; ok?: boolean }>,
@@ -121,6 +128,42 @@ describe("price checks still fire", () => {
       NO_PREV,
     );
     expect(failures[0]).toContain("below R 1/kg");
+  });
+});
+
+describe("count drop", () => {
+  const vendors: Vendor[] = [
+    { ...vendorBase, id: "ct-big", regions: ["cape-town"] },
+    { ...vendorBase, id: "jhb-a", regions: ["johannesburg"] },
+    { ...vendorBase, id: "jhb-b", regions: ["johannesburg"] },
+  ];
+  const many = (vendorId: string, n: number) =>
+    Array.from({ length: n }, (_, i) => product({ id: `${vendorId}::${i}`, vendorId }));
+  const prevOf = (products: Product[]): ProductsFile => ({
+    generatedAt: "2026-08-09T04:00:00.000Z",
+    products,
+    vendorRunStatus: {},
+  });
+  const allOk = status({ "ct-big": { count: 1 }, "jhb-a": { count: 1 }, "jhb-b": { count: 1 } });
+
+  test("a small city collapsing fails even when the site-wide total barely moves", () => {
+    const prev = prevOf([...many("ct-big", 500), ...many("jhb-a", 10), ...many("jhb-b", 10)]);
+    const next = [...many("ct-big", 500), ...many("jhb-a", 10), ...many("jhb-b", 1)];
+    const failures = runSanityChecks(next, allOk, prev, vendors);
+    expect(failures).toEqual(["Johannesburg product count dropped from 20 to 11 (45% drop)"]);
+  });
+
+  test("a failed vendor is left to the failed-run report, not counted as a drop", () => {
+    // Its products are carried forward or aged out; either way the refresh of
+    // everyone else must still publish.
+    const prev = prevOf([...many("ct-big", 500), ...many("jhb-a", 10), ...many("jhb-b", 10)]);
+    const next = [...many("ct-big", 500), ...many("jhb-a", 10)];
+    const withFailure = status({
+      "ct-big": { count: 1 },
+      "jhb-a": { count: 1 },
+      "jhb-b": { count: 0, ok: false },
+    });
+    expect(runSanityChecks(next, withFailure, prev, vendors)).toEqual([]);
   });
 });
 

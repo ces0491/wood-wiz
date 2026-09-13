@@ -2,6 +2,7 @@ import { appendFileSync, existsSync, readFileSync, writeFileSync } from "node:fs
 import { join } from "node:path";
 import type { Product, ProductsFile, ScrapedProduct } from "../src/lib/types";
 import { normalize } from "../src/lib/normalize";
+import { carryForward } from "./carry-forward";
 import { catalogueChanged, runSanityChecks } from "./sanity-checks";
 
 import * as motherCity from "./scrapers/mother-city-firewood";
@@ -41,9 +42,29 @@ function reportCatalogueChange(changed: boolean) {
   if (out) appendFileSync(out, `catalogue_changed=${changed}\n`);
 }
 
+// A run where some vendors failed still publishes, so the other vendors'
+// prices refresh. The workflow fails afterwards on this output, so the failure
+// sends a notification instead of sitting in a green run's log — Stompies
+// failed four days running before anyone saw it.
+function reportFailedVendors(failed: string[]) {
+  const out = process.env.GITHUB_OUTPUT;
+  if (out) appendFileSync(out, `vendors_failed=${failed.join(",")}\n`);
+}
+
+function readPrevious(path: string): ProductsFile | null {
+  if (!existsSync(path)) return null;
+  try {
+    return JSON.parse(readFileSync(path, "utf-8")) as ProductsFile;
+  } catch {
+    return null; // unreadable: no carry-forward, no count comparison
+  }
+}
+
 async function main() {
   const startedAt = new Date().toISOString();
   console.log(`Scrape run started at ${startedAt}`);
+  const path = join(process.cwd(), "data", "products.json");
+  const prev = readPrevious(path);
   const allProducts: Product[] = [];
   const status: ProductsFile["vendorRunStatus"] = {};
 
@@ -67,14 +88,19 @@ async function main() {
     } catch (err) {
       const msg = err instanceof Error ? err.message : String(err);
       console.error(`  FAILED: ${msg}`);
-      status[mod.vendorId] = { ok: false, count: 0, error: msg, ranAt };
+      const carried = carryForward(mod.vendorId, msg, ranAt, prev);
+      console.error(
+        carried.products.length > 0
+          ? `  carrying forward ${carried.products.length} products from ${carried.status.lastOkAt}`
+          : "  nothing to carry forward",
+      );
+      allProducts.push(...carried.products);
+      status[mod.vendorId] = carried.status;
     }
   }
 
-  const path = join(process.cwd(), "data", "products.json");
-
   console.log("\n=== Sanity checks ===");
-  const failures = runSanityChecks(allProducts, status, path);
+  const failures = runSanityChecks(allProducts, status, prev);
   if (failures.length > 0) {
     console.error("Sanity checks failed — refusing to overwrite data/products.json:");
     for (const line of failures) console.error(`  ${line}`);
@@ -88,21 +114,18 @@ async function main() {
     vendorRunStatus: status,
   };
 
-  let changed = true;
-  if (existsSync(path)) {
-    try {
-      changed = catalogueChanged(out, JSON.parse(readFileSync(path, "utf-8")) as ProductsFile);
-    } catch {
-      // Previous file unreadable; treat this run as a change.
-    }
-  }
-  reportCatalogueChange(changed);
+  // No readable previous file counts as a change.
+  reportCatalogueChange(prev ? catalogueChanged(out, prev) : true);
 
   writeFileSync(path, JSON.stringify(out, null, 2));
   console.log(`\nWrote ${out.products.length} products to ${path}`);
 
-  const allFailed = Object.values(status).every((s) => !s.ok);
-  if (allFailed) {
+  const failed = Object.entries(status)
+    .filter(([, s]) => !s.ok)
+    .map(([id]) => id);
+  reportFailedVendors(failed);
+
+  if (failed.length === SCRAPERS.length) {
     console.error("All scrapers failed");
     process.exit(1);
   }

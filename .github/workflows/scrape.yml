@@ -2,7 +2,8 @@ name: Scrape wood prices
 
 on:
   schedule:
-    # Daily at 03:00 UTC (05:00 SAST)
+    # Scheduled for 03:00 UTC (05:00 SAST). GitHub starts scheduled runs late
+    # under load; in September 2026 they started between 07:07 and 07:39 UTC.
     - cron: "0 3 * * *"
   workflow_dispatch: {}
 
@@ -49,3 +50,14 @@ jobs:
           git add data/products.json
           git commit -m "$MSG"
           git push
+
+      # After the commit, so the vendors that did scrape still publish. A
+      # failed vendor's last good prices are carried forward for a few days
+      # (scripts/carry-forward.ts), which is what makes a red run here
+      # something to fix soon rather than an outage. It used to be a green run
+      # with the failure buried in the log.
+      - name: Fail if any vendor failed to scrape
+        if: steps.scrape.outputs.vendors_failed != ''
+        run: |
+          echo "::error::Vendor scrape failed: ${{ steps.scrape.outputs.vendors_failed }}"
+          exit 1

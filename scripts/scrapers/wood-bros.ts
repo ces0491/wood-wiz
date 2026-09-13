@@ -1,5 +1,5 @@
 import * as cheerio from "cheerio";
-import { fetchText, logScraper } from "./shared";
+import { HttpError, fetchText, logScraper } from "./shared";
 import type { ScrapedProduct } from "../../src/lib/types";
 
 export const vendorId = "wood-bros";
@@ -64,7 +64,16 @@ export async function scrape(): Promise<ScrapedProduct[]> {
       const p = await scrapeOne(url);
       if (p) out.push(p);
     } catch (err) {
-      logScraper(vendorId, `failed ${url}: ${err instanceof Error ? err.message : err}`);
+      // A product removed since the sitemap was generated is gone, not broken.
+      if (err instanceof HttpError && (err.status === 404 || err.status === 410)) {
+        logScraper(vendorId, `skipped ${url}: HTTP ${err.status}`);
+        continue;
+      }
+      // Anything else fails the vendor. Skipping it used to publish a partial
+      // catalogue under an ok status; a failed run carries the last complete
+      // one forward instead (scripts/carry-forward.ts). fetchText has already
+      // retried transient errors by this point.
+      throw err;
     }
   }
   return out;

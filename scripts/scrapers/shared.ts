@@ -264,8 +264,13 @@ export async function scrapeWooCommerce(
     try {
       data = await fetchJson<WooProduct[]>(url);
     } catch (err) {
-      if (page === 1) throw err;
-      break;
+      // Past the last page the Store API answers 200 with [] on the stores we
+      // scrape, and some installs answer 400 instead. Anything else on a later
+      // page is a real failure. Stopping the loop there used to publish a
+      // truncated catalogue under an ok status, which the yield check can't
+      // see because the raw and normalised counts shrink together.
+      if (page > 1 && err instanceof HttpError && err.status === 400) break;
+      throw err;
     }
     if (!Array.isArray(data) || data.length === 0) break;
     for (const p of data) {

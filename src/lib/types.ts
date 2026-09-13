@@ -108,17 +108,22 @@ export interface Vendor {
   notes?: string;
 }
 
+export interface VendorRunStatus {
+  ok: boolean;
+  // Products published for this vendor. On a failed run these are the ones
+  // carried forward from the last successful scrape (see
+  // scripts/carry-forward.ts), so the count can be non-zero when ok is false.
+  count: number;
+  rawCount?: number;
+  error?: string;
+  ranAt: string;
+  // When this vendor last scraped successfully. Set only on a failed run, and
+  // only when the previous file knew it.
+  lastOkAt?: string;
+}
+
 export interface ProductsFile {
   generatedAt: string;
   products: Product[];
-  vendorRunStatus: Record<
-    string,
-    {
-      ok: boolean;
-      count: number;
-      rawCount?: number;
-      error?: string;
-      ranAt: string;
-    }
-  >;
+  vendorRunStatus: Record<string, VendorRunStatus>;
 }

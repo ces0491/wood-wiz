@@ -1,5 +1,6 @@
-import { existsSync, readFileSync } from "node:fs";
-import type { Product, ProductsFile } from "../src/lib/types";
+import type { Product, ProductsFile, Vendor } from "../src/lib/types";
+import { REGIONS } from "../src/lib/regions";
+import { VENDORS } from "../src/lib/vendors";
 
 // Sanity-check thresholds. See SCOPE.md > "Data quality".
 export const SUSPECT_PRICE_PER_KG = 50;
@@ -46,7 +47,8 @@ function listOffenders(products: Product[], heading: string): string[] {
 export function runSanityChecks(
   products: Product[],
   status: ProductsFile["vendorRunStatus"],
-  outputPath: string,
+  prev: ProductsFile | null,
+  vendors: Vendor[] = VENDORS,
 ): string[] {
   const failures: string[] = [];
 
@@ -105,19 +107,37 @@ export function runSanityChecks(
     );
   }
 
-  // 3. Total count dropped catastrophically vs previous run.
-  if (existsSync(outputPath)) {
-    try {
-      const prev = JSON.parse(readFileSync(outputPath, "utf-8")) as ProductsFile;
-      const prevCount = prev.products.length;
-      if (prevCount > 0 && products.length / prevCount < COUNT_DROP_THRESHOLD) {
-        const pct = Math.round((1 - products.length / prevCount) * 100);
-        failures.push(
-          `product count dropped from ${prevCount} to ${products.length} (${pct}% drop)`,
-        );
+  // 3. Product count dropped catastrophically vs previous run, site-wide and
+  // in each city. Only vendors that scraped successfully this run are counted
+  // on both sides: a failed vendor is carried forward or aged out by
+  // carry-forward.ts and reported as a failed run, and counting it here would
+  // either hide a parse collapse elsewhere or refuse the whole refresh.
+  //
+  // The per-city check exists because the site-wide one can't see a small city
+  // collapse: Johannesburg's whole catalogue is under 4% of the site's.
+  if (prev) {
+    const scrapedOk = new Set(
+      Object.entries(status)
+        .filter(([, s]) => s.ok)
+        .map(([id]) => id),
+    );
+    const countFor = (list: Product[], ids: Set<string>) =>
+      list.filter((p) => scrapedOk.has(p.vendorId) && ids.has(p.vendorId)).length;
+
+    const scopes: { label: string; ids: Set<string> }[] = [
+      { label: "product count", ids: scrapedOk },
+      ...REGIONS.map((r) => ({
+        label: `${r.name} product count`,
+        ids: new Set(vendors.filter((v) => v.regions.includes(r.id)).map((v) => v.id)),
+      })),
+    ];
+    for (const { label, ids } of scopes) {
+      const before = countFor(prev.products, ids);
+      const after = countFor(products, ids);
+      if (before > 0 && after / before < COUNT_DROP_THRESHOLD) {
+        const pct = Math.round((1 - after / before) * 100);
+        failures.push(`${label} dropped from ${before} to ${after} (${pct}% drop)`);
       }
-    } catch {
-      // Previous file unreadable; skip the check.
     }
   }
 

@@ -6,6 +6,7 @@ import {
   isRetryableError,
   parseRetryAfter,
   retryDelayMs,
+  scrapeWooCommerce,
   type WooProduct,
 } from "./shared";
 
@@ -366,5 +367,38 @@ describe("retryDelayMs", () => {
 
   test("caps an unreasonable Retry-After so one origin cannot stall the run", () => {
     expect(retryDelayMs(new HttpError(429, "https://x", 600_000), 1000, 1)).toBe(15000);
+  });
+});
+
+describe("scrapeWooCommerce pagination", () => {
+  afterEach(() => {
+    vi.unstubAllGlobals();
+  });
+
+  const fullPage = () =>
+    JSON.stringify(Array.from({ length: 100 }, (_, i) => makeWoo({ id: i + 1 })));
+
+  function stubPages(page2: () => Response) {
+    vi.stubGlobal(
+      "fetch",
+      vi.fn(async (url: string) =>
+        /[?&]page=1$/.test(url) ? new Response(fullPage(), { status: 200 }) : page2(),
+      ),
+    );
+  }
+
+  test("an empty page ends the catalogue", async () => {
+    stubPages(() => new Response("[]", { status: 200 }));
+    await expect(scrapeWooCommerce("v", "https://store.test")).resolves.toHaveLength(100);
+  });
+
+  test("a 400 past the last page ends the catalogue", async () => {
+    stubPages(() => new Response("{}", { status: 400 }));
+    await expect(scrapeWooCommerce("v", "https://store.test")).resolves.toHaveLength(100);
+  });
+
+  test("any other failure on a later page fails the vendor instead of truncating it", async () => {
+    stubPages(() => new Response("gone", { status: 403 }));
+    await expect(scrapeWooCommerce("v", "https://store.test")).rejects.toThrow(/HTTP 403/);
   });
 });
