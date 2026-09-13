@@ -71,7 +71,7 @@ jobs:
           node-version: "24"
 
       # high, not low. Dev dependencies are in scope — the scrape job holds
-      # `contents: write` and reaches eight third-party sites, and what it
+      # `contents: write` and reaches ten third-party sites, and what it
       # commits deploys itself — so this deliberately does not pass
       # `--omit=dev`. But a moderate advisory in a build-time transitive should
       # not block a price refresh at 03:00; those get picked up by review.

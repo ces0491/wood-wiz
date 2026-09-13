@@ -6,8 +6,8 @@ import { DEFAULT_REGION, type RegionId, isRegionId } from "./regions";
 /**
  * The metro a reader last looked at.
  *
- * Wood Wiz is a thing people check repeatedly \u2014 it is why the site is
- * installable at all \u2014 and the manifest's `start_url` is `/`. Without a
+ * Wood Wiz is a thing people check repeatedly — it is why the site is
+ * installable at all — and the manifest's `start_url` is `/`. Without a
  * memory, every launch of the installed app landed on "Where are you buying
  * wood?" and cost a tap before showing a single price. Remembering the choice
  * makes `/` a redirect for a returning reader and a picker for a new one.

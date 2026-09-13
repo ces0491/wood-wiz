@@ -19,7 +19,7 @@ export interface RegionCard {
  *
  * Deliberately not a comparison. Each card carries how much is listed and
  * nothing about price, because a per-kg figure beside another city's would
- * invite reading one against the other \u2014 and that comparison is meaningless.
+ * invite reading one against the other — and that comparison is meaningless.
  * Cape Town bulk runs cheaper than Gauteng's because it is nearer the source,
  * which says nothing about whether a vendor is good value to someone who lives
  * there. Prices are compared inside a metro, never across.

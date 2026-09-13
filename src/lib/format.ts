@@ -35,10 +35,11 @@ const MONTHS = [
   "Jul", "Aug", "Sep", "Oct", "Nov", "Dec",
 ];
 
-// Fixed +02:00 offset rather than a locale/timezone lookup. Two reasons: the
-// audience is Cape Town only, and the value has to render identically on the
-// server (UTC on Vercel) and in the browser or hydration mismatches. South
-// Africa has never observed DST, so the offset is a constant, not a guess.
+// Fixed +02:00 offset rather than a locale/timezone lookup. Two reasons: every
+// city the site covers is in South Africa, which has one time zone, and the
+// value has to render identically on the server (UTC on Vercel) and in the
+// browser or hydration mismatches. South Africa has no daylight saving time,
+// so the offset is a constant, not a guess.
 const SAST_OFFSET_MS = 2 * 60 * 60 * 1000;
 
 /** "10 Aug 2026, 06:19 SAST" — deterministic, no Intl, no local clock. */
