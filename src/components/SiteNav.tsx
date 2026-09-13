@@ -51,8 +51,11 @@ export default function SiteNav() {
       ]
     : [{ href: "/faq", label: "How it works" }];
 
+  // Pinned from sm only. On a phone the nav wraps to two rows, and pinning it
+  // kept a tenth of the screen covered for the length of every list; the price
+  // page pins its own sort-and-filter bar there instead.
   return (
-    <nav className="sticky top-0 z-30 border-b border-stone-200/70 bg-white/80 backdrop-blur dark:border-stone-800/70 dark:bg-stone-950/70">
+    <nav className="z-30 border-b sm:sticky sm:top-0 border-stone-200/70 bg-white/80 backdrop-blur dark:border-stone-800/70 dark:bg-stone-950/70">
       {/* Wraps to two rows on a phone rather than overflowing: logo and city
           on the first, page links on the second. Measured at 375px the single
           row came to 456px and scrolled the whole document sideways. */}
@@ -78,7 +81,7 @@ export default function SiteNav() {
                   <Link
                     href={l.href}
                     aria-current={active ? "page" : undefined}
-                    className={`rounded-md whitespace-nowrap px-3 py-1.5 text-sm font-medium transition motion-reduce:transition-none ${
+                    className={`inline-flex min-h-10 items-center rounded-md whitespace-nowrap px-3 py-1.5 text-sm font-medium sm:min-h-0 transition motion-reduce:transition-none ${
                       active
                         ? "bg-amber-700 text-white shadow-sm shadow-amber-900/30 dark:bg-amber-600 dark:text-stone-50"
                         : "text-stone-700 hover:bg-stone-100 dark:text-stone-300 dark:hover:bg-stone-800"
@@ -114,7 +117,7 @@ function RegionSwitch({ current, pathname }: { current: string; pathname: string
           <span
             key={r.id}
             aria-current="page"
-            className="rounded-md px-2.5 py-1.5 text-xs font-medium bg-stone-200 text-stone-900 dark:bg-stone-700 dark:text-stone-100"
+            className="inline-flex min-h-10 items-center rounded-md px-2.5 py-1.5 text-sm font-medium bg-stone-200 sm:min-h-0 sm:text-xs text-stone-900 dark:bg-stone-700 dark:text-stone-100"
           >
             {r.name}
           </span>
@@ -122,7 +125,7 @@ function RegionSwitch({ current, pathname }: { current: string; pathname: string
           <Link
             key={r.id}
             href={`/${r.id}${suffix}`}
-            className="rounded-md px-2.5 py-1.5 text-xs font-medium text-stone-600 transition hover:bg-stone-100 hover:text-stone-900 motion-reduce:transition-none dark:text-stone-400 dark:hover:bg-stone-800 dark:hover:text-stone-200"
+            className="inline-flex min-h-10 items-center rounded-md px-2.5 py-1.5 text-sm font-medium text-stone-600 sm:min-h-0 sm:text-xs transition hover:bg-stone-100 hover:text-stone-900 motion-reduce:transition-none dark:text-stone-400 dark:hover:bg-stone-800 dark:hover:text-stone-200"
           >
             {r.name}
           </Link>

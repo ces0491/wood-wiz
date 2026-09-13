@@ -67,7 +67,7 @@ export default function VendorComparison({
           <h1 className="text-2xl font-bold tracking-tight sm:text-3xl">
             {region.name} vendor comparison
           </h1>
-          <span className="rounded-full bg-amber-100 px-3 py-1 text-xs font-medium text-amber-900 ring-1 ring-amber-200 dark:bg-amber-900/40 dark:text-amber-200 dark:ring-amber-800/50">
+          <span className="hidden rounded-full bg-amber-100 px-3 py-1 text-xs font-medium text-amber-900 ring-1 ring-amber-200 sm:inline-block dark:bg-amber-900/40 dark:text-amber-200 dark:ring-amber-800/50">
             {region.name}
           </span>
         </div>
@@ -85,7 +85,7 @@ export default function VendorComparison({
         Highlights
       </h2>
       <section
-        className="mb-8 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4"
+        className="mb-8 grid grid-cols-1 gap-2 sm:grid-cols-2 sm:gap-3 lg:grid-cols-4"
         aria-labelledby="highlights-heading"
       >
         {highlights.cheapestMedian && (
@@ -241,12 +241,12 @@ export default function VendorComparison({
                         {v.name}
                       </TrackedLink>
                     </h3>
-                    <span className="text-xs uppercase tracking-wide text-stone-500 dark:text-stone-400">
+                    <span className="hidden text-xs uppercase tracking-wide text-stone-500 sm:inline dark:text-stone-400">
                       {v.platform}
                     </span>
                   </div>
 
-                  <dl className="grid grid-cols-2 gap-x-3 gap-y-2 text-sm">
+                  <dl className="grid grid-cols-3 gap-x-3 gap-y-2 text-sm md:grid-cols-2">
                     <Stat label="Median per kg" value={formatZar(s.medianPricePerKgZar)} />
                     <Stat label="Cheapest per kg" value={formatZar(s.minPricePerKgZar)} />
                     <Stat label="Products" value={`${s.productCount}`} />
@@ -364,20 +364,22 @@ function SpotlightCard({
   const t = SPOTLIGHT_TONE[tone];
   return (
     <div
-      className={`rounded-lg border ${t.border} bg-white p-4 dark:bg-stone-900`}
+      className={`rounded-lg border ${t.border} bg-white p-3 sm:p-4 dark:bg-stone-900`}
     >
       <div className="flex items-start gap-3">
         <span
-          className={`flex size-9 shrink-0 items-center justify-center rounded-md ${t.iconBg}`}
+          className={`flex size-8 shrink-0 items-center justify-center rounded-md sm:size-9 ${t.iconBg}`}
           aria-hidden
         >
           <Icon className={`size-5 ${t.iconColor}`} />
         </span>
         <div className="min-w-0">
           <p className="text-xs uppercase tracking-wide text-stone-500 dark:text-stone-400">{label}</p>
-          <p className="mt-0.5 text-lg font-semibold leading-tight">{value}</p>
+          <p className="mt-0.5 text-base font-semibold leading-tight sm:text-lg">{value}</p>
           {sub !== undefined && (
-            <p className="mt-1 text-xs text-stone-600 dark:text-stone-400">{sub}</p>
+            // Clamped on a phone: the cheapest-product card quotes a full
+            // listing title, which ran to three lines in a one-column stack.
+            <p className="mt-1 line-clamp-2 text-xs text-stone-600 sm:line-clamp-none dark:text-stone-400">{sub}</p>
           )}
         </div>
       </div>

@@ -9,7 +9,7 @@ Comparison is always **within a city**: each city page ranks the vendors deliver
 Routes:
 
 - **`/`** — city picker. Vendor and product counts only, deliberately no prices: a per-kg figure beside another city's would invite exactly the comparison the site doesn't make.
-- **`/[region]`** (`/cape-town`, `/johannesburg`) — paginated price list (10/page, adjustable to 100). Filter by wood type (kameeldoring, blue gum, etc.), vendor, intended use (braai, fireplace, smoking), total budget, and minimum bulk weight. Facet counts update live as you filter, so you always see how many products match the *other* axes you haven't picked yet. On phones and tablets the filters are a bottom-sheet drawer; from `lg` up they're a sticky sidebar.
+- **`/[region]`** (`/cape-town`, `/johannesburg`) — paginated price list (10/page, adjustable to 100). Filter by wood type (kameeldoring, blue gum, etc.), vendor, intended use (braai, fireplace, smoking), total budget, and minimum bulk weight. Facet counts update live as you filter, so you always see how many products match the *other* axes you haven't picked yet. On phones and tablets the filters are a bottom-sheet drawer that ends in a "Show N products" button; from `lg` up they're a sticky sidebar. On a phone the sort menu and Filters button stick to the top of the screen while the list scrolls, in place of the site nav.
 - **`/[region]/vendors`** — vendor comparison for that city: cheapest typical (median) price per kg, most species variety, most sales running right now, and a per-vendor breakdown with delivery and stacking info. Stats are computed from that city's slice only.
 - **`/faq`** — the methodology: how per-kg is computed, what `~est` means, how delivery-zone variants are handled, how fresh the data is, and who runs the site.
 
@@ -71,6 +71,12 @@ city pages scrolled sideways on a phone — the HTML was valid and every class
 was plausible. Only a real layout engine at a real width shows it. The suite
 was checked against that regression: reintroduce it and eight assertions fail,
 naming the routes and the width.
+
+Three more tests drive the price page at phone width: the sort and Filters
+controls must still be on screen after scrolling the list, the filter sheet's
+"Show N products" button must be reachable and close the sheet, and no text
+field or select may use text under 16px, which makes iOS Safari zoom the page
+on focus.
 
 The suite builds and serves the app against `tests/fixtures/products.json`
 rather than the live catalogue, via `WOOD_WIZ_DATA=fixture` (see

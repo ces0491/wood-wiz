@@ -8,6 +8,19 @@
  */
 export function scrollToTop(): void {
   if (typeof window === "undefined") return;
+  window.scrollTo({ top: 0, behavior: scrollBehavior() });
+}
+
+/**
+ * Scroll an element to the top of the viewport, with the same motion rule.
+ * Sticky chrome above it is cleared with `scroll-margin-top` on the element.
+ */
+export function scrollToElement(el: Element | null): void {
+  if (typeof window === "undefined" || !el) return;
+  el.scrollIntoView({ block: "start", behavior: scrollBehavior() });
+}
+
+function scrollBehavior(): ScrollBehavior {
   const reduce = window.matchMedia?.("(prefers-reduced-motion: reduce)").matches ?? false;
-  window.scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" });
+  return reduce ? "auto" : "smooth";
 }

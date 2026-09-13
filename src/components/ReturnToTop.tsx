@@ -32,7 +32,7 @@ export default function ReturnToTop() {
       type="button"
       onClick={scrollToTop}
       aria-label="Return to top"
-      className={`fixed bottom-4 right-4 z-50 inline-flex size-11 items-center justify-center rounded-full bg-amber-700 text-white shadow-lg shadow-amber-900/30 transition-all duration-200 motion-reduce:transition-none hover:bg-amber-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:ring-offset-2 dark:bg-amber-600 dark:hover:bg-amber-500 ${
+      className={`fixed right-4 bottom-[max(1rem,env(safe-area-inset-bottom))] z-50 inline-flex size-11 items-center justify-center rounded-full bg-amber-700 text-white shadow-lg shadow-amber-900/30 transition-all duration-200 motion-reduce:transition-none hover:bg-amber-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:ring-offset-2 dark:bg-amber-600 dark:hover:bg-amber-500 ${
         visible ? "opacity-100 translate-y-0" : "pointer-events-none opacity-0 translate-y-2"
       }`}
     >

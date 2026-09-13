@@ -90,6 +90,45 @@ for (const scheme of SCHEMES) {
   }
 }
 
+/**
+ * Phone behaviour the layout invariants can't see: a page can fit its width
+ * and still hide its controls a screen away or zoom on every tap.
+ */
+test.describe("mobile interaction", () => {
+  test.use({ viewport: { width: 375, height: 812 }, hasTouch: true });
+
+  test("sort and Filters stay on screen while scrolling the list", async ({ page }) => {
+    await visitFresh(page, "/cape-town");
+    await page.evaluate(() => window.scrollTo(0, 1500));
+    const box = await page.getByRole("button", { name: /^Filters/ }).boundingBox();
+    expect(box, "Filters button is rendered").not.toBeNull();
+    expect(box!.y).toBeGreaterThanOrEqual(0);
+    expect(box!.y + box!.height).toBeLessThan(120);
+  });
+
+  test("the filter sheet ends in a reachable button that closes it", async ({ page }) => {
+    await visitFresh(page, "/cape-town");
+    await page.getByRole("button", { name: /^Filters/ }).click();
+    const show = page.getByRole("button", { name: /^Show \d+ products?$/ });
+    await expect(show).toBeInViewport();
+    await show.click();
+    await expect(page.locator("#filter-panel")).toBeHidden();
+  });
+
+  test("no text field or select is small enough to trigger iOS zoom", async ({ page }) => {
+    await visitFresh(page, "/cape-town");
+    await page.getByRole("button", { name: /^Filters/ }).click();
+    // iOS Safari zooms the page when a focused field's text is under 16px.
+    const small = await page.evaluate(() =>
+      Array.from(document.querySelectorAll("input:not([type=checkbox]), select"))
+        .filter((el) => el.getBoundingClientRect().width > 0)
+        .filter((el) => parseFloat(getComputedStyle(el).fontSize) < 16)
+        .map((el) => el.outerHTML.slice(0, 80)),
+    );
+    expect(small).toEqual([]);
+  });
+});
+
 test.describe("appearance", () => {
   for (const scheme of SCHEMES) {
     for (const vp of VIEWPORTS) {
