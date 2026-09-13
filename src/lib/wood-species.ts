@@ -86,7 +86,7 @@ export const SPECIES: Record<WoodSpecies, SpeciesInfo> = {
   "black-wattle": {
     id: "black-wattle",
     displayName: "Black Wattle",
-    aliases: ["black wattle", "wattle", "acacia mearnsii"],
+    aliases: ["black wattle", "blackwattle", "wattle", "acacia mearnsii"],
     densityKgPerM3: 700,
     usage: "both",
     color: "bg-stone-800",
@@ -160,6 +160,8 @@ export const SPECIES: Record<WoodSpecies, SpeciesInfo> = {
     aliases: [
       "wingerd stompies",
       "wingerdstompies",
+      // The Wood Gurus' spelling: "Wingered STOMPIES / Vine 5kg-7kg BAG".
+      "wingered",
       "wingerd stompe",
       "wingerd",
       "grape vine",
@@ -320,17 +322,44 @@ export const SPECIES: Record<WoodSpecies, SpeciesInfo> = {
 
 const ALL_SPECIES = Object.values(SPECIES);
 
-// Longest alias first, so "kameel doring" wins over a shorter substring match.
-// Built once at module load rather than per call — detectSpecies runs on every
-// scraped listing (~500 a run) and used to rebuild and re-sort this each time.
-const ALIASES_BY_LENGTH: { id: WoodSpecies; alias: string }[] = ALL_SPECIES.flatMap((s) =>
-  s.aliases.map((alias) => ({ id: s.id, alias: alias.toLowerCase() })),
-).sort((a, b) => b.alias.length - a.alias.length);
+// Species whose aliases describe a product type rather than a wood. "Smoking
+// Wood | Pecan Chunks" is pecan; the generic alias is the longer match, so
+// under plain longest-first ordering it hid the species of 17 smoking-chunk
+// listings and left Cherry, Pecan and Macadamia with no products at all. A
+// generic alias only applies when no specific species is named.
+const GENERIC_SPECIES: ReadonlySet<WoodSpecies> = new Set(["smoking-mix"]);
+
+// Aliases match as whole words, with an optional plural "s". Substring
+// matching let short aliases fire inside unrelated words: Pine's Afrikaans
+// "den" matched "wooden" and "Vredenburg", which published a Christmas
+// decoration and a grape-vine bag as pine.
+//
+// `(?:^|[^a-z])` rather than a lookbehind: this module also loads in the
+// browser, and a lookbehind throws at construction on Safari before 16.4.
+function aliasPattern(alias: string): RegExp {
+  const escaped = alias.replace(/[.*+?^${}()|[\]\\/]/g, "\\$&");
+  return new RegExp(`(?:^|[^a-z])${escaped}s?(?![a-z])`);
+}
+
+// Specific species before generic ones, then longest alias first, so "kameel
+// doring" wins over a shorter match. Built once at module load rather than per
+// call — detectSpecies runs on every scraped listing (~500 a run).
+const ALIAS_PATTERNS: { id: WoodSpecies; alias: string; pattern: RegExp }[] = ALL_SPECIES.flatMap(
+  (s) =>
+    s.aliases.map((raw) => {
+      const alias = raw.toLowerCase();
+      return { id: s.id, alias, pattern: aliasPattern(alias) };
+    }),
+).sort(
+  (a, b) =>
+    Number(GENERIC_SPECIES.has(a.id)) - Number(GENERIC_SPECIES.has(b.id)) ||
+    b.alias.length - a.alias.length,
+);
 
 export function detectSpecies(text: string): WoodSpecies {
   const lower = text.toLowerCase();
-  for (const { id, alias } of ALIASES_BY_LENGTH) {
-    if (lower.includes(alias)) return id;
+  for (const { id, pattern } of ALIAS_PATTERNS) {
+    if (pattern.test(lower)) return id;
   }
   return "unknown";
 }

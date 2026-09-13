@@ -13,7 +13,7 @@ export const COUNT_DROP_THRESHOLD = 0.6; // fail if new < old * this
 // Titles matching this pattern are allowed to exceed SUSPECT_PRICE_PER_KG —
 // these are legitimately-expensive small specialty products (smoking chunks,
 // per-box gift items, etc.) whose per-kg price reflects packaging not value.
-export const SPECIALTY_PATTERN = /\b(smoking|chunks|per\s*box|eco\s*log)/i;
+export const SPECIALTY_PATTERN = /\b(smoking|chunks|per\s*box)/i;
 export const SPECIALTY_MAX_KG = 10; // only allow specialty exemption for small packs
 
 // Per-vendor normalisation yield: what fraction of a vendor's raw listings

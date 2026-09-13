@@ -75,6 +75,15 @@ const NON_FIREWOOD_PATTERNS = [
   /\bbag\s*opener\b/i,
   /\bbellow(s)?\b/i,
   /\bwood\s*pellet/i,
+  // Processed wood. SCOPE excludes eco logs, but no pattern matched them and
+  // 17 sawdust heat logs and eco logs were in the catalogue.
+  /\bsawdust\b/i,
+  /\beco\s*logs?\b/i,
+  /\bheat\s*logs?\b/i,
+  /\b(?:com)?pressed\s+(?:wood\s+)?logs?\b/i,
+  // Cape Town Firewood sell a wooden Christmas tree decoration, which parsed
+  // as 10 kg of pine braai wood at R 47.90/kg, just under the sanity ceiling.
+  /\b(?:christmas|xmas|kersfees)\b/i,
   /\bgarden\s*refuse\b/i,
   /\b(waste|refuse)\s*removal\b/i,
   /\bremoval\s*service\b/i,

@@ -335,6 +335,11 @@ describe("isFirewood", () => {
       ["waste removal", "General Waste Removal Service — Full 1-Ton Bakkie Load"],
       ["refuse removal", "Refuse Removal — Small Bakkie"],
       ["removal service", "Garden Removal Service — Bakkie Load"],
+      ["sawdust", "Sawdust Heat Logs (Fire Logs) | 12pc Packs — 25 Packs"],
+      ["eco logs", "Eco Logs Bulk - 20KG Bags (Eco-Friendly) — 50x Bags - 1Ton"],
+      ["heat logs", "Namibian Hardwood Eco / Heat Logs (12 LOGS)(10kg)"],
+      ["pressed logs", "Compressed Wood Logs 10kg"],
+      ["christmas", "Christmas Tree - White | Wooden (Xmas/Kersfees Boom)"],
     ];
     test.each(cases)("rejects %s: '%s'", (_, title) => {
       expect(isFirewood(title)).toBe(false);
@@ -381,6 +386,38 @@ describe("detectSpecies", () => {
       // Both 'eucalyptus globulus' and 'eucalyptus' are aliases of blue-gum,
       // so this test mostly confirms the longest-alias-first ordering works
       expect(detectSpecies("Eucalyptus globulus 18kg")).toBe("blue-gum");
+    });
+  });
+
+  describe("aliases match whole words only", () => {
+    test("Pine's 'den' does not fire inside 'wooden' or 'Vredenburg'", () => {
+      expect(detectSpecies("Wooden crate of firewood")).toBe("unknown");
+      expect(detectSpecies("Mixed firewood | The Wood Gurus Vredenburg")).toBe("unknown");
+    });
+    test("'oak' does not fire inside 'soaked'", () => {
+      expect(detectSpecies("Rain-soaked bargain bin 20kg")).toBe("unknown");
+    });
+    test("a plural still matches", () => {
+      expect(detectSpecies("Plums and more 20kg")).toBe("plum");
+    });
+    test("The Wood Gurus' 'Wingered' spelling is grape vine", () => {
+      expect(
+        detectSpecies("Wingered STOMPIES / Vine 5kg-7kg BAG | The Wood Gurus Vredenburg"),
+      ).toBe("grape-vine");
+    });
+    test("one-word 'Blackwattle' is still black wattle", () => {
+      expect(detectSpecies("Blackwattle – 500 pieces")).toBe("black-wattle");
+    });
+  });
+
+  describe("a named species beats a generic product-type alias", () => {
+    test("'Smoking Wood | Pecan Chunks' is pecan, not the smoking mix", () => {
+      expect(detectSpecies("Smoking Wood | Pecan Chunks | Sold per Single Box or more")).toBe(
+        "pecan",
+      );
+    });
+    test("smoking chunks with no known species stay in the mix", () => {
+      expect(detectSpecies("Smoking Wood | Guava Chunks | Per Box")).toBe("smoking-mix");
     });
   });
 
