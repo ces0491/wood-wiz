@@ -13,7 +13,7 @@ Done is observable, not eternal. The criteria below are the pass/fail bar for de
 ### Data quality
 
 - [x] `extractWeight()` and `detectSpecies()` have unit tests covering each regex branch and a representative accessory-rejection set. (138 tests across `normalize.test.ts` and `shared.test.ts`.)
-- [x] Post-scrape sanity check fails the CI scrape job if (a) any normalised product reports per-kg > R 50 without specialty-product exemption, (b) total product count drops by more than 40% between consecutive runs, or (c) any vendor reports > 10 raw items but normalises to 0. Found and fixed 8 misparsed Namibian Hardwood titles on first run.
+- [x] Post-scrape sanity check fails the CI scrape job if (a) any normalised product reports per-kg > R 50 without specialty-product exemption, (b) product count drops by more than 40% between consecutive runs, site-wide or in any one city, counting vendors that scraped successfully, or (c) any vendor reports > 10 raw items but normalises to 0. Found and fixed 8 misparsed Namibian Hardwood titles on first run.
 - [ ] For any product spot-checked against its live vendor page, the published total price matches within 24 hours of the last refresh, or the discrepancy is documented in the FAQ.
 - [ ] At least 8 vendors covered in the founding city (Cape Town), with daily auto-refresh confirmed by the `scrape.yml` workflow. A second city ships when it has enough vendors to be a comparison rather than a listing — Johannesburg is live with 2 and is explicitly not there yet.
 
@@ -34,7 +34,7 @@ Done is observable, not eternal. The criteria below are the pass/fail bar for de
 
 ### Operational
 
-- [ ] Daily scrape runs on a schedule; vendor failures are isolated and surfaced in the UI on the next page render.
+- [ ] Daily scrape runs on a schedule; vendor failures are isolated and surfaced in the UI on the next page render. (Implemented: a failed vendor's last good prices are carried forward for up to 7 days, both city pages name the vendor and the date of their prices, and the scrape workflow fails after committing so the failure notifies. Still to confirm against a real failure in production.)
 - [x] Own domain (not the Vercel preview URL). Live at `woodwiz.sheetsolved.com` — a GoDaddy CNAME on the sheetsolved.com apex pointing at Vercel, matching `rtp.sheetsolved.com`. Certificate issued, all three routes serving. `SITE_URL` in `src/lib/site.ts` is the single origin the metadata, sitemap and robots policy all read.
 - [x] Vercel Analytics enabled with at least one custom event (outbound vendor click). Every "Buy at vendor" link, vendor-name link, and cheapest-product link routes through `TrackedLink` and fires a `vendor_click` event with `vendor`, `product`, and `source` properties (product-title, buy-button, spotlight, vendor-card-name, vendor-card-cheapest). **Analytics dashboard needs to be enabled in Vercel project settings to capture them.**
 - [x] CI green on every push to main: typecheck, lint, normalisation tests. (`.github/workflows/test.yml`)
@@ -69,7 +69,10 @@ Vendor or user disputes route to [GitHub Issues](https://github.com/ces0491/wood
 
 ## Status
 
-This document is updated when any of the above changes. Reviewed at least quarterly. Last updated: 2026-09-04.
+This document is updated when any of the above changes. Reviewed at least quarterly. Last updated: 2026-09-13.
+
+- Eco logs and sawdust heat logs are now filtered out by the normaliser, as this document already stated they were.
+- Vendor failures: last good prices carried forward for up to 7 days, per-city count check, and a failing scrape workflow when any vendor fails. Prompted by Stompies failing unnoticed from 2026-09-10 to 2026-09-13, which left Johannesburg with one vendor.
 
 - Narrowed the “mobile apps” exclusion to native apps, recording the PWA install decision.
 - **Multi-city, reversing the “Cape Town only” exclusion.** The site now covers Cape Town (9 vendors) and Johannesburg (2), on per-city routes at `/[region]`. Durban and the Garden Route were requested at the same time and are not shipping, for the reason given under “out of scope” above. What replaces the old exclusion is a narrower one: no cross-city comparison, and no city that can't sustain a comparison.

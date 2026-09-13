@@ -128,8 +128,13 @@ export function computeHighlights(
   const byMedian = [...stats].sort((a, b) => a.medianPricePerKgZar - b.medianPricePerKgZar);
   const eligible = byMedian.filter((s) => s.productCount >= MIN_SPOTLIGHT_SAMPLE);
   const cheapestMedian = eligible.length >= 2 ? eligible[0] : null;
-  const mostVariety = [...stats].sort((a, b) => b.speciesCount - a.speciesCount)[0];
-  const mostSales = [...stats].sort((a, b) => b.salesCount - a.salesCount)[0];
+  // The vendor-level awards follow the same rule. With one vendor left in a
+  // city, "most species variety" and "most active sales" name the only entrant.
+  const contested = stats.length >= 2;
+  const mostVariety = contested
+    ? [...stats].sort((a, b) => b.speciesCount - a.speciesCount)[0]
+    : null;
+  const mostSales = contested ? [...stats].sort((a, b) => b.salesCount - a.salesCount)[0] : null;
   const cheapestSingleProduct = [...products]
     .filter((p) => p.inStock)
     .sort((a, b) => a.pricePerKgZar - b.pricePerKgZar)[0];
@@ -144,7 +149,7 @@ export function computeHighlights(
   return {
     cheapestMedian,
     mostVariety,
-    mostSales: mostSales.salesCount > 0 ? mostSales : null,
+    mostSales: mostSales && mostSales.salesCount > 0 ? mostSales : null,
     cheapestSingleProduct: cheapestSingleProduct ?? null,
     freeStackingVendorIds,
     freeDeliveryThresholds,

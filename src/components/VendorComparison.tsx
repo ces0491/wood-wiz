@@ -9,12 +9,13 @@ import {
   Truck,
 } from "lucide-react";
 import type { ComparisonHighlights, VendorStats } from "@/lib/vendor-stats";
-import type { Vendor } from "@/lib/types";
+import type { ProductsFile, Vendor } from "@/lib/types";
 import type { Region } from "@/lib/regions";
 import { SPECIES } from "@/lib/wood-species";
 import { formatKg, formatPct, formatZar } from "@/lib/format";
 import RefreshedAt from "./RefreshedAt";
 import TrackedLink from "./TrackedLink";
+import VendorFailureNotice from "./VendorFailureNotice";
 
 type IconType = typeof Tag;
 
@@ -25,6 +26,7 @@ interface Props {
   highlights: ComparisonHighlights;
   totalProducts: number;
   generatedAt: string;
+  vendorRunStatus: ProductsFile["vendorRunStatus"];
 }
 
 function stackingLabel(s: Vendor["delivery"]["stacking"]): {
@@ -50,6 +52,7 @@ export default function VendorComparison({
   highlights,
   totalProducts,
   generatedAt,
+  vendorRunStatus,
 }: Props) {
   const vendorById = Object.fromEntries(vendors.map((v) => [v.id, v]));
   const maxMedian = Math.max(...stats.map((s) => s.medianPricePerKgZar));
@@ -70,9 +73,12 @@ export default function VendorComparison({
         </div>
         <p className="mt-1 text-sm text-stone-600 dark:text-stone-400">
           {totalProducts} products across {stats.length} {region.name} vendor
-          {stats.length === 1 ? "" : "s"}, ranked against each other. Data refreshed{" "}
-          <RefreshedAt iso={generatedAt} />.
+          {stats.length === 1
+            ? ", so there is no one to rank them against"
+            : "s, ranked against each other"}
+          . Data refreshed <RefreshedAt iso={generatedAt} />.
         </p>
+        <VendorFailureNotice vendors={vendors} vendorRunStatus={vendorRunStatus} />
       </header>
 
       <h2 id="highlights-heading" className="sr-only">

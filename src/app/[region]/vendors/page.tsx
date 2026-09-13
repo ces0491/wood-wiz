@@ -56,6 +56,7 @@ export default async function RegionVendorsPage({
         highlights={highlights}
         totalProducts={products.length}
         generatedAt={data.generatedAt}
+        vendorRunStatus={data.vendorRunStatus}
       />
     </>
   );

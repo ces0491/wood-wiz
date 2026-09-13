@@ -89,6 +89,26 @@ describe("cheapest typical price spotlight", () => {
   });
 });
 
+describe("vendor-level awards need a field of two", () => {
+  test("a city down to one vendor gets no variety or sales award", () => {
+    const products = catalogue("only", 20, 4).map((p, i) => ({
+      ...p,
+      regularPriceZar: i === 0 ? p.priceZar + 10 : undefined,
+    }));
+    const vendors = [vendor("only")];
+    const highlights = computeHighlights(computeVendorStats(products, vendors), vendors, products);
+    expect(highlights.mostVariety).toBeNull();
+    expect(highlights.mostSales).toBeNull();
+  });
+
+  test("with two vendors the awards are made", () => {
+    const products = [...catalogue("a", 10, 4), ...catalogue("b", 10, 5)];
+    const vendors = [vendor("a"), vendor("b")];
+    const highlights = computeHighlights(computeVendorStats(products, vendors), vendors, products);
+    expect(highlights.mostVariety).not.toBeNull();
+  });
+});
+
 describe("median", () => {
   test("even-length catalogues average the two middle values", () => {
     const products = [...catalogue("v", 1, 2), ...catalogue("v", 1, 4)].map((p, i) => ({

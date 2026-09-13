@@ -143,6 +143,7 @@ src/
     SiteFooter.tsx           # Footer with independence note + GitHub link
     ProductBrowser.tsx       # Client: facet filters, sort, pagination, filter drawer
     VendorComparison.tsx     # Server-rendered spotlights + CSS bar charts
+    VendorFailureNotice.tsx  # Names a city's vendors that failed to refresh, and how old their prices are
     FAQ.tsx                  # Server-rendered accordion sections
     RefreshedAt.tsx          # Client: absolute stamp on the server, relative once hydrated
     TrackedLink.tsx          # Outbound <a> that fires the vendor_click event
@@ -156,6 +157,7 @@ src/
     vendor-stats.ts          # Per-vendor aggregates and comparison highlights
     format.ts                # Deterministic currency/weight/date formatters (SSR-safe)
     load-products.ts         # Server-side JSON loader
+    stale.ts                 # MAX_STALE_DAYS: how long a failed vendor's prices stay up
     site.ts                  # SITE_URL / IS_PRODUCTION, read by metadata + sitemap + robots
     install-app.ts           # DOM-free PWA install eligibility rules
     use-install-app.ts       # Client hook wrapping beforeinstallprompt
@@ -164,7 +166,8 @@ tests/
   fixtures/products.json     # Frozen catalogue so screenshots don't churn daily
 scripts/
   scrape-all.ts              # Orchestrator: runs every scraper, writes JSON
-  sanity-checks.ts           # Build gate: price bounds, per-vendor yield, count drop
+  sanity-checks.ts           # Build gate: price bounds, per-vendor yield, count drop (site and city)
+  carry-forward.ts           # Republishes a failed vendor's last good products, up to 7 days
   scrapers/
     shared.ts                # Shopify (/products.json) + WooCommerce (/wp-json/wc/store/v1/products) helpers
     mother-city-firewood.ts  # Each scraper exports { vendorId, scrape() }
@@ -200,13 +203,23 @@ For non-Shopify/WooCommerce sites, look for JSON-LD Product schema, OpenGraph `p
 - any product under R 1/kg at 50 kg or more (a non-firewood service that slipped past the accessory blocklist);
 - a vendor returning more than 10 raw items but normalising to zero;
 - a vendor normalising less than 15% of at least 20 raw items — the partial-breakage case, where a title format changes and most listings stop parsing while a few still do;
-- the total product count dropping more than 40% against the previous run.
+- the product count dropping more than 40% against the previous run, site-wide or in any one city. Only vendors that scraped successfully this run are counted, on both sides; a small city's collapse is invisible in the site-wide total.
+
+### When a vendor fails
+
+A vendor whose scrape throws doesn't stop the run. `scripts/carry-forward.ts` republishes that vendor's products from the previous `data/products.json` (re-checked against the current blocklist) and records `lastOkAt`, the time of their last successful scrape. Both city pages show a notice naming the vendor and the date their prices are from. After `MAX_STALE_DAYS` (7, in `src/lib/stale.ts`) the carried products are dropped and the notice says the vendor is left out.
+
+The scrape workflow commits the refreshed data first, so every other vendor still updates, and then fails with the list of failed vendors. That red run is the alert — before, a vendor could fail for days inside a green run.
+
+Scrapers fail the vendor rather than publish part of a catalogue: a WooCommerce page after the first that errors (anything but the 400 some installs send past the last page) and a Wix product page that errors (anything but 404/410) both throw.
 
 A new vendor whose catalogue legitimately sits under the yield floor needs an entry in `YIELD_OVERRIDES` with a comment saying why. The Wood Gurus are the existing case: most of their storefront is a per-piece "SELECT YOUR QUANTITY" configurator whose variants are dropped by design in `normalize.ts`.
 
 ## Adding a new species
 
 Edit `src/lib/wood-species.ts` and add an entry with `aliases` (everything a vendor might write — Afrikaans names, English names, Latin name), `densityKgPerM3` (mid-range air-dry), and `usage` (`braai`, `fireplace`, `smoking`, or `both`). Also add the id to the `WoodSpecies` union in `src/lib/types.ts`.
+
+Aliases match whole words (a trailing plural "s" is allowed), so a compound spelling like "Blackwattle" needs its own alias. Among matches, the longest alias wins, except that generic product-type species (`smoking-mix`) only apply when no specific species is named — "Smoking Wood | Pecan Chunks" is pecan.
 
 ## Deploy to Vercel
 
@@ -296,7 +309,7 @@ than one hiding the other. It reads `package-lock.json` and needs no install,
 so it answers in seconds.
 
 The threshold is **high**, and dev dependencies are deliberately in scope (no
-`--omit=dev`): the scrape job holds `contents: write`, reaches eight
+`--omit=dev`): the scrape job holds `contents: write`, reaches ten
 third-party sites, and what it commits deploys itself, so a compromised build
 tool is a real path to the live site. A moderate advisory in a build-time
 transitive shouldn't block a 03:00 price refresh, though, so those surface at
@@ -323,12 +336,12 @@ Both workflows fire on the same push, so `Test` runs `npm ci` against the Window
 ## Known limitations
 
 - **Delivery prices are descriptive, not computed.** The vendor record stores a free-form description and (where known) a `freeOverZar` threshold and `stacking` flag. The UI shows the description on each card but doesn't compute a delivered total — most vendors price delivery by suburb at checkout.
-- **Stacking flags only confirmed for two vendors.** `delivery.stacking` is explicitly set for Mother City Firewood (`free-over-threshold`) and Lancehoudt (`free`) — the only two whose product descriptions stated it. The other six are unset and render no stacking badge at all; the earlier "Stacking unconfirmed" badge was removed as UI noise, since a badge that says nothing still reads as a verdict.
+- **Stacking flags only confirmed for two vendors.** `delivery.stacking` is explicitly set for Mother City Firewood (`free-over-threshold`) and Lancehoudt (`free`) — the only two whose product descriptions stated it. The other eight are unset and render no stacking badge at all; the earlier "Stacking unconfirmed" badge was removed as UI noise, since a badge that says nothing still reads as a verdict.
 - **Vendor ranking uses the median, never the mean.** CTF and Mother City Firewood sell premium smoking-chunk boxes at R 100–130/kg alongside bulk pallets at R 2–5/kg. The arithmetic mean ranks them as expensive (R 16–20/kg) even though their bulk product is cheap, so `/[region]/vendors` ranks and displays the median throughout — the word "average" is kept out of the headline UI on purpose. `avgPricePerKgZar` is still computed in `vendor-stats.ts` but isn't shown anywhere.
 - **Medians rest on very different sample sizes.** The Wood Gurus normalise to a handful of products because most of their catalogue is a per-piece configurator, while Mother City Firewood contribute ~200. The bar charts print each vendor's product count beside their name, and the "cheapest typical price" spotlight skips vendors below `MIN_SPOTLIGHT_SAMPLE` (8) so a four-product median can't take the headline.
 - **Regional price levels are not comparable, and the site doesn't try.** Cape Town bulk runs R 1–5/kg against Gauteng's R 4–11, driven mostly by distance from source. Rankings are scoped per city and `/` shows no prices. The sanity gate's R 1/kg floor and R 50/kg ceiling are still global, though, and were derived from Cape Town pricing — they hold for Gauteng today but should become per-region if a city with a very different price level is added.
 - **The species table is coastal Western Cape–biased.** Rooikrans and Port Jackson are local invasives. `detectSpecies` returns `unknown` for anything unlisted, which silently applies the 800 kg/m³ default density to volume-priced listings. Gauteng vendors already surfaced this — Stompies' "Sekelbush" spelling needed an alias.
 - **Combo/bundle products** (e.g. `Hout Bay Firewood Combo - Kameelhout & Rooipitjie`) classify as `unknown` species because they contain multiple woods. The price/kg is still computed and they show in "All" filters.
-- **Eco logs, briquettes, charcoal, and wood pellets** are filtered out by the normaliser since they're processed wood rather than firewood. Edit `NON_FIREWOOD_PATTERNS` in `src/lib/normalize.ts` to change this.
+- **Eco logs, sawdust heat logs, briquettes, charcoal, and wood pellets** are filtered out by the normaliser since they're processed wood rather than firewood. Edit `NON_FIREWOOD_PATTERNS` in `src/lib/normalize.ts` to change this.
 - **Big-box retailers** (Makro, Builders, Takealot) are not yet scraped. Their firewood SKUs need manual product-page verification first.
 - **Turbopack file watcher can desync on Windows + OneDrive paths.** Symptom: dev server keeps serving stale compiled output even after source edits; all routes start returning 404. Fix: kill the dev server, delete `.next/`, restart. If it recurs frequently, run `next dev --no-turbopack` (slower but uses Webpack's more robust file watcher), or move the project off OneDrive.

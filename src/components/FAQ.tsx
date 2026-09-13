@@ -1,6 +1,19 @@
 import { Banknote, ChevronDown, Hammer, ShieldCheck, Store } from "lucide-react";
 import { REGIONS } from "@/lib/regions";
 import { VENDORS } from "@/lib/vendors";
+import { MIN_SPOTLIGHT_SAMPLE } from "@/lib/vendor-stats";
+import { MAX_STALE_DAYS } from "@/lib/stale";
+
+// Derived from the registry so the counts can't go stale again: this answer
+// said "the other six vendors" after the registry had grown to ten.
+const STACKING_VENDORS = VENDORS.filter(
+  (v) => v.delivery.stacking === "free" || v.delivery.stacking === "free-over-threshold",
+);
+
+function joinNames(names: string[]): string {
+  if (names.length <= 1) return names.join("");
+  return `${names.slice(0, -1).join(", ")} and ${names[names.length - 1]}`;
+}
 
 function GithubMark({ className }: { className?: string }) {
   return (
@@ -57,9 +70,10 @@ const SECTIONS: FaqSection[] = [
                 piece. A &ldquo;1,000 piece&rdquo; bundle becomes 1,500&nbsp;kg.
               </li>
               <li>
-                <strong>Volume</strong> &mdash; for &ldquo;0.5 m³&rdquo; or
-                &ldquo;50L&rdquo; listings, we multiply by the species&apos; air-dry
-                density.
+                <strong>Volume</strong> &mdash; for &ldquo;0.5 m³&rdquo; listings, we
+                multiply by the species&apos; air-dry density. For bag volumes like
+                &ldquo;50L&rdquo; we also halve the result, assuming a bag of loose
+                pieces is about half wood and half air.
               </li>
             </ul>
             <p>
@@ -203,13 +217,22 @@ const SECTIONS: FaqSection[] = [
       {
         q: "How fresh is the data?",
         a: (
-          <p>
-            Refreshed every 24 hours. The time of the last refresh is shown in the
-            header of the Prices and Vendors pages &mdash; as &ldquo;Data refreshed 6
-            hours ago&rdquo; once the page is open in your browser, and hover it for the
-            exact timestamp. If you need real-time accuracy &mdash; before placing a
-            large order, say &mdash; click through to the vendor&apos;s page to confirm.
-          </p>
+          <>
+            <p>
+              Refreshed every 24 hours. The time of the last refresh is shown in the
+              header of the Prices and Vendors pages &mdash; as &ldquo;Data refreshed 6
+              hours ago&rdquo; once the page is open in your browser, and hover it for
+              the exact timestamp. If you need real-time accuracy &mdash; before placing
+              a large order, say &mdash; click through to the vendor&apos;s page to
+              confirm.
+            </p>
+            <p>
+              If one vendor&apos;s refresh fails, the page says so and keeps showing
+              their last successful prices, with the date they&apos;re from, for up to{" "}
+              {MAX_STALE_DAYS} days. After that their products are left out until the
+              refresh works again.
+            </p>
+          </>
         ),
       },
       {
@@ -228,8 +251,10 @@ const SECTIONS: FaqSection[] = [
             <p>
               A median is only as good as the catalogue behind it, so the
               &ldquo;Cheapest typical price&rdquo; card at the top of the page passes
-              over vendors with fewer than 8 listed products and gives it to the
-              cheapest vendor above that line. Every vendor still appears in the charts
+              over vendors with fewer than {MIN_SPOTLIGHT_SAMPLE} listed products and
+              gives it to the cheapest vendor above that line. It needs at least two
+              vendors above the line, and isn&apos;t shown otherwise; the variety and
+              sales cards likewise need two vendors to compare. Every vendor still appears in the charts
               and breakdown cards either way, with their product count next to the bar
               so you can weigh it yourself.
             </p>
@@ -240,11 +265,11 @@ const SECTIONS: FaqSection[] = [
         q: "Which vendors include stacking on delivery?",
         a: (
           <p>
-            Only Mother City Firewood and Lancehoudt explicitly state in their
-            delivery descriptions that wood is stacked on arrival (instead of dumped
-            on the driveway). They each get a &ldquo;Stacking included&rdquo; badge
-            on the Vendors page. The other six vendors don&apos;t say one way or the
-            other &mdash; we don&apos;t display a badge for them rather than
+            Only {joinNames(STACKING_VENDORS.map((v) => v.name))} explicitly state
+            that wood is stacked on arrival (instead of dumped on the driveway), and
+            they get a stacking badge on the Vendors page. The other{" "}
+            {VENDORS.length - STACKING_VENDORS.length} vendors don&apos;t say one way or
+            the other &mdash; we don&apos;t display a badge for them rather than
             guessing. If stacking matters to you, ask at checkout.
           </p>
         ),

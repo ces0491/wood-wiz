@@ -989,9 +989,16 @@
       "ranAt": "2026-09-01T04:19:45.689Z"
     },
     "stompies": {
-      "ok": true,
+      "ok": false,
       "count": 6,
-      "rawCount": 12,
+      "error": "Unexpected token '<', \"<html><hea\"... is not valid JSON",
+      "ranAt": "2026-09-01T04:19:45.689Z",
+      "lastOkAt": "2026-08-30T04:19:45.689Z"
+    },
+    "fire-man": {
+      "ok": false,
+      "count": 0,
+      "error": "HTTP 503 for https://thefireman.co.za/wp-json/wc/store/v1/products?per_page=100&page=1",
       "ranAt": "2026-09-01T04:19:45.689Z"
     }
   }

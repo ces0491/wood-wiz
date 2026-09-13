@@ -13,13 +13,14 @@ import {
   Wind,
   X,
 } from "lucide-react";
-import type { Product, Vendor, WoodSpecies, WoodUsage } from "@/lib/types";
+import type { Product, ProductsFile, Vendor, WoodSpecies, WoodUsage } from "@/lib/types";
 import type { Region } from "@/lib/regions";
 import { SPECIES } from "@/lib/wood-species";
 import { formatKg, formatZar } from "@/lib/format";
 import RefreshedAt from "./RefreshedAt";
 import Link from "next/link";
 import TrackedLink from "./TrackedLink";
+import VendorFailureNotice from "./VendorFailureNotice";
 import { scrollToTop } from "@/lib/scroll";
 
 type UsageFilter = "all" | WoodUsage;
@@ -49,7 +50,7 @@ interface Props {
   products: Product[];
   vendors: Vendor[];
   generatedAt: string;
-  vendorRunStatus: Record<string, { ok: boolean; count: number; error?: string; ranAt: string }>;
+  vendorRunStatus: ProductsFile["vendorRunStatus"];
 }
 
 const USAGE_LABEL: Record<UsageFilter, string> = {
@@ -358,7 +359,6 @@ export default function ProductBrowser({
     setPage(1);
   }
 
-  const failedVendors = Object.entries(vendorRunStatus).filter(([, s]) => !s.ok);
   const hasFilters =
     usage !== "all" ||
     selectedSpecies.size > 0 ||
@@ -384,12 +384,7 @@ export default function ProductBrowser({
           {vendors.length === 1 ? "" : "s"}. Data refreshed{" "}
           <RefreshedAt iso={generatedAt} />.
         </p>
-        {failedVendors.length > 0 && (
-          <p className="mt-2 text-xs text-amber-700 dark:text-amber-300">
-            ⚠ {failedVendors.length} vendor{failedVendors.length === 1 ? "" : "s"} failed to scrape:{" "}
-            {failedVendors.map(([id]) => vendorById[id]?.name ?? id).join(", ")}
-          </p>
-        )}
+        <VendorFailureNotice vendors={vendors} vendorRunStatus={vendorRunStatus} />
       </header>
 
       <div className="mb-4 flex flex-wrap items-center gap-2">
