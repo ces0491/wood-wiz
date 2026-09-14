@@ -4,7 +4,7 @@
 
 A public, independent comparison of South African firewood vendors, normalised to rand per kilogram, so buyers can find the best value for their budget without spreadsheets.
 
-Comparison is always **within a city**. Each city page ranks the vendors who deliver to that doorstep against one another; the site never ranks one city against another. Cape Town bulk wood is cheaper than Gauteng's largely because it is nearer the source, which tells a Johannesburg buyer nothing about which of their options is good value.
+Comparison is always **within a city**. Each city page ranks the vendors who deliver to that doorstep against one another; the site never ranks one city against another. Prices differ between cities largely because of distance from the source, which tells a buyer nothing about which of their own options is good value. Cape Town is the only city listed.
 
 ## What "done" means
 
@@ -15,7 +15,7 @@ Done is observable, not eternal. The criteria below are the pass/fail bar for de
 - [x] `extractWeight()` and `detectSpecies()` have unit tests covering each regex branch and a representative accessory-rejection set. (138 tests across `normalize.test.ts` and `shared.test.ts`.)
 - [x] Post-scrape sanity check fails the CI scrape job if (a) any normalised product reports per-kg > R 50 without specialty-product exemption, (b) product count drops by more than 40% between consecutive runs, site-wide or in any one city, counting vendors that scraped successfully, or (c) any vendor reports > 10 raw items but normalises to 0. Found and fixed 8 misparsed Namibian Hardwood titles on first run.
 - [ ] For any product spot-checked against its live vendor page, the published total price matches within 24 hours of the last refresh, or the discrepancy is documented in the FAQ.
-- [ ] At least 8 vendors covered in the founding city (Cape Town), with daily auto-refresh confirmed by the `scrape.yml` workflow. A second city ships when it has enough vendors to be a comparison rather than a listing — Johannesburg is live with 2 and is explicitly not there yet.
+- [ ] At least 8 vendors covered in the founding city (Cape Town), with daily auto-refresh confirmed by the `scrape.yml` workflow. A second city ships when it has enough vendors the scraper can reach to be a comparison rather than a listing.
 
 ### Trust signals
 
@@ -49,7 +49,7 @@ These are decisions, not deferrals. We explicitly will **not** do:
 - **Real-time prices.** Daily refresh is sufficient; the vendor's site is always authoritative for exact pricing at purchase time.
 - **Computed delivered totals.** Vendors price delivery by suburb at checkout; we surface their stated rule and let the user factor it in.
 - **Cross-city price comparison.** Prices are compared within a city, never between them. Distance from source dominates the difference, so a national ranking would read as a verdict on vendors when it is a fact about geography. The `/` picker deliberately shows no prices.
-- **A city without enough vendors to compare.** A city page needs vendors with a public, machine-readable catalogue — the same bar the FAQ states. As of 2026-09-04 Durban and the Garden Route fail it: KZN firewood retail is Gumtree and Facebook Marketplace listings, and the Garden Route reduces to a single vendor. Both were requested and neither ships; a one-vendor page is a listing, not a comparison.
+- **A city without enough vendors to compare.** A city page needs vendors with a public, machine-readable catalogue — the same bar the FAQ states. As of 2026-09-04 Durban and the Garden Route fail it: KZN firewood retail is Gumtree and Facebook Marketplace listings, and the Garden Route reduces to a single vendor. Both were requested and neither ships; a one-vendor page is a listing, not a comparison. Johannesburg failed it on 2026-09-14 and was taken down (see Status).
 - **Native mobile apps.** Web only — no App Store or Play Store build, no React Native, no platform SDKs. The site is installable to a home screen as a PWA (web app manifest, generated icons, standalone display); that is still the same web page, deliberately with no service worker so a cache layer can never serve stale prices.
 - **Charcoal, briquettes, eco logs, kindling, accessories.** Filtered out by the normaliser; not in the catalogue we publish.
 - **Vendor-managed listings.** Vendors don't edit the site; corrections route through GitHub issues.
@@ -69,7 +69,9 @@ Vendor or user disputes route to [GitHub Issues](https://github.com/ces0491/wood
 
 ## Status
 
-This document is updated when any of the above changes. Reviewed at least quarterly. Last updated: 2026-09-13.
+This document is updated when any of the above changes. Reviewed at least quarterly. Last updated: 2026-09-14.
+
+- **Johannesburg removed, with Just Get Wood and Stompies.** Stompies' host, SiteGround, serves its anti-bot challenge to GitHub's runners, confirmed in the scrape log on 2026-09-14 after failures since 2026-09-10. That left Johannesburg with one vendor and four products, below this document's bar for a city. Stompies also delivered to Cape Town and is removed there too, since a vendor the scraper can never reach turns every daily run red. Cape Town keeps 8 vendors. `/` redirects to `/cape-town` while it is the only city.
 
 - Eco logs and sawdust heat logs are now filtered out by the normaliser, as this document already stated they were.
 - Vendor failures: last good prices carried forward for up to 7 days, per-city count check, and a failing scrape workflow when any vendor fails. Prompted by Stompies failing unnoticed from 2026-09-10 to 2026-09-13, which left Johannesburg with one vendor.

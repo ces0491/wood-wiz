@@ -8,6 +8,10 @@ import {
   forRegion,
 } from "./vendor-stats";
 
+// A stand-in second metro. The registry holds only Cape Town, but forRegion is
+// written for several and these tests keep it honest.
+const OTHER_METRO = "other-metro" as RegionId;
+
 function vendor(id: string, regions: RegionId[] = ["cape-town"]): Vendor {
   return {
     id,
@@ -133,8 +137,8 @@ describe("median", () => {
 describe("forRegion", () => {
   const vendors = [
     vendor("ct-only", ["cape-town"]),
-    vendor("jhb-only", ["johannesburg"]),
-    vendor("both", ["cape-town", "johannesburg"]),
+    vendor("jhb-only", [OTHER_METRO]),
+    vendor("both", ["cape-town", OTHER_METRO]),
   ];
   const products = [
     ...catalogue("ct-only", 2, 3),
@@ -149,7 +153,7 @@ describe("forRegion", () => {
   });
 
   test("a metro never sees another metro's vendors", () => {
-    const jhb = forRegion("johannesburg", products, vendors);
+    const jhb = forRegion(OTHER_METRO, products, vendors);
     expect(jhb.vendors.map((v) => v.id).sort()).toEqual(["both", "jhb-only"]);
     expect(jhb.products.some((p) => p.vendorId === "ct-only")).toBe(false);
   });
@@ -158,14 +162,14 @@ describe("forRegion", () => {
     // One storefront, one set of prices — so the figures must not differ by
     // which page you are on, only which vendors they sit beside.
     const ct = forRegion("cape-town", products, vendors);
-    const jhb = forRegion("johannesburg", products, vendors);
+    const jhb = forRegion(OTHER_METRO, products, vendors);
     const only = (r: typeof ct) => r.products.filter((p) => p.vendorId === "both");
     expect(only(ct)).toEqual(only(jhb));
   });
 
   test("ranking is scoped to the metro, so each names its own cheapest", () => {
     const ct = forRegion("cape-town", products, vendors);
-    const jhb = forRegion("johannesburg", products, vendors);
+    const jhb = forRegion(OTHER_METRO, products, vendors);
     const cheapest = (r: typeof ct) =>
       computeHighlights(
         computeVendorStats(r.products, r.vendors),

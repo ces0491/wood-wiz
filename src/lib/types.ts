@@ -100,9 +100,9 @@ export interface Vendor {
   url: string;
   platform: "shopify" | "woocommerce" | "wix" | "custom";
   // Plural because a vendor can genuinely serve more than one metro from one
-  // storefront — Stompies delivers to both Cape Town and Gauteng, and listing
-  // them in only one would hide a real option from half their customers.
-  // Their products appear in every region named here.
+  // storefront — Stompies delivered to both Cape Town and Gauteng while both
+  // cities were listed, and listing a vendor in only one hides a real option
+  // from half their customers. Their products appear in every region named here.
   regions: RegionId[];
   delivery: DeliveryRule;
   notes?: string;

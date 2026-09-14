@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import { REGIONS } from "./src/lib/regions";
 
 const nextConfig: NextConfig = {
   allowedDevOrigins: ["192.168.1.100"],
@@ -8,6 +9,11 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       { source: "/vendors", destination: "/cape-town/vendors", permanent: true },
+      // With one city the picker at `/` is a page with one choice on it, a tap
+      // before any price. Temporary, because a second city brings it back.
+      ...(REGIONS.length === 1
+        ? [{ source: "/", destination: `/${REGIONS[0].id}`, permanent: false }]
+        : []),
       // The production deployment answers on its Vercel alias as well as on
       // the custom domain, and served the whole site on both. Two hosts with
       // the same content split whatever authority the pages earn, and a

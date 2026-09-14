@@ -1,5 +1,5 @@
 import type { Product, ProductsFile, Vendor } from "../src/lib/types";
-import { REGIONS } from "../src/lib/regions";
+import { REGIONS, type Region } from "../src/lib/regions";
 import { VENDORS } from "../src/lib/vendors";
 
 // Sanity-check thresholds. See SCOPE.md > "Data quality".
@@ -49,6 +49,7 @@ export function runSanityChecks(
   status: ProductsFile["vendorRunStatus"],
   prev: ProductsFile | null,
   vendors: Vendor[] = VENDORS,
+  regions: Region[] = REGIONS,
 ): string[] {
   const failures: string[] = [];
 
@@ -114,7 +115,8 @@ export function runSanityChecks(
   // either hide a parse collapse elsewhere or refuse the whole refresh.
   //
   // The per-city check exists because the site-wide one can't see a small city
-  // collapse: Johannesburg's whole catalogue is under 4% of the site's.
+  // collapse: while it was listed, Johannesburg's whole catalogue was under 4%
+  // of the site's. With one city the two checks coincide.
   if (prev) {
     const scrapedOk = new Set(
       Object.entries(status)
@@ -126,7 +128,7 @@ export function runSanityChecks(
 
     const scopes: { label: string; ids: Set<string> }[] = [
       { label: "product count", ids: scrapedOk },
-      ...REGIONS.map((r) => ({
+      ...regions.map((r) => ({
         label: `${r.name} product count`,
         ids: new Set(vendors.filter((v) => v.regions.includes(r.id)).map((v) => v.id)),
       })),

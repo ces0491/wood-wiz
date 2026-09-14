@@ -181,7 +181,8 @@ const SECTIONS: FaqSection[] = [
           <>
             <p>
               An automated job scrapes each vendor&apos;s public product catalogue daily.
-              We currently cover {VENDORS.length} vendors across {REGIONS.length} cities:
+              We currently cover {VENDORS.length} vendors across {REGIONS.length}{" "}
+              {REGIONS.length === 1 ? "city" : "cities"}:
             </p>
             {REGIONS.map((region) => {
               const vendors = VENDORS.filter((v) => v.regions.includes(region.id));
@@ -199,12 +200,11 @@ const SECTIONS: FaqSection[] = [
               );
             })}
             <p>
-              A vendor delivering to more than one city is listed under each. Prices are
-              always compared <strong>within</strong> a city &mdash; each page ranks the
-              vendors who deliver to that doorstep against one another, never one city
-              against another. Cape Town bulk wood is cheaper than Gauteng&apos;s largely
-              because it is nearer the source, which tells you nothing useful if you live
-              in Johannesburg.
+              Prices are always compared <strong>within</strong> a city &mdash; a page
+              ranks the vendors who deliver to that doorstep against one another, never
+              one city against another. Firewood prices differ between cities mostly
+              because of distance from the source, which says nothing about which of your
+              own options is good value.
             </p>
             <p>
               We&apos;re not affiliated with any of them. There&apos;s no paid placement
@@ -281,10 +281,12 @@ const SECTIONS: FaqSection[] = [
             We can only include vendors with a public, machine-readable product
             catalogue (most use Shopify, WooCommerce, or have a sitemap we can parse).
             Adding a new vendor requires writing a small scraper for their site format.
-            It is also why some cities aren&apos;t listed at all: Durban and the Garden
-            Route have firewood sellers, but as of September 2026 none of them publishes
-            a catalogue we can read, and a city page with one vendor on it wouldn&apos;t
-            be a comparison.
+            It is also why other cities aren&apos;t listed: Durban and the Garden Route
+            have firewood sellers, but as of September 2026 none of them publishes a
+            catalogue we can read, and a city page with one vendor on it wouldn&apos;t be
+            a comparison. Johannesburg was listed briefly in September 2026 and taken
+            down for the same reason: one of its two vendors&apos; web hosts blocks our
+            automated price checks.
             Suggest one via the{" "}
             <a
               href="https://github.com/ces0491/wood-wiz/issues"
@@ -369,7 +371,7 @@ const SECTIONS: FaqSection[] = [
               Wood Wiz is <strong>independent</strong> — there are no affiliate
               links, no paid placement, and no vendor-sponsored ranking. Vendors are
               listed because they have a public product catalogue and serve the
-              cities we cover; rankings are purely metric-based.
+              areas we cover; rankings are purely metric-based.
             </p>
           </>
         ),

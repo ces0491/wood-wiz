@@ -4,12 +4,12 @@
 
 Ranks South African firewood vendors by **rand per kilogram**, with delivery costs and stock status surfaced up front.
 
-Comparison is always **within a city**: each city page ranks the vendors delivering to that doorstep against each other. The site never ranks one city against another — Cape Town bulk is cheaper than Gauteng's mostly because it is nearer the source, which is useless to someone buying in Johannesburg.
+It covers **Cape Town**. Comparison is always within a city: a city page ranks the vendors delivering to that doorstep against each other, and the site never ranks one city against another. Prices differ between cities mostly because of distance from the source, which says nothing about which of a buyer's own options is good value.
 
 Routes:
 
-- **`/`** — city picker. Vendor and product counts only, deliberately no prices: a per-kg figure beside another city's would invite exactly the comparison the site doesn't make.
-- **`/[region]`** (`/cape-town`, `/johannesburg`) — paginated price list (10/page, adjustable to 100). Filter by wood type (kameeldoring, blue gum, etc.), vendor, intended use (braai, fireplace, smoking), total budget, and minimum bulk weight. Facet counts update live as you filter, so you always see how many products match the *other* axes you haven't picked yet. On phones and tablets the filters are a bottom-sheet drawer that ends in a "Show N products" button; from `lg` up they're a sticky sidebar. On a phone the sort menu and Filters button stick to the top of the screen while the list scrolls, in place of the site nav.
+- **`/`** — redirects to `/cape-town` while it is the only city (`next.config.ts`). With more than one city it is a city picker showing vendor and product counts and deliberately no prices, since a per-kg figure beside another city's would invite exactly the comparison the site doesn't make.
+- **`/[region]`** (`/cape-town`) — paginated price list (10/page, adjustable to 100). Filter by wood type (kameeldoring, blue gum, etc.), vendor, intended use (braai, fireplace, smoking), total budget, and minimum bulk weight. Facet counts update live as you filter, so you always see how many products match the *other* axes you haven't picked yet. On phones and tablets the filters are a bottom-sheet drawer that ends in a "Show N products" button; from `lg` up they're a sticky sidebar. On a phone the sort menu and Filters button stick to the top of the screen while the list scrolls, in place of the site nav.
 - **`/[region]/vendors`** — vendor comparison for that city: cheapest typical (median) price per kg, most species variety, most sales running right now, and a per-vendor breakdown with delivery and stacking info. Stats are computed from that city's slice only.
 - **`/faq`** — the methodology: how per-kg is computed, what `~est` means, how delivery-zone variants are handled, how fresh the data is, and who runs the site.
 
@@ -17,7 +17,7 @@ Data is scraped daily from each vendor's storefront and committed to `data/produ
 
 The site is installable to a home screen as a PWA (manifest, generated icons, standalone display). There is deliberately no service worker — a cache layer over daily-refreshed prices would risk showing stale numbers.
 
-## Vendors covered (10)
+## Vendors covered (8)
 
 | Vendor | Cities | Platform | Site |
 | --- | --- | --- | --- |
@@ -29,16 +29,15 @@ The site is installable to a home screen as a PWA (manifest, generated icons, st
 | Lancehoudt | Cape Town | WooCommerce | lancehoudt.co.za |
 | Namibian Hardwood | Cape Town | WooCommerce | namibianhardwood.co.za |
 | The Wood Bros | Cape Town | Wix (sitemap + meta) | thewoodbros.co.za |
-| Just Get Wood | Johannesburg | WooCommerce | justgetwood.co.za |
-| Stompies | Cape Town + Johannesburg | WooCommerce | stompieswood.com |
-
-`Vendor.regions` is a list because Stompies genuinely delivers to both metros from one storefront. Their catalogue and prices are identical on each city page — what differs is who they sit beside.
+`Vendor.regions` is a list because a vendor can deliver to more than one metro from one storefront, and would then appear on each city page with the same catalogue.
 
 ### Cities
 
 Cities live in `src/lib/regions.ts`. Adding one is a data edit: `/[region]` derives its static params from that registry, and the routes, sitemap, navigation and copy follow.
 
 A city earns an entry once it has vendors publishing a machine-readable catalogue — the bar the FAQ states publicly. **Durban and the Garden Route are deliberately absent.** As of 2026-09-04, KZN firewood retail is Gumtree and Facebook Marketplace listings with no per-vendor catalogue, and the Garden Route reduces to a single vendor, which is a listing rather than a comparison. Both were requested; neither ships until that changes.
+
+**Johannesburg was listed from 2026-09-04 to 2026-09-14 and removed**, together with its two vendors. Stompies' store sits behind SiteGround's anti-bot challenge, which serves GitHub's runners an HTML `sgcaptcha` page instead of the product API; the store answers normally from a home connection. That left Just Get Wood alone with four products, a listing rather than a comparison. Stompies also delivered to Cape Town and was removed there for the same reason: a vendor the scraper can never reach fails the scrape run every day, and a permanently red run stops meaning anything. Johannesburg can come back when it has two vendors the scraper can reach — for Stompies that means their host allowing it, not working around the challenge.
 
 ## Running locally
 
@@ -84,9 +83,9 @@ rather than the live catalogue, via `WOOD_WIZ_DATA=fixture` (see
 because a non-literal path defeats Turbopack's file tracing and pulls the whole
 project into the server output). The scrape rewrites `data/products.json` every
 morning, so anything asserted against real data would be stale by breakfast.
-The fixture is a curated 53-product subset carrying each state the UI can
+The fixture is a curated 43-product subset carrying each state the UI can
 render: price ranges, estimated weights, sale badges, out-of-stock, long
-titles, and both metros.
+titles, and a failed vendor in each state (carried forward, and left out).
 
 **Pixel diffs are a local tool, not a CI gate.** `npm run test:visual:baseline`
 writes screenshots for your platform and `npm run test:visual:pixel` compares
@@ -185,7 +184,7 @@ scripts/
     namibian-hardwood.ts
     wood-bros.ts             # Wix: sitemap → per-page meta tag scrape
 data/
-  products.json              # Output of `npm run scrape`; ~480 products
+  products.json              # Output of `npm run scrape`; ~470 products
 .github/workflows/
   scrape.yml                 # Daily cron at 03:00 UTC, commits refreshed JSON
   test.yml                   # Lint, typecheck, unit tests, layout invariants, audit gate
@@ -295,7 +294,7 @@ Propagation is usually minutes. Vercel issues the certificate on its own once th
 
 `NEXT_PUBLIC_SITE_URL` overrides all three and is the one environment variable the project takes. It is optional; set it only for a deployment that genuinely serves somewhere else.
 
-`robots.txt` and `sitemap.xml` are generated from the same value. A preview build disallows crawling outright — it serves production's content on another hostname, which competes with production for the same queries — so only production emits an `Allow` and a `Sitemap` line. The sitemap dates the picker and the per-city pages from the catalogue's `generatedAt` and leaves `/faq` undated, since hand-written copy doesn't change when a price does.
+`robots.txt` and `sitemap.xml` are generated from the same value. A preview build disallows crawling outright — it serves production's content on another hostname, which competes with production for the same queries — so only production emits an `Allow` and a `Sitemap` line. The sitemap lists `/` only when it is a picker rather than a redirect, dates it and the per-city pages from the catalogue's `generatedAt`, and leaves `/faq` undated, since hand-written copy doesn't change when a price does.
 
 **`wood-wiz.vercel.app` 308s to the custom domain**, via a host-matched redirect in `next.config.ts`. Vercel keeps answering on a project's generated alias after a custom domain is attached, and until 2026-09-04 the alias served the whole site — two hostnames with identical content, splitting whatever authority the pages earn. The `has` clause matches that exact alias, so preview deployments on their own generated hostnames are untouched and go on serving themselves for review.
 
@@ -315,7 +314,7 @@ than one hiding the other. It reads `package-lock.json` and needs no install,
 so it answers in seconds.
 
 The threshold is **high**, and dev dependencies are deliberately in scope (no
-`--omit=dev`): the scrape job holds `contents: write`, reaches ten
+`--omit=dev`): the scrape job holds `contents: write`, reaches eight
 third-party sites, and what it commits deploys itself, so a compromised build
 tool is a real path to the live site. A moderate advisory in a build-time
 transitive shouldn't block a 03:00 price refresh, though, so those surface at
@@ -345,8 +344,8 @@ Both workflows fire on the same push, so `Test` runs `npm ci` against the Window
 - **Stacking flags only confirmed for two vendors.** `delivery.stacking` is explicitly set for Mother City Firewood (`free-over-threshold`) and Lancehoudt (`free`) — the only two whose product descriptions stated it. The other eight are unset and render no stacking badge at all; the earlier "Stacking unconfirmed" badge was removed as UI noise, since a badge that says nothing still reads as a verdict.
 - **Vendor ranking uses the median, never the mean.** CTF and Mother City Firewood sell premium smoking-chunk boxes at R 100–130/kg alongside bulk pallets at R 2–5/kg. The arithmetic mean ranks them as expensive (R 16–20/kg) even though their bulk product is cheap, so `/[region]/vendors` ranks and displays the median throughout — the word "average" is kept out of the headline UI on purpose. `avgPricePerKgZar` is still computed in `vendor-stats.ts` but isn't shown anywhere.
 - **Medians rest on very different sample sizes.** The Wood Gurus normalise to a handful of products because most of their catalogue is a per-piece configurator, while Mother City Firewood contribute ~200. The bar charts print each vendor's product count beside their name, and the "cheapest typical price" spotlight skips vendors below `MIN_SPOTLIGHT_SAMPLE` (8) so a four-product median can't take the headline.
-- **Regional price levels are not comparable, and the site doesn't try.** Cape Town bulk runs R 1–5/kg against Gauteng's R 4–11, driven mostly by distance from source. Rankings are scoped per city and `/` shows no prices. The sanity gate's R 1/kg floor and R 50/kg ceiling are still global, though, and were derived from Cape Town pricing — they hold for Gauteng today but should become per-region if a city with a very different price level is added.
-- **The species table is coastal Western Cape–biased.** Rooikrans and Port Jackson are local invasives. `detectSpecies` returns `unknown` for anything unlisted, which silently applies the 800 kg/m³ default density to volume-priced listings. Gauteng vendors already surfaced this — Stompies' "Sekelbush" spelling needed an alias.
+- **Regional price levels are not comparable, and the site doesn't try.** While Johannesburg was listed, Cape Town bulk ran R 1–5/kg against Gauteng's R 4–11, driven mostly by distance from source. Rankings are scoped per city, and a multi-city `/` shows no prices. The sanity gate's R 1/kg floor and R 50/kg ceiling are global and were derived from Cape Town pricing; they held for Gauteng but should become per-region if a city with a very different price level is added.
+- **The species table is coastal Western Cape–biased.** Rooikrans and Port Jackson are local invasives. `detectSpecies` returns `unknown` for anything unlisted, which silently applies the 800 kg/m³ default density to volume-priced listings. Gauteng vendors surfaced this while they were listed — Stompies' "Sekelbush" spelling needed an alias.
 - **Combo/bundle products** (e.g. `Hout Bay Firewood Combo - Kameelhout & Rooipitjie`) classify as `unknown` species because they contain multiple woods. The price/kg is still computed and they show in "All" filters.
 - **Eco logs, sawdust heat logs, briquettes, charcoal, and wood pellets** are filtered out by the normaliser since they're processed wood rather than firewood. Edit `NON_FIREWOOD_PATTERNS` in `src/lib/normalize.ts` to change this.
 - **Big-box retailers** (Makro, Builders, Takealot) are not yet scraped. Their firewood SKUs need manual product-page verification first.

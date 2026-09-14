@@ -1,5 +1,6 @@
 import { describe, expect, test } from "vitest";
 import type { Product, ProductsFile, Vendor } from "../src/lib/types";
+import type { Region, RegionId } from "../src/lib/regions";
 import { MIN_YIELD, YIELD_OVERRIDES, catalogueChanged, runSanityChecks } from "./sanity-checks";
 
 const NO_PREV = null;
@@ -132,10 +133,17 @@ describe("price checks still fire", () => {
 });
 
 describe("count drop", () => {
+  // Two metros, so the per-city check has a small city to watch. The live
+  // registry holds one; the check is written for several.
+  const SMALL = "small-metro" as RegionId;
+  const regions: Region[] = [
+    { id: "cape-town", name: "Cape Town", coverage: "" },
+    { id: SMALL, name: "Small Metro", coverage: "" },
+  ];
   const vendors: Vendor[] = [
     { ...vendorBase, id: "ct-big", regions: ["cape-town"] },
-    { ...vendorBase, id: "jhb-a", regions: ["johannesburg"] },
-    { ...vendorBase, id: "jhb-b", regions: ["johannesburg"] },
+    { ...vendorBase, id: "jhb-a", regions: [SMALL] },
+    { ...vendorBase, id: "jhb-b", regions: [SMALL] },
   ];
   const many = (vendorId: string, n: number) =>
     Array.from({ length: n }, (_, i) => product({ id: `${vendorId}::${i}`, vendorId }));
@@ -149,8 +157,8 @@ describe("count drop", () => {
   test("a small city collapsing fails even when the site-wide total barely moves", () => {
     const prev = prevOf([...many("ct-big", 500), ...many("jhb-a", 10), ...many("jhb-b", 10)]);
     const next = [...many("ct-big", 500), ...many("jhb-a", 10), ...many("jhb-b", 1)];
-    const failures = runSanityChecks(next, allOk, prev, vendors);
-    expect(failures).toEqual(["Johannesburg product count dropped from 20 to 11 (45% drop)"]);
+    const failures = runSanityChecks(next, allOk, prev, vendors, regions);
+    expect(failures).toEqual(["Small Metro product count dropped from 20 to 11 (45% drop)"]);
   });
 
   test("a failed vendor is left to the failed-run report, not counted as a drop", () => {
@@ -163,7 +171,7 @@ describe("count drop", () => {
       "jhb-a": { count: 1 },
       "jhb-b": { count: 0, ok: false },
     });
-    expect(runSanityChecks(next, withFailure, prev, vendors)).toEqual([]);
+    expect(runSanityChecks(next, withFailure, prev, vendors, regions)).toEqual([]);
   });
 });
 

@@ -45,7 +45,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const lastModified = await catalogueUpdatedAt();
 
   return [
-    { url: `${SITE_URL}/`, lastModified },
+    // `/` redirects while there is only one city, and a sitemap should list
+    // pages rather than redirects.
+    ...(REGIONS.length > 1 ? [{ url: `${SITE_URL}/`, lastModified }] : []),
     ...REGIONS.flatMap((r) => [
       { url: `${SITE_URL}/${r.id}`, lastModified },
       { url: `${SITE_URL}/${r.id}/vendors`, lastModified },

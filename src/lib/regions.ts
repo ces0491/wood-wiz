@@ -11,8 +11,16 @@
  * Garden Route are deliberately absent: as of 2026-09-04 neither has a seller
  * meeting it (KZN retail is Gumtree and Facebook Marketplace listings, and the
  * Garden Route reduces to a single vendor, which is not a comparison).
+ *
+ * Johannesburg was listed from 2026-09-04 to 2026-09-14 and removed. It had two
+ * vendors, and one of them, Stompies, sits behind SiteGround's anti-bot
+ * challenge, which refuses the scraper from GitHub's runners. One vendor left
+ * is a listing, not a comparison.
+ *
+ * The routes, stats and nav stay written for several metros. With one entry,
+ * next.config.ts sends `/` straight to it and the nav hides the city switch.
  */
-export type RegionId = "cape-town" | "johannesburg";
+export type RegionId = "cape-town";
 
 export interface Region {
   id: RegionId;
@@ -27,11 +35,6 @@ export const REGIONS: Region[] = [
     id: "cape-town",
     name: "Cape Town",
     coverage: "Cape Town, the Winelands and the West Coast",
-  },
-  {
-    id: "johannesburg",
-    name: "Johannesburg",
-    coverage: "Greater Johannesburg, the East and West Rand, Centurion and Pretoria",
   },
 ];
 

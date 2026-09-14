@@ -13,12 +13,11 @@ import { expect, test, type Page } from "@playwright/test";
  * assertion can't name.
  */
 
+// `/` isn't listed: with one city it redirects to /cape-town (next.config.ts),
+// so it would only test that page twice. Add it back with a second city.
 const ROUTES = [
-  { name: "picker", path: "/" },
   { name: "cape-town", path: "/cape-town" },
-  { name: "johannesburg", path: "/johannesburg" },
   { name: "cape-town-vendors", path: "/cape-town/vendors" },
-  { name: "johannesburg-vendors", path: "/johannesburg/vendors" },
   { name: "faq", path: "/faq" },
 ] as const;
 
