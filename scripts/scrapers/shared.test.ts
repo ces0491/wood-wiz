@@ -1,6 +1,8 @@
 import { afterEach, describe, expect, test, vi } from "vitest";
 import {
+  describeNonJson,
   extractWooPrice,
+  fetchJson,
   fetchText,
   HttpError,
   isRetryableError,
@@ -400,5 +402,35 @@ describe("scrapeWooCommerce pagination", () => {
   test("any other failure on a later page fails the vendor instead of truncating it", async () => {
     stubPages(() => new Response("gone", { status: 403 }));
     await expect(scrapeWooCommerce("v", "https://store.test")).rejects.toThrow(/HTTP 403/);
+  });
+});
+
+describe("non-JSON responses", () => {
+  afterEach(() => {
+    vi.unstubAllGlobals();
+  });
+
+  test("names a SiteGround challenge page and keeps a readable snippet", () => {
+    const body =
+      '<html><head><link rel="icon" href="data:,"><meta http-equiv="refresh" content="0; url=/.well-known/sgcaptcha/?r=%2F"></head></html>';
+    const d = describeNonJson(body);
+    expect(d).toMatch(/^SiteGround anti-bot challenge page/);
+    expect(d).toContain("sgcaptcha");
+  });
+
+  test("an unrecognised page reports its title", () => {
+    expect(describeNonJson("<html><head><title> Maintenance </title></head></html>")).toMatch(
+      /^non-JSON response titled "Maintenance"/,
+    );
+  });
+
+  test("fetchJson says what it got instead of JSON.parse's ten characters", async () => {
+    vi.stubGlobal(
+      "fetch",
+      vi.fn(async () => new Response("<html><head><title>Blocked</title></head></html>", { status: 200 })),
+    );
+    await expect(fetchJson("https://store.test/api", 1000, { attempts: 1 })).rejects.toThrow(
+      'Expected JSON from https://store.test/api, got non-JSON response titled "Blocked"',
+    );
   });
 });

@@ -110,13 +110,42 @@ export async function fetchText(
   throw lastErr; // unreachable: the final attempt always returns or throws
 }
 
+// Known bot-challenge pages, matched on markers in their HTML. A store API
+// answering 200 with one of these means the host is refusing the scraper,
+// which no retry or parser change will fix.
+const CHALLENGE_MARKERS: { pattern: RegExp; name: string }[] = [
+  { pattern: /sgcaptcha/i, name: "SiteGround anti-bot challenge" },
+  { pattern: /cf-chl|challenge-platform|cf_chl_opt/i, name: "Cloudflare challenge" },
+  { pattern: /wordfence/i, name: "Wordfence block page" },
+  { pattern: /imunify360|bot-protection/i, name: "Imunify360 bot protection" },
+];
+
+/**
+ * A one-line account of a body that should have been JSON.
+ *
+ * JSON.parse's own message keeps the first ten characters, so Stompies'
+ * failures read `"<html><hea"... is not valid JSON` for four days with nothing
+ * to say what the page was.
+ */
+export function describeNonJson(body: string): string {
+  const challenge = CHALLENGE_MARKERS.find((m) => m.pattern.test(body));
+  const title = body.match(/<title[^>]*>([^<]*)<\/title>/i)?.[1]?.trim();
+  const snippet = body.replace(/\s+/g, " ").trim().slice(0, 160);
+  const what = challenge ? `${challenge.name} page` : "non-JSON response";
+  return `${what}${title ? ` titled "${title}"` : ""} (${body.length} bytes): ${snippet}`;
+}
+
 export async function fetchJson<T = unknown>(
   url: string,
   timeoutMs = 20000,
   opts: FetchRetryOptions = {},
 ): Promise<T> {
   const text = await fetchText(url, timeoutMs, opts);
-  return JSON.parse(text) as T;
+  try {
+    return JSON.parse(text) as T;
+  } catch {
+    throw new Error(`Expected JSON from ${url}, got ${describeNonJson(text)}`);
+  }
 }
 
 // Shopify exposes /products.json on most storefronts with paginated product
