@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-26T08:09:53.446Z",
+  "generatedAt": "2026-10-27T08:25:19.366Z",
   "products": [
     {
       "id": "lancehoudt::2169",
@@ -18,7 +18,7 @@
       "maxPricePerKgZar": 1.21,
       "weightEstimated": true,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:33.625Z"
+      "scrapedAt": "2026-10-27T08:24:24.788Z"
     },
     {
       "id": "lancehoudt::2173",
@@ -37,7 +37,7 @@
       "maxPricePerKgZar": 1.22,
       "weightEstimated": true,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:33.625Z"
+      "scrapedAt": "2026-10-27T08:24:24.788Z"
     },
     {
       "id": "lancehoudt::469",
@@ -56,7 +56,7 @@
       "maxPricePerKgZar": 1.25,
       "weightEstimated": true,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:33.625Z"
+      "scrapedAt": "2026-10-27T08:24:24.788Z"
     },
     {
       "id": "lancehoudt::468",
@@ -75,7 +75,7 @@
       "maxPricePerKgZar": 1.25,
       "weightEstimated": true,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:33.625Z"
+      "scrapedAt": "2026-10-27T08:24:24.788Z"
     },
     {
       "id": "wood-gurus::15388805431454-67563913019550",
@@ -93,7 +93,7 @@
       "pricePerKgZar": 1.19,
       "weightEstimated": true,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:28.347Z"
+      "scrapedAt": "2026-10-27T08:24:18.712Z"
     },
     {
       "id": "wood-gurus::15358735614110-67474357158046",
@@ -111,7 +111,7 @@
       "pricePerKgZar": 1.19,
       "weightEstimated": true,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:28.347Z"
+      "scrapedAt": "2026-10-27T08:24:18.712Z"
     },
     {
       "id": "lancehoudt::471",
@@ -130,7 +130,7 @@
       "maxPricePerKgZar": 1.32,
       "weightEstimated": true,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:33.625Z"
+      "scrapedAt": "2026-10-27T08:24:24.788Z"
     },
     {
       "id": "lancehoudt::470",
@@ -149,7 +149,7 @@
       "maxPricePerKgZar": 1.32,
       "weightEstimated": true,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:33.625Z"
+      "scrapedAt": "2026-10-27T08:24:24.788Z"
     },
     {
       "id": "wood-gurus::8433525653662-45970015912094",
@@ -167,7 +167,7 @@
       "pricePerKgZar": 1.23,
       "weightEstimated": true,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:28.347Z"
+      "scrapedAt": "2026-10-27T08:24:18.712Z"
     },
     {
       "id": "lancehoudt::2181",
@@ -184,7 +184,7 @@
       "pricePerKgZar": 1.26,
       "weightEstimated": true,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:33.625Z"
+      "scrapedAt": "2026-10-27T08:24:24.788Z"
     },
     {
       "id": "lancehoudt::2177",
@@ -201,7 +201,7 @@
       "pricePerKgZar": 1.26,
       "weightEstimated": true,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:33.625Z"
+      "scrapedAt": "2026-10-27T08:24:24.788Z"
     },
     {
       "id": "lancehoudt::472",
@@ -220,7 +220,7 @@
       "maxPricePerKgZar": 1.39,
       "weightEstimated": true,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:33.625Z"
+      "scrapedAt": "2026-10-27T08:24:24.788Z"
     },
     {
       "id": "lancehoudt::2189",
@@ -239,7 +239,7 @@
       "maxPricePerKgZar": 1.5,
       "weightEstimated": true,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:33.625Z"
+      "scrapedAt": "2026-10-27T08:24:24.788Z"
     },
     {
       "id": "lancehoudt::2185",
@@ -258,7 +258,7 @@
       "maxPricePerKgZar": 1.5,
       "weightEstimated": true,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:33.625Z"
+      "scrapedAt": "2026-10-27T08:24:24.788Z"
     },
     {
       "id": "lancehoudt::2599",
@@ -277,7 +277,7 @@
       "maxPricePerKgZar": 1.47,
       "weightEstimated": true,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:33.625Z"
+      "scrapedAt": "2026-10-27T08:24:24.788Z"
     },
     {
       "id": "lancehoudt::2578",
@@ -296,7 +296,7 @@
       "maxPricePerKgZar": 1.47,
       "weightEstimated": true,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:33.625Z"
+      "scrapedAt": "2026-10-27T08:24:24.788Z"
     },
     {
       "id": "wood-bros::blue-gum-wood",
@@ -313,7 +313,7 @@
       "pricePerKgZar": 1.37,
       "weightEstimated": true,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:48.765Z"
+      "scrapedAt": "2026-10-27T08:25:08.566Z"
     },
     {
       "id": "wood-bros::black-wattle-firewood-1000-pieces",
@@ -330,7 +330,7 @@
       "pricePerKgZar": 1.37,
       "weightEstimated": true,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:53.312Z"
+      "scrapedAt": "2026-10-27T08:25:08.732Z"
     },
     {
       "id": "lancehoudt::2598",
@@ -349,7 +349,7 @@
       "maxPricePerKgZar": 1.54,
       "weightEstimated": true,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:33.625Z"
+      "scrapedAt": "2026-10-27T08:24:24.788Z"
     },
     {
       "id": "lancehoudt::2574",
@@ -368,7 +368,7 @@
       "maxPricePerKgZar": 1.54,
       "weightEstimated": true,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:33.625Z"
+      "scrapedAt": "2026-10-27T08:24:24.788Z"
     },
     {
       "id": "lancehoudt::454",
@@ -387,7 +387,7 @@
       "maxPricePerKgZar": 1.54,
       "weightEstimated": true,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:33.625Z"
+      "scrapedAt": "2026-10-27T08:24:24.788Z"
     },
     {
       "id": "wood-gurus::8433498390686-45969856135326",
@@ -405,7 +405,7 @@
       "pricePerKgZar": 1.46,
       "weightEstimated": true,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:28.347Z"
+      "scrapedAt": "2026-10-27T08:24:18.712Z"
     },
     {
       "id": "lancehoudt::2570",
@@ -424,24 +424,7 @@
       "maxPricePerKgZar": 1.61,
       "weightEstimated": true,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:33.625Z"
-    },
-    {
-      "id": "wood-bros::wood-for-fireplace",
-      "vendorId": "wood-bros",
-      "vendorName": "The Wood Bros",
-      "title": "Blue Gum Fireplace Wood (500 Pieces)",
-      "url": "https://www.thewoodbros.co.za/product-page/wood-for-fireplace",
-      "imageUrl": "https://static.wixstatic.com/media/b4fa82_dc42d7049e6143828b546b4e75f2596b~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
-      "species": "blue-gum",
-      "usage": "fireplace",
-      "packFormat": "pieces",
-      "priceZar": 1100,
-      "weightKg": 750,
-      "pricePerKgZar": 1.47,
-      "weightEstimated": true,
-      "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:48.858Z"
+      "scrapedAt": "2026-10-27T08:24:24.788Z"
     },
     {
       "id": "wood-bros::red-gum-firewood-1000-pieces",
@@ -458,7 +441,7 @@
       "pricePerKgZar": 1.47,
       "weightEstimated": true,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:51.979Z"
+      "scrapedAt": "2026-10-27T08:24:51.761Z"
     },
     {
       "id": "wood-bros::black-wattle-firewood-500-pieces",
@@ -475,7 +458,24 @@
       "pricePerKgZar": 1.47,
       "weightEstimated": true,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:53.443Z"
+      "scrapedAt": "2026-10-27T08:24:53.630Z"
+    },
+    {
+      "id": "wood-bros::wood-for-fireplace",
+      "vendorId": "wood-bros",
+      "vendorName": "The Wood Bros",
+      "title": "Blue Gum Fireplace Wood (500 Pieces)",
+      "url": "https://www.thewoodbros.co.za/product-page/wood-for-fireplace",
+      "imageUrl": "https://static.wixstatic.com/media/b4fa82_dc42d7049e6143828b546b4e75f2596b~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
+      "species": "blue-gum",
+      "usage": "fireplace",
+      "packFormat": "pieces",
+      "priceZar": 1100,
+      "weightKg": 750,
+      "pricePerKgZar": 1.47,
+      "weightEstimated": true,
+      "inStock": true,
+      "scrapedAt": "2026-10-27T08:25:03.741Z"
     },
     {
       "id": "lancehoudt::473",
@@ -492,7 +492,7 @@
       "pricePerKgZar": 1.49,
       "weightEstimated": true,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:33.625Z"
+      "scrapedAt": "2026-10-27T08:24:24.788Z"
     },
     {
       "id": "lancehoudt::2198",
@@ -511,7 +511,7 @@
       "maxPricePerKgZar": 1.71,
       "weightEstimated": true,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:33.625Z"
+      "scrapedAt": "2026-10-27T08:24:24.788Z"
     },
     {
       "id": "lancehoudt::455",
@@ -530,7 +530,7 @@
       "maxPricePerKgZar": 1.77,
       "weightEstimated": true,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:33.625Z"
+      "scrapedAt": "2026-10-27T08:24:24.788Z"
     },
     {
       "id": "lancehoudt::2194",
@@ -549,7 +549,7 @@
       "maxPricePerKgZar": 1.76,
       "weightEstimated": true,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:33.625Z"
+      "scrapedAt": "2026-10-27T08:24:24.788Z"
     },
     {
       "id": "lancehoudt::451",
@@ -568,7 +568,7 @@
       "maxPricePerKgZar": 1.83,
       "weightEstimated": true,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:33.625Z"
+      "scrapedAt": "2026-10-27T08:24:24.788Z"
     },
     {
       "id": "wood-bros::red-gum-wood",
@@ -585,7 +585,7 @@
       "pricePerKgZar": 1.67,
       "weightEstimated": true,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:52.679Z"
+      "scrapedAt": "2026-10-27T08:24:50.084Z"
     },
     {
       "id": "lancehoudt::453",
@@ -604,7 +604,7 @@
       "maxPricePerKgZar": 1.91,
       "weightEstimated": true,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:33.625Z"
+      "scrapedAt": "2026-10-27T08:24:24.788Z"
     },
     {
       "id": "lancehoudt::452",
@@ -623,7 +623,7 @@
       "maxPricePerKgZar": 1.91,
       "weightEstimated": true,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:33.625Z"
+      "scrapedAt": "2026-10-27T08:24:24.788Z"
     },
     {
       "id": "lancehoudt::456",
@@ -642,7 +642,7 @@
       "maxPricePerKgZar": 1.97,
       "weightEstimated": true,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:33.625Z"
+      "scrapedAt": "2026-10-27T08:24:24.788Z"
     },
     {
       "id": "cape-town-firewood::8037403885858-44165376377122",
@@ -660,25 +660,7 @@
       "pricePerKgZar": 1.8,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
-    },
-    {
-      "id": "cape-town-firewood::8859877572898-47412107641122",
-      "vendorId": "cape-town-firewood",
-      "vendorName": "Cape Town Firewood (CTF)",
-      "title": "Kaggelhout / Firewood Bulk | 1000 Loose Pieces Mixed",
-      "url": "https://capetownfirewood.co.za/products/kaggelhout-firewood-bulk-1000-loose-pieces-mix?variant=47412107641122",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0691/7845/8402/files/KaggelhoutFirewoodBulk1000LoosePiecesMix.png?v=1737658764",
-      "species": "unknown",
-      "usage": "fireplace",
-      "packFormat": "pallet",
-      "priceZar": 1899,
-      "regularPriceZar": 2300,
-      "weightKg": 1000,
-      "pricePerKgZar": 1.9,
-      "weightEstimated": false,
-      "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "wood-gurus::10295026516126-50530935603358",
@@ -696,7 +678,7 @@
       "pricePerKgZar": 1.93,
       "weightEstimated": true,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:28.347Z"
+      "scrapedAt": "2026-10-27T08:24:18.712Z"
     },
     {
       "id": "cape-town-firewood::8079111880994-44312846270754",
@@ -714,7 +696,7 @@
       "pricePerKgZar": 1.95,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "cape-town-firewood::8079106146594-44312777031970",
@@ -732,7 +714,7 @@
       "pricePerKgZar": 1.95,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "cape-town-firewood::8079110603042-44312821170466",
@@ -750,7 +732,7 @@
       "pricePerKgZar": 1.97,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "cape-town-firewood::8079103328546-44312762843426",
@@ -768,7 +750,7 @@
       "pricePerKgZar": 1.97,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "cape-town-firewood::8037404311842-44165377032482",
@@ -786,7 +768,7 @@
       "pricePerKgZar": 2,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "cape-town-firewood::8037404049698-44165376639266",
@@ -804,7 +786,7 @@
       "pricePerKgZar": 2,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "cape-town-firewood::8117752332578-44458084925730",
@@ -822,7 +804,7 @@
       "pricePerKgZar": 2,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "cape-town-firewood::8037403820322-44165376311586",
@@ -839,7 +821,7 @@
       "pricePerKgZar": 2,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "cape-town-firewood::8117738930466-44458014703906",
@@ -857,7 +839,7 @@
       "pricePerKgZar": 2.07,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "cape-town-firewood::8037404410146-44165377130786",
@@ -875,7 +857,7 @@
       "pricePerKgZar": 2.07,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "cape-town-firewood::8037404115234-44165376704802",
@@ -893,7 +875,7 @@
       "pricePerKgZar": 2.07,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "mother-city-firewood::8879024242851-46319075262627",
@@ -911,7 +893,7 @@
       "pricePerKgZar": 2.1,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "cape-town-firewood::8037404475682-44165377229090",
@@ -929,7 +911,7 @@
       "pricePerKgZar": 2.1,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "cape-town-firewood::8037404180770-44165376770338",
@@ -947,7 +929,7 @@
       "pricePerKgZar": 2.1,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "cape-town-firewood::8117724676386-44457922396450",
@@ -965,7 +947,7 @@
       "pricePerKgZar": 2.1,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "mother-city-firewood::8879024242851-46319075229859",
@@ -983,7 +965,7 @@
       "pricePerKgZar": 2.13,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8597519761571-45252890853539",
@@ -1001,7 +983,7 @@
       "pricePerKgZar": 2.13,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8597518647459-45242672513187",
@@ -1019,7 +1001,7 @@
       "pricePerKgZar": 2.13,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8597515862179-46433247002787",
@@ -1037,7 +1019,7 @@
       "pricePerKgZar": 2.13,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "wood-gurus::7567606273-33563177910409",
@@ -1055,7 +1037,7 @@
       "pricePerKgZar": 2.13,
       "weightEstimated": true,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:28.347Z"
+      "scrapedAt": "2026-10-27T08:24:18.712Z"
     },
     {
       "id": "mother-city-firewood::8597519761571-46432055066787",
@@ -1073,7 +1055,7 @@
       "pricePerKgZar": 2.16,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8597515862179-45280541704355",
@@ -1091,7 +1073,7 @@
       "pricePerKgZar": 2.16,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "cape-town-firewood::8117702852898-44457860530466",
@@ -1109,7 +1091,7 @@
       "pricePerKgZar": 2.16,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "cape-town-firewood::8037404541218-44165377294626",
@@ -1127,7 +1109,7 @@
       "pricePerKgZar": 2.16,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "cape-town-firewood::8037403984162-44165376573730",
@@ -1145,7 +1127,7 @@
       "pricePerKgZar": 2.16,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "cape-town-firewood::8079120302370-44312922390818",
@@ -1163,7 +1145,7 @@
       "pricePerKgZar": 2.19,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "cape-town-firewood::8079116992802-44312911610146",
@@ -1181,7 +1163,7 @@
       "pricePerKgZar": 2.19,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "cape-town-firewood::8117662023970-44457701769506",
@@ -1199,7 +1181,25 @@
       "pricePerKgZar": 2.19,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
+    },
+    {
+      "id": "cape-town-firewood::9268108493090-48567928488226",
+      "vendorId": "cape-town-firewood",
+      "vendorName": "Cape Town Firewood (CTF)",
+      "title": "Fire and Braai Combo Deal - 700pc Blue Gum / 300pc Rooikrans",
+      "url": "https://capetownfirewood.co.za/products/fire-and-braai-combo-deal-700pc-blue-gum-300pc-rooikrans?variant=48567928488226",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0691/7845/8402/files/FireandBraaiComboDeal-700pcBlueGum300pcRooikrans.jpg?v=1737658757",
+      "species": "rooikrans",
+      "usage": "braai",
+      "packFormat": "pieces",
+      "priceZar": 2299,
+      "regularPriceZar": 2650,
+      "weightKg": 1050,
+      "pricePerKgZar": 2.19,
+      "weightEstimated": true,
+      "inStock": true,
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "mother-city-firewood::8879024242851-46319075164323",
@@ -1217,7 +1217,7 @@
       "pricePerKgZar": 2.2,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8597519761571-45252890820771",
@@ -1235,7 +1235,7 @@
       "pricePerKgZar": 2.2,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8597515862179-45280541671587",
@@ -1253,25 +1253,7 @@
       "pricePerKgZar": 2.2,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
-    },
-    {
-      "id": "cape-town-firewood::9268108493090-48567928488226",
-      "vendorId": "cape-town-firewood",
-      "vendorName": "Cape Town Firewood (CTF)",
-      "title": "Fire and Braai Combo Deal - 700pc Blue Gum / 300pc Rooikrans",
-      "url": "https://capetownfirewood.co.za/products/fire-and-braai-combo-deal-700pc-blue-gum-300pc-rooikrans?variant=48567928488226",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0691/7845/8402/files/FireandBraaiComboDeal-700pcBlueGum300pcRooikrans.jpg?v=1737658757",
-      "species": "rooikrans",
-      "usage": "braai",
-      "packFormat": "pallet",
-      "priceZar": 2199,
-      "regularPriceZar": 2650,
-      "weightKg": 1000,
-      "pricePerKgZar": 2.2,
-      "weightEstimated": false,
-      "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8597518647459-45242672414883",
@@ -1289,7 +1271,7 @@
       "pricePerKgZar": 2.24,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8597519761571-45252890722467",
@@ -1307,7 +1289,7 @@
       "pricePerKgZar": 2.27,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8597518647459-46341517410467",
@@ -1325,7 +1307,7 @@
       "pricePerKgZar": 2.27,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8597515862179-45280541638819",
@@ -1343,7 +1325,7 @@
       "pricePerKgZar": 2.27,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8879024242851-46319075131555",
@@ -1361,7 +1343,7 @@
       "pricePerKgZar": 2.3,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8597519761571-45252890788003",
@@ -1379,7 +1361,7 @@
       "pricePerKgZar": 2.3,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8597518647459-45242672545955",
@@ -1397,7 +1379,7 @@
       "pricePerKgZar": 2.3,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8597515862179-45280541606051",
@@ -1415,7 +1397,7 @@
       "pricePerKgZar": 2.3,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8879024242851-46319075098787",
@@ -1433,7 +1415,7 @@
       "pricePerKgZar": 2.33,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "wood-bros::bulk-sekelbos-wood",
@@ -1450,7 +1432,7 @@
       "pricePerKgZar": 2.33,
       "weightEstimated": true,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:52.891Z"
+      "scrapedAt": "2026-10-27T08:25:10.255Z"
     },
     {
       "id": "wood-bros::soetdoring-fire-pace-wood-1000-pieces",
@@ -1467,7 +1449,7 @@
       "pricePerKgZar": 2.37,
       "weightEstimated": true,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:51.591Z"
+      "scrapedAt": "2026-10-27T08:25:19.363Z"
     },
     {
       "id": "mother-city-firewood::8597519761571-45252890755235",
@@ -1485,7 +1467,7 @@
       "pricePerKgZar": 2.4,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8597515862179-45280541573283",
@@ -1503,7 +1485,7 @@
       "pricePerKgZar": 2.4,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "wood-bros::soetdoring-fire-pace-wood-500-pieces",
@@ -1520,7 +1502,7 @@
       "pricePerKgZar": 2.47,
       "weightEstimated": true,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:52.810Z"
+      "scrapedAt": "2026-10-27T08:25:01.744Z"
     },
     {
       "id": "mother-city-firewood::8879024242851-46319075066019",
@@ -1538,7 +1520,7 @@
       "pricePerKgZar": 2.49,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8597518647459-45242672480419",
@@ -1556,7 +1538,7 @@
       "pricePerKgZar": 2.5,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "wood-gurus::8877578420382-48252725985438",
@@ -1574,7 +1556,7 @@
       "pricePerKgZar": 2.5,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:28.347Z"
+      "scrapedAt": "2026-10-27T08:24:18.712Z"
     },
     {
       "id": "cape-town-firewood::8120726290722-44468362838306",
@@ -1591,7 +1573,7 @@
       "pricePerKgZar": 2.5,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "cape-town-firewood::8088290394402-44340949778722",
@@ -1609,7 +1591,7 @@
       "pricePerKgZar": 2.55,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "cape-town-firewood::8088290394402-44340949745954",
@@ -1627,7 +1609,7 @@
       "pricePerKgZar": 2.6,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "cape-town-firewood::8120684183842-44468237238562",
@@ -1645,7 +1627,7 @@
       "pricePerKgZar": 2.6,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "wood-gurus::15417712214174-67765171585182",
@@ -1663,7 +1645,7 @@
       "pricePerKgZar": 2.62,
       "weightEstimated": true,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:28.347Z"
+      "scrapedAt": "2026-10-27T08:24:18.712Z"
     },
     {
       "id": "wood-gurus::15391267946654-67575459741854",
@@ -1681,7 +1663,7 @@
       "pricePerKgZar": 2.62,
       "weightEstimated": true,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:28.347Z"
+      "scrapedAt": "2026-10-27T08:24:18.712Z"
     },
     {
       "id": "mother-city-firewood::8597519564963-46517862957219",
@@ -1699,7 +1681,7 @@
       "pricePerKgZar": 2.67,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "cape-town-firewood::8310227763490-45291982029090",
@@ -1717,7 +1699,7 @@
       "pricePerKgZar": 2.67,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "mother-city-firewood::8597519564963-45355914100899",
@@ -1735,7 +1717,7 @@
       "pricePerKgZar": 2.72,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8597518647459-45242672447651",
@@ -1753,7 +1735,7 @@
       "pricePerKgZar": 2.76,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8597519564963-45355914068131",
@@ -1771,7 +1753,7 @@
       "pricePerKgZar": 2.8,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "cape-town-firewood::8079124857122-44312952897826",
@@ -1789,7 +1771,43 @@
       "pricePerKgZar": 2.82,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
+    },
+    {
+      "id": "cape-town-firewood::8079122727202-44312935366946",
+      "vendorId": "cape-town-firewood",
+      "vendorName": "Cape Town Firewood (CTF)",
+      "title": "Rooikrans Braai Wood Bulk (Local) | 1500 Loose Pieces",
+      "url": "https://capetownfirewood.co.za/products/rooikrans-braai-wood-bulk-local-1500-loose-pieces?variant=44312935366946",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0691/7845/8402/products/IMG_20221214_004108_582.jpg?v=1687309611",
+      "species": "rooikrans",
+      "usage": "braai",
+      "packFormat": "pallet",
+      "priceZar": 4249,
+      "regularPriceZar": 5250,
+      "weightKg": 1500,
+      "pricePerKgZar": 2.83,
+      "weightEstimated": false,
+      "inStock": true,
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
+    },
+    {
+      "id": "cape-town-firewood::8037404639522-44165377524002",
+      "vendorId": "cape-town-firewood",
+      "vendorName": "Cape Town Firewood (CTF)",
+      "title": "Rooikrans Wood Bulk | 1000 Loose Pieces",
+      "url": "https://capetownfirewood.co.za/products/rooikrans-wood-bulk-local-1000-loose-pieces?variant=44165377524002",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0691/7845/8402/products/Rooikrans-Wood-Bulk-1000-Loose-Pieces.jpg?v=1726870246",
+      "species": "rooikrans",
+      "usage": "braai",
+      "packFormat": "pallet",
+      "priceZar": 2849,
+      "regularPriceZar": 3500,
+      "weightKg": 1000,
+      "pricePerKgZar": 2.85,
+      "weightEstimated": false,
+      "inStock": true,
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "mother-city-firewood::8597519564963-45355913969827",
@@ -1807,7 +1825,25 @@
       "pricePerKgZar": 2.87,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
+    },
+    {
+      "id": "cape-town-firewood::8037404705058-44165377589538",
+      "vendorId": "cape-town-firewood",
+      "vendorName": "Cape Town Firewood (CTF)",
+      "title": "Rooikrans Braai Wood Bulk | 750 Loose Pieces",
+      "url": "https://capetownfirewood.co.za/products/rooikrans-braai-wood-bulk-local-750-loose-pieces?variant=44165377589538",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0691/7845/8402/products/RooikransBraaiWoodBulk_Local_750LoosePieces-CapeTownFirewood.jpg?v=1690322704",
+      "species": "rooikrans",
+      "usage": "braai",
+      "packFormat": "pallet",
+      "priceZar": 2149,
+      "regularPriceZar": 2625,
+      "weightKg": 750,
+      "pricePerKgZar": 2.87,
+      "weightEstimated": false,
+      "inStock": true,
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "mother-city-firewood::8597519564963-45355914035363",
@@ -1825,7 +1861,25 @@
       "pricePerKgZar": 2.9,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
+    },
+    {
+      "id": "cape-town-firewood::8037404770594-44165377655074",
+      "vendorId": "cape-town-firewood",
+      "vendorName": "Cape Town Firewood (CTF)",
+      "title": "Rooikrans Braai Wood Bulk (Local) | 500 Loose Pieces",
+      "url": "https://capetownfirewood.co.za/products/rooikrans-braai-wood-bulk-local-500-loose-pieces?variant=44165377655074",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0691/7845/8402/products/Rooikrans_Braai_Wood_Bulk.jpg?v=1726917885",
+      "species": "rooikrans",
+      "usage": "braai",
+      "packFormat": "pallet",
+      "priceZar": 1449,
+      "regularPriceZar": 1750,
+      "weightKg": 500,
+      "pricePerKgZar": 2.9,
+      "weightEstimated": false,
+      "inStock": true,
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "wood-bros::rooibos-braai-wood-1000-pieces",
@@ -1842,7 +1896,7 @@
       "pricePerKgZar": 2.92,
       "weightEstimated": true,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:53.236Z"
+      "scrapedAt": "2026-10-27T08:24:46.383Z"
     },
     {
       "id": "cape-town-firewood::8037404836130-44165377720610",
@@ -1860,7 +1914,7 @@
       "pricePerKgZar": 2.96,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "cape-town-firewood::8079126004002-44312961188130",
@@ -1878,7 +1932,7 @@
       "pricePerKgZar": 2.99,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "mother-city-firewood::8597519564963-45355914002595",
@@ -1896,7 +1950,7 @@
       "pricePerKgZar": 3,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "wood-bros::sekelbos-braai-wood-500-pieces",
@@ -1913,7 +1967,7 @@
       "pricePerKgZar": 3,
       "weightEstimated": true,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:51.806Z"
+      "scrapedAt": "2026-10-27T08:25:14.349Z"
     },
     {
       "id": "wood-bros::kameeldoring-braai-wood",
@@ -1930,7 +1984,7 @@
       "pricePerKgZar": 3.05,
       "weightEstimated": true,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:48.621Z"
+      "scrapedAt": "2026-10-27T08:25:12.037Z"
     },
     {
       "id": "mother-city-firewood::9042147246243-47408201466019",
@@ -1948,7 +2002,7 @@
       "pricePerKgZar": 3.13,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8917031649443-46470842319011",
@@ -1966,7 +2020,7 @@
       "pricePerKgZar": 3.13,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8915949912227-46467919380643",
@@ -1984,7 +2038,7 @@
       "pricePerKgZar": 3.13,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8762063716515-46431971639459",
@@ -2002,25 +2056,7 @@
       "pricePerKgZar": 3.13,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
-    },
-    {
-      "id": "cape-town-firewood::9897617129762-50480507846946",
-      "vendorId": "cape-town-firewood",
-      "vendorName": "Cape Town Firewood (CTF)",
-      "title": "Braai Boss Summer Combo - Camelthorn | Wattle Wood",
-      "url": "https://capetownfirewood.co.za/products/braai-boss-summer-combo-camelthorn-wattle-wood?variant=50480507846946",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0691/7845/8402/files/BraaiBossSummerCombo-CamelthornWattleWood-CapeTownFirewood.png?v=1761572499",
-      "species": "kameeldoring",
-      "usage": "braai",
-      "packFormat": "pallet",
-      "priceZar": 2199,
-      "regularPriceZar": 2800,
-      "weightKg": 700,
-      "pricePerKgZar": 3.14,
-      "weightEstimated": false,
-      "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::9042147246243-47408201433251",
@@ -2038,7 +2074,7 @@
       "pricePerKgZar": 3.17,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8917031649443-46470842286243",
@@ -2056,7 +2092,7 @@
       "pricePerKgZar": 3.17,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8915949912227-46467919347875",
@@ -2074,7 +2110,7 @@
       "pricePerKgZar": 3.17,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8762063716515-45836274663587",
@@ -2092,7 +2128,7 @@
       "pricePerKgZar": 3.17,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8597516583075-45692559982755",
@@ -2110,7 +2146,7 @@
       "pricePerKgZar": 3.2,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8597516189859-45280024363171",
@@ -2128,7 +2164,7 @@
       "pricePerKgZar": 3.2,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8597519728803-45243861205155",
@@ -2146,7 +2182,7 @@
       "pricePerKgZar": 3.2,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8597518483619-46341456461987",
@@ -2164,7 +2200,7 @@
       "pricePerKgZar": 3.2,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "cape-town-firewood::9592727568674-49488589750562",
@@ -2181,7 +2217,7 @@
       "pricePerKgZar": 3.2,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "cape-town-firewood::9592727568674-49488589783330",
@@ -2198,7 +2234,7 @@
       "pricePerKgZar": 3.2,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "mother-city-firewood::9042147246243-47408201400483",
@@ -2216,7 +2252,7 @@
       "pricePerKgZar": 3.22,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8917031649443-46470842253475",
@@ -2234,7 +2270,7 @@
       "pricePerKgZar": 3.22,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8915949912227-46467919315107",
@@ -2252,7 +2288,7 @@
       "pricePerKgZar": 3.22,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8762063716515-45836274630819",
@@ -2270,7 +2306,7 @@
       "pricePerKgZar": 3.22,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "wood-bros::swarthaak-braai-wood-1000-pieces",
@@ -2287,7 +2323,7 @@
       "pricePerKgZar": 3.24,
       "weightEstimated": true,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:52.564Z"
+      "scrapedAt": "2026-10-27T08:24:57.106Z"
     },
     {
       "id": "mother-city-firewood::8597516583075-45692559949987",
@@ -2305,7 +2341,7 @@
       "pricePerKgZar": 3.25,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8597516189859-45280024330403",
@@ -2323,7 +2359,7 @@
       "pricePerKgZar": 3.25,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8597519728803-45243861172387",
@@ -2341,7 +2377,7 @@
       "pricePerKgZar": 3.25,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "cape-town-firewood::9602864513314-49525103657250",
@@ -2359,7 +2395,7 @@
       "pricePerKgZar": 3.26,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "cape-town-firewood::9592727568674-49488589717794",
@@ -2377,7 +2413,7 @@
       "pricePerKgZar": 3.3,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "wood-bros::swarthaak-braai-wood-500-pieces",
@@ -2394,7 +2430,7 @@
       "pricePerKgZar": 3.32,
       "weightEstimated": true,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:53.021Z"
+      "scrapedAt": "2026-10-27T08:25:17.846Z"
     },
     {
       "id": "mother-city-firewood::9042147246243-47408201367715",
@@ -2412,7 +2448,7 @@
       "pricePerKgZar": 3.33,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8917031649443-46470842220707",
@@ -2430,7 +2466,7 @@
       "pricePerKgZar": 3.33,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8915949912227-46467919282339",
@@ -2448,7 +2484,7 @@
       "pricePerKgZar": 3.33,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8597516583075-45692559917219",
@@ -2466,7 +2502,7 @@
       "pricePerKgZar": 3.33,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8597516189859-45280024297635",
@@ -2484,7 +2520,7 @@
       "pricePerKgZar": 3.33,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8762063716515-45836274598051",
@@ -2502,7 +2538,7 @@
       "pricePerKgZar": 3.33,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8597519728803-45243861139619",
@@ -2520,7 +2556,7 @@
       "pricePerKgZar": 3.33,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8597518483619-45242011254947",
@@ -2538,7 +2574,7 @@
       "pricePerKgZar": 3.37,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "cape-town-firewood::9592727568674-49488589685026",
@@ -2555,7 +2591,7 @@
       "pricePerKgZar": 3.4,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "cape-town-firewood::9592727568674-49488589652258",
@@ -2572,7 +2608,7 @@
       "pricePerKgZar": 3.49,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "mother-city-firewood::9042147246243-47408201334947",
@@ -2590,7 +2626,7 @@
       "pricePerKgZar": 3.5,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8917031649443-46470842187939",
@@ -2608,7 +2644,7 @@
       "pricePerKgZar": 3.5,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8915949912227-46467919249571",
@@ -2626,7 +2662,7 @@
       "pricePerKgZar": 3.5,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8597516583075-45692559851683",
@@ -2644,7 +2680,7 @@
       "pricePerKgZar": 3.5,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8597516189859-45280024232099",
@@ -2662,7 +2698,7 @@
       "pricePerKgZar": 3.5,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8762063716515-45836274565283",
@@ -2680,7 +2716,7 @@
       "pricePerKgZar": 3.5,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8597519728803-45243861074083",
@@ -2698,25 +2734,7 @@
       "pricePerKgZar": 3.5,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
-    },
-    {
-      "id": "cape-town-firewood::8412487057698-45716565131554",
-      "vendorId": "cape-town-firewood",
-      "vendorName": "Cape Town Firewood (CTF)",
-      "title": "The Firewood Africa Combo - Mupani & Kaggel Hout",
-      "url": "https://capetownfirewood.co.za/products/the-firewood-africa-combo-deal-mupani-and-kaggel-hout?variant=45716565131554",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0691/7845/8402/files/TheFirewoodCompanyComboDeal.png?v=1698238020",
-      "species": "mopane",
-      "usage": "fireplace",
-      "packFormat": "pallet",
-      "priceZar": 2449,
-      "regularPriceZar": 2800,
-      "weightKg": 700,
-      "pricePerKgZar": 3.5,
-      "weightEstimated": false,
-      "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8597518483619-45240751227043",
@@ -2734,7 +2752,7 @@
       "pricePerKgZar": 3.58,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8597520253091-45446594199715",
@@ -2752,7 +2770,7 @@
       "pricePerKgZar": 3.6,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8597518483619-45240751194275",
@@ -2770,7 +2788,7 @@
       "pricePerKgZar": 3.62,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "cape-town-firewood::8114477072674-44443045331234",
@@ -2788,7 +2806,7 @@
       "pricePerKgZar": 3.64,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "mother-city-firewood::9042147246243-47408201302179",
@@ -2806,7 +2824,7 @@
       "pricePerKgZar": 3.66,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8917031649443-46470842155171",
@@ -2824,7 +2842,7 @@
       "pricePerKgZar": 3.66,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8915949912227-46467919216803",
@@ -2842,7 +2860,7 @@
       "pricePerKgZar": 3.66,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8762063716515-45836274532515",
@@ -2860,7 +2878,7 @@
       "pricePerKgZar": 3.66,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8597520253091-45446594166947",
@@ -2878,7 +2896,7 @@
       "pricePerKgZar": 3.67,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "cape-town-firewood::8037404606754-44507078852898",
@@ -2896,7 +2914,7 @@
       "pricePerKgZar": 3.7,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "cape-town-firewood::8037404246306-44507047657762",
@@ -2914,7 +2932,7 @@
       "pricePerKgZar": 3.7,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "cape-town-firewood::8088314020130-44508890136866",
@@ -2932,7 +2950,7 @@
       "pricePerKgZar": 3.7,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "lancehoudt::462",
@@ -2949,7 +2967,7 @@
       "pricePerKgZar": 3.74,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:33.625Z"
+      "scrapedAt": "2026-10-27T08:24:24.788Z"
     },
     {
       "id": "mother-city-firewood::8597516583075-45692559818915",
@@ -2967,7 +2985,7 @@
       "pricePerKgZar": 3.75,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8597516189859-45280024199331",
@@ -2985,7 +3003,7 @@
       "pricePerKgZar": 3.75,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8597519728803-45243861041315",
@@ -3003,7 +3021,7 @@
       "pricePerKgZar": 3.75,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8597518483619-45240751161507",
@@ -3021,7 +3039,7 @@
       "pricePerKgZar": 3.75,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8597520253091-45446594134179",
@@ -3039,7 +3057,7 @@
       "pricePerKgZar": 3.75,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "wood-gurus::8877543227550-48252567290014",
@@ -3057,7 +3075,7 @@
       "pricePerKgZar": 3.75,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:28.347Z"
+      "scrapedAt": "2026-10-27T08:24:18.712Z"
     },
     {
       "id": "cape-town-firewood::8037404606754-44507078820130",
@@ -3075,7 +3093,7 @@
       "pricePerKgZar": 3.75,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "cape-town-firewood::8037404246306-44507047624994",
@@ -3093,7 +3111,7 @@
       "pricePerKgZar": 3.75,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "cape-town-firewood::8088314020130-44508890104098",
@@ -3111,24 +3129,7 @@
       "pricePerKgZar": 3.75,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
-    },
-    {
-      "id": "wood-bros::firewood-for-restaurants",
-      "vendorId": "wood-bros",
-      "vendorName": "The Wood Bros",
-      "title": "Restaurant Blue Gum Bundle FireWood Bags (20x20kg)",
-      "url": "https://www.thewoodbros.co.za/product-page/firewood-for-restaurants",
-      "imageUrl": "https://static.wixstatic.com/media/b4fa82_617b3c38c62d4faabc0582cb40d92161~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
-      "species": "blue-gum",
-      "usage": "both",
-      "packFormat": "pallet",
-      "priceZar": 1500,
-      "weightKg": 400,
-      "pricePerKgZar": 3.75,
-      "weightEstimated": false,
-      "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:51.516Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "wood-bros::black-wattle-firewood-bags-20x20kg",
@@ -3145,7 +3146,24 @@
       "pricePerKgZar": 3.75,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:52.265Z"
+      "scrapedAt": "2026-10-27T08:25:00.310Z"
+    },
+    {
+      "id": "wood-bros::firewood-for-restaurants",
+      "vendorId": "wood-bros",
+      "vendorName": "The Wood Bros",
+      "title": "Restaurant Blue Gum Bundle FireWood Bags (20x20kg)",
+      "url": "https://www.thewoodbros.co.za/product-page/firewood-for-restaurants",
+      "imageUrl": "https://static.wixstatic.com/media/b4fa82_617b3c38c62d4faabc0582cb40d92161~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
+      "species": "blue-gum",
+      "usage": "both",
+      "packFormat": "pallet",
+      "priceZar": 1500,
+      "weightKg": 400,
+      "pricePerKgZar": 3.75,
+      "weightEstimated": false,
+      "inStock": true,
+      "scrapedAt": "2026-10-27T08:25:16.235Z"
     },
     {
       "id": "cape-town-firewood::8332278628642-45369966100770",
@@ -3163,7 +3181,7 @@
       "pricePerKgZar": 3.79,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "cape-town-firewood::8037404606754-44507078787362",
@@ -3181,7 +3199,7 @@
       "pricePerKgZar": 3.83,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "cape-town-firewood::8037404246306-44507047592226",
@@ -3199,7 +3217,7 @@
       "pricePerKgZar": 3.83,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "cape-town-firewood::8088314020130-44508890071330",
@@ -3217,7 +3235,7 @@
       "pricePerKgZar": 3.83,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "mother-city-firewood::8597520253091-45446594101411",
@@ -3235,7 +3253,7 @@
       "pricePerKgZar": 3.86,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8771185410211-45871823880355",
@@ -3253,7 +3271,7 @@
       "pricePerKgZar": 3.87,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8917031649443-46470842122403",
@@ -3271,7 +3289,7 @@
       "pricePerKgZar": 3.88,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8762063716515-45836274499747",
@@ -3289,7 +3307,7 @@
       "pricePerKgZar": 3.88,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "cape-town-firewood::8037403754786-44514407448866",
@@ -3307,7 +3325,7 @@
       "pricePerKgZar": 3.9,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "mother-city-firewood::8771185410211-45871823847587",
@@ -3325,7 +3343,7 @@
       "pricePerKgZar": 3.92,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8597520253091-45446594068643",
@@ -3343,7 +3361,7 @@
       "pricePerKgZar": 3.92,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "wood-gurus::8680839938206-46697620799646",
@@ -3361,7 +3379,7 @@
       "pricePerKgZar": 3.95,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:28.347Z"
+      "scrapedAt": "2026-10-27T08:24:18.712Z"
     },
     {
       "id": "cape-town-firewood::8037404606754-44507078754594",
@@ -3379,7 +3397,7 @@
       "pricePerKgZar": 3.95,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "cape-town-firewood::8037404246306-44507047559458",
@@ -3397,7 +3415,7 @@
       "pricePerKgZar": 3.95,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "cape-town-firewood::8088314020130-44508890038562",
@@ -3415,7 +3433,7 @@
       "pricePerKgZar": 3.95,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "mother-city-firewood::8915949912227-46467919184035",
@@ -3433,7 +3451,7 @@
       "pricePerKgZar": 3.97,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8597516583075-45692559786147",
@@ -3451,7 +3469,7 @@
       "pricePerKgZar": 3.99,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8597516189859-45280024166563",
@@ -3469,7 +3487,7 @@
       "pricePerKgZar": 3.99,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8597519728803-45243861008547",
@@ -3487,7 +3505,7 @@
       "pricePerKgZar": 3.99,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "cape-town-firewood::8037404606754-44507078721826",
@@ -3505,7 +3523,7 @@
       "pricePerKgZar": 3.99,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "cape-town-firewood::8037404246306-44507047526690",
@@ -3523,7 +3541,7 @@
       "pricePerKgZar": 3.99,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "cape-town-firewood::8088314020130-44508890005794",
@@ -3541,7 +3559,7 @@
       "pricePerKgZar": 3.99,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "mother-city-firewood::8771185410211-45871823814819",
@@ -3559,7 +3577,7 @@
       "pricePerKgZar": 4,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8803779772579-46434475671715",
@@ -3577,7 +3595,7 @@
       "pricePerKgZar": 4,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8597520253091-45216035504291",
@@ -3595,7 +3613,7 @@
       "pricePerKgZar": 4,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "cape-town-firewood::9617905713442-49615697543458",
@@ -3613,7 +3631,7 @@
       "pricePerKgZar": 4,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "cape-town-firewood::8114959843618-44444890235170",
@@ -3631,7 +3649,7 @@
       "pricePerKgZar": 4,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "cape-town-firewood::8037403754786-44514407416098",
@@ -3649,7 +3667,7 @@
       "pricePerKgZar": 4,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "mother-city-firewood::8771185410211-45871823749283",
@@ -3667,7 +3685,7 @@
       "pricePerKgZar": 4.08,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "cape-town-firewood::8383468011810-45562049167650",
@@ -3685,7 +3703,7 @@
       "pricePerKgZar": 4.1,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "lancehoudt::463",
@@ -3702,7 +3720,7 @@
       "pricePerKgZar": 4.11,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:33.625Z"
+      "scrapedAt": "2026-10-27T08:24:24.788Z"
     },
     {
       "id": "mother-city-firewood::8597520253091-45216035471523",
@@ -3720,7 +3738,7 @@
       "pricePerKgZar": 4.12,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8597516583075-45692559753379",
@@ -3738,7 +3756,7 @@
       "pricePerKgZar": 4.15,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8597519728803-45243860975779",
@@ -3756,7 +3774,7 @@
       "pricePerKgZar": 4.15,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8771185410211-45871823716515",
@@ -3774,7 +3792,7 @@
       "pricePerKgZar": 4.16,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8597520253091-45216035438755",
@@ -3792,7 +3810,7 @@
       "pricePerKgZar": 4.16,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "cape-town-firewood::8037403754786-44514407383330",
@@ -3810,7 +3828,7 @@
       "pricePerKgZar": 4.16,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "mother-city-firewood::8803779772579-45998478164131",
@@ -3828,7 +3846,7 @@
       "pricePerKgZar": 4.17,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8597520253091-45216035405987",
@@ -3846,7 +3864,7 @@
       "pricePerKgZar": 4.25,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "cape-town-firewood::9617905713442-49615697477922",
@@ -3864,7 +3882,7 @@
       "pricePerKgZar": 4.25,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "cape-town-firewood::8037403754786-44514407350562",
@@ -3882,7 +3900,7 @@
       "pricePerKgZar": 4.25,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "mother-city-firewood::8771185410211-45871823683747",
@@ -3900,7 +3918,7 @@
       "pricePerKgZar": 4.33,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8803779772579-45998478131363",
@@ -3918,7 +3936,7 @@
       "pricePerKgZar": 4.33,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "cape-town-firewood::8037404901666-44508896166178",
@@ -3936,7 +3954,7 @@
       "pricePerKgZar": 4.4,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "mother-city-firewood::8803779772579-45998478065827",
@@ -3954,7 +3972,7 @@
       "pricePerKgZar": 4.42,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8771185410211-45871823650979",
@@ -3972,7 +3990,7 @@
       "pricePerKgZar": 4.43,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "wood-gurus::8433528340638-45970048123038",
@@ -3990,7 +4008,7 @@
       "pricePerKgZar": 4.45,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:28.347Z"
+      "scrapedAt": "2026-10-27T08:24:18.712Z"
     },
     {
       "id": "mother-city-firewood::8597520253091-45216035373219",
@@ -4008,7 +4026,7 @@
       "pricePerKgZar": 4.49,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "cape-town-firewood::9617905713442-49615697412386",
@@ -4026,7 +4044,7 @@
       "pricePerKgZar": 4.49,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "cape-town-firewood::8037403754786-44514407317794",
@@ -4044,7 +4062,7 @@
       "pricePerKgZar": 4.49,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "mother-city-firewood::8803779772579-45998478033059",
@@ -4062,7 +4080,7 @@
       "pricePerKgZar": 4.5,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "cape-town-firewood::8037404901666-44508896133410",
@@ -4080,7 +4098,7 @@
       "pricePerKgZar": 4.5,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "cape-town-firewood::8910904754466-47605468758306",
@@ -4098,7 +4116,7 @@
       "pricePerKgZar": 4.6,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "cape-town-firewood::8088270635298-44508431417634",
@@ -4116,7 +4134,7 @@
       "pricePerKgZar": 4.6,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "cape-town-firewood::8910904754466-47605468725538",
@@ -4134,7 +4152,7 @@
       "pricePerKgZar": 4.62,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "cape-town-firewood::8088270635298-44508431384866",
@@ -4152,7 +4170,7 @@
       "pricePerKgZar": 4.62,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "mother-city-firewood::8803779772579-45998478000291",
@@ -4170,7 +4188,7 @@
       "pricePerKgZar": 4.66,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "cape-town-firewood::8910904754466-47605468692770",
@@ -4188,7 +4206,7 @@
       "pricePerKgZar": 4.66,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "cape-town-firewood::8088270635298-44508431352098",
@@ -4206,7 +4224,7 @@
       "pricePerKgZar": 4.66,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "cape-town-firewood::8037404901666-44508896100642",
@@ -4224,7 +4242,7 @@
       "pricePerKgZar": 4.66,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "lancehoudt::459",
@@ -4243,7 +4261,7 @@
       "maxPricePerKgZar": 5.13,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:33.625Z"
+      "scrapedAt": "2026-10-27T08:24:24.788Z"
     },
     {
       "id": "mother-city-firewood::8597519499427-45358428029091",
@@ -4261,7 +4279,7 @@
       "pricePerKgZar": 4.7,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8597519499427-45358427996323",
@@ -4279,7 +4297,7 @@
       "pricePerKgZar": 4.75,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "wood-gurus::8887147200670-48288312426654",
@@ -4297,7 +4315,7 @@
       "pricePerKgZar": 4.75,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:28.347Z"
+      "scrapedAt": "2026-10-27T08:24:18.712Z"
     },
     {
       "id": "cape-town-firewood::8910904754466-47605468660002",
@@ -4315,7 +4333,7 @@
       "pricePerKgZar": 4.75,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "cape-town-firewood::8088270635298-44508431319330",
@@ -4333,7 +4351,7 @@
       "pricePerKgZar": 4.75,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "cape-town-firewood::8037404901666-44508896067874",
@@ -4351,24 +4369,7 @@
       "pricePerKgZar": 4.75,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
-    },
-    {
-      "id": "wood-bros::red-gum-firewood-bags",
-      "vendorId": "wood-bros",
-      "vendorName": "The Wood Bros",
-      "title": "Red Gum FireWood Bags (100kg)",
-      "url": "https://www.thewoodbros.co.za/product-page/red-gum-firewood-bags",
-      "imageUrl": "https://static.wixstatic.com/media/b4fa82_617b3c38c62d4faabc0582cb40d92161~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
-      "species": "red-gum",
-      "usage": "both",
-      "packFormat": "pallet",
-      "priceZar": 480,
-      "weightKg": 100,
-      "pricePerKgZar": 4.8,
-      "weightEstimated": false,
-      "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:51.724Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "wood-bros::blue-gum-firewood-bags-100kg",
@@ -4385,7 +4386,24 @@
       "pricePerKgZar": 4.8,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:53.103Z"
+      "scrapedAt": "2026-10-27T08:24:48.190Z"
+    },
+    {
+      "id": "wood-bros::red-gum-firewood-bags",
+      "vendorId": "wood-bros",
+      "vendorName": "The Wood Bros",
+      "title": "Red Gum FireWood Bags (100kg)",
+      "url": "https://www.thewoodbros.co.za/product-page/red-gum-firewood-bags",
+      "imageUrl": "https://static.wixstatic.com/media/b4fa82_617b3c38c62d4faabc0582cb40d92161~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
+      "species": "red-gum",
+      "usage": "both",
+      "packFormat": "pallet",
+      "priceZar": 480,
+      "weightKg": 100,
+      "pricePerKgZar": 4.8,
+      "weightEstimated": false,
+      "inStock": true,
+      "scrapedAt": "2026-10-27T08:24:58.686Z"
     },
     {
       "id": "mother-city-firewood::8597519499427-45358427963555",
@@ -4403,7 +4421,7 @@
       "pricePerKgZar": 4.83,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "cape-town-firewood::8037404901666-44508896035106",
@@ -4421,7 +4439,7 @@
       "pricePerKgZar": 4.89,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "cape-town-firewood::9454036353314-49071312011554",
@@ -4439,7 +4457,7 @@
       "pricePerKgZar": 4.9,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "wood-gurus::8877540671646-48252562538654",
@@ -4457,7 +4475,7 @@
       "pricePerKgZar": 4.95,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:28.347Z"
+      "scrapedAt": "2026-10-27T08:24:18.712Z"
     },
     {
       "id": "firewood-company::625773",
@@ -4475,7 +4493,7 @@
       "pricePerKgZar": 4.95,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:30.032Z"
+      "scrapedAt": "2026-10-27T08:24:20.372Z"
     },
     {
       "id": "mother-city-firewood::8597520253091-46518054256803",
@@ -4493,7 +4511,7 @@
       "pricePerKgZar": 4.98,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8803779772579-45998477967523",
@@ -4511,7 +4529,7 @@
       "pricePerKgZar": 4.99,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "cape-town-firewood::8910904754466-47605468627234",
@@ -4529,7 +4547,7 @@
       "pricePerKgZar": 4.99,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "cape-town-firewood::8088270635298-44508431286562",
@@ -4547,7 +4565,7 @@
       "pricePerKgZar": 4.99,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "mother-city-firewood::8597519499427-45358427930787",
@@ -4565,7 +4583,7 @@
       "pricePerKgZar": 5,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "wood-gurus::8375406854302-45818186170526",
@@ -4583,7 +4601,7 @@
       "pricePerKgZar": 5,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:28.347Z"
+      "scrapedAt": "2026-10-27T08:24:18.712Z"
     },
     {
       "id": "cape-town-firewood::9454036353314-49071311978786",
@@ -4601,25 +4619,7 @@
       "pricePerKgZar": 5,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
-    },
-    {
-      "id": "cape-town-firewood::9871009579298-50400619954466",
-      "vendorId": "cape-town-firewood",
-      "vendorName": "Cape Town Firewood (CTF)",
-      "title": "Ultimate Braai Master Combo - Kameelhout | Wingerd Stompies",
-      "url": "https://capetownfirewood.co.za/products/ultimate-braai-master-combo?variant=50400619954466",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0691/7845/8402/files/Cape-Town-Firewood-Ultimate-Braai-Master-Summer-Combo-Deal.png?v=1759921448",
-      "species": "grape-vine",
-      "usage": "braai",
-      "packFormat": "pallet",
-      "priceZar": 1549,
-      "regularPriceZar": 2000,
-      "weightKg": 300,
-      "pricePerKgZar": 5.16,
-      "weightEstimated": false,
-      "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "fire-man::4635",
@@ -4636,7 +4636,7 @@
       "pricePerKgZar": 5.23,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:32.528Z"
+      "scrapedAt": "2026-10-27T08:24:23.492Z"
     },
     {
       "id": "mother-city-firewood::8597519499427-45358427898019",
@@ -4654,7 +4654,7 @@
       "pricePerKgZar": 5.25,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "cape-town-firewood::8612830183714-47142948176162",
@@ -4672,7 +4672,7 @@
       "pricePerKgZar": 5.25,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "lancehoudt::464",
@@ -4689,7 +4689,7 @@
       "pricePerKgZar": 5.27,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:33.625Z"
+      "scrapedAt": "2026-10-27T08:24:24.788Z"
     },
     {
       "id": "fire-man::2875",
@@ -4706,7 +4706,7 @@
       "pricePerKgZar": 5.3,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:32.528Z"
+      "scrapedAt": "2026-10-27T08:24:23.492Z"
     },
     {
       "id": "lancehoudt::460",
@@ -4725,7 +4725,7 @@
       "maxPricePerKgZar": 5.87,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:33.625Z"
+      "scrapedAt": "2026-10-27T08:24:24.788Z"
     },
     {
       "id": "mother-city-firewood::8597516058787-45497068322979",
@@ -4743,7 +4743,7 @@
       "pricePerKgZar": 5.4,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "cape-town-firewood::8612830183714-46687110005026",
@@ -4761,7 +4761,7 @@
       "pricePerKgZar": 5.4,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "cape-town-firewood::8088527405346-44507852570914",
@@ -4779,7 +4779,7 @@
       "pricePerKgZar": 5.43,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "mother-city-firewood::8597516091555-45507154280611",
@@ -4797,7 +4797,7 @@
       "pricePerKgZar": 5.44,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8597516058787-45497068290211",
@@ -4815,7 +4815,7 @@
       "pricePerKgZar": 5.44,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "firewood-company::209371",
@@ -4832,7 +4832,7 @@
       "pricePerKgZar": 5.45,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:30.032Z"
+      "scrapedAt": "2026-10-27T08:24:20.372Z"
     },
     {
       "id": "firewood-company::209359",
@@ -4849,7 +4849,7 @@
       "pricePerKgZar": 5.45,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:30.032Z"
+      "scrapedAt": "2026-10-27T08:24:20.372Z"
     },
     {
       "id": "mother-city-firewood::8597519499427-45358427865251",
@@ -4867,7 +4867,7 @@
       "pricePerKgZar": 5.49,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8597516058787-45497068257443",
@@ -4885,7 +4885,7 @@
       "pricePerKgZar": 5.5,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "cape-town-firewood::8612830183714-46687109972258",
@@ -4903,7 +4903,7 @@
       "pricePerKgZar": 5.5,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "mother-city-firewood::8597516091555-45507154247843",
@@ -4921,7 +4921,7 @@
       "pricePerKgZar": 5.55,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8597516058787-45497068224675",
@@ -4939,7 +4939,7 @@
       "pricePerKgZar": 5.57,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8597516058787-45216023314595",
@@ -4957,7 +4957,7 @@
       "pricePerKgZar": 5.58,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8597516058787-45216023281827",
@@ -4975,7 +4975,7 @@
       "pricePerKgZar": 5.6,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8597519237283-45283034333347",
@@ -4993,7 +4993,7 @@
       "pricePerKgZar": 5.6,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8597516058787-45216023249059",
@@ -5011,7 +5011,7 @@
       "pricePerKgZar": 5.62,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "cape-town-firewood::8080146432290-44316967272738",
@@ -5029,7 +5029,7 @@
       "pricePerKgZar": 5.62,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "cape-town-firewood::8080095707426-44316775711010",
@@ -5047,7 +5047,7 @@
       "pricePerKgZar": 5.62,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "cape-town-firewood::8612830183714-46687109939490",
@@ -5065,7 +5065,7 @@
       "pricePerKgZar": 5.62,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "cape-town-firewood::8037405720866-44508906946850",
@@ -5083,7 +5083,7 @@
       "pricePerKgZar": 5.62,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "mother-city-firewood::8597516058787-45216023216291",
@@ -5101,7 +5101,7 @@
       "pricePerKgZar": 5.66,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "cape-town-firewood::8037405720866-44508906914082",
@@ -5119,7 +5119,7 @@
       "pricePerKgZar": 5.66,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "cape-town-firewood::8080144269602-44316953837858",
@@ -5137,7 +5137,7 @@
       "pricePerKgZar": 5.67,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "cape-town-firewood::8080092299554-44316763947298",
@@ -5155,7 +5155,7 @@
       "pricePerKgZar": 5.67,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "mother-city-firewood::8597516091555-45507154215075",
@@ -5173,7 +5173,7 @@
       "pricePerKgZar": 5.69,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "cape-town-firewood::8620144820514-47143012335906",
@@ -5191,7 +5191,7 @@
       "pricePerKgZar": 5.7,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "cape-town-firewood::8612095164706-47142923796770",
@@ -5209,7 +5209,7 @@
       "pricePerKgZar": 5.7,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "cape-town-firewood::8088527405346-44507852603682",
@@ -5227,7 +5227,7 @@
       "pricePerKgZar": 5.7,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "cape-town-firewood::8037405294882-44165378375970",
@@ -5245,7 +5245,7 @@
       "pricePerKgZar": 5.7,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "cape-town-firewood::8037405163810-44165378179362",
@@ -5263,7 +5263,7 @@
       "pricePerKgZar": 5.7,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "cape-town-firewood::8620144820514-46701260210466",
@@ -5281,7 +5281,7 @@
       "pricePerKgZar": 5.73,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "cape-town-firewood::8612095164706-46684184805666",
@@ -5299,7 +5299,7 @@
       "pricePerKgZar": 5.73,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "cape-town-firewood::8037405360418-44165378441506",
@@ -5317,7 +5317,7 @@
       "pricePerKgZar": 5.73,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "cape-town-firewood::8037405262114-44165378343202",
@@ -5335,7 +5335,7 @@
       "pricePerKgZar": 5.73,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "mother-city-firewood::8597516058787-45216023183523",
@@ -5353,7 +5353,7 @@
       "pricePerKgZar": 5.75,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "wood-gurus::8877541359774-48252565258398",
@@ -5371,7 +5371,7 @@
       "pricePerKgZar": 5.75,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:28.347Z"
+      "scrapedAt": "2026-10-27T08:24:18.712Z"
     },
     {
       "id": "cape-town-firewood::8612830183714-46687109906722",
@@ -5389,7 +5389,7 @@
       "pricePerKgZar": 5.75,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "cape-town-firewood::8097285701922-44375478599970",
@@ -5407,7 +5407,7 @@
       "pricePerKgZar": 5.75,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "cape-town-firewood::8080147972386-44509097820450",
@@ -5425,7 +5425,7 @@
       "pricePerKgZar": 5.75,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "cape-town-firewood::8037405720866-44508906881314",
@@ -5443,7 +5443,7 @@
       "pricePerKgZar": 5.75,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "cape-town-firewood::8088527405346-44507852669218",
@@ -5461,7 +5461,7 @@
       "pricePerKgZar": 5.77,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "fire-man::41436",
@@ -5478,7 +5478,7 @@
       "pricePerKgZar": 5.77,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:32.528Z"
+      "scrapedAt": "2026-10-27T08:24:23.492Z"
     },
     {
       "id": "cape-town-firewood::8612830183714-46687109873954",
@@ -5496,7 +5496,7 @@
       "pricePerKgZar": 5.79,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "wood-gurus::8877545390238-48252613132446",
@@ -5514,7 +5514,7 @@
       "pricePerKgZar": 5.8,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:28.347Z"
+      "scrapedAt": "2026-10-27T08:24:18.712Z"
     },
     {
       "id": "cape-town-firewood::8620144820514-46701260177698",
@@ -5532,7 +5532,7 @@
       "pricePerKgZar": 5.8,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "cape-town-firewood::8612095164706-46684184772898",
@@ -5550,7 +5550,7 @@
       "pricePerKgZar": 5.8,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "cape-town-firewood::8037405557026-44165378670882",
@@ -5568,7 +5568,7 @@
       "pricePerKgZar": 5.8,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "cape-town-firewood::8037405458722-44165378572578",
@@ -5586,7 +5586,7 @@
       "pricePerKgZar": 5.8,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "mother-city-firewood::8597519499427-45358427799715",
@@ -5604,25 +5604,7 @@
       "pricePerKgZar": 5.82,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
-    },
-    {
-      "id": "cape-town-firewood::8037404770594-44165377655074",
-      "vendorId": "cape-town-firewood",
-      "vendorName": "Cape Town Firewood (CTF)",
-      "title": "Rooikrans Braai Wood Bulk (Local) | 500 Loose Pieces",
-      "url": "https://capetownfirewood.co.za/products/rooikrans-braai-wood-bulk-local-500-loose-pieces?variant=44165377655074",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0691/7845/8402/products/Rooikrans_Braai_Wood_Bulk.jpg?v=1726917885",
-      "species": "rooikrans",
-      "usage": "braai",
-      "packFormat": "pallet",
-      "priceZar": 1449,
-      "regularPriceZar": 1750,
-      "weightKg": 249,
-      "pricePerKgZar": 5.82,
-      "weightEstimated": false,
-      "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "cape-town-firewood::8088527405346-44507852636450",
@@ -5640,7 +5622,7 @@
       "pricePerKgZar": 5.83,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "mother-city-firewood::8597516091555-45507154182307",
@@ -5658,7 +5640,7 @@
       "pricePerKgZar": 5.87,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "cape-town-firewood::8037405720866-44508906848546",
@@ -5676,7 +5658,7 @@
       "pricePerKgZar": 5.89,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "wood-gurus::10294964748446-50530659139742",
@@ -5694,7 +5676,7 @@
       "pricePerKgZar": 5.93,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:28.347Z"
+      "scrapedAt": "2026-10-27T08:24:18.712Z"
     },
     {
       "id": "cape-town-firewood::8080147972386-44509097787682",
@@ -5712,7 +5694,7 @@
       "pricePerKgZar": 5.93,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "wood-gurus::5552012722334-35576033640606",
@@ -5730,7 +5712,7 @@
       "pricePerKgZar": 5.95,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:28.347Z"
+      "scrapedAt": "2026-10-27T08:24:18.712Z"
     },
     {
       "id": "mother-city-firewood::8597516058787-45216023150755",
@@ -5748,7 +5730,7 @@
       "pricePerKgZar": 5.99,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8597518057635-45291946311843",
@@ -5766,7 +5748,7 @@
       "pricePerKgZar": 6,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8597519237283-45283034300579",
@@ -5784,7 +5766,7 @@
       "pricePerKgZar": 6,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "cape-town-firewood::9617905713442-49615697510690",
@@ -5802,7 +5784,7 @@
       "pricePerKgZar": 6,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "cape-town-firewood::8080147972386-44509097754914",
@@ -5820,7 +5802,7 @@
       "pricePerKgZar": 6.04,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "cape-town-firewood::8067052372258-44268143411490",
@@ -5838,7 +5820,7 @@
       "pricePerKgZar": 6.04,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "mother-city-firewood::8597516091555-45216023511203",
@@ -5856,7 +5838,7 @@
       "pricePerKgZar": 6.11,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8597519237283-45283034267811",
@@ -5874,7 +5856,7 @@
       "pricePerKgZar": 6.17,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "cape-town-firewood::8620144820514-46701260144930",
@@ -5892,7 +5874,7 @@
       "pricePerKgZar": 6.2,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "cape-town-firewood::8612095164706-46684184740130",
@@ -5910,7 +5892,7 @@
       "pricePerKgZar": 6.2,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "cape-town-firewood::8037405622562-44165378736418",
@@ -5928,7 +5910,7 @@
       "pricePerKgZar": 6.2,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "cape-town-firewood::8037405491490-44165378605346",
@@ -5946,7 +5928,7 @@
       "pricePerKgZar": 6.2,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "cape-town-firewood::8037405786402-44507760754978",
@@ -5964,7 +5946,7 @@
       "pricePerKgZar": 6.22,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "cape-town-firewood::8080147972386-44509097722146",
@@ -5982,7 +5964,7 @@
       "pricePerKgZar": 6.24,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "mother-city-firewood::8597518057635-45291946279075",
@@ -6000,7 +5982,7 @@
       "pricePerKgZar": 6.25,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "wood-gurus::8433556324510-45970138529950",
@@ -6018,7 +6000,7 @@
       "pricePerKgZar": 6.25,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:28.347Z"
+      "scrapedAt": "2026-10-27T08:24:18.712Z"
     },
     {
       "id": "cape-town-firewood::8037405786402-44507760722210",
@@ -6036,7 +6018,7 @@
       "pricePerKgZar": 6.25,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "cape-town-firewood::8037405786402-44507760689442",
@@ -6054,7 +6036,7 @@
       "pricePerKgZar": 6.29,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "mother-city-firewood::8597516058787-47375623028899",
@@ -6072,7 +6054,7 @@
       "pricePerKgZar": 6.32,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8597519237283-45283034235043",
@@ -6090,7 +6072,7 @@
       "pricePerKgZar": 6.37,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "cape-town-firewood::8620144820514-46701260112162",
@@ -6108,7 +6090,7 @@
       "pricePerKgZar": 6.38,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "cape-town-firewood::8612095164706-46684184707362",
@@ -6126,7 +6108,7 @@
       "pricePerKgZar": 6.38,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "cape-town-firewood::8037405786402-44507760656674",
@@ -6144,7 +6126,7 @@
       "pricePerKgZar": 6.38,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "wood-gurus::8391397834910-45857956626590",
@@ -6162,7 +6144,7 @@
       "pricePerKgZar": 6.39,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:28.347Z"
+      "scrapedAt": "2026-10-27T08:24:18.712Z"
     },
     {
       "id": "mother-city-firewood::9154375975075-47785209856163",
@@ -6180,7 +6162,7 @@
       "pricePerKgZar": 6.4,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "cape-town-firewood::8097326989602-44375660560674",
@@ -6198,7 +6180,7 @@
       "pricePerKgZar": 6.4,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "cape-town-firewood::8097311129890-44375596564770",
@@ -6216,7 +6198,7 @@
       "pricePerKgZar": 6.4,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "cape-town-firewood::8096017285410-45317612896546",
@@ -6234,7 +6216,7 @@
       "pricePerKgZar": 6.43,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "mother-city-firewood::8597518909603-45284069015715",
@@ -6252,7 +6234,7 @@
       "pricePerKgZar": 6.44,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8597516091555-45216023478435",
@@ -6270,7 +6252,7 @@
       "pricePerKgZar": 6.44,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8597518057635-45216029474979",
@@ -6288,7 +6270,7 @@
       "pricePerKgZar": 6.45,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "cape-town-firewood::9617905713442-49615697445154",
@@ -6306,7 +6288,7 @@
       "pricePerKgZar": 6.49,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "mother-city-firewood::9154375975075-47785209823395",
@@ -6324,7 +6306,7 @@
       "pricePerKgZar": 6.5,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8597519237283-45283034202275",
@@ -6342,7 +6324,7 @@
       "pricePerKgZar": 6.5,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "cape-town-firewood::8096017285410-45317612863778",
@@ -6360,7 +6342,7 @@
       "pricePerKgZar": 6.5,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "cape-town-firewood::8620144820514-46701260079394",
@@ -6378,7 +6360,7 @@
       "pricePerKgZar": 6.54,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "cape-town-firewood::8612095164706-46684184674594",
@@ -6396,7 +6378,7 @@
       "pricePerKgZar": 6.54,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "cape-town-firewood::8037405786402-44507760623906",
@@ -6414,7 +6396,7 @@
       "pricePerKgZar": 6.54,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "mother-city-firewood::8597518057635-45216029442211",
@@ -6432,7 +6414,7 @@
       "pricePerKgZar": 6.56,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "cape-town-firewood::8080147972386-44509097689378",
@@ -6450,7 +6432,7 @@
       "pricePerKgZar": 6.61,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "lancehoudt::461",
@@ -6467,7 +6449,7 @@
       "pricePerKgZar": 6.61,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:33.625Z"
+      "scrapedAt": "2026-10-27T08:24:24.788Z"
     },
     {
       "id": "cape-town-firewood::8088527405346-44507852538146",
@@ -6485,7 +6467,7 @@
       "pricePerKgZar": 6.64,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "mother-city-firewood::9154375975075-47785209790627",
@@ -6503,7 +6485,7 @@
       "pricePerKgZar": 6.66,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8597518909603-45284068884643",
@@ -6521,7 +6503,7 @@
       "pricePerKgZar": 6.66,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8597516091555-45216023445667",
@@ -6539,7 +6521,7 @@
       "pricePerKgZar": 6.66,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "cape-town-firewood::8332146606370-45369368248610",
@@ -6557,7 +6539,7 @@
       "pricePerKgZar": 6.66,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "cape-town-firewood::8096017285410-45317612765474",
@@ -6575,7 +6557,7 @@
       "pricePerKgZar": 6.66,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "firewood-company::605",
@@ -6592,7 +6574,7 @@
       "pricePerKgZar": 6.67,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:30.032Z"
+      "scrapedAt": "2026-10-27T08:24:20.372Z"
     },
     {
       "id": "firewood-company::609",
@@ -6609,7 +6591,7 @@
       "pricePerKgZar": 6.67,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:30.032Z"
+      "scrapedAt": "2026-10-27T08:24:20.372Z"
     },
     {
       "id": "firewood-company::626943",
@@ -6626,7 +6608,7 @@
       "pricePerKgZar": 6.67,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:30.032Z"
+      "scrapedAt": "2026-10-27T08:24:20.372Z"
     },
     {
       "id": "mother-city-firewood::8597518811299-47943876673699",
@@ -6644,7 +6626,7 @@
       "pricePerKgZar": 6.71,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8597518811299-45359177498787",
@@ -6662,7 +6644,7 @@
       "pricePerKgZar": 6.76,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "cape-town-firewood::8080783802658-44319208440098",
@@ -6680,7 +6662,7 @@
       "pricePerKgZar": 6.8,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "mother-city-firewood::8597518057635-45216029409443",
@@ -6698,7 +6680,7 @@
       "pricePerKgZar": 6.86,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "cape-town-firewood::8037405688098-44507891663138",
@@ -6716,7 +6698,7 @@
       "pricePerKgZar": 6.87,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "cape-town-firewood::8080781639970-44319193694498",
@@ -6734,7 +6716,7 @@
       "pricePerKgZar": 6.9,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "mother-city-firewood::8597518811299-45216031637667",
@@ -6752,7 +6734,7 @@
       "pricePerKgZar": 6.91,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "lancehoudt::457",
@@ -6771,7 +6753,7 @@
       "maxPricePerKgZar": 8.39,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:33.625Z"
+      "scrapedAt": "2026-10-27T08:24:24.788Z"
     },
     {
       "id": "cape-town-firewood::8037405688098-44507891630370",
@@ -6789,7 +6771,7 @@
       "pricePerKgZar": 6.93,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "cape-town-firewood::8037405688098-44507891597602",
@@ -6807,7 +6789,7 @@
       "pricePerKgZar": 6.95,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "mother-city-firewood::8597518811299-45216031604899",
@@ -6825,7 +6807,7 @@
       "pricePerKgZar": 6.96,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "lancehoudt::465",
@@ -6842,7 +6824,7 @@
       "pricePerKgZar": 6.96,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:33.625Z"
+      "scrapedAt": "2026-10-27T08:24:24.788Z"
     },
     {
       "id": "cape-town-firewood::9617905713442-49615697379618",
@@ -6860,7 +6842,7 @@
       "pricePerKgZar": 6.98,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "mother-city-firewood::9154375975075-47785209725091",
@@ -6878,7 +6860,7 @@
       "pricePerKgZar": 6.99,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "cape-town-firewood::8037405688098-44507891564834",
@@ -6896,7 +6878,7 @@
       "pricePerKgZar": 6.99,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "mother-city-firewood::9154375975075-47785209757859",
@@ -6914,7 +6896,7 @@
       "pricePerKgZar": 7,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8597519270051-45285738283171",
@@ -6931,7 +6913,7 @@
       "pricePerKgZar": 7,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "cape-town-firewood::8037404999970-44165378015522",
@@ -6949,7 +6931,7 @@
       "pricePerKgZar": 7,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "cape-town-firewood::8037404967202-44165377982754",
@@ -6967,7 +6949,7 @@
       "pricePerKgZar": 7,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "firewood-company::209283",
@@ -6984,7 +6966,7 @@
       "pricePerKgZar": 7,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:30.032Z"
+      "scrapedAt": "2026-10-27T08:24:20.372Z"
     },
     {
       "id": "firewood-company::629813",
@@ -7001,7 +6983,7 @@
       "pricePerKgZar": 7,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:30.032Z"
+      "scrapedAt": "2026-10-27T08:24:20.372Z"
     },
     {
       "id": "mother-city-firewood::8597518909603-45284068982947",
@@ -7019,7 +7001,7 @@
       "pricePerKgZar": 7.03,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8597516091555-45216023412899",
@@ -7037,7 +7019,7 @@
       "pricePerKgZar": 7.03,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8597518811299-45216031572131",
@@ -7055,7 +7037,7 @@
       "pricePerKgZar": 7.06,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "namibian-hardwood::28811",
@@ -7074,7 +7056,7 @@
       "maxPricePerKgZar": 8.72,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:41.347Z"
+      "scrapedAt": "2026-10-27T08:24:37.762Z"
     },
     {
       "id": "cape-town-firewood::8037405065506-44165378081058",
@@ -7092,7 +7074,7 @@
       "pricePerKgZar": 7.1,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "fire-man::41621",
@@ -7109,7 +7091,7 @@
       "pricePerKgZar": 7.14,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:32.528Z"
+      "scrapedAt": "2026-10-27T08:24:23.492Z"
     },
     {
       "id": "lancehoudt::1522",
@@ -7128,7 +7110,7 @@
       "maxPricePerKgZar": 8.01,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:33.625Z"
+      "scrapedAt": "2026-10-27T08:24:24.788Z"
     },
     {
       "id": "namibian-hardwood::28699",
@@ -7147,7 +7129,7 @@
       "maxPricePerKgZar": 8.83,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:41.347Z"
+      "scrapedAt": "2026-10-27T08:24:37.762Z"
     },
     {
       "id": "cape-town-firewood::8037405098274-44165378113826",
@@ -7165,7 +7147,7 @@
       "pricePerKgZar": 7.2,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "namibian-hardwood::28710",
@@ -7184,7 +7166,7 @@
       "maxPricePerKgZar": 8.89,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:41.347Z"
+      "scrapedAt": "2026-10-27T08:24:37.762Z"
     },
     {
       "id": "mother-city-firewood::8744211054755-45771749785763",
@@ -7202,7 +7184,7 @@
       "pricePerKgZar": 7.25,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8597519270051-45285738250403",
@@ -7219,7 +7201,7 @@
       "pricePerKgZar": 7.25,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8597518057635-45216029376675",
@@ -7237,7 +7219,7 @@
       "pricePerKgZar": 7.27,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8597519270051-45285738217635",
@@ -7254,7 +7236,7 @@
       "pricePerKgZar": 7.33,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8597518811299-45216031539363",
@@ -7272,7 +7254,7 @@
       "pricePerKgZar": 7.35,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8597519270051-45285738184867",
@@ -7289,7 +7271,7 @@
       "pricePerKgZar": 7.37,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "lancehoudt::458",
@@ -7308,7 +7290,7 @@
       "maxPricePerKgZar": 8.86,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:33.625Z"
+      "scrapedAt": "2026-10-27T08:24:24.788Z"
     },
     {
       "id": "fire-man::2986",
@@ -7325,7 +7307,7 @@
       "pricePerKgZar": 7.43,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:32.528Z"
+      "scrapedAt": "2026-10-27T08:24:23.492Z"
     },
     {
       "id": "mother-city-firewood::9154375975075-47785209692323",
@@ -7343,7 +7325,7 @@
       "pricePerKgZar": 7.48,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8597518909603-45284068917411",
@@ -7361,7 +7343,7 @@
       "pricePerKgZar": 7.49,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8744211054755-45771749752995",
@@ -7379,7 +7361,7 @@
       "pricePerKgZar": 7.49,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8597516091555-45216023380131",
@@ -7397,7 +7379,7 @@
       "pricePerKgZar": 7.49,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8597519270051-45285738152099",
@@ -7414,7 +7396,7 @@
       "pricePerKgZar": 7.5,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "firewood-company::1029",
@@ -7431,7 +7413,7 @@
       "pricePerKgZar": 7.5,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:30.032Z"
+      "scrapedAt": "2026-10-27T08:24:20.372Z"
     },
     {
       "id": "namibian-hardwood::28821",
@@ -7450,7 +7432,7 @@
       "maxPricePerKgZar": 9.17,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:41.347Z"
+      "scrapedAt": "2026-10-27T08:24:37.762Z"
     },
     {
       "id": "namibian-hardwood::28543",
@@ -7467,7 +7449,7 @@
       "pricePerKgZar": 7.67,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:41.347Z"
+      "scrapedAt": "2026-10-27T08:24:37.762Z"
     },
     {
       "id": "mother-city-firewood::8597518909603-45284068851875",
@@ -7485,7 +7467,7 @@
       "pricePerKgZar": 7.77,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8597516091555-45216023347363",
@@ -7503,7 +7485,7 @@
       "pricePerKgZar": 7.77,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "wood-gurus::15387299119262-67556363174046",
@@ -7521,7 +7503,7 @@
       "pricePerKgZar": 7.8,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:28.347Z"
+      "scrapedAt": "2026-10-27T08:24:18.712Z"
     },
     {
       "id": "mother-city-firewood::8744211054755-45771749720227",
@@ -7539,7 +7521,7 @@
       "pricePerKgZar": 7.98,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "cape-town-firewood::9617905713442-49578013491490",
@@ -7557,7 +7539,7 @@
       "pricePerKgZar": 7.99,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "namibian-hardwood::28555",
@@ -7574,7 +7556,7 @@
       "pricePerKgZar": 8,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:41.347Z"
+      "scrapedAt": "2026-10-27T08:24:37.762Z"
     },
     {
       "id": "mother-city-firewood::8744211054755-45771749687459",
@@ -7592,7 +7574,7 @@
       "pricePerKgZar": 8.3,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8597518909603-45284068819107",
@@ -7610,7 +7592,7 @@
       "pricePerKgZar": 8.31,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8597516091555-47374340784291",
@@ -7628,7 +7610,7 @@
       "pricePerKgZar": 8.31,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "lancehoudt::466",
@@ -7645,7 +7627,7 @@
       "pricePerKgZar": 8.39,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:33.625Z"
+      "scrapedAt": "2026-10-27T08:24:24.788Z"
     },
     {
       "id": "namibian-hardwood::28538",
@@ -7662,7 +7644,7 @@
       "pricePerKgZar": 8.39,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:41.347Z"
+      "scrapedAt": "2026-10-27T08:24:37.762Z"
     },
     {
       "id": "cape-town-firewood::8080099213602-44507778744610",
@@ -7680,7 +7662,7 @@
       "pricePerKgZar": 8.57,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "namibian-hardwood::28528",
@@ -7697,7 +7679,7 @@
       "pricePerKgZar": 8.67,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:41.347Z"
+      "scrapedAt": "2026-10-27T08:24:37.762Z"
     },
     {
       "id": "namibian-hardwood::28518",
@@ -7714,7 +7696,7 @@
       "pricePerKgZar": 8.67,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:41.347Z"
+      "scrapedAt": "2026-10-27T08:24:37.762Z"
     },
     {
       "id": "lancehoudt::467",
@@ -7731,7 +7713,7 @@
       "pricePerKgZar": 8.71,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:33.625Z"
+      "scrapedAt": "2026-10-27T08:24:24.788Z"
     },
     {
       "id": "namibian-hardwood::28427",
@@ -7748,7 +7730,7 @@
       "pricePerKgZar": 8.72,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:41.347Z"
+      "scrapedAt": "2026-10-27T08:24:37.762Z"
     },
     {
       "id": "lancehoudt::1528",
@@ -7767,7 +7749,7 @@
       "maxPricePerKgZar": 9.8,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:33.625Z"
+      "scrapedAt": "2026-10-27T08:24:24.788Z"
     },
     {
       "id": "cape-town-firewood::8080099213602-44507778711842",
@@ -7785,7 +7767,7 @@
       "pricePerKgZar": 8.92,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "cape-town-firewood::9617905713442-49578013458722",
@@ -7803,7 +7785,7 @@
       "pricePerKgZar": 8.98,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "namibian-hardwood::28441",
@@ -7820,7 +7802,7 @@
       "pricePerKgZar": 9,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:41.347Z"
+      "scrapedAt": "2026-10-27T08:24:37.762Z"
     },
     {
       "id": "namibian-hardwood::28840",
@@ -7837,7 +7819,7 @@
       "pricePerKgZar": 9,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:41.347Z"
+      "scrapedAt": "2026-10-27T08:24:37.762Z"
     },
     {
       "id": "cape-town-firewood::8080099213602-44507778679074",
@@ -7855,7 +7837,7 @@
       "pricePerKgZar": 9.04,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "cape-town-firewood::8080099213602-44507778646306",
@@ -7873,7 +7855,7 @@
       "pricePerKgZar": 9.27,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "namibian-hardwood::28432",
@@ -7890,7 +7872,7 @@
       "pricePerKgZar": 9.33,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:41.347Z"
+      "scrapedAt": "2026-10-27T08:24:37.762Z"
     },
     {
       "id": "cape-town-firewood::8080099213602-44507778613538",
@@ -7908,7 +7890,7 @@
       "pricePerKgZar": 9.4,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "cape-town-firewood::9617905713442-49578013425954",
@@ -7926,7 +7908,7 @@
       "pricePerKgZar": 9.96,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "mother-city-firewood::9042147246243-47408201269411",
@@ -7944,7 +7926,7 @@
       "pricePerKgZar": 11.63,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "cape-town-firewood::8088892997922-44507562639650",
@@ -7962,7 +7944,7 @@
       "pricePerKgZar": 12,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "cape-town-firewood::8332146606370-45369368281378",
@@ -7980,7 +7962,7 @@
       "pricePerKgZar": 12.33,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "mother-city-firewood::8597516189859-45280024133795",
@@ -7998,7 +7980,7 @@
       "pricePerKgZar": 12.45,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "cape-town-firewood::8088892997922-44507562606882",
@@ -8016,7 +7998,7 @@
       "pricePerKgZar": 12.5,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "cape-town-firewood::8088892997922-44507562574114",
@@ -8034,7 +8016,7 @@
       "pricePerKgZar": 12.66,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "cape-town-firewood::8088892997922-44507562541346",
@@ -8052,7 +8034,7 @@
       "pricePerKgZar": 12.99,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "cape-town-firewood::8096017285410-45317612798242",
@@ -8070,7 +8052,7 @@
       "pricePerKgZar": 13.16,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "cape-town-firewood::8088892997922-44507523350818",
@@ -8088,7 +8070,7 @@
       "pricePerKgZar": 13.58,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "cape-town-firewood::8332146606370-45369368314146",
@@ -8106,7 +8088,7 @@
       "pricePerKgZar": 17.99,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "cape-town-firewood::8096017285410-45317612831010",
@@ -8124,7 +8106,7 @@
       "pricePerKgZar": 19.66,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "cape-town-firewood::8332146606370-45369368346914",
@@ -8142,7 +8124,7 @@
       "pricePerKgZar": 23.66,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "cape-town-firewood::8332146606370-45369368379682",
@@ -8160,7 +8142,7 @@
       "pricePerKgZar": 28.66,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "cape-town-firewood::8866151039266-47435988435234",
@@ -8178,7 +8160,7 @@
       "pricePerKgZar": 29.35,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "cape-town-firewood::8332146606370-45369392136482",
@@ -8196,7 +8178,7 @@
       "pricePerKgZar": 33.99,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "cape-town-firewood::8089667141922-44348050768162",
@@ -8214,7 +8196,7 @@
       "pricePerKgZar": 76.67,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "cape-town-firewood::8089656230178-44348001386786",
@@ -8232,7 +8214,7 @@
       "pricePerKgZar": 76.67,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "cape-town-firewood::8089647120674-44347963998498",
@@ -8250,7 +8232,7 @@
       "pricePerKgZar": 76.67,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "cape-town-firewood::8089610813730-44347850850594",
@@ -8268,7 +8250,7 @@
       "pricePerKgZar": 76.67,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "cape-town-firewood::8089588793634-44347781382434",
@@ -8286,7 +8268,7 @@
       "pricePerKgZar": 76.67,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "cape-town-firewood::8089570541858-44347668594978",
@@ -8304,7 +8286,7 @@
       "pricePerKgZar": 76.67,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "cape-town-firewood::8089539215650-44347523760418",
@@ -8322,7 +8304,7 @@
       "pricePerKgZar": 76.67,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "cape-town-firewood::8089526239522-44347425915170",
@@ -8340,7 +8322,7 @@
       "pricePerKgZar": 76.67,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "cape-town-firewood::8089514869026-44347352711458",
@@ -8358,7 +8340,7 @@
       "pricePerKgZar": 76.67,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "cape-town-firewood::8089496355106-44347289862434",
@@ -8376,7 +8358,7 @@
       "pricePerKgZar": 76.67,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "cape-town-firewood::8089422987554-44346723008802",
@@ -8394,7 +8376,7 @@
       "pricePerKgZar": 76.67,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "cape-town-firewood::8089403031842-44346608091426",
@@ -8412,7 +8394,7 @@
       "pricePerKgZar": 76.67,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "cape-town-firewood::8089390121250-44346510278946",
@@ -8430,7 +8412,7 @@
       "pricePerKgZar": 76.67,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "cape-town-firewood::8089368658210-44346413908258",
@@ -8448,7 +8430,7 @@
       "pricePerKgZar": 76.67,
       "weightEstimated": false,
       "inStock": true,
-      "scrapedAt": "2026-10-26T08:09:29.048Z"
+      "scrapedAt": "2026-10-27T08:24:19.342Z"
     },
     {
       "id": "mother-city-firewood::8751378989219-45790650663075",
@@ -8466,7 +8448,7 @@
       "pricePerKgZar": 91.5,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8751122743459-45789128032419",
@@ -8484,7 +8466,7 @@
       "pricePerKgZar": 91.5,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8750769209507-45788571959459",
@@ -8502,7 +8484,7 @@
       "pricePerKgZar": 91.5,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8750307147939-45787193999523",
@@ -8520,7 +8502,7 @@
       "pricePerKgZar": 91.5,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8751540437155-45790984208547",
@@ -8538,7 +8520,7 @@
       "pricePerKgZar": 99.33,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8743949500579-45770548904099",
@@ -8556,7 +8538,7 @@
       "pricePerKgZar": 99.33,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8743908245667-45770438639779",
@@ -8574,7 +8556,7 @@
       "pricePerKgZar": 99.33,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8743718551715-45769951412387",
@@ -8592,7 +8574,7 @@
       "pricePerKgZar": 99.33,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8743645511843-45769319547043",
@@ -8610,7 +8592,7 @@
       "pricePerKgZar": 99.33,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8597517402275-45216026951843",
@@ -8628,7 +8610,7 @@
       "pricePerKgZar": 99.33,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8597517369507-45216026919075",
@@ -8646,7 +8628,7 @@
       "pricePerKgZar": 99.33,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8597517107363-45216026362019",
@@ -8664,7 +8646,7 @@
       "pricePerKgZar": 99.33,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8597517172899-45216026722467",
@@ -8682,7 +8664,7 @@
       "pricePerKgZar": 99.33,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8597517074595-45216026329251",
@@ -8700,7 +8682,7 @@
       "pricePerKgZar": 99.33,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8597517238435-45216026788003",
@@ -8718,7 +8700,7 @@
       "pricePerKgZar": 99.33,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8597517271203-45216026820771",
@@ -8736,7 +8718,7 @@
       "pricePerKgZar": 99.33,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8597517336739-45216026886307",
@@ -8754,7 +8736,7 @@
       "pricePerKgZar": 99.33,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8597517303971-45216026853539",
@@ -8772,7 +8754,7 @@
       "pricePerKgZar": 99.33,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8597517205667-45216026755235",
@@ -8790,7 +8772,7 @@
       "pricePerKgZar": 99.33,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8597517435043-45216026984611",
@@ -8808,7 +8790,7 @@
       "pricePerKgZar": 99.33,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8597517500579-45216027345059",
@@ -8826,7 +8808,7 @@
       "pricePerKgZar": 99.33,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8597517533347-45216027377827",
@@ -8844,7 +8826,7 @@
       "pricePerKgZar": 99.33,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     },
     {
       "id": "mother-city-firewood::8597517566115-45240584208547",
@@ -8862,7 +8844,7 @@
       "pricePerKgZar": 99.33,
       "weightEstimated": false,
       "inStock": false,
-      "scrapedAt": "2026-10-26T08:09:27.540Z"
+      "scrapedAt": "2026-10-27T08:24:18.118Z"
     }
   ],
   "vendorRunStatus": {
@@ -8870,49 +8852,49 @@
       "ok": true,
       "count": 199,
       "rawCount": 233,
-      "ranAt": "2026-10-26T08:09:27.540Z"
+      "ranAt": "2026-10-27T08:24:18.117Z"
     },
     "wood-gurus": {
       "ok": true,
       "count": 22,
-      "rawCount": 75,
-      "ranAt": "2026-10-26T08:09:28.347Z"
+      "rawCount": 77,
+      "ranAt": "2026-10-27T08:24:18.712Z"
     },
     "cape-town-firewood": {
       "ok": true,
-      "count": 190,
+      "count": 189,
       "rawCount": 267,
-      "ranAt": "2026-10-26T08:09:29.048Z"
+      "ranAt": "2026-10-27T08:24:19.341Z"
     },
     "firewood-company": {
       "ok": true,
       "count": 9,
       "rawCount": 32,
-      "ranAt": "2026-10-26T08:09:30.032Z"
+      "ranAt": "2026-10-27T08:24:20.371Z"
     },
     "fire-man": {
       "ok": true,
       "count": 5,
       "rawCount": 18,
-      "ranAt": "2026-10-26T08:09:32.527Z"
+      "ranAt": "2026-10-27T08:24:23.491Z"
     },
     "lancehoudt": {
       "ok": true,
       "count": 38,
       "rawCount": 47,
-      "ranAt": "2026-10-26T08:09:33.624Z"
+      "ranAt": "2026-10-27T08:24:24.788Z"
     },
     "namibian-hardwood": {
       "ok": true,
       "count": 13,
       "rawCount": 68,
-      "ranAt": "2026-10-26T08:09:41.346Z"
+      "ranAt": "2026-10-27T08:24:37.762Z"
     },
     "wood-bros": {
       "ok": true,
       "count": 18,
       "rawCount": 18,
-      "ranAt": "2026-10-26T08:09:47.900Z"
+      "ranAt": "2026-10-27T08:24:44.220Z"
     }
   }
 }
