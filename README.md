@@ -145,7 +145,7 @@ src/
     globals.css              # Tailwind v4
   components/
     SiteNav.tsx              # Top nav with active-route highlighting
-    SiteFooter.tsx           # Footer with independence note + GitHub link
+    SiteFooter.tsx           # Footer with independence note, Sheet Solved credit + GitHub link
     ProductBrowser.tsx       # Client: facet filters, sort, pagination, filter drawer
     VendorComparison.tsx     # Server-rendered spotlights + CSS bar charts
     VendorFailureNotice.tsx  # Names a city's vendors that failed to refresh, and how old their prices are

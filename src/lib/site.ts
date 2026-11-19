@@ -23,6 +23,12 @@ export const SITE_URL =
       : "http://localhost:3000");
 
 /**
+ * The Sheet Solved hub, which this site is a spoke of. The hub links here from
+ * its home page and its project index, and the footer links back.
+ */
+export const HUB_URL = "https://sheetsolved.com";
+
+/**
  * Whether this deployment is the public production one.
  *
  * A preview build must not invite indexing: it serves the same content on a
