@@ -1,5 +1,6 @@
 import { afterEach, describe, expect, test, vi } from "vitest";
 import {
+  describeFetchFailure,
   describeNonJson,
   extractWooPrice,
   fetchJson,
@@ -302,15 +303,36 @@ describe("fetchText retry", () => {
     expect(calls).toBe(3);
   });
 
-  test("gives up after exhausting attempts and rethrows", async () => {
+  test("gives up after exhausting attempts and names the timeout", async () => {
     const fetchMock = vi.fn(async () => {
       throw abortError();
     });
     vi.stubGlobal("fetch", fetchMock);
     await expect(fetchText("https://x", 1000, { attempts: 2, backoffMs: 1 })).rejects.toThrow(
-      /aborted/i,
+      "timed out after 1000ms for https://x (2 attempts)",
     );
     expect(fetchMock).toHaveBeenCalledTimes(2);
+  });
+
+  // Lancehoudt on 2026-11-19: three failed connections, and the run log and
+  // the published status both read "fetch failed".
+  test("a network failure names the URL, the attempts and the underlying cause", async () => {
+    const original = new TypeError("fetch failed", {
+      cause: Object.assign(
+        new Error("Connect Timeout Error (attempted address: store.test:443, timeout: 10000ms)"),
+        { code: "UND_ERR_CONNECT_TIMEOUT" },
+      ),
+    });
+    const fetchMock = vi.fn(async () => {
+      throw original;
+    });
+    vi.stubGlobal("fetch", fetchMock);
+    const err = await fetchText("https://store.test/api", 1000, { backoffMs: 1 }).catch((e) => e);
+    expect(err.message).toBe(
+      "fetch failed for https://store.test/api (3 attempts): Connect Timeout Error (attempted address: store.test:443, timeout: 10000ms) [UND_ERR_CONNECT_TIMEOUT]",
+    );
+    expect(err.cause).toBe(original);
+    expect(fetchMock).toHaveBeenCalledTimes(3);
   });
 
   test("does not retry a non-retryable 4xx", async () => {
@@ -348,6 +370,37 @@ describe("fetchText retry", () => {
     expect(err).toBeInstanceOf(HttpError);
     expect(err.status).toBe(429);
     expect(err.retryAfterMs).toBe(0);
+  });
+});
+
+describe("describeFetchFailure", () => {
+  test("does not repeat a code the cause already spells out", () => {
+    const err = new TypeError("fetch failed", {
+      cause: Object.assign(new Error("getaddrinfo ENOTFOUND store.test"), { code: "ENOTFOUND" }),
+    });
+    expect(describeFetchFailure(err, "https://store.test", 1000, 1)).toBe(
+      "fetch failed for https://store.test (1 attempt): getaddrinfo ENOTFOUND store.test",
+    );
+  });
+
+  test("lists each address tried when the host failed on more than one", () => {
+    const cause = Object.assign(
+      new AggregateError(
+        [new Error("connect ECONNREFUSED ::1:443"), new Error("connect ECONNREFUSED 127.0.0.1:443")],
+        "",
+      ),
+      { code: "ECONNREFUSED" },
+    );
+    const err = new TypeError("fetch failed", { cause });
+    expect(describeFetchFailure(err, "https://store.test", 1000, 3)).toBe(
+      "fetch failed for https://store.test (3 attempts): connect ECONNREFUSED ::1:443; connect ECONNREFUSED 127.0.0.1:443",
+    );
+  });
+
+  test("falls back to the bare message when there is no cause", () => {
+    expect(describeFetchFailure(networkError(), "https://store.test", 1000, 3)).toBe(
+      "fetch failed for https://store.test (3 attempts)",
+    );
   });
 });
 

@@ -68,6 +68,32 @@ export function retryDelayMs(err: unknown, backoffMs: number, attempt: number): 
   return Math.max(Math.min(retryAfter ?? 0, MAX_RETRY_AFTER_MS), backoffMs * attempt);
 }
 
+// fetch reports a network-level failure as a bare TypeError "fetch failed" (or
+// "terminated", mid-body) and keeps the reason on `cause`: connect timeout,
+// DNS, reset socket, TLS. A timeout is an AbortError that names neither the URL
+// nor the budget. Lancehoudt's failure on 2026-11-19 logged "fetch failed" and
+// nothing else, so the cause had to be inferred from how long the step took.
+export function describeFetchFailure(
+  err: unknown,
+  url: string,
+  timeoutMs: number,
+  attempts: number,
+): string {
+  const where = `${url} (${attempts} attempt${attempts === 1 ? "" : "s"})`;
+  if (!(err instanceof Error)) return `${String(err)} for ${where}`;
+  if (err.name === "AbortError") return `timed out after ${timeoutMs}ms for ${where}`;
+
+  const { cause } = err;
+  if (!(cause instanceof Error)) return `${err.message} for ${where}`;
+  // Node reports a host that fails on more than one address as an
+  // AggregateError with an empty message and one error per address tried.
+  const reasons = cause instanceof AggregateError ? cause.errors : [cause];
+  const detail = reasons.map((r) => (r instanceof Error ? r.message : String(r))).join("; ");
+  const code = (cause as NodeJS.ErrnoException).code;
+  const suffix = code && !detail.includes(code) ? ` [${code}]` : "";
+  return `${err.message} for ${where}: ${detail}${suffix}`;
+}
+
 export interface FetchRetryOptions {
   attempts?: number;
   backoffMs?: number;
@@ -102,7 +128,9 @@ export async function fetchText(
         await sleep(retryDelayMs(err, backoffMs, attempt));
         continue;
       }
-      throw err;
+      // HttpError already names its status and URL, and callers branch on it.
+      if (err instanceof HttpError) throw err;
+      throw new Error(describeFetchFailure(err, url, timeoutMs, attempt), { cause: err });
     } finally {
       clearTimeout(timer);
     }
